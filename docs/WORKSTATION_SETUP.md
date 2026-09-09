@@ -12,6 +12,7 @@ on 2026-09-09. No installation or GPU benchmark has been performed on this machi
 | CPU | AMD Threadripper 9970X, 32 physical / 64 logical cores | Owner report |
 | System memory | 128 GB ECC | Owner report |
 | OS | Native Arch Linux, x86_64 | Owner report of distribution and native execution |
+| Python environment manager | uv; installed version to be recorded | Owner preference |
 | Kernel, NVIDIA driver, disk space | Unknown | Inspect locally before installation |
 
 The [machine profile](../configs/hardware/office_5090.json) records unknown fields
@@ -27,7 +28,14 @@ package, and backend versions in each run manifest.
 | Modern JAX GPU | Native implementation and canonical training on the 5090 | Stable Blackwell-compatible release; lock after R000 checks |
 | Optional PyTorch | Port and later research | Separate environment; compare identical fixtures to JAX before training interpretation |
 
-Keep these in separate environments or containers. A seed alone cannot establish
+Create these as independent uv projects during R000: `envs/jax-cpu` and
+`envs/jax-gpu`, plus `envs/torch-gpu` if implementing the port. Their distinct JAX
+pins require separate dependency resolutions. uv documents
+[independent projects with path dependencies](https://docs.astral.sh/uv/concepts/projects/workspaces/)
+for conflicting requirements; shared repository code can be a local path dependency.
+These environment projects and locks have not been created yet.
+
+A seed alone cannot establish
 parity between them. Preserve and compare the actual wiring, initial parameters,
 inputs, targets, RNG semantics, losses, and updates.
 
@@ -58,19 +66,25 @@ replacement or limitation instead of silently discarding it.
 
 ## Arch environment choices
 
-Pin the Python interpreter for each experiment environment independently of the
-system interpreter. A project environment manager such as
-[uv](https://docs.astral.sh/uv/guides/install-python/) can install specific Python
-versions alongside one another. Resolve a Python version compatible with the
-historical JAX wheels and a version supported by the selected modern GPU stack;
-they need not be the same. Record exact interpreter versions with both locks.
-Keep the experiment's Python packages in those isolated environments.
+Use [uv](https://docs.astral.sh/uv/guides/install-python/) to manage and pin the
+Python interpreter for each experiment environment. Resolve a Python version
+compatible with the historical JAX wheels and a version supported by the selected
+modern GPU stack; they need not be the same. Each environment project must commit
+its `pyproject.toml`, `uv.lock`, and `.python-version` with an exact Python patch
+version after validation. Keep its `.venv` out of git.
+
+For reproduction, use `uv sync --locked` and `uv run --locked` from the selected
+environment project. The [locked mode](https://docs.astral.sh/uv/concepts/projects/sync/)
+checks that the existing lock matches the project instead of updating it during
+a run. Dependency upgrades belong to a recorded environment revision. Capture
+the uv version, interpreter version, and lock checksum in each run manifest.
 
 Start local inspection with these read-only commands:
 
 ```sh
 uname -r
 nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv
+uv --version
 ```
 
 Record the installed kernel and NVIDIA package versions too. Inspect the existing

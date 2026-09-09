@@ -9,6 +9,9 @@ or dependency lock already exists.
 - Keep the scientific recipe separate from hardware/runtime configuration.
   Inspect the local OS, driver, and devices before selecting environment packages.
   Lock dependencies after validating them; do not label an untested lock verified.
+- Use uv for Python environments. Keep historical CPU and modern GPU dependencies
+  in independent uv projects with separate locks and interpreter pins, following
+  `docs/WORKSTATION_SETUP.md`. Record the uv version in run provenance.
 - Do not silently alter a frozen budget, optimizer, loss, wiring, initialization,
   readout, precision, or evaluation rule in response to an outcome. Assign a
   separate experiment or documented protocol revision to an intervention.

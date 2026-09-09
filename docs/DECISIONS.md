@@ -62,3 +62,11 @@ inspection. Pin experiment Python interpreters independently of the system
 interpreter and keep the historical CPU and modern GPU environments separate.
 Record host changes alongside dependency locks so later runtime differences are
 observable. This changes environment guidance, not the R001 scientific recipe.
+
+## D008 — Use uv for experiment environments
+
+The owner confirmed uv on 2026-09-09. Use independent uv projects for the
+historical JAX CPU oracle and modern GPU runtime, each with a validated lock and
+exact interpreter pin. Record uv itself in run provenance and use locked mode
+for reproduction. R000 will resolve and validate these environments locally;
+this decision does not constitute a completed dependency lock.
