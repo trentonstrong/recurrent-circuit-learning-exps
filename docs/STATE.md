@@ -77,6 +77,13 @@ next question is whether the matched gate-coordinate and weight-decay conditions
 in R002 change optimization behavior. Do not launch that comparison until the
 R000/R001 evidence and protocol are reviewed.
 
+The [review of commit e94789f](../reviews/R001_e94789f/REVIEW.md) supports the
+R001 positive control and records a remaining validation gap: the committed R000
+fixtures compare the extracted implementation across runtimes. Add direct
+vendored-notebook execution parity, including the X64-disabled sampling mode
+used by R001, before launching R002. Shared access to the existing checkpoint
+bundle is also needed for direct circuit and trajectory analysis.
+
 The workstation runs native Arch Linux kernel 7.1.8-arch1-3 with NVIDIA driver
 610.57.04. The RTX 5090 uses an explicit modern GPU runtime adaptation, validated
 against the historical CPU reference. The independent uv projects retain exact

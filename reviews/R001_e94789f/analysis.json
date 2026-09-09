@@ -1,0 +1,23 @@
+{
+  "reviewed_commit": "e94789f64a5a9212c3540ce49ee928ca952998e0",
+  "scope": "Analysis of committed records and source; no training or checkpoint replay",
+  "inputs": {
+    "results/R001_20260909T231016Z_seed23_jaxgpu_attempt01/manifest.json": "dec628d93e95b8799a83c9f1d0ffa493abe58b1d7d81f1f9f8b22829b1f3705c",
+    "results/R001_20260909T231016Z_seed23_jaxgpu_attempt01/metrics.jsonl": "a1f3abe354cab27f583b7a3f034cb80aaf5fdef2d04206e89d89b7813ccc6251"
+  },
+  "record_count": 500,
+  "first_exact_saved_probe_update": 250,
+  "final_probe_hard_bit_errors": 0,
+  "final_probe_soft_sse": 0.181566521525383,
+  "final_probe_soft_mse": 2.216388202214148e-05,
+  "first_zero_training_batch_error_record": 245,
+  "maximum_raw_gradient_entry": 23.252685546875,
+  "updates_exceeding_clip_bound": 0,
+  "summed_update_seconds": 50.43456783122383,
+  "median_update_seconds": 0.10064478195272386,
+  "peak_allocator_gib_reported": 3.9669883251190186,
+  "plotting_environment": {
+    "python": "3.12.14",
+    "matplotlib": "3.10.8"
+  }
+}
