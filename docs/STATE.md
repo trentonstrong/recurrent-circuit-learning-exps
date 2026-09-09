@@ -1,7 +1,7 @@
 # Research state
 
-Updated: 2026-09-09. Repository initialized with specifications; no learner or
-new training run has been added yet.
+Updated: 2026-09-09. R000 implementation and office-5090 parity are complete.
+The canonical R001 run is next; no R001 training conclusion exists yet.
 
 ## Objective
 
@@ -25,8 +25,8 @@ eventually periodic. Length and storage-size generalization need separate tests.
 
 | Experiment | Purpose | Status |
 | --- | --- | --- |
-| [R000](../experiments/R000/SPEC.md) | Pinned source, standalone JAX, numerical parity | Ready for implementation |
-| [R001](../experiments/R001/SPEC.md) | Synchronous checkerboard, canonical seed 23 | Specified; follows R000 |
+| [R000](../experiments/R000/SPEC.md) | Pinned source, standalone JAX, numerical parity | Passed on CPU oracle and office 5090 |
+| [R001](../experiments/R001/SPEC.md) | Synchronous checkerboard, canonical seed 23 | Runner implemented; canonical run next |
 | [R002](../experiments/R002/SPEC.md) | Paired gate-coordinate and weight-decay comparison | Proposed; follows R001 review |
 | [R003](../experiments/R003/SPEC.md) | Same-function mixture interventions | Proposed mechanism study |
 
@@ -44,6 +44,13 @@ optimizer's geometry; it does not establish that learning must improve. See the
 [full derivation and controls](RECURRENT_BASELINE_HANDOFF.md).
 
 ## Existing evidence and its limits
+
+[R000](../results/R000_20260909_jax_parity/summary.md) verified the pinned
+notebook checksum, exact wiring and Boolean execution, FP64 gate probes, FP32
+20-tick rollouts, gradients, an AdamW update, and exact checkpoint resumption.
+The modern runtime must retain `jax_threefry_partitionable=false` to reproduce
+JAX 0.4.33's seeded arrays. This is implementation/runtime evidence, not a new
+training result.
 
 The source and dimensionality audits are recorded in the
 [manifest](../references/difflogic_ca/source_manifest.json). These are completed

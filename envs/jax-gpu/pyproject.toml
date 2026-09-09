@@ -1,0 +1,18 @@
+[project]
+name = "recurrent-circuit-learning-jax-gpu"
+version = "0.1.0"
+requires-python = "==3.11.6"
+dependencies = [
+  "jax[cuda13]==0.10.2",
+  "jaxlib==0.10.2",
+  "numpy==2.4.6",
+  "optax==0.2.8",
+  "pytest==9.1.1",
+  "recurrent-circuit-learning",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+recurrent-circuit-learning = { path = "../..", editable = true }

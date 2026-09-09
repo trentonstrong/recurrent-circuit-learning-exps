@@ -6,9 +6,9 @@ parameterization affect learning, neutral movement, discretization, and the
 structures that emerge during optimization. Increment and other small generators
 are stepping stones toward harder cases such as pi.
 
-**Status, 2026-09-09:** research handoff and experiment specifications only.
-The official DiffLogic CA source has been audited. This repository does not yet
-contain a learner, a working environment lock, or new training results.
+**Status, 2026-09-09:** R000 is implemented and passes on the office RTX 5090.
+The pinned CPU oracle, modern GPU lock, parity fixture, and R001 runner are now
+available. The canonical R001 training result is the next step.
 
 ## Start here
 
@@ -56,3 +56,25 @@ steady-state runtime before choosing seed concurrency.
 The repo is the shared source of truth for specifications, code, decisions, and
 the [result ledger](results/README.md). Large training artifacts live outside git
 and are identified by stable locations and checksums in their run manifests.
+
+## Reproduce R000 and run R001
+
+```sh
+uv sync --project envs/jax-cpu --locked
+uv sync --project envs/jax-gpu --locked
+
+JAX_ENABLE_X64=1 uv run --project envs/jax-cpu --locked \
+  pytest -q
+
+XLA_FLAGS=' --xla_gpu_deterministic_ops=true' JAX_ENABLE_X64=1 \
+  uv run --project envs/jax-gpu --locked \
+  python scripts/r000.py verify-fixture \
+  tests/fixtures/r000_jax_0_4_33_cpu.npz
+
+uv run --project envs/jax-gpu --locked python scripts/r001.py \
+  --run-id R001_$(date -u +%Y%m%dT%H%M%SZ)_seed23_jaxgpu_attempt01
+```
+
+The implementation fixes `jax_threefry_partitionable=false`, matching JAX
+0.4.33's PRNG behavior under modern JAX. Do not remove that compatibility setting:
+modern JAX otherwise produces different wiring and training batches for seed 23.

@@ -1,0 +1,18 @@
+[project]
+name = "recurrent-circuit-learning-jax-cpu"
+version = "0.1.0"
+requires-python = "==3.11.6"
+dependencies = [
+  "jax==0.4.33",
+  "jaxlib==0.4.33",
+  "numpy==2.1.3",
+  "optax==0.2.4",
+  "pytest==8.3.5",
+  "recurrent-circuit-learning",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+recurrent-circuit-learning = { path = "../..", editable = true }

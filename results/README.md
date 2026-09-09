@@ -1,7 +1,9 @@
 # Result ledger
 
-No new experiment has run in this repository yet. The source audit is under
-`references/`; it is not a training result.
+R000 implementation parity is recorded in
+[`R000_20260909_jax_parity`](R000_20260909_jax_parity/summary.md). It is runtime
+and implementation evidence, not a recurrent-training result. No R001 training
+result has been recorded yet.
 
 Create one directory per run, for example `R001_20260909_seed23_jaxgpu_attempt01`.
 Use separate identities for retries and interventions and explain their relation.

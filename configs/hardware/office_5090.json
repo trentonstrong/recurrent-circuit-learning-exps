@@ -2,7 +2,7 @@
   "schema_version": 1,
   "profile_id": "office_5090",
   "recorded_at": "2026-09-09",
-  "status": "owner-reported hardware and OS; driver, runtime, and performance not yet inspected",
+  "status": "hardware inspected; R000 modern JAX GPU parity and profile passed",
   "gpu": {
     "model": "NVIDIA GeForce RTX 5090",
     "count": 1,
@@ -25,24 +25,24 @@
     "distribution": "Arch Linux",
     "execution": "native",
     "architecture": "x86_64",
-    "kernel_release": null
+    "kernel_release": "7.1.8-arch1-3"
   },
-  "nvidia_driver_version": null,
+  "nvidia_driver_version": "610.57.04",
   "python_environment_manager": {
     "name": "uv",
-    "version": null,
+    "version": "0.12.5",
     "selection_source": "owner preference",
     "lock_policy": "independent uv projects for historical CPU and modern GPU environments"
   },
-  "available_disk_bytes": null,
-  "validated_environment_lock": null,
-  "measured_peak_gpu_bytes": null,
-  "measured_seconds_per_training_update": null,
+  "available_disk_bytes": 755171966976,
+  "validated_environment_lock": "envs/jax-gpu/uv.lock",
+  "measured_peak_gpu_bytes": 4259354112,
+  "measured_seconds_per_training_update": 0.101406343979761,
   "initial_execution_policy": {
     "gpu_training_processes": 1,
     "training_dtype": "float32",
-    "cpu_thread_count": null,
-    "allocator_settings": null,
+      "cpu_thread_count": null,
+      "allocator_settings": "JAX defaults; 25266487296-byte allocator limit observed",
     "profile_before_increasing_concurrency": true
   },
   "environment_plan": {
@@ -50,13 +50,13 @@
       "framework": "jax",
       "jax_version": "0.4.33",
       "jaxlib_version": "0.4.33",
-      "remaining_dependencies": "resolve compatible versions and lock after validation"
+      "remaining_dependencies": "resolved in envs/jax-cpu/uv.lock"
     },
     "gpu_reference": {
       "framework": "jax",
       "candidate_cuda_wheel_family": "cuda13",
-      "exact_versions": null,
-      "selection": "stable Blackwell-compatible runtime; validate against the CPU oracle"
+      "exact_versions": "JAX/JAXLIB/CUDA plugin 0.10.2; Optax 0.2.8",
+      "selection": "validated against the JAX 0.4.33 CPU oracle in R000"
     },
     "pytorch_port": "optional separate environment; use identical arrays for parity"
   },

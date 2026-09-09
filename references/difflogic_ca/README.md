@@ -6,11 +6,11 @@ synchronous/asynchronous recipes, and derived parameter counts. It also preserve
 the handoff's proposed experiment outline; current experiment status lives in
 `docs/STATE.md` and the corresponding `experiments/Rxxx/SPEC.md`.
 
-The notebook source itself is not vendored yet. R000 must retrieve and verify it
-before extracting executable code, preserve its Apache-2.0 attribution, and
-retain the original checksum alongside any local adaptations. This audit is not
-a full environment lock and does not claim to identify the exact source revision
-used for the paper's reported results.
+The pinned notebook is vendored at
+`upstream/diffLogic_CA.ipynb`; its SHA-256 is verified by the R000 checks. The
+upstream Apache-2.0 license is retained as `LICENSE.apache-2.0.txt`, and the
+standalone implementation carries source attribution. This audit does not claim
+to identify the exact source revision used for the paper's reported results.
 
 Primary references:
 

@@ -1,0 +1,38 @@
+{
+  "compile_seconds": 12.162811981048435,
+  "device_memory": {
+    "bytes_in_use": 1430272,
+    "bytes_limit": 25266487296,
+    "peak_bytes_in_use": 4259354112
+  },
+  "environment": {
+    "backend": "gpu",
+    "devices": [
+      "cuda:0"
+    ],
+    "jax": "0.10.2",
+    "jax_enable_x64": false,
+    "jax_threefry_partitionable": false,
+    "jaxlib": "0.10.2",
+    "numpy": "2.4.6",
+    "optax": "0.2.8",
+    "optax_adamw_defaults": {
+      "eps": "1e-08",
+      "eps_root": "0.0",
+      "mu_dtype": "None",
+      "nesterov": "False"
+    },
+    "platform": "Linux-7.1.8-arch1-3-x86_64-with-glibc2.44",
+    "python": "3.11.6"
+  },
+  "median_update_seconds": 0.101406343979761,
+  "profile_state_discarded": true,
+  "status": "passed",
+  "synchronized_update_seconds": [
+    0.138217783998698,
+    0.101406343979761,
+    0.10109093296341598,
+    0.10165036004036665,
+    0.10082627483643591
+  ]
+}
