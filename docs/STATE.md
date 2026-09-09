@@ -82,7 +82,9 @@ R001 positive control and records a remaining validation gap: the committed R000
 fixtures compare the extracted implementation across runtimes. Add direct
 vendored-notebook execution parity, including the X64-disabled sampling mode
 used by R001, before launching R002. Shared access to the existing checkpoint
-bundle is also needed for direct circuit and trajectory analysis.
+bundle is now provided by the experiment-scoped
+[`experiment/R001` GitHub release](https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/tag/experiment/R001)
+for direct circuit and trajectory analysis.
 
 The workstation runs native Arch Linux kernel 7.1.8-arch1-3 with NVIDIA driver
 610.57.04. The RTX 5090 uses an explicit modern GPU runtime adaptation, validated

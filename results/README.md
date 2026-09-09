@@ -5,6 +5,8 @@ R000 implementation parity is recorded in
 and implementation evidence, not a recurrent-training result. The canonical
 R001 positive control is recorded in
 [`R001_20260909T231016Z_seed23_jaxgpu_attempt01`](R001_20260909T231016Z_seed23_jaxgpu_attempt01/summary.md).
+Its large artifacts are published under the experiment-scoped
+[`experiment/R001` GitHub release](https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/tag/experiment/R001).
 
 Create one directory per run, for example `R001_20260909_seed23_jaxgpu_attempt01`.
 Use separate identities for retries and interventions and explain their relation.

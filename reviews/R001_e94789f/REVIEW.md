@@ -106,14 +106,18 @@ fixtures rather than overwriting the historical evidence.
 
 ## Artifact access and follow-up
 
-The manifest identifies approximately 6.8 MB of checkpoints, selected trajectories,
-probe arrays, and the final gate/wire export through absolute workstation paths
-and hashes. Those paths describe where the artifacts were written, but they are
-not retrievable through the repo connection. Put the existing files in an archive
-in shared durable storage, such as a GitHub release asset, and record its URL,
-size, archive checksum, and included file checksums. Keep checkpoints out of the
-source tree as already specified. Direct artifact access is needed to inspect
-the learned gadgets and verify readout from the exported circuit here.
+**Resolved 2026-09-09:** the existing files are now published in the durable
+[`experiment/R001` GitHub release](https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/tag/experiment/R001).
+The run manifest records the release URL, asset sizes, and SHA-256 values. The
+published checkpoint bundle, analysis bundle, and asset manifest were downloaded
+from GitHub and hash-verified after publication.
+
+The reviewed manifest identified approximately 6.8 MB of checkpoints, selected
+trajectories, probe arrays, and the final gate/wire export only through absolute
+workstation paths and hashes. Those paths were not retrievable through the repo
+connection. The release above closes that access gap while keeping checkpoints
+out of the source tree as specified, enabling inspection of the learned gadgets
+and verification of readout from the exported circuit.
 
 Then implement the already proposed R002 comparison in the working JAX stack:
 16 paired seeds, four conditions, matched effective initialization and actual

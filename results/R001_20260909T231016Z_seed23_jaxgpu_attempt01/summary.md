@@ -51,6 +51,9 @@ The committed [`manifest.json`](manifest.json) contains environment, hardware,
 RNG, metric, checkpoint, and SHA-256 provenance. [`metrics.jsonl`](metrics.jsonl)
 contains all 500 pre-update training records. The 6.8 MB of checkpoints, selected
 soft/hard trajectories, fixed evaluation arrays, and exported final hard circuit
-remain under the manifest's absolute `artifacts/` paths and are intentionally
-excluded from git. The final checkpoint was reloaded successfully at update 500,
-and its four reported artifact hashes were verified after completion.
+are intentionally excluded from git and published in the durable
+[`experiment/R001` GitHub release](https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/tag/experiment/R001).
+The release provides separate checkpoint and analysis bundles plus a machine-readable
+asset manifest with every included file's size and SHA-256. All three release
+assets were downloaded and hash-verified after publication. The final checkpoint
+was also reloaded successfully at update 500.

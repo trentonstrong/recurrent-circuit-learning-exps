@@ -506,6 +506,37 @@
     "training_loss": "pre-update terminal channel-0 squared error summed over batch and grid"
   },
   "primary_checkpoint_update": 500,
+  "release": {
+    "assets": [
+      {
+        "bytes": 5626214,
+        "kind": "checkpoint_bundle",
+        "name": "R001_20260909T231016Z_seed23_jaxgpu_attempt01_checkpoints.tar.gz",
+        "sha256": "cff77e87faf6653ff7561c46a219ea2a3d4c1ee3af8080ba9b5c91324240bd95",
+        "url": "https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/download/experiment/R001/R001_20260909T231016Z_seed23_jaxgpu_attempt01_checkpoints.tar.gz"
+      },
+      {
+        "bytes": 1374632,
+        "kind": "analysis_bundle",
+        "name": "R001_20260909T231016Z_seed23_jaxgpu_attempt01_analysis.tar.gz",
+        "sha256": "d30d67c104729c72465eec5fa223cdf5c9eef479a440cbeca407162a7c7b739b",
+        "url": "https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/download/experiment/R001/R001_20260909T231016Z_seed23_jaxgpu_attempt01_analysis.tar.gz"
+      },
+      {
+        "bytes": 5104,
+        "kind": "release_asset_manifest",
+        "name": "R001_20260909T231016Z_seed23_jaxgpu_attempt01_release-assets.json",
+        "sha256": "e115454100d65015114699918dbed5bd0605b4baa988b9581fb8dbb0eba7382b",
+        "url": "https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/download/experiment/R001/R001_20260909T231016Z_seed23_jaxgpu_attempt01_release-assets.json"
+      }
+    ],
+    "experiment_id": "R001",
+    "published_at": "2026-09-09T23:57:42Z",
+    "tag": "experiment/R001",
+    "target_commit": "47ead52addb22382f66273890b6c65df5a1edee5",
+    "url": "https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/tag/experiment/R001",
+    "verification": "all assets downloaded from GitHub and SHA-256 verified after publication"
+  },
   "rng": {
     "implementation": "JAX threefry2x32 with jax_threefry_partitionable=false",
     "probe_seed": 1000023,
