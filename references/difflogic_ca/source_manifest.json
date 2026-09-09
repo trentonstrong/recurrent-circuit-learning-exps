@@ -1,0 +1,342 @@
+{
+  "status": "audited source and proposed experiments; no new training performed",
+  "audit_date": "2026-09-09",
+  "source": {
+    "repository": "google-research/self-organising-systems",
+    "commit": "3d5547ca48b60ecac459834e2c05c9ff5df87991",
+    "path": "notebooks/diffLogic_CA.ipynb",
+    "url": "https://github.com/google-research/self-organising-systems/blob/3d5547ca48b60ecac459834e2c05c9ff5df87991/notebooks/diffLogic_CA.ipynb",
+    "raw_url": "https://raw.githubusercontent.com/google-research/self-organising-systems/3d5547ca48b60ecac459834e2c05c9ff5df87991/notebooks/diffLogic_CA.ipynb",
+    "sha256": "a9b3829db0d9fe0eb46148d516c18358aa648e3538aeaa682003b77cfbe757c8",
+    "bytes_utf8": 201717,
+    "license": "Apache-2.0; Copyright 2025 Google LLC",
+    "reference_cells": {
+      "0q_ToewoMBfk": {
+        "source_sha256": "066e0ede102a43e7e838b1723de0d52756f8657ab4e71d52b22059959f0c4142"
+      },
+      "JxZse8uV-C3D": {
+        "source_sha256": "bb6195c7f24521094e957cd4c7ed9b6fcbcce6ea8f67a2fa512e86d1c505f09d"
+      },
+      "Ii6ioJvju78Q": {
+        "source_sha256": "ea1754c4157a101ddfd5ead55365e07e38e09ad77f2f2f9dcf4fcc3d48e6eeb2"
+      },
+      "FYKUs0uhu78Q": {
+        "source_sha256": "76d75c22b434322eb4bd85ec4997cdfd17b64efecdc5d3dff21692b0604af1d7"
+      },
+      "bNkdywCOEir4": {
+        "source_sha256": "ac5f7daa93fceb730fcf1f0a243d8b72ad7bff2b1a751dd104c65132247639da"
+      },
+      "0coNJrpHEkPx": {
+        "source_sha256": "984794f34c3c6735cb5b68db59d14f990f1c1389302e5bc79518aaa994b659d5"
+      },
+      "rblos5LlWJWn": {
+        "source_sha256": "0dd14ec7fa8b3079a7caac8befd7c053f97e91c3025893808b03567e5921c2dc"
+      },
+      "_3AdVC_TWQ1V": {
+        "source_sha256": "9a379506f86d10dbdc57004f90e0fc21332bd1fd294088c7ffbd004ce4c1742c"
+      },
+      "DYCSx_HrbFRr": {
+        "source_sha256": "6f52e1fac1e9c9aa834a24536b0717d4ddbc8a2236297adac58995d8562dd58c"
+      },
+      "W_finQuMKUSa": {
+        "source_sha256": "e0858ca20a8c83b3866698807bae1d1c5233dcfeb77aca8f3325617f2339a30c"
+      }
+    }
+  },
+  "recipes": {
+    "sync": {
+      "framework": "jax",
+      "jax_version_pinned_in_notebook": "0.4.33",
+      "jaxlib_version_pinned_in_notebook": "0.4.33",
+      "other_dependency_versions": "not fully pinned upstream; lock the successful reference environment",
+      "reference_seed": 23,
+      "channels": 8,
+      "dtype_of_training_grids": "float32",
+      "exterior_padding": "constant zero",
+      "periodic": false,
+      "checker_square_width": 2,
+      "fresh_initial_grid_each_training_update": true,
+      "initial_grid_values": "independent random Boolean bits",
+      "gate_parameterization": "16-way softmax",
+      "native_hardening": "argmax gate",
+      "pass_through_gate_index": 3,
+      "initial_pass_through_logit": 10.0,
+      "other_initial_gate_logits": 0.0,
+      "gate_truth_column_order": [
+        "00",
+        "01",
+        "10",
+        "11"
+      ],
+      "trainable_wiring": false,
+      "perception": {
+        "kernels": 16,
+        "layer_widths_including_input": [
+          9,
+          8,
+          4,
+          2
+        ],
+        "connections": [
+          "first_kernel",
+          "unique",
+          "unique"
+        ],
+        "parameters_shared_across_channels": true,
+        "wiring_shared_across_kernels": true
+      },
+      "update_connections": "unique",
+      "loss": "sum of squared errors over batch and grid on channel 0 at final runtime tick",
+      "optimizer": {
+        "name": "optax.adamw",
+        "learning_rate": 0.05,
+        "b1": 0.9,
+        "b2": 0.99,
+        "weight_decay": 0.01,
+        "clip_before_optimizer": {
+          "kind": "elementwise_value",
+          "bound": 100.0
+        },
+        "eps": "Optax default at locked version; inspect and record rather than assume parity"
+      },
+      "xla_flags": " --xla_gpu_deterministic_ops=true",
+      "grid_size": [
+        16,
+        16
+      ],
+      "batch_size": 2,
+      "optimizer_updates": 500,
+      "runtime_ticks": 20,
+      "update_layer_widths_including_input": [
+        264,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        128,
+        64,
+        32,
+        16,
+        8,
+        8
+      ],
+      "asynchronous": false,
+      "cell_fire_probability": 1.0,
+      "async_mask_note": null,
+      "derived_counts": {
+        "perception_unique_gate_slots": 224,
+        "update_unique_gate_slots": 2816,
+        "unique_gate_slots": 3040,
+        "gate_evaluations_per_cell_tick": 4608,
+        "categorical_logit_count": 48640,
+        "gate_probability_dimension": 45600,
+        "formal_gate_truth_coordinates_upper_bound": 12160,
+        "generic_gate_mixture_fiber_dimension": 33440,
+        "runtime_boolean_state_bits": 2048
+      }
+    },
+    "async": {
+      "framework": "jax",
+      "jax_version_pinned_in_notebook": "0.4.33",
+      "jaxlib_version_pinned_in_notebook": "0.4.33",
+      "other_dependency_versions": "not fully pinned upstream; lock the successful reference environment",
+      "reference_seed": 23,
+      "channels": 8,
+      "dtype_of_training_grids": "float32",
+      "exterior_padding": "constant zero",
+      "periodic": false,
+      "checker_square_width": 2,
+      "fresh_initial_grid_each_training_update": true,
+      "initial_grid_values": "independent random Boolean bits",
+      "gate_parameterization": "16-way softmax",
+      "native_hardening": "argmax gate",
+      "pass_through_gate_index": 3,
+      "initial_pass_through_logit": 10.0,
+      "other_initial_gate_logits": 0.0,
+      "gate_truth_column_order": [
+        "00",
+        "01",
+        "10",
+        "11"
+      ],
+      "trainable_wiring": false,
+      "perception": {
+        "kernels": 16,
+        "layer_widths_including_input": [
+          9,
+          8,
+          4,
+          2
+        ],
+        "connections": [
+          "first_kernel",
+          "unique",
+          "unique"
+        ],
+        "parameters_shared_across_channels": true,
+        "wiring_shared_across_kernels": true
+      },
+      "update_connections": "unique",
+      "loss": "sum of squared errors over batch and grid on channel 0 at final runtime tick",
+      "optimizer": {
+        "name": "optax.adamw",
+        "learning_rate": 0.05,
+        "b1": 0.9,
+        "b2": 0.99,
+        "weight_decay": 0.01,
+        "clip_before_optimizer": {
+          "kind": "elementwise_value",
+          "bound": 100.0
+        },
+        "eps": "Optax default at locked version; inspect and record rather than assume parity"
+      },
+      "xla_flags": " --xla_gpu_deterministic_ops=true",
+      "grid_size": [
+        14,
+        14
+      ],
+      "batch_size": 1,
+      "optimizer_updates": 800,
+      "runtime_ticks": 50,
+      "update_layer_widths_including_input": [
+        264,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        128,
+        64,
+        32,
+        16,
+        8,
+        8
+      ],
+      "asynchronous": true,
+      "cell_fire_probability": 0.6,
+      "async_mask_note": "The upstream batched vmap shares its mask key; do not change mask RNG semantics in a reproduction.",
+      "derived_counts": {
+        "perception_unique_gate_slots": 224,
+        "update_unique_gate_slots": 3840,
+        "unique_gate_slots": 4064,
+        "gate_evaluations_per_cell_tick": 5632,
+        "categorical_logit_count": 65024,
+        "gate_probability_dimension": 60960,
+        "formal_gate_truth_coordinates_upper_bound": 16256,
+        "generic_gate_mixture_fiber_dimension": 44704,
+        "runtime_boolean_state_bits": 1568
+      }
+    }
+  },
+  "recipe_extraction_note": "Only consumed connection labels are recorded. Upstream lists include unused trailing labels; source code remains authoritative. AdamW is created in the earlier training-helper cell and has the same lr as both checkerboard configs.",
+  "dimensionality_audit": {
+    "single_lut2": {
+      "stored_categorical_logits": 16,
+      "probability_dimension": 15,
+      "formal_truth_function_dimension": 4,
+      "normalization_and_truth_matrix_rank": 5,
+      "generic_interior_mixture_fiber_dimension": 11,
+      "stored_truth_sigmoid_logits": 4
+    },
+    "current_counter": {
+      "cells": 4,
+      "channels": 6,
+      "gate_slots": 16,
+      "truth_logits": 64,
+      "gate_input_logits": 944,
+      "state_output_logits": 228,
+      "origin_seed_logits": 6,
+      "total_parameters": 1242,
+      "wiring_softmax_gauges": 38,
+      "formal_coordinates_after_wiring_gauges": 1204,
+      "total_if_only_gate_coordinates_become_categorical": 1434,
+      "runtime_boolean_state_bits": 24,
+      "finite_fixed_trace_outputs": 80
+    },
+    "neutral_fiber_illustration": {
+      "scope": "single gate; no training or recurrent rollout",
+      "reference_p_identity": 0.999319464497523,
+      "effective_q": [
+        0.0003629522679877721,
+        0.0003629522679877721,
+        0.9996370477320125,
+        0.9996370477320125
+      ],
+      "factorized_p_identity": 0.9985489811429067,
+      "matched_q_max_error": 0.0,
+      "reference_induced_sgd_matrix_frobenius_norm": 5.675188270331324e-07,
+      "factorized_induced_sgd_matrix_frobenius_norm": 6.948351982623273e-07
+    }
+  },
+  "proposed_experiments": {
+    "R000": "source capture and framework parity",
+    "R001": {
+      "recipe": "sync",
+      "seed": 23,
+      "updates": 500,
+      "additional_fixed_evaluation_grids": 32,
+      "checkpoint_every_updates": 50
+    },
+    "R002": {
+      "recipe": "sync",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "updates": 500,
+      "conditions": [
+        {
+          "gate_coordinates": "categorical",
+          "weight_decay": 0.01
+        },
+        {
+          "gate_coordinates": "truth_sigmoid",
+          "weight_decay": 0.01
+        },
+        {
+          "gate_coordinates": "categorical",
+          "weight_decay": 0.0
+        },
+        {
+          "gate_coordinates": "truth_sigmoid",
+          "weight_decay": 0.0
+        }
+      ],
+      "matched_initial_effective_truth_tables": true,
+      "fixed_wiring_arrays_paired": true,
+      "added_exploration_noise": false,
+      "description_pressure": false,
+      "evaluation": "native hardening and common truth rounding reported separately"
+    },
+    "R003": "same-q gate-mixture intervention with state/parameter Jacobian diagnostics"
+  }
+}

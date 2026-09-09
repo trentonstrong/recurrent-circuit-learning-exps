@@ -1,0 +1,44 @@
+# Local environments and tooling
+.venv/
+.venv-*/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.cache/
+*.egg-info/
+build/
+dist/
+.DS_Store
+
+# Local credentials/configuration (commit a non-secret example explicitly)
+.env
+.env.*
+!.env.example
+
+# Large or transient experiment output. Keep small result manifests in git.
+artifacts/
+checkpoints/
+scratch/
+wandb/
+tensorboard/
+results/**/raw/
+results/**/checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.mp4
+*.webm
+
+# Small checked-in numerical fixtures may be useful for reference parity.
+!tests/fixtures/**/*.npy
+!tests/fixtures/**/*.npz

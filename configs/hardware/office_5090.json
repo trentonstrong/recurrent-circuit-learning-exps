@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "profile_id": "office_5090",
+  "recorded_at": "2026-09-09",
+  "status": "owner-reported hardware; software and performance not yet inspected",
+  "gpu": {
+    "model": "NVIDIA GeForce RTX 5090",
+    "count": 1,
+    "memory_gb_reported": 32,
+    "memory_type": "GDDR7",
+    "architecture": "Blackwell",
+    "compute_capability": "12.0"
+  },
+  "cpu": {
+    "model": "AMD Ryzen Threadripper 9970X",
+    "physical_cores_reported": 32,
+    "logical_cpus_reported": 64
+  },
+  "system_memory": {
+    "capacity_gb_reported": 128,
+    "ecc_reported": true
+  },
+  "os": null,
+  "nvidia_driver_version": null,
+  "available_disk_bytes": null,
+  "validated_environment_lock": null,
+  "measured_peak_gpu_bytes": null,
+  "measured_seconds_per_training_update": null,
+  "initial_execution_policy": {
+    "gpu_training_processes": 1,
+    "training_dtype": "float32",
+    "cpu_thread_count": null,
+    "allocator_settings": null,
+    "profile_before_increasing_concurrency": true
+  },
+  "environment_plan": {
+    "historical_cpu_oracle": {
+      "framework": "jax",
+      "jax_version": "0.4.33",
+      "jaxlib_version": "0.4.33",
+      "remaining_dependencies": "resolve compatible versions and lock after validation"
+    },
+    "gpu_reference": {
+      "framework": "jax",
+      "candidate_cuda_wheel_family": "cuda13",
+      "exact_versions": null,
+      "selection": "stable Blackwell-compatible runtime; validate against the CPU oracle"
+    },
+    "pytorch_port": "optional separate environment; use identical arrays for parity"
+  },
+  "hardware_sources": {
+    "owner_report": "Research handoff, 2026-09-09",
+    "compute_capability": "https://developer.nvidia.com/cuda/gpus"
+  },
+  "setup_document": "docs/WORKSTATION_SETUP.md"
+}

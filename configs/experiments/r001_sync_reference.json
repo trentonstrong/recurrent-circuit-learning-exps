@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "kind": "experiment_specification",
+  "experiment_id": "R001",
+  "status": "specified; implementation and R000 acceptance pending",
+  "spec_path": "experiments/R001/SPEC.md",
+  "source_manifest_path": "references/difflogic_ca/source_manifest.json",
+  "source_commit": "3d5547ca48b60ecac459834e2c05c9ff5df87991",
+  "source_sha256": "a9b3829db0d9fe0eb46148d516c18358aa648e3538aeaa682003b77cfbe757c8",
+  "reference_recipe": {
+    "framework": "jax",
+    "jax_version_pinned_in_notebook": "0.4.33",
+    "jaxlib_version_pinned_in_notebook": "0.4.33",
+    "other_dependency_versions": "not fully pinned upstream; lock the successful reference environment",
+    "reference_seed": 23,
+    "channels": 8,
+    "dtype_of_training_grids": "float32",
+    "exterior_padding": "constant zero",
+    "periodic": false,
+    "checker_square_width": 2,
+    "fresh_initial_grid_each_training_update": true,
+    "initial_grid_values": "independent random Boolean bits",
+    "gate_parameterization": "16-way softmax",
+    "native_hardening": "argmax gate",
+    "pass_through_gate_index": 3,
+    "initial_pass_through_logit": 10.0,
+    "other_initial_gate_logits": 0.0,
+    "gate_truth_column_order": [
+      "00",
+      "01",
+      "10",
+      "11"
+    ],
+    "trainable_wiring": false,
+    "perception": {
+      "kernels": 16,
+      "layer_widths_including_input": [
+        9,
+        8,
+        4,
+        2
+      ],
+      "connections": [
+        "first_kernel",
+        "unique",
+        "unique"
+      ],
+      "parameters_shared_across_channels": true,
+      "wiring_shared_across_kernels": true
+    },
+    "update_connections": "unique",
+    "loss": "sum of squared errors over batch and grid on channel 0 at final runtime tick",
+    "optimizer": {
+      "name": "optax.adamw",
+      "learning_rate": 0.05,
+      "b1": 0.9,
+      "b2": 0.99,
+      "weight_decay": 0.01,
+      "clip_before_optimizer": {
+        "kind": "elementwise_value",
+        "bound": 100.0
+      },
+      "eps": "Optax default at locked version; inspect and record rather than assume parity"
+    },
+    "xla_flags": " --xla_gpu_deterministic_ops=true",
+    "grid_size": [
+      16,
+      16
+    ],
+    "batch_size": 2,
+    "optimizer_updates": 500,
+    "runtime_ticks": 20,
+    "update_layer_widths_including_input": [
+      264,
+      256,
+      256,
+      256,
+      256,
+      256,
+      256,
+      256,
+      256,
+      256,
+      256,
+      128,
+      64,
+      32,
+      16,
+      8,
+      8
+    ],
+    "asynchronous": false,
+    "cell_fire_probability": 1.0,
+    "async_mask_note": null,
+    "derived_counts": {
+      "perception_unique_gate_slots": 224,
+      "update_unique_gate_slots": 2816,
+      "unique_gate_slots": 3040,
+      "gate_evaluations_per_cell_tick": 4608,
+      "categorical_logit_count": 48640,
+      "gate_probability_dimension": 45600,
+      "formal_gate_truth_coordinates_upper_bound": 12160,
+      "generic_gate_mixture_fiber_dimension": 33440,
+      "runtime_boolean_state_bits": 2048
+    }
+  },
+  "runtime_selection": {
+    "hardware_profile_path": "configs/hardware/office_5090.json",
+    "environment_role": "modern_jax_gpu",
+    "validated_environment_lock": null,
+    "require_R000_parity": true,
+    "source_version_fields_are_historical": true
+  },
+  "project_additions": {
+    "evaluation": {
+      "initial_grids": 32,
+      "generation": "JAX PRNG stream independent of training; preserve, hash, and reuse actual arrays",
+      "seed": 1000023,
+      "use_for_training_or_tuning": false,
+      "checkpoint_selection": "final update 500",
+      "native_hardening": "source argmax",
+      "exact_finite_set_criterion": "zero hard bit errors on every grid",
+      "source_guarantee": false
+    },
+    "checkpoint_updates": [
+      0,
+      50,
+      100,
+      150,
+      200,
+      250,
+      300,
+      350,
+      400,
+      450,
+      500
+    ],
+    "checkpoint_contents": [
+      "model",
+      "optimizer",
+      "RNG",
+      "update_index",
+      "resolved_run_manifest"
+    ],
+    "cheap_training_metrics_every_updates": 1,
+    "state_trajectories": "selected fixed probes at saved checkpoints",
+    "profiling": "separate from the canonical training state; restore model, optimizer, and RNG after warm-up"
+  }
+}
