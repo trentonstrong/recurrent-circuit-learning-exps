@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "experiment_id": "R000",
+  "run_id": "R000_20260909_jax_parity",
+  "status": "completed",
+  "started_at": "2026-09-09T15:56:48-07:00",
+  "ended_at": "2026-09-09T16:08:22-07:00",
+  "code_commit": "c312b6989854d5e94c187ea4dcc896bad1fb536d",
+  "source": {
+    "commit": "3d5547ca48b60ecac459834e2c05c9ff5df87991",
+    "path": "references/difflogic_ca/upstream/diffLogic_CA.ipynb",
+    "bytes": 201717,
+    "sha256": "a9b3829db0d9fe0eb46148d516c18358aa648e3538aeaa682003b77cfbe757c8"
+  },
+  "environment": {
+    "python": "3.11.6",
+    "uv": "0.12.5",
+    "cpu_lock": {
+      "path": "envs/jax-cpu/uv.lock",
+      "sha256": "b903bc8cf72ab04b4265fe627c73df5580e4491d37feab8da98527ed08607577",
+      "jax": "0.4.33",
+      "jaxlib": "0.4.33",
+      "optax": "0.2.4"
+    },
+    "gpu_lock": {
+      "path": "envs/jax-gpu/uv.lock",
+      "sha256": "7a8e627cd9851d7426502bc3734bcedcfe48277575aec363877d4e7b717b2125",
+      "jax": "0.10.2",
+      "jaxlib": "0.10.2",
+      "optax": "0.2.8",
+      "cuda_wheel_family": "13"
+    },
+    "xla_flags": " --xla_gpu_deterministic_ops=true",
+    "jax_threefry_partitionable": false,
+    "training_precision": "float32",
+    "diagnostic_precision": "float64 enabled for small gate probes"
+  },
+  "hardware": {
+    "os": "Arch Linux x86_64",
+    "kernel": "7.1.8-arch1-3",
+    "cpu": "AMD Ryzen Threadripper 9970X 32-Cores",
+    "logical_cpus": 64,
+    "system_memory_bytes": 134379921408,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "gpu_memory_mib": 32607,
+    "compute_capability": "12.0",
+    "driver": "610.57.04"
+  },
+  "fixture": {
+    "path": "tests/fixtures/r000_jax_0_4_33_cpu.npz",
+    "bytes": 1195168,
+    "sha256": "62379358548ad4b3052cf181ba4e74f3468d90fe7a431f6ebc9b501b1974d66d"
+  },
+  "checks": {
+    "focused_tests": "6 passed",
+    "source_checksum": "passed",
+    "cpu_fixture_self_check": "passed",
+    "gpu_fixture_parity": "passed",
+    "hard_boolean_execution": "exact",
+    "checkpoint_resume": "exact",
+    "profile": "passed"
+  },
+  "profile": {
+    "compile_seconds": 12.162811981048435,
+    "median_synchronized_update_seconds": 0.101406343979761,
+    "peak_gpu_bytes": 4259354112,
+    "profile_state_discarded": true
+  },
+  "reports": [
+    {
+      "path": "results/R000_20260909_jax_parity/parity_report.json",
+      "bytes": 12430,
+      "sha256": "4eadc47371dacd1cb74fa64ef4b0aedadc409ec4edb66d734a4fcb6db5fa2a5e"
+    },
+    {
+      "path": "results/R000_20260909_jax_parity/checkpoint_report.json",
+      "bytes": 249,
+      "sha256": "49e0325756fe7554c0891783c8507e90fbedf44129e4df805f8cc20f99e7dae6"
+    },
+    {
+      "path": "results/R000_20260909_jax_parity/profile.json",
+      "bytes": 894,
+      "sha256": "cc5b1203ab0174c2410f4f435d529882a2fbe742a8a68e15102afb9c7fc7a7d7"
+    }
+  ]
+}
