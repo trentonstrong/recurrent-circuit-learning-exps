@@ -1,6 +1,7 @@
 # R001 — Synchronous recurrent positive control
 
-Status: specified; run after R000 passes. No training result exists.
+Status: canonical seed-23 run completed on 2026-09-09. See the
+[result summary](../../results/R001_20260909T231016Z_seed23_jaxgpu_attempt01/summary.md).
 
 ## Question and fixed recipe
 

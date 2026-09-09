@@ -6,9 +6,9 @@ parameterization affect learning, neutral movement, discretization, and the
 structures that emerge during optimization. Increment and other small generators
 are stepping stones toward harder cases such as pi.
 
-**Status, 2026-09-09:** R000 is implemented and passes on the office RTX 5090.
-The pinned CPU oracle, modern GPU lock, parity fixture, and R001 runner are now
-available. The canonical R001 training result is the next step.
+**Status, 2026-09-09:** R000 passes on the office RTX 5090, and the canonical
+R001 seed-23 run completed all 500 updates. Its final native-hard circuit exactly
+reconstructed the independent fixed set of 32 checkerboard trials.
 
 ## Start here
 
@@ -30,16 +30,15 @@ the reasoning behind the current plan.
 
 ## Office workstation
 
-The intended machine has an RTX 5090 with 32 GB GPU memory, a Threadripper
-9970X with 32 physical / 64 logical cores, and 128 GB ECC system RAM.
-These are owner-reported specifications, not measurements from this repository.
-The workstation runs native Arch Linux. Driver and kernel versions remain to be
-recorded locally.
+The measured machine has an RTX 5090 with 32,607 MiB GPU memory, a Threadripper
+9970X with 32 physical / 64 logical cores, and 128 GB system RAM. It runs native
+Arch Linux with kernel 7.1.8-arch1-3 and NVIDIA driver 610.57.04. See the hardware
+profile and run manifests for exact provenance.
 
 Read [workstation setup](docs/WORKSTATION_SETUP.md) before installing dependencies.
 The notebook's historical JAX environment and the modern GPU runtime are distinct
-profiles. Begin with one GPU training process; measure activation memory and
-steady-state runtime before choosing seed concurrency.
+profiles. R000 measured one reference process; keep that initial scheduling
+policy until later experiment concurrency is profiled explicitly.
 
 ## First local Codex instruction
 
@@ -78,3 +77,5 @@ uv run --project envs/jax-gpu --locked python scripts/r001.py \
 The implementation fixes `jax_threefry_partitionable=false`, matching JAX
 0.4.33's PRNG behavior under modern JAX. Do not remove that compatibility setting:
 modern JAX otherwise produces different wiring and training batches for seed 23.
+The completed result is summarized in
+[`results/R001_20260909T231016Z_seed23_jaxgpu_attempt01`](results/R001_20260909T231016Z_seed23_jaxgpu_attempt01/summary.md).

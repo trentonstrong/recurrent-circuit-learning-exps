@@ -1,24 +1,23 @@
 # Office workstation setup
 
-Status: recommended environment strategy, checked against official documentation
-on 2026-09-09. No installation or GPU benchmark has been performed on this machine.
+Status: environment strategy implemented and R000 GPU profile completed on
+2026-09-09. See the R000 result for measured parity and performance.
 
 ## Hardware and open items
 
 | Item | Recorded value | Evidence |
 | --- | --- | --- |
-| GPU | NVIDIA RTX 5090, 32 GB GDDR7 | Owner report |
+| GPU | NVIDIA RTX 5090, 32,607 MiB reported by driver | `nvidia-smi` during R000 |
 | GPU architecture | Blackwell, compute capability 12.0 (`sm_120`) | [NVIDIA table](https://developer.nvidia.com/cuda/gpus) |
-| CPU | AMD Threadripper 9970X, 32 physical / 64 logical cores | Owner report |
-| System memory | 128 GB ECC | Owner report |
-| OS | Native Arch Linux, x86_64 | Owner report of distribution and native execution |
-| Python environment manager | uv; installed version to be recorded | Owner preference |
-| Kernel, NVIDIA driver, disk space | Unknown | Inspect locally before installation |
+| CPU | AMD Threadripper 9970X, 32 physical / 64 logical cores | `lscpu` during R000 |
+| System memory | 134,379,921,408 bytes; ECC owner-reported | `free -b` and owner report |
+| OS | Native Arch Linux, x86_64 | Local inspection |
+| Python environment manager | uv 0.12.5 | Local inspection |
+| Kernel; NVIDIA driver | 7.1.8-arch1-3; 610.57.04 | Local inspection and `nvidia-smi` |
 
-The [machine profile](../configs/hardware/office_5090.json) records unknown fields
-as null. Fill them from the workstation, not from the machine used to write this
-handoff. Capture device and driver information with `nvidia-smi`, plus OS, Python,
-package, and backend versions in each run manifest.
+The [machine profile](../configs/hardware/office_5090.json) records the R000
+measurements. Continue to capture device, driver, OS, Python, package, and backend
+versions in each run manifest because host state can change.
 
 ## Three environment roles
 

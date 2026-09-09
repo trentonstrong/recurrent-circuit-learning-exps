@@ -1,7 +1,8 @@
 # Research state
 
 Updated: 2026-09-09. R000 implementation and office-5090 parity are complete.
-The canonical R001 run is next; no R001 training conclusion exists yet.
+The canonical R001 seed-23 run completed and established the recurrent positive
+control. Review that evidence before starting R002.
 
 ## Objective
 
@@ -26,7 +27,7 @@ eventually periodic. Length and storage-size generalization need separate tests.
 | Experiment | Purpose | Status |
 | --- | --- | --- |
 | [R000](../experiments/R000/SPEC.md) | Pinned source, standalone JAX, numerical parity | Passed on CPU oracle and office 5090 |
-| [R001](../experiments/R001/SPEC.md) | Synchronous checkerboard, canonical seed 23 | Runner implemented; canonical run next |
+| [R001](../experiments/R001/SPEC.md) | Synchronous checkerboard, canonical seed 23 | Completed; fixed 32-grid probe exact at update 500 |
 | [R002](../experiments/R002/SPEC.md) | Paired gate-coordinate and weight-decay comparison | Proposed; follows R001 review |
 | [R003](../experiments/R003/SPEC.md) | Same-function mixture interventions | Proposed mechanism study |
 
@@ -52,6 +53,13 @@ The modern runtime must retain `jax_threefry_partitionable=false` to reproduce
 JAX 0.4.33's seeded arrays. This is implementation/runtime evidence, not a new
 training result.
 
+[R001 seed 23](../results/R001_20260909T231016Z_seed23_jaxgpu_attempt01/summary.md)
+completed the frozen 500-update recipe. Its added fixed 32-grid probe first had
+zero native-hard bit errors at checkpoint 250 and remained exact through the
+primary update-500 checkpoint. The final soft summed squared error on that set
+was 0.1815665. This establishes one working recurrent-learning example, not a
+success-rate estimate or a sequence-compression result.
+
 The source and dimensionality audits are recorded in the
 [manifest](../references/difflogic_ca/source_manifest.json). These are completed
 audits, not new recurrent-training results.
@@ -64,15 +72,15 @@ claim of reproducing those runs here is made.
 
 ## Next question
 
-Can the pinned synchronous recipe learn under a recorded, working environment
-on the office machine? R000 resolves implementation and runtime differences;
-R001 records the canonical outcome before we study alternative coordinates.
+With the pinned synchronous recipe working under a recorded environment, the
+next question is whether the matched gate-coordinate and weight-decay conditions
+in R002 change optimization behavior. Do not launch that comparison until the
+R000/R001 evidence and protocol are reviewed.
 
-The workstation runs native Arch Linux; its driver and kernel versions remain
-to be inspected locally. The RTX 5090 motivates an explicit modern GPU runtime
-adaptation, with a historical CPU reference for parity. Use uv with independent
-locks and Python interpreter pins for those environments. See
-[workstation setup](WORKSTATION_SETUP.md).
+The workstation runs native Arch Linux kernel 7.1.8-arch1-3 with NVIDIA driver
+610.57.04. The RTX 5090 uses an explicit modern GPU runtime adaptation, validated
+against the historical CPU reference. The independent uv projects retain exact
+locks and Python interpreter pins. See [workstation setup](WORKSTATION_SETUP.md).
 
 Trajectory data should distinguish optimizer update, runtime tick, and output
 position. Log effective truth tables, discretization, gradients, optimizer state,

@@ -1,0 +1,523 @@
+{
+  "artifacts": [
+    {
+      "bytes": 18268,
+      "kind": "fixed_evaluation_set",
+      "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/fixed_evaluation_set.npz",
+      "sha256": "d49ecf23fd932fba25b1068f8c90820265a05fd90daadc372089520889090b2f"
+    },
+    {
+      "bytes": 21671,
+      "kind": "final_hard_circuit",
+      "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/final_hard_circuit.npz",
+      "sha256": "44cba42f059265d6bfeb21bfef0a9591b9739e28efa3633e7cf19db4f66eab71"
+    }
+  ],
+  "checkpoints": [
+    {
+      "checkpoint": {
+        "bytes": 15239,
+        "kind": "training_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/checkpoint_update_000.npz",
+        "sha256": "092a5c03f24d4b146e691c35962b234b7b3331b86a9c1e84174e1b9ce841118b"
+      },
+      "probe_trajectory": {
+        "bytes": 29100,
+        "kind": "selected_probe_trajectory",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/probe_trajectory_update_000.npz",
+        "sha256": "7c8eb5c85acc16cf4854d555019064a80b49c40b2ff17e4640d572031bb81ade"
+      },
+      "update": 0
+    },
+    {
+      "checkpoint": {
+        "bytes": 556500,
+        "kind": "training_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/checkpoint_update_050.npz",
+        "sha256": "905402960463b8bfdb6d3d0a36da726254e135e8b4ede6b4731b201bda02dfa6"
+      },
+      "probe_trajectory": {
+        "bytes": 91917,
+        "kind": "selected_probe_trajectory",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/probe_trajectory_update_050.npz",
+        "sha256": "7096fcd806cbb8104799a30669af1c1c47c6a47191996351f2e91ba85504c5c0"
+      },
+      "update": 50
+    },
+    {
+      "checkpoint": {
+        "bytes": 557764,
+        "kind": "training_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/checkpoint_update_100.npz",
+        "sha256": "ddc1c2b9b262918a43b17683c3221f407bad10dc889ad664912cfbbb76861ab3"
+      },
+      "probe_trajectory": {
+        "bytes": 95535,
+        "kind": "selected_probe_trajectory",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/probe_trajectory_update_100.npz",
+        "sha256": "704b9bf163dbd34c96ac4ccf0cb1ef2d1f4da5a25b8395469eb9fe92aceb8245"
+      },
+      "update": 100
+    },
+    {
+      "checkpoint": {
+        "bytes": 558340,
+        "kind": "training_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/checkpoint_update_150.npz",
+        "sha256": "107778b66908a8a99cda8bc03a23f0393f2bc7920a3f1ead48b945a4b4b4610f"
+      },
+      "probe_trajectory": {
+        "bytes": 143550,
+        "kind": "selected_probe_trajectory",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/probe_trajectory_update_150.npz",
+        "sha256": "91e5d42a5aa765adfa004697b288a55ac3aef63470b1e63d58c560faabdb6481"
+      },
+      "update": 150
+    },
+    {
+      "checkpoint": {
+        "bytes": 568999,
+        "kind": "training_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/checkpoint_update_200.npz",
+        "sha256": "591e63a7677bfbd6ee2c6c77c19118a79425c7099feb87ea6c446443fca12422"
+      },
+      "probe_trajectory": {
+        "bytes": 153365,
+        "kind": "selected_probe_trajectory",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/probe_trajectory_update_200.npz",
+        "sha256": "c1a3db4e5efba3638594c0cf1b36c6b12fb3eb9108639097e29f5c887558daf1"
+      },
+      "update": 200
+    },
+    {
+      "checkpoint": {
+        "bytes": 570715,
+        "kind": "training_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/checkpoint_update_250.npz",
+        "sha256": "95eee045d2d78c2b533008e455f55d6199c66695e6679e098e39ea800da82f38"
+      },
+      "probe_trajectory": {
+        "bytes": 142699,
+        "kind": "selected_probe_trajectory",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/probe_trajectory_update_250.npz",
+        "sha256": "c8d3f4c98d6ba5c5609222b44967229797b0e63c20e5d0487743a0913daff156"
+      },
+      "update": 250
+    },
+    {
+      "checkpoint": {
+        "bytes": 570162,
+        "kind": "training_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/checkpoint_update_300.npz",
+        "sha256": "bedc3e86a6517b72938427073a9e10e22475bbd0a682c3546cb5b902549e74b8"
+      },
+      "probe_trajectory": {
+        "bytes": 140486,
+        "kind": "selected_probe_trajectory",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/probe_trajectory_update_300.npz",
+        "sha256": "067d969ee4a3c95fbff4021b1c4541e7fb1b77687b0f488c1eee0ae511aea248"
+      },
+      "update": 300
+    },
+    {
+      "checkpoint": {
+        "bytes": 570360,
+        "kind": "training_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/checkpoint_update_350.npz",
+        "sha256": "54afc104c156380c2db0a1e6028647669f8f7a499626376ed9493e5b2cf1cb83"
+      },
+      "probe_trajectory": {
+        "bytes": 139413,
+        "kind": "selected_probe_trajectory",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/probe_trajectory_update_350.npz",
+        "sha256": "bc4f50cb4f17863b6bd8b3c9f30c4f0e7adc02789d2336717d0528fbab044541"
+      },
+      "update": 350
+    },
+    {
+      "checkpoint": {
+        "bytes": 571000,
+        "kind": "training_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/checkpoint_update_400.npz",
+        "sha256": "654442b393dad675aca36d45c3dfbe1fa53dc6280cdd122cefae53a73047354f"
+      },
+      "probe_trajectory": {
+        "bytes": 138308,
+        "kind": "selected_probe_trajectory",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/probe_trajectory_update_400.npz",
+        "sha256": "ff2f652a4b1dbc41a479659c1fa258ae220466811dee14cfe00b3e904d98d60f"
+      },
+      "update": 400
+    },
+    {
+      "checkpoint": {
+        "bytes": 570685,
+        "kind": "training_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/checkpoint_update_450.npz",
+        "sha256": "f2607b9d0881f9bf5b15d8536c3f439648dd2d53cc72afd26fad531ce31da281"
+      },
+      "probe_trajectory": {
+        "bytes": 138224,
+        "kind": "selected_probe_trajectory",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/probe_trajectory_update_450.npz",
+        "sha256": "c494a31a3b5760f392cc71000bb0db17147dfeb10a71fa846eb7df5ce8e9ae4a"
+      },
+      "update": 450
+    },
+    {
+      "checkpoint": {
+        "bytes": 570775,
+        "kind": "training_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/checkpoint_update_500.npz",
+        "sha256": "12f94e687399bfe33d3b98b4ba0cfb294b9e56ba7b4e4458cebd62223e406ce1"
+      },
+      "probe_trajectory": {
+        "bytes": 138455,
+        "kind": "selected_probe_trajectory",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/probe_trajectory_update_500.npz",
+        "sha256": "eb690df60f552d9aa46218006e8cc69b3f160a2ef7f8bb64687c354ba7707160"
+      },
+      "update": 500
+    }
+  ],
+  "code": {
+    "commit": "d46a6b8c838a24b6820d4181285abbff6752231c",
+    "dirty": false
+  },
+  "config": {
+    "experiment_id": "R001",
+    "kind": "experiment_specification",
+    "project_additions": {
+      "cheap_training_metrics_every_updates": 1,
+      "checkpoint_contents": [
+        "model",
+        "optimizer",
+        "RNG",
+        "update_index",
+        "resolved_run_manifest"
+      ],
+      "checkpoint_updates": [
+        0,
+        50,
+        100,
+        150,
+        200,
+        250,
+        300,
+        350,
+        400,
+        450,
+        500
+      ],
+      "evaluation": {
+        "checkpoint_selection": "final update 500",
+        "exact_finite_set_criterion": "zero hard bit errors on every grid",
+        "generation": "JAX PRNG stream independent of training; preserve, hash, and reuse actual arrays",
+        "initial_grids": 32,
+        "native_hardening": "source argmax",
+        "seed": 1000023,
+        "source_guarantee": false,
+        "use_for_training_or_tuning": false
+      },
+      "profiling": "separate from the canonical training state; restore model, optimizer, and RNG after warm-up",
+      "state_trajectories": "selected fixed probes at saved checkpoints"
+    },
+    "reference_recipe": {
+      "async_mask_note": null,
+      "asynchronous": false,
+      "batch_size": 2,
+      "cell_fire_probability": 1.0,
+      "channels": 8,
+      "checker_square_width": 2,
+      "derived_counts": {
+        "categorical_logit_count": 48640,
+        "formal_gate_truth_coordinates_upper_bound": 12160,
+        "gate_evaluations_per_cell_tick": 4608,
+        "gate_probability_dimension": 45600,
+        "generic_gate_mixture_fiber_dimension": 33440,
+        "perception_unique_gate_slots": 224,
+        "runtime_boolean_state_bits": 2048,
+        "unique_gate_slots": 3040,
+        "update_unique_gate_slots": 2816
+      },
+      "dtype_of_training_grids": "float32",
+      "exterior_padding": "constant zero",
+      "framework": "jax",
+      "fresh_initial_grid_each_training_update": true,
+      "gate_parameterization": "16-way softmax",
+      "gate_truth_column_order": [
+        "00",
+        "01",
+        "10",
+        "11"
+      ],
+      "grid_size": [
+        16,
+        16
+      ],
+      "initial_grid_values": "independent random Boolean bits",
+      "initial_pass_through_logit": 10.0,
+      "jax_version_pinned_in_notebook": "0.4.33",
+      "jaxlib_version_pinned_in_notebook": "0.4.33",
+      "loss": "sum of squared errors over batch and grid on channel 0 at final runtime tick",
+      "native_hardening": "argmax gate",
+      "optimizer": {
+        "b1": 0.9,
+        "b2": 0.99,
+        "clip_before_optimizer": {
+          "bound": 100.0,
+          "kind": "elementwise_value"
+        },
+        "eps": "Optax default at locked version; inspect and record rather than assume parity",
+        "learning_rate": 0.05,
+        "name": "optax.adamw",
+        "weight_decay": 0.01
+      },
+      "optimizer_updates": 500,
+      "other_dependency_versions": "not fully pinned upstream; lock the successful reference environment",
+      "other_initial_gate_logits": 0.0,
+      "pass_through_gate_index": 3,
+      "perception": {
+        "connections": [
+          "first_kernel",
+          "unique",
+          "unique"
+        ],
+        "kernels": 16,
+        "layer_widths_including_input": [
+          9,
+          8,
+          4,
+          2
+        ],
+        "parameters_shared_across_channels": true,
+        "wiring_shared_across_kernels": true
+      },
+      "periodic": false,
+      "reference_seed": 23,
+      "runtime_ticks": 20,
+      "trainable_wiring": false,
+      "update_connections": "unique",
+      "update_layer_widths_including_input": [
+        264,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        128,
+        64,
+        32,
+        16,
+        8,
+        8
+      ],
+      "xla_flags": " --xla_gpu_deterministic_ops=true"
+    },
+    "runtime_selection": {
+      "environment_role": "modern_jax_gpu",
+      "hardware_profile_path": "configs/hardware/office_5090.json",
+      "require_R000_parity": true,
+      "source_version_fields_are_historical": true,
+      "validated_environment_lock": null
+    },
+    "schema_version": 1,
+    "source_commit": "3d5547ca48b60ecac459834e2c05c9ff5df87991",
+    "source_manifest_path": "references/difflogic_ca/source_manifest.json",
+    "source_sha256": "a9b3829db0d9fe0eb46148d516c18358aa648e3538aeaa682003b77cfbe757c8",
+    "spec_path": "experiments/R001/SPEC.md",
+    "status": "specified; implementation and R000 acceptance pending"
+  },
+  "config_sha256": "091821c562e28262f780ba584fc5c1ee5009f27af969530db26df9c1452851d3",
+  "current_update": 500,
+  "device_memory": {
+    "bytes_in_use": 1399296,
+    "bytes_limit": 25266487296,
+    "peak_bytes_in_use": 4259521280
+  },
+  "ended_at": "2026-09-09T23:11:41.986420+00:00",
+  "environment": {
+    "allocator": {
+      "XLA_PYTHON_CLIENT_MEM_FRACTION": null,
+      "XLA_PYTHON_CLIENT_PREALLOCATE": null
+    },
+    "backend": "gpu",
+    "devices": [
+      "cuda:0"
+    ],
+    "jax": "0.10.2",
+    "jax_enable_x64": false,
+    "jax_threefry_partitionable": false,
+    "jaxlib": "0.10.2",
+    "lock_path": "envs/jax-gpu/uv.lock",
+    "lock_sha256": "7a8e627cd9851d7426502bc3734bcedcfe48277575aec363877d4e7b717b2125",
+    "numpy": "2.4.6",
+    "optax": "0.2.8",
+    "optax_adamw_defaults": {
+      "eps": "1e-08",
+      "eps_root": "0.0",
+      "mu_dtype": "None",
+      "nesterov": "False"
+    },
+    "platform": "Linux-7.1.8-arch1-3-x86_64-with-glibc2.44",
+    "python": "3.11.6",
+    "uv": "uv 0.12.5 (210d1f678 2026-08-14 x86_64-unknown-linux-gnu)",
+    "xla_flags": " --xla_gpu_deterministic_ops=true"
+  },
+  "evaluation_compile_seconds": 5.099006422795355,
+  "evaluations": [
+    {
+      "exact_all_32": false,
+      "hard_bit_errors": 4096,
+      "hard_terminal_summed_squared_error": 4096.0,
+      "perfect_grid_count": 0,
+      "perfect_grid_fraction": 0.0,
+      "soft_hard_gap": 395.73876953125,
+      "soft_terminal_summed_squared_error": 3700.26123046875,
+      "update": 0
+    },
+    {
+      "exact_all_32": false,
+      "hard_bit_errors": 4096,
+      "hard_terminal_summed_squared_error": 4096.0,
+      "perfect_grid_count": 0,
+      "perfect_grid_fraction": 0.0,
+      "soft_hard_gap": 2031.61279296875,
+      "soft_terminal_summed_squared_error": 2064.38720703125,
+      "update": 50
+    },
+    {
+      "exact_all_32": false,
+      "hard_bit_errors": 4096,
+      "hard_terminal_summed_squared_error": 4096.0,
+      "perfect_grid_count": 0,
+      "perfect_grid_fraction": 0.0,
+      "soft_hard_gap": 2049.986083984375,
+      "soft_terminal_summed_squared_error": 2046.013916015625,
+      "update": 100
+    },
+    {
+      "exact_all_32": false,
+      "hard_bit_errors": 4096,
+      "hard_terminal_summed_squared_error": 4096.0,
+      "perfect_grid_count": 0,
+      "perfect_grid_fraction": 0.0,
+      "soft_hard_gap": 2054.8045654296875,
+      "soft_terminal_summed_squared_error": 2041.1954345703125,
+      "update": 150
+    },
+    {
+      "exact_all_32": false,
+      "hard_bit_errors": 916,
+      "hard_terminal_summed_squared_error": 916.0,
+      "perfect_grid_count": 0,
+      "perfect_grid_fraction": 0.0,
+      "soft_hard_gap": 51.5322265625,
+      "soft_terminal_summed_squared_error": 864.4677734375,
+      "update": 200
+    },
+    {
+      "exact_all_32": true,
+      "hard_bit_errors": 0,
+      "hard_terminal_summed_squared_error": 0.0,
+      "perfect_grid_count": 32,
+      "perfect_grid_fraction": 1.0,
+      "soft_hard_gap": -74.40660095214844,
+      "soft_terminal_summed_squared_error": 74.40660095214844,
+      "update": 250
+    },
+    {
+      "exact_all_32": true,
+      "hard_bit_errors": 0,
+      "hard_terminal_summed_squared_error": 0.0,
+      "perfect_grid_count": 32,
+      "perfect_grid_fraction": 1.0,
+      "soft_hard_gap": -2.94425892829895,
+      "soft_terminal_summed_squared_error": 2.94425892829895,
+      "update": 300
+    },
+    {
+      "exact_all_32": true,
+      "hard_bit_errors": 0,
+      "hard_terminal_summed_squared_error": 0.0,
+      "perfect_grid_count": 32,
+      "perfect_grid_fraction": 1.0,
+      "soft_hard_gap": -0.8199693560600281,
+      "soft_terminal_summed_squared_error": 0.8199693560600281,
+      "update": 350
+    },
+    {
+      "exact_all_32": true,
+      "hard_bit_errors": 0,
+      "hard_terminal_summed_squared_error": 0.0,
+      "perfect_grid_count": 32,
+      "perfect_grid_fraction": 1.0,
+      "soft_hard_gap": -0.16405600309371948,
+      "soft_terminal_summed_squared_error": 0.16405600309371948,
+      "update": 400
+    },
+    {
+      "exact_all_32": true,
+      "hard_bit_errors": 0,
+      "hard_terminal_summed_squared_error": 0.0,
+      "perfect_grid_count": 32,
+      "perfect_grid_fraction": 1.0,
+      "soft_hard_gap": -0.17949965596199036,
+      "soft_terminal_summed_squared_error": 0.17949965596199036,
+      "update": 450
+    },
+    {
+      "exact_all_32": true,
+      "hard_bit_errors": 0,
+      "hard_terminal_summed_squared_error": 0.0,
+      "perfect_grid_count": 32,
+      "perfect_grid_fraction": 1.0,
+      "soft_hard_gap": -0.181566521525383,
+      "soft_terminal_summed_squared_error": 0.181566521525383,
+      "update": 500
+    }
+  ],
+  "experiment_id": "R001",
+  "failure_reason": null,
+  "final_training_metric": {
+    "gradient_l2": 0.029737280681729317,
+    "gradient_max_abs": 0.01945613883435726,
+    "pre_update_hard_loss": 0.0,
+    "pre_update_soft_loss": 0.01039879210293293,
+    "synchronized_seconds": 0.10075167194008827,
+    "update": 500
+  },
+  "hardware": {
+    "cpu": "AMD Ryzen Threadripper 9970X 32-Cores",
+    "gpu_query": "NVIDIA GeForce RTX 5090, 610.57.04, 32607 MiB, 12.0",
+    "kernel": "7.1.8-arch1-3",
+    "platform": "Linux-7.1.8-arch1-3-x86_64-with-glibc2.44"
+  },
+  "median_update_seconds": 0.10064478195272386,
+  "metric_definitions": {
+    "exact": "zero hard bit errors across all 32 fixed grids",
+    "hard_bit_error": "terminal native-argmax channel-0 mismatches on 32 fixed grids",
+    "probe_soft_loss": "terminal channel-0 squared error summed over 32 fixed grids",
+    "training_loss": "pre-update terminal channel-0 squared error summed over batch and grid"
+  },
+  "primary_checkpoint_update": 500,
+  "rng": {
+    "implementation": "JAX threefry2x32 with jax_threefry_partitionable=false",
+    "probe_seed": 1000023,
+    "training_data_and_model_streams": "independent source-compatible split streams",
+    "training_seed": 23
+  },
+  "run_id": "R001_20260909T231016Z_seed23_jaxgpu_attempt01",
+  "schema_version": 1,
+  "source_sha256": "a9b3829db0d9fe0eb46148d516c18358aa648e3538aeaa682003b77cfbe757c8",
+  "started_at": "2026-09-09T23:10:22.234347+00:00",
+  "status": "completed",
+  "training_compile_seconds": 12.178128945175558,
+  "synchronized_update_seconds": 50.43456783122383,
+  "training_loop_wall_seconds": 54.8420492419973
+}

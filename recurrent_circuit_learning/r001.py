@@ -336,9 +336,8 @@ def run(
                 if update % 50 == 0:
                     save_evaluation(update)
 
-        manifest["training_synchronized_seconds"] = (
-            time.perf_counter() - training_started
-        )
+        manifest["training_loop_wall_seconds"] = time.perf_counter() - training_started
+        manifest["synchronized_update_seconds"] = float(sum(update_durations))
         manifest["median_update_seconds"] = float(np.median(update_durations))
         manifest["final_training_metric"] = json.loads(
             metrics_path.read_text().splitlines()[-1]

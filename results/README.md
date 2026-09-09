@@ -2,8 +2,9 @@
 
 R000 implementation parity is recorded in
 [`R000_20260909_jax_parity`](R000_20260909_jax_parity/summary.md). It is runtime
-and implementation evidence, not a recurrent-training result. No R001 training
-result has been recorded yet.
+and implementation evidence, not a recurrent-training result. The canonical
+R001 positive control is recorded in
+[`R001_20260909T231016Z_seed23_jaxgpu_attempt01`](R001_20260909T231016Z_seed23_jaxgpu_attempt01/summary.md).
 
 Create one directory per run, for example `R001_20260909_seed23_jaxgpu_attempt01`.
 Use separate identities for retries and interventions and explain their relation.
