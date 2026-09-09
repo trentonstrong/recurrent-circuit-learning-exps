@@ -2,7 +2,7 @@
   "schema_version": 1,
   "profile_id": "office_5090",
   "recorded_at": "2026-09-09",
-  "status": "owner-reported hardware; software and performance not yet inspected",
+  "status": "owner-reported hardware and OS; driver, runtime, and performance not yet inspected",
   "gpu": {
     "model": "NVIDIA GeForce RTX 5090",
     "count": 1,
@@ -20,7 +20,13 @@
     "capacity_gb_reported": 128,
     "ecc_reported": true
   },
-  "os": null,
+  "os": {
+    "name": "Linux",
+    "distribution": "Arch Linux",
+    "execution": "native",
+    "architecture": "x86_64",
+    "kernel_release": null
+  },
   "nvidia_driver_version": null,
   "available_disk_bytes": null,
   "validated_environment_lock": null,

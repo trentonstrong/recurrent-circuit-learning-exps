@@ -11,7 +11,8 @@ on 2026-09-09. No installation or GPU benchmark has been performed on this machi
 | GPU architecture | Blackwell, compute capability 12.0 (`sm_120`) | [NVIDIA table](https://developer.nvidia.com/cuda/gpus) |
 | CPU | AMD Threadripper 9970X, 32 physical / 64 logical cores | Owner report |
 | System memory | 128 GB ECC | Owner report |
-| OS, NVIDIA driver, disk space | Unknown | Inspect locally before installation |
+| OS | Native Arch Linux, x86_64 | Owner report of distribution and native execution |
+| Kernel, NVIDIA driver, disk space | Unknown | Inspect locally before installation |
 
 The [machine profile](../configs/hardware/office_5090.json) records unknown fields
 as null. Fill them from the workstation, not from the machine used to write this
@@ -39,14 +40,13 @@ installed versions; put installed versions in an environment lock and run manife
 
 [JAX installation guidance](https://docs.jax.dev/en/latest/installation.html)
 recommends CUDA 13 pip wheels (`jax[cuda13]`) and a Linux driver at least version
-580. NVIDIA GPU wheels target Linux; native Windows GPU execution is unsupported
-and WSL2 is listed as experimental. Native Linux x86_64 is the recommended first
-path if the workstation setup allows it. Select exact package versions during
-R000 and commit the validated lock; this handoff is not a resolved install script.
+580. Use the Linux x86_64 wheels on this native Arch workstation. Select exact
+package versions during R000 and commit the validated lock; this handoff is not
+a resolved install script.
 
 For a PyTorch port, the [PyTorch 2.12 release guidance](https://pytorch.org/blog/pytorch-2-12-release-blog/)
 recommends CUDA 13.0+ wheels for Blackwell. That guidance specifies drivers at least
-580.65.06 on Linux or 580.88 on Windows. Recheck the selected release's requirements
+580.65.06 on Linux. Recheck the selected release's requirements
 when resolving the environment. Do not infer GPU support merely from importing
 the package or from the CUDA version displayed by `nvidia-smi`.
 
@@ -55,6 +55,34 @@ and gradient computations on it, and passes reference parity. Capture failures
 and necessary API adaptations. Retain the reference deterministic XLA flag where
 supported; if a modern runtime rejects it, record the issue and validated
 replacement or limitation instead of silently discarding it.
+
+## Arch environment choices
+
+Pin the Python interpreter for each experiment environment independently of the
+system interpreter. A project environment manager such as
+[uv](https://docs.astral.sh/uv/guides/install-python/) can install specific Python
+versions alongside one another. Resolve a Python version compatible with the
+historical JAX wheels and a version supported by the selected modern GPU stack;
+they need not be the same. Record exact interpreter versions with both locks.
+Keep the experiment's Python packages in those isolated environments.
+
+Start local inspection with these read-only commands:
+
+```sh
+uname -r
+nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv
+```
+
+Record the installed kernel and NVIDIA package versions too. Inspect the existing
+working driver before deciding whether any system change is necessary. The JAX
+CUDA pip-wheel route supplies user-space CUDA dependencies; select its matching
+driver requirement during R000. A local CUDA toolkit is a separate need if later
+work compiles extensions that require it.
+
+After a kernel, driver, interpreter, or dependency change, record a new environment
+identity and rerun focused device/parity checks before pooling new runs with old
+ones. Package locks do not capture the host kernel and NVIDIA driver, so retain
+that metadata in each run manifest.
 
 ## Resource policy for the first runs
 

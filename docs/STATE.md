@@ -61,9 +61,10 @@ Can the pinned synchronous recipe learn under a recorded, working environment
 on the office machine? R000 resolves implementation and runtime differences;
 R001 records the canonical outcome before we study alternative coordinates.
 
-The machine's OS and driver are still unknown. The RTX 5090 motivates an explicit
-modern GPU runtime adaptation, with a historical CPU reference for parity. See
-[workstation setup](WORKSTATION_SETUP.md).
+The workstation runs native Arch Linux; its driver and kernel versions remain
+to be inspected locally. The RTX 5090 motivates an explicit modern GPU runtime
+adaptation, with a historical CPU reference for parity. Pin each environment's
+Python interpreter as well as its packages. See [workstation setup](WORKSTATION_SETUP.md).
 
 Trajectory data should distinguish optimizer update, runtime tick, and output
 position. Log effective truth tables, discretization, gradients, optimizer state,

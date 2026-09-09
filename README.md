@@ -33,7 +33,8 @@ the reasoning behind the current plan.
 The intended machine has an RTX 5090 with 32 GB GPU memory, a Threadripper
 9970X with 32 physical / 64 logical cores, and 128 GB ECC system RAM.
 These are owner-reported specifications, not measurements from this repository.
-OS and driver remain to be recorded.
+The workstation runs native Arch Linux. Driver and kernel versions remain to be
+recorded locally.
 
 Read [workstation setup](docs/WORKSTATION_SETUP.md) before installing dependencies.
 The notebook's historical JAX environment and the modern GPU runtime are distinct

@@ -53,3 +53,12 @@ Keep the reference batch, grid, and unroll unchanged. Measure compilation,
 steady-state update time, and peak memory first. The number of CPU threads is not
 the number of viable simultaneous GPU trials. Any scheduling changes retain
 the same scientific recipe and recorded per-trial randomness.
+
+## D007 — Target native Arch Linux
+
+The owner confirmed native Arch Linux on 2026-09-09. Update the hardware profile
+and setup guidance accordingly; driver and kernel versions still require local
+inspection. Pin experiment Python interpreters independently of the system
+interpreter and keep the historical CPU and modern GPU environments separate.
+Record host changes alongside dependency locks so later runtime differences are
+observable. This changes environment guidance, not the R001 scientific recipe.
