@@ -57,3 +57,11 @@ The release provides separate checkpoint and analysis bundles plus a machine-rea
 asset manifest with every included file's size and SHA-256. All three release
 assets were downloaded and hash-verified after publication. The final checkpoint
 was also reloaded successfully at update 500.
+
+## Checkerboard trajectory
+
+![Soft and hard R001 checkerboard trajectory](checkerboard_trajectory.svg)
+
+The contact sheet shows channel 0 of the selected fixed probe at runtime ticks
+0, 5, 10, 15, and 20 under the final update-500 parameters. It is rendered
+directly from the saved `soft` and native-hard trajectory arrays.

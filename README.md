@@ -78,4 +78,15 @@ The implementation fixes `jax_threefry_partitionable=false`, matching JAX
 0.4.33's PRNG behavior under modern JAX. Do not remove that compatibility setting:
 modern JAX otherwise produces different wiring and training batches for seed 23.
 The completed result is summarized in
-[`results/R001_20260909T231016Z_seed23_jaxgpu_attempt01`](results/R001_20260909T231016Z_seed23_jaxgpu_attempt01/summary.md).
+[the R001 result ledger](results/R001_20260909T231016Z_seed23_jaxgpu_attempt01/summary.md).
+
+Render a saved probe trajectory as an SVG contact sheet with soft and native-hard
+states at five evenly spaced runtime ticks:
+
+```sh
+uv run --project envs/jax-cpu --locked python scripts/render_checkerboard.py \
+  artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/probe_trajectory_update_500.npz
+```
+
+Use `--ticks all`, `--mode hard`, `--sample`, `--channel`, or `--output` to
+customize the rendering.
