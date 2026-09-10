@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "experiment_id": "R002",
+  "kind": "implementation_validation",
+  "status": "passed",
+  "formal_sweep_status": "not_launched",
+  "development_seed": 23,
+  "code": {
+    "base_commit": "62c03894fe19e95644d75971136bdfc36bd04a61",
+    "validation_worktree_dirty": true,
+    "finalized_implementation": "enclosing git commit"
+  },
+  "config_path": "configs/experiments/r002_paired_gate_coordinates.json",
+  "config_sha256": "9632f2135e8262903c40cdaeba211e4f5bebac22c2b8f45c0e2100b993111bb9",
+  "environment_locks": {
+    "cpu_sha256": "b903bc8cf72ab04b4265fe627c73df5580e4491d37feab8da98527ed08607577",
+    "gpu_sha256": "7a8e627cd9851d7426502bc3734bcedcfe48277575aec363877d4e7b717b2125"
+  },
+  "runtime": {
+    "uv": "0.12.5",
+    "kernel": "7.1.8-arch1-3",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "driver": "610.57.04",
+    "selected_concurrency": 1
+  },
+  "reports": [
+    {"path": "common_kernel_report_attempt01.json", "status": "failed", "sha256": "5961b3f24787e5a175e573ea98fc00107b0e3b46ff3bdf8b12e0c506a2e5da89"},
+    {"path": "common_kernel_report_attempt02.json", "status": "passed", "sha256": "3dc75f1f58c5d491933af0095903aad62f07c4e3498687787fe3162dc9057c0e"},
+    {"path": "fp64_gradient_report.json", "status": "passed", "sha256": "310259e4a884586a8a86b407ccf21867e2c724425dbefd3c2fe2fe28dbf32120"},
+    {"path": "preflight_categorical_reference_decay_attempt01.json", "status": "passed_superseded", "sha256": "819795ef1bb5ca2a90c31279b8985bbbd6391b5a995dd4d006d9eef408222d42"},
+    {"path": "preflight_categorical_reference_decay_attempt02.json", "status": "passed", "sha256": "7781a45d4b63d9a49bd8a97a68a3876e9797696f2509974dd15cd0b7663f0a26"},
+    {"path": "preflight_truth_reference_decay_attempt01.json", "status": "passed_superseded", "sha256": "164ec1800e481d7c49f09e8d5e9f6e2bafb2df5cb05429bcf07519a5aa0f866e"},
+    {"path": "preflight_truth_reference_decay_attempt02.json", "status": "passed", "sha256": "49c5a14587ad286380b4bedbf94c9eda93fce3ab0e9a164d9df0d6802a8d7380"},
+    {"path": "preflight_categorical_no_decay_attempt01.json", "status": "passed_superseded", "sha256": "fc9bea85f0cb0afe353af43b294b7353d5d5cc789956541cfe8d1f7964fb957c"},
+    {"path": "preflight_categorical_no_decay_attempt02.json", "status": "passed", "sha256": "fe087b1ce890aa76d81f1aa6f648c3586ab9f01c86f0d97c7a4301dc62d54897"},
+    {"path": "preflight_truth_no_decay_attempt01.json", "status": "passed_superseded", "sha256": "41b3a48fd0c84e1db53fd20e34a26f9d10b68cb5cbb1045adf6126196250d5cb"},
+    {"path": "preflight_truth_no_decay_attempt02.json", "status": "passed", "sha256": "14c498b1794f4752b3d60ce7feb76b169b71a19bbb40b68c54dfaf247dd37c95"}
+  ],
+  "validation_commands": [
+    "JAX_ENABLE_X64=1 uv run --project envs/jax-cpu --locked python scripts/r002.py validate-fp64 --report results/R002_20260910_validation/fp64_gradient_report.json",
+    "JAX_ENABLE_X64=0 uv run --project envs/jax-gpu --locked python scripts/r002.py validate-kernel --report results/R002_20260910_validation/common_kernel_report_attempt02.json",
+    "JAX_ENABLE_X64=0 uv run --project envs/jax-gpu --locked python scripts/r002.py preflight --condition CONDITION --config configs/experiments/r002_paired_gate_coordinates.json --report results/R002_20260910_validation/preflight_CONDITION_attempt02.json --checkpoint artifacts/R002_20260910_validation/preflight_CONDITION_update001_attempt02.npz"
+  ],
+  "launch_command": "JAX_ENABLE_X64=0 uv run --project envs/jax-gpu --locked python scripts/r002.py sweep --config configs/experiments/r002_paired_gate_coordinates.json --concurrency 1 --sweep-id formal_attempt01"
+}

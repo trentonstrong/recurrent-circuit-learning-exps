@@ -1,0 +1,186 @@
+{
+  "cases": {
+    "initial": {
+      "matched_coordinate_trajectory": {
+        "atol": 1e-06,
+        "max_abs_error": 1.621246337890625e-05,
+        "max_relative_error": 1.6979246055306024e-05,
+        "ok": true,
+        "rtol": 0.0001
+      },
+      "matched_state_jvp": {
+        "atol": 1e-06,
+        "max_abs_error": 0.0,
+        "max_relative_error": 0.0,
+        "ok": true,
+        "rtol": 0.0001
+      },
+      "source_to_common_gradient": {
+        "atol": 1e-06,
+        "max_abs_error": 0.009600281715393066,
+        "max_relative_error": 3.765520003276309,
+        "ok": false,
+        "rtol": 0.0001
+      },
+      "source_to_common_loss": {
+        "atol": 1e-06,
+        "max_abs_error": 0.431884765625,
+        "max_relative_error": 0.0018674779480703366,
+        "ok": false,
+        "rtol": 0.0001
+      },
+      "source_to_common_optimizer_state": {
+        "atol": 1e-06,
+        "max_abs_error": 0.0009600259363651276,
+        "max_relative_error": 6.648100737188287,
+        "ok": false,
+        "rtol": 0.0001
+      },
+      "source_to_common_trajectory": {
+        "atol": 1e-06,
+        "max_abs_error": 0.048320889472961426,
+        "max_relative_error": 0.0533038119369399,
+        "ok": false,
+        "rtol": 0.0001
+      },
+      "source_to_common_updated_params": {
+        "atol": 5e-05,
+        "max_abs_error": 0.09900698065757751,
+        "max_relative_error": 2.0093752757250583,
+        "ok": false,
+        "rtol": 0.0001
+      }
+    },
+    "nontrivial": {
+      "matched_coordinate_trajectory": {
+        "atol": 1e-06,
+        "max_abs_error": 5.960464477539063e-08,
+        "max_relative_error": 1.1607960181910665e-07,
+        "ok": true,
+        "rtol": 0.0001
+      },
+      "matched_state_jvp": {
+        "atol": 1e-06,
+        "max_abs_error": 0.0,
+        "max_relative_error": 0.0,
+        "ok": true,
+        "rtol": 0.0001
+      },
+      "source_to_common_gradient": {
+        "atol": 1e-06,
+        "max_abs_error": 0.00039461255073547363,
+        "max_relative_error": 1.448485161795652e+265,
+        "ok": false,
+        "rtol": 0.0001
+      },
+      "source_to_common_loss": {
+        "atol": 1e-06,
+        "max_abs_error": 0.00018310546875,
+        "max_relative_error": 1.4295469241630121e-06,
+        "ok": true,
+        "rtol": 0.0001
+      },
+      "source_to_common_optimizer_state": {
+        "atol": 1e-06,
+        "max_abs_error": 3.9458274841308594e-05,
+        "max_relative_error": 2.393149397749338e+264,
+        "ok": false,
+        "rtol": 0.0001
+      },
+      "source_to_common_trajectory": {
+        "atol": 1e-06,
+        "max_abs_error": 5.644559860229492e-05,
+        "max_relative_error": 0.00011046453779222799,
+        "ok": false,
+        "rtol": 0.0001
+      },
+      "source_to_common_updated_params": {
+        "atol": 5e-05,
+        "max_abs_error": 0.0016232728958129883,
+        "max_relative_error": 0.0110142296341194,
+        "ok": false,
+        "rtol": 0.0001
+      }
+    }
+  },
+  "environment": {
+    "backend": "gpu",
+    "devices": [
+      "cuda:0"
+    ],
+    "jax": "0.10.2",
+    "jax_enable_x64": false,
+    "jax_threefry_partitionable": false,
+    "jaxlib": "0.10.2",
+    "numpy": "2.4.6",
+    "optax": "0.2.8",
+    "optax_adamw_defaults": {
+      "eps": "1e-08",
+      "eps_root": "0.0",
+      "mu_dtype": "None",
+      "nesterov": "False"
+    },
+    "platform": "Linux-7.1.8-arch1-3-x86_64-with-glibc2.44",
+    "python": "3.11.6"
+  },
+  "exports": {
+    "categorical_common": {
+      "execution": {
+        "atol": 0.0,
+        "max_abs_error": 0.0,
+        "max_relative_error": 0.0,
+        "ok": true,
+        "rtol": 0.0
+      },
+      "gate_id_sha256": "818323d8425ec1c39e0f51c5f524b0d0cfc71b42563897dcb1fbf1b30f77e2e4"
+    },
+    "categorical_native": {
+      "execution": {
+        "atol": 0.0,
+        "max_abs_error": 0.0,
+        "max_relative_error": 0.0,
+        "ok": true,
+        "rtol": 0.0
+      },
+      "gate_id_sha256": "fa5788ddafe24c8aafa91947d4ad7f5d01cc61c52dcec321f811ff8768d7388a"
+    },
+    "truth_common": {
+      "execution": {
+        "atol": 0.0,
+        "max_abs_error": 0.0,
+        "max_relative_error": 0.0,
+        "ok": true,
+        "rtol": 0.0
+      },
+      "gate_id_sha256": "818323d8425ec1c39e0f51c5f524b0d0cfc71b42563897dcb1fbf1b30f77e2e4"
+    },
+    "truth_native": {
+      "execution": {
+        "atol": 0.0,
+        "max_abs_error": 0.0,
+        "max_relative_error": 0.0,
+        "ok": true,
+        "rtol": 0.0
+      },
+      "gate_id_sha256": "818323d8425ec1c39e0f51c5f524b0d0cfc71b42563897dcb1fbf1b30f77e2e4"
+    }
+  },
+  "gate_source_to_common": {
+    "atol": 1e-06,
+    "max_abs_error": 6.201863288879395e-05,
+    "max_relative_error": 0.00016164172689911747,
+    "ok": false,
+    "rtol": 0.0001
+  },
+  "initial_effective_table_match": {
+    "atol": 1e-07,
+    "max_abs_error": 5.960464477539063e-08,
+    "max_relative_error": 1.604077693823916e-07,
+    "ok": true,
+    "rtol": 1e-06
+  },
+  "parameter_gradient_note": "Gradients across coordinate systems are intentionally not compared.",
+  "schema_version": 1,
+  "seed": 23,
+  "status": "failed"
+}

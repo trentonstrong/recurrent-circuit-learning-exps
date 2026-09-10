@@ -1,0 +1,128 @@
+{
+  "bytes": 1634432,
+  "fixture": "artifacts/R000_20260910_direct_notebook_parity_attempt01/notebook_oracle_x64_disabled.npz",
+  "metadata": {
+    "environment": {
+      "backend": "cpu",
+      "devices": [
+        "TFRT_CPU_0"
+      ],
+      "jax": "0.4.33",
+      "jax_enable_x64": false,
+      "jax_threefry_partitionable": false,
+      "jaxlib": "0.4.33",
+      "numpy": "2.1.3",
+      "optax": "0.2.4",
+      "optax_adamw_defaults": {
+        "eps": "1e-08",
+        "eps_root": "0.0",
+        "mu_dtype": "None",
+        "nesterov": "False"
+      },
+      "platform": "Linux-7.1.8-arch1-3-x86_64-with-glibc2.44",
+      "python": "3.11.6"
+    },
+    "execution": {
+      "adapters": {
+        "checkerboard_setup": "frozen synchronous hyperparameters supplied before cell 16",
+        "einops.rearrange": [
+          "k c s -> (c s k): transpose(1,2,0), reshape(-1)",
+          "x y (c f) -> (x y) f c: explicit reshape/transpose"
+        ],
+        "flax.linen.softmax": "jax.nn.softmax"
+      },
+      "executed_cells": [
+        {
+          "id": "FYKUs0uhu78Q",
+          "index": 6,
+          "source": "# @title Hyperparameters\n\n# Index of the pass-through gate used for network initialization.\nPASS_THROUGH_GATE = 3\nDEFAULT_PASS_VALUE = 10.0\n\n# Number of possible gates with 2 inputs and 1 output.\nNUMBER_OF_GATES = 16\n\n\"\"\"\nFire rate for asynchronicity.\n\n60% of cells will perform the update,\n40% will have the update masked.\n\"\"\"\nFIRE_RATE = 0.6\n\nTARGET_EMOJI = \"\ud83e\udd8e\"\nTARGET_SIZE_EMOJI = 20\nTARGET_SIZE_G = 16\nTARGET_SIZE_ASYNC = 14\nTARGET_SIZE = 16",
+          "source_sha256": "76d75c22b434322eb4bd85ec4997cdfd17b64efecdc5d3dff21692b0604af1d7"
+        },
+        {
+          "id": "bNkdywCOEir4",
+          "index": 8,
+          "source": "# @title Model definition\n\n\ndef get_moore_connections(key):\n  \"\"\"Generate Moore neighborhood connections for a 9x1 vector.\n\n  Center element is at index 4 and connects to all other elements.\n  \"\"\"\n  neighbors = jnp.array([0, 1, 2, 3, 5, 6, 7, 8])\n  a = neighbors\n  b = jnp.full_like(neighbors, 4)\n  perm = jax.random.permutation(key, neighbors.shape[0])\n  a = a[perm]\n  b = b[perm]\n  return a, b\n\n\n# From https://github.com/Felix-Petersen/difflogic/tree/main/difflogic\ndef get_unique_connections(in_dim, out_dim, key):\n  assert (\n      out_dim * 2 >= in_dim\n  )  # Number of neurons must not be smaller than half of inputs\n  x = jnp.arange(in_dim)\n  # Take pairs (0, 1), (2, 3), (4, 5), ...\n  a = x[::2]\n  b = x[1::2]\n  m = min(a.shape[0], b.shape[0])\n  a = a[:m]\n  b = b[:m]\n  # If needed, add pairs (1, 2), (3, 4), (5, 6), ...\n  if a.shape[0] < out_dim:\n    a_ = x[1::2]\n    b_ = x[2::2]\n    m = min(a_.shape[0], b_.shape[0])\n    a = jnp.concatenate([a, a_[:m]])\n    b = jnp.concatenate([b, b_[:m]])\n  # If still needed, add pairs with larger offsets\n  offset = 2\n  while out_dim > a.shape[0] and offset < in_dim:\n    a_ = x[:-offset]\n    b_ = x[offset:]\n    a = jnp.concatenate([a, a_])\n    b = jnp.concatenate([b, b_])\n    offset += 1\n\n  if a.shape[0] >= out_dim:\n    a = a[:out_dim]\n    b = b[:out_dim]\n  else:\n    raise ValueError(\n        f'Could not generate enough unique connections: {a.shape[0]} <'\n        f' {out_dim}'\n    )\n\n  # Random permutation\n  perm = jax.random.permutation(key, out_dim)\n  a = a[perm]\n  b = b[perm]\n\n  return a, b\n\n\ndef bin_op_all_combinations(a, b):\n  # Implementation of binary operations between two inputs for all the different operations\n  return jnp.stack(\n      [\n          jnp.zeros_like(a),\n          a * b,\n          a - a * b,\n          a,\n          b - a * b,\n          b,\n          a + b - 2 * a * b,\n          a + b - a * b,\n          1 - (a + b - a * b),\n          1 - (a + b - 2 * a * b),\n          1 - b,\n          1 - b + a * b,\n          1 - a,\n          1 - a + a * b,\n          1 - a * b,\n          jnp.ones_like(a),\n      ],\n      axis=-1,\n  )\n\n\n\ndef bin_op_s(a, b, i_s):\n  # Compute all possible operations\n  combinations = bin_op_all_combinations(\n      a, b\n  )  # Shape: (n_gate, n_possible_gates, 16)\n  \"\"\"\n    Calculate the weighted sum of all possible gate operations.\n    During training (soft decoding), the weights are the probabilities\n    of each gate type. During inference (hard decoding), the weights\n    are a one-hot vector representing the selected gate type.\n    \"\"\"\n  result = jax.numpy.sum(combinations * i_s[None, ...], axis=-1)\n  return result\n\n\n\ndef decode_soft(weights):\n  # From the weights vector compute the probability distribution of choosing each gate using softmax\n  return nn.softmax(weights, axis=-1)\n\n\ndef decode_hard(weights):\n  return jax.nn.one_hot(\n      jnp.argmax(weights, axis=-1), 16\n  )  # Return the gate with maximum probability.\n\n\n# Initialize gates as pass through gate\ndef init_gates(\n    n,\n    num_gates=NUMBER_OF_GATES,\n    pass_through_gate=PASS_THROUGH_GATE,\n    default_pass_value=DEFAULT_PASS_VALUE,\n):\n  \"\"\"Initializes a gate matrix with default pass-through values.\n\n  Args:\n      n: The number of rows in the gate matrix.\n      num_gates: The number of gates (columns). Defaults to NUMBER_OF_GATES.\n      pass_through_gate: The index of the pass-through gate column. Defaults to\n        PASS_THROUGH_GATE.\n      default_pass_value: The default value for the pass-through gate. Defaults\n        to DEFAULT_PASS_VALUE.\n\n  Returns:\n      An array representing the initialized gate matrix.\n  \"\"\"\n  gates = jnp.zeros((n, num_gates))\n  gates = gates.at[:, pass_through_gate].set(default_pass_value)\n  return gates\n\n\ndef init_gate_layer(key, in_dim, out_dim, connections):\n\n  # With 'random' connections the input of each gate are sampled randomly from the previous layer.\n  if connections == 'random':\n    key1, key2 = jax.random.split(key)\n\n    c = jax.random.permutation(key2, 2 * out_dim) % in_dim\n    c = jax.random.permutation(key1, in_dim)[c]\n\n    c = c.reshape(2, out_dim)\n\n    indices_a = c[0, :]\n    indices_b = c[1, :]\n\n  # With 'unique' connections each gate will have a different pair of inputs.\n  elif connections == 'unique':\n    indices_a, indices_b = get_unique_connections(in_dim, out_dim, key)\n\n  # With 'first_kernel' the connections are specifically designed to mimic the Moore neighborhood.\n  elif connections == 'first_kernel':\n    indices_a, indices_b = get_moore_connections(key)\n  else:\n    raise ValueError(f'Connection type {connections} not implemented')\n\n  wires = [indices_a, indices_b]\n  gate_logits = init_gates(out_dim)\n  return gate_logits, wires\n\n\ndef init_logic_gate_network(hyperparams, params, wires, key):\n  for i, (in_dim, out_dim) in enumerate(\n      zip(hyperparams['layers'][:-1], hyperparams['layers'][1:])\n  ):\n    key, subkey = jax.random.split(key)\n    gate_logits, gate_wires = init_gate_layer(\n        subkey, int(in_dim), int(out_dim), hyperparams['connections'][i]\n    )\n    params.append(gate_logits)\n    wires.append(gate_wires)\n\n\ndef init_perceive_network(hyperparams, params, wires, key):\n  for i, (in_dim, out_dim) in enumerate(\n      zip(hyperparams['layers'][:-1], hyperparams['layers'][1:])\n  ):\n    key, subkey = jax.random.split(key)\n    gate_logits, gate_wires = init_gate_layer(\n        subkey, int(in_dim), int(out_dim), hyperparams['connections'][i]\n    )\n    \"\"\"\n    Replicate the gate logits for each of the 'n_kernels' perception kernels.\n    This allows for parallel computation of the perception module,\n    as all kernels share the same underlying structure and wiring.\n    \"\"\"\n    params.append(\n        gate_logits.repeat(hyperparams['n_kernels'], axis=0).reshape(\n            hyperparams['n_kernels'], out_dim, NUMBER_OF_GATES\n        )\n    )\n    wires.append(gate_wires)\n\n\n# In the current implementation all the kernels share the same connection scheme\ndef init_diff_logic_ca(hyperparams, key):\n\n  key, subkey = jax.random.split(key)\n  \"\"\"Initialize parameters for the update and perceive networks.\n\n   Each network's parameters will be stored as a list of gate logits.\n\n   'update':  List of gate logits for the update network.\n              Each element is a JAX array with shape (out_dim, 16),\n              where out_dim is the output dimension of the layer.\n   'perceive': List of gate logits for the perceive network.\n               Each element is a JAX array with shape (n_kernels * out_dim, 16),\n               where n_kernels is the number of perception kernels\n               and out_dim is the output dimension of the layer.\n  \"\"\"\n  params = {'update': [], 'perceive': []}\n\n  \"\"\"Initialize wiring for the update and perceive networks.\n\n   Each network's wiring will be stored as a list of connection indices.\n\n   'update':  List of connection indices for the update network.\n              Each element is a tuple of two JAX arrays (indices_a, indices_b)\n              representing the input indices for each gate.\n   'perceive': List of connection indices for the perceive network.\n               The perceive kernels share the same wiring, so this list\n               contains a single tuple of connection indices (indices_a, indices_b).\n  \"\"\"\n  wires = {'update': [], 'perceive': []}\n\n  # Initialize the gate\n  init_logic_gate_network(\n      hyperparams['update'], params['update'], wires['update'], subkey\n  )\n\n  key, subkey = jax.random.split(key)\n\n  # Initialize perceive vector\n  init_perceive_network(\n      hyperparams['perceive'], params['perceive'], wires['perceive'], subkey\n  )\n\n  return params, wires\n\n\ndef run_layer(logits, wires, x, training):\n  \"\"\"Args:\n\n      x: input vector, shape (input_dim, 1).\n      wires: wire configuration, shape (out_dim, 1).\n      logits: gate parameters, shape (n_out, 16).\n\n  Returns:\n      If training is True, the expected gate values.\n      If training is False, the gates with maximum probability.\n  \"\"\"\n\n  a = x[..., wires[0]]\n  b = x[..., wires[1]]\n  logits = jax.lax.cond(training, decode_soft, decode_hard, logits)\n  out = bin_op_s(a, b, logits)\n  return out\n\n\ndef run_update(params, wires, x, training):\n  for g, c in zip(params, wires):\n    x = run_layer(g, c, x, training)\n  return x\n\n\ndef run_perceive(params, wires, x, training):\n  \"\"\"Applies a perception layer to a patch.\n\n  Args:\n      params: List of kernel parameters for each layer.\n      wires: List of wire configurations for each layer.\n      x: Input patch, shape [batch_size, patch_size, channel_size].\n      training: Boolean indicating training mode.\n\n  Returns:\n      Output feature vector, shape [batch_size, channel_size].\n  \"\"\"\n\n  # Apply each layer using vmap for kernel parallelism.\n  run_layer_map = jax.vmap(run_layer, in_axes=(0, None, 0, None))\n  x_prev = x\n  x = x.T  # [channel_size, batch_size, patch_size]\n\n  \"\"\"\n    Duplicate 'x' to create n_kernels copies for the first layer, which all share the same input.\n    Subsequent layers receive unique inputs.\n    \"\"\"\n  x = jnp.repeat(\n      x[None, ...], params[0].shape[0], axis=0\n  )  # [n_kernels, channel_size, batch_size, patch_size]\n\n  # Iterate through layers, applying kernels and wire configurations.\n  for g, c in zip(params, wires):\n    x = run_layer_map(g, c, x, training)\n\n  x = rearrange(\n      x, 'k c s -> (c s k)'\n  )  # [channel_size * patch_size * n_kernels]\n\n  return jnp.concatenate(\n      [x_prev[4, :], x], axis=-1\n  )  # Concatenate the original input.\n\n\ndef run_circuit(params, wires, x, training):\n  x = run_perceive(params['perceive'], wires['perceive'], x, training)\n  x = run_update(params['update'], wires['update'], x, training)\n  return x",
+          "source_sha256": "ac5f7daa93fceb730fcf1f0a243d8b72ad7bff2b1a751dd104c65132247639da"
+        },
+        {
+          "id": "0coNJrpHEkPx",
+          "index": 10,
+          "source": "# @title get_grid_patches\n\n@partial(jax.jit, static_argnums=(1,2))\ndef get_grid_patches(grid, patch_size, channel_dim, periodic):\n  # Given a grid NxN it creates a list of (patch_size x patch_size, channel_dim) patches.\n\n  pad_size = (patch_size - 1) // 2\n\n  # Two possible modes exist: with or without periodic boundary conditions.\n  padded_grid = jax.lax.cond(\n      periodic,\n      lambda g: jnp.pad(\n          g, ((pad_size, pad_size), (pad_size, pad_size), (0, 0)), mode=\"wrap\"\n      ),\n      lambda g: jnp.pad(\n          g,\n          ((pad_size, pad_size), (pad_size, pad_size), (0, 0)),\n          mode=\"constant\",\n          constant_values=0,\n      ),\n      grid,\n  )\n  padded_grid = jnp.expand_dims(padded_grid, axis=0)\n  patches = conv_general_dilated_patches(\n      padded_grid,\n      filter_shape=(patch_size, patch_size),\n      window_strides=(1, 1),\n      padding=\"VALID\",\n      dimension_numbers=(\"NHWC\", \"OIHW\", \"NHWC\"),\n  )[0]\n\n  # Rearrange to have (list, patch_size x patch_size, channel_dim)\n  patches = rearrange(patches, \"x y (c f) -> (x y) f c\", c=channel_dim)\n  return patches",
+          "source_sha256": "984794f34c3c6735cb5b68db59d14f990f1c1389302e5bc79518aaa994b659d5"
+        },
+        {
+          "id": "rblos5LlWJWn",
+          "index": 12,
+          "source": "# @title run iterations\n\n\n# patches = [batch_size, n_patches, patch_size x patch_size, channels]\ndef v_run_circuit_patched(patches, params, wires, training):\n  run_circuit_patch = jax.vmap(\n      run_circuit, in_axes=(None, None, 0, None)\n  )  # vmap over the patches\n  x = run_circuit_patch(params, wires, patches, training)\n  return x\n\n@jax.jit\ndef run_async(grid, params, wires, training, periodic, key):\n  patches = get_grid_patches(\n      grid, patch_size=3, channel_dim=grid.shape[-1], periodic=periodic\n  )\n  x_new = v_run_circuit_patched(patches, params, wires, training)\n  x_new = x_new.reshape(*grid.shape)\n  update_mask_f32 = (\n      jax.random.uniform(key, x_new[..., :1].shape) <= FIRE_RATE\n  ).astype(jax.numpy.float32)\n  x = grid * (1 - update_mask_f32) + x_new * update_mask_f32\n  return x\n\n@jax.jit\ndef run_sync(grid, params, wires, training, periodic):\n  patches = get_grid_patches(\n      grid, patch_size=3, channel_dim=grid.shape[-1], periodic=periodic\n  )\n  x_new = v_run_circuit_patched(patches, params, wires, training)\n  x_new = x_new.reshape(*grid.shape)\n  return x_new\n\n\n@partial(jax.jit, static_argnames=['num_steps', 'periodic', 'async_training'])\ndef run_iter_nca(grid, params, wires, training, periodic, num_steps, async_training, key):\n  def body_fn(carry, i):\n    grid, key = carry\n    if async_training:\n      key, subkey = jax.random.split(key)\n      x = run_async(grid, params, wires, training, periodic, subkey)\n    else:\n      x = run_sync(grid, params, wires, training, periodic)\n    return (x, key), 0\n\n  (grid, key), _ = jax.lax.scan(\n      body_fn, (grid, key), jnp.arange(0, num_steps, 1)\n  )\n  return grid\n\n\nv_run_iter_nca = jax.vmap(\n    run_iter_nca, in_axes=(0, None, None, None, None, None, None, None)\n)",
+          "source_sha256": "0dd14ec7fa8b3079a7caac8befd7c053f97e91c3025893808b03567e5921c2dc"
+        },
+        {
+          "id": "_3AdVC_TWQ1V",
+          "index": 16,
+          "source": "TrainState = namedtuple('TrainState', 'param opt_state key')\n\n# Create optimizer\nopt = optax.chain(\n    optax.clip(100.0),  # Clips by value\n    optax.adamw(\n        learning_rate=hyperparams['lr'], b1=0.9, b2=0.99, weight_decay=1e-2\n    ),\n)\n\ndef init_state(hyperparams, opt, seed):\n  key = random.PRNGKey(seed)\n  key, subkey = random.split(key, 2)\n  params, wires = init_diff_logic_ca(hyperparams, subkey)\n  opt_state = opt.init(params)\n  return TrainState(params, opt_state, key), wires\n\n\ndef loss_f(params, wires, train_x, train_y, periodic, num_steps, async_training, key):\n  def eval(params, training):\n    y = v_run_iter_nca(\n        train_x, params, wires, training, periodic, num_steps, async_training, key\n    )\n    return jax.numpy.square(y[..., 0] - train_y[..., 0]).sum()\n\n  return eval(params, 1), {'hard': eval(params, 0)}\n\nval_and_grad = jax.value_and_grad(loss_f, argnums=0, has_aux=True)\n\n# Helper function that can be used for clipping parameters.\nupd_f = lambda p: p\n\n@partial(jax.jit, static_argnums=(4, 5, 6))\ndef train_step(\n    train_state, train_x, train_y, wires, periodic, num_steps, async_training\n):\n  params, opt_state, key = train_state\n  key, k1 = jax.random.split(key, 2)\n  (loss, hard), dx = val_and_grad(\n      params, wires, train_x, train_y, periodic, num_steps, async_training, k1\n  )\n  dx, opt_state = opt.update(dx, opt_state, params)\n  new_params = optax.apply_updates(params, dx)\n  new_params = upd_f(new_params)\n  return TrainState(new_params, opt_state, key), loss, hard",
+          "source_sha256": "9a379506f86d10dbdc57004f90e0fc21332bd1fd294088c7ffbd004ce4c1742c"
+        }
+      ],
+      "jax_enable_x64": false,
+      "jax_threefry_partitionable": false,
+      "notebook_path": "references/difflogic_ca/upstream/diffLogic_CA.ipynb",
+      "notebook_sha256": "a9b3829db0d9fe0eb46148d516c18358aa648e3538aeaa682003b77cfbe757c8",
+      "supplied_globals": [
+        "DEFAULT_PASS_VALUE",
+        "FIRE_RATE",
+        "NUMBER_OF_GATES",
+        "PASS_THROUGH_GATE",
+        "TARGET_EMOJI",
+        "TARGET_SIZE",
+        "TARGET_SIZE_ASYNC",
+        "TARGET_SIZE_EMOJI",
+        "TARGET_SIZE_G",
+        "TrainState",
+        "bin_op_all_combinations",
+        "bin_op_s",
+        "conv_general_dilated_patches",
+        "decode_hard",
+        "decode_soft",
+        "get_grid_patches",
+        "get_moore_connections",
+        "get_unique_connections",
+        "hyperparams",
+        "init_diff_logic_ca",
+        "init_gate_layer",
+        "init_gates",
+        "init_logic_gate_network",
+        "init_perceive_network",
+        "init_state",
+        "jax",
+        "jnp",
+        "loss_f",
+        "namedtuple",
+        "nn",
+        "np",
+        "opt",
+        "optax",
+        "partial",
+        "random",
+        "rearrange",
+        "run_async",
+        "run_circuit",
+        "run_iter_nca",
+        "run_layer",
+        "run_perceive",
+        "run_sync",
+        "run_update",
+        "train_step",
+        "upd_f",
+        "v_run_circuit_patched",
+        "v_run_iter_nca",
+        "val_and_grad"
+      ]
+    },
+    "kind": "vendored_notebook_execution_oracle",
+    "sampling_x64_enabled": false,
+    "schema_version": 2,
+    "scientific_dtype": "float32",
+    "source_sha256": "a9b3829db0d9fe0eb46148d516c18358aa648e3538aeaa682003b77cfbe757c8"
+  },
+  "sha256": "1ed579efdc49dcb60fdccf9543960f55bc6557a252e68018c900d80e284aa898"
+}

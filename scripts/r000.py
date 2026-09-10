@@ -10,6 +10,7 @@ from pathlib import Path
 from recurrent_circuit_learning.r000 import (
     checkpoint_resume_check,
     export_fixture,
+    export_notebook_fixture,
     profile_update,
     verify_fixture,
     verify_source,
@@ -25,6 +26,11 @@ def main() -> None:
 
     export_parser = subparsers.add_parser("export-fixture")
     export_parser.add_argument("path", type=Path)
+
+    notebook_parser = subparsers.add_parser("export-notebook-fixture")
+    notebook_parser.add_argument("notebook", type=Path)
+    notebook_parser.add_argument("path", type=Path)
+    notebook_parser.add_argument("--report", type=Path)
 
     verify_parser = subparsers.add_parser("verify-fixture")
     verify_parser.add_argument("path", type=Path)
@@ -43,6 +49,11 @@ def main() -> None:
         result = verify_source(args.path)
     elif args.command == "export-fixture":
         result = export_fixture(args.path)
+    elif args.command == "export-notebook-fixture":
+        result = export_notebook_fixture(args.notebook, args.path)
+        if args.report:
+            args.report.parent.mkdir(parents=True, exist_ok=True)
+            args.report.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
     elif args.command == "verify-fixture":
         result = verify_fixture(args.path, args.report)
     elif args.command == "checkpoint-check":

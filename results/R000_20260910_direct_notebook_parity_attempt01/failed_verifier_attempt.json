@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "stage": "CPU extraction verifier harness",
+  "error": "KeyError: fractional_pairs_fp64",
+  "interpretation": "The X64-disabled notebook fixture intentionally omits separately configured FP64 probes, but the schema-v1 verifier assumed they were always present. No numerical comparison ran.",
+  "resolution": "Make FP64 arrays optional for the schema-v2 X64-disabled fixture and rerun without changing the fixture."
+}

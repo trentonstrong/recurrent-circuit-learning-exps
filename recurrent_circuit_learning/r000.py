@@ -33,6 +33,7 @@ from .difflogic_ca import (
     replace_params,
     sample_training_batch,
 )
+from .notebook_oracle import load_notebook_namespace
 
 SOURCE_SHA256 = "a9b3829db0d9fe0eb46148d516c18358aa648e3538aeaa682003b77cfbe757c8"
 
@@ -132,7 +133,32 @@ def _parameter_results(
         f"{label}_step_hard_loss": np.asarray(auxiliary["hard"]),
         f"{label}_step_gradients": flatten_float_tree(step_gradients),
         f"{label}_updated_params": flatten_float_tree(next_state.params),
+        f"{label}_opt_state": flatten_float_tree(state.opt_state),
+        f"{label}_updated_opt_state": flatten_float_tree(next_state.opt_state),
+        f"{label}_updated_model_key": np.asarray(next_state.key),
     }
+
+
+def _gate_id_arrays(params: Any) -> dict[str, np.ndarray]:
+    arrays: dict[str, np.ndarray] = {}
+    for network in ("perceive", "update"):
+        for index, logits in enumerate(params[network]):
+            arrays[f"hard_gate_id_{network}_{index:02d}"] = np.asarray(
+                jnp.argmax(logits, axis=-1)
+            )
+    return arrays
+
+
+def _sample_batches(key: jax.Array, config: SyncConfig, count: int = 3):
+    arrays: dict[str, np.ndarray] = {"data_key_before": np.asarray(key)}
+    for index in range(count):
+        key, inputs = sample_training_batch(key, config)
+        arrays[f"training_inputs_{index:03d}"] = np.asarray(inputs)
+        arrays[f"data_key_after_{index:03d}"] = np.asarray(key)
+    # Retain the schema-v1 names for the first batch.
+    arrays["training_inputs"] = arrays["training_inputs_000"]
+    arrays["data_key_after"] = arrays["data_key_after_000"]
+    return key, arrays
 
 
 def build_fixture() -> tuple[dict[str, np.ndarray], dict[str, Any]]:
@@ -140,7 +166,8 @@ def build_fixture() -> tuple[dict[str, np.ndarray], dict[str, Any]]:
     optimizer = make_optimizer(config)
     initial_state, wires = init_train_state(config, optimizer)
     data_key_before = jax.random.PRNGKey(config.seed)
-    data_key_after, inputs = sample_training_batch(data_key_before, config)
+    _, sampled = _sample_batches(data_key_before, config)
+    inputs = jnp.asarray(sampled["training_inputs"])
     target = make_target(config)
 
     boolean_pairs = jnp.array([[0, 0], [0, 1], [1, 0], [1, 1]], dtype=jnp.float32)
@@ -161,13 +188,12 @@ def build_fixture() -> tuple[dict[str, np.ndarray], dict[str, Any]]:
         ),
         "patch_grid": np.asarray(patch_grid),
         "zero_boundary_patches": np.asarray(get_grid_patches(patch_grid, 3, 2, False)),
-        "training_inputs": np.asarray(inputs),
         "target": np.asarray(target),
         "model_key": np.asarray(initial_state.key),
-        "data_key_before": np.asarray(data_key_before),
-        "data_key_after": np.asarray(data_key_after),
     }
+    arrays.update(sampled)
     arrays.update(_wire_arrays(wires))
+    arrays.update(_gate_id_arrays(initial_state.params))
     arrays.update(
         _parameter_results(
             "identity", initial_state, wires, inputs, target, config, optimizer
@@ -197,6 +223,134 @@ def build_fixture() -> tuple[dict[str, np.ndarray], dict[str, Any]]:
     }
     arrays["metadata_json"] = np.array(json.dumps(metadata, sort_keys=True))
     return arrays, metadata
+
+
+def _notebook_trajectory(namespace: dict[str, Any], inputs, params, wires, training):
+    def one_grid(grid):
+        def body(current, _unused):
+            updated = namespace["run_sync"](current, params, wires, training, 0)
+            return updated, updated
+
+        _, states = jax.lax.scan(body, grid, None, length=20)
+        return jnp.concatenate([grid[None, ...], states], axis=0)
+
+    return jnp.swapaxes(jax.vmap(one_grid)(inputs), 0, 1)
+
+
+def _notebook_parameter_results(
+    namespace: dict[str, Any],
+    label: str,
+    state: Any,
+    wires: Any,
+    inputs: Any,
+    target: Any,
+) -> dict[str, np.ndarray]:
+    trajectory = jax.jit(
+        lambda params: _notebook_trajectory(namespace, inputs, params, wires, 1)
+    )(state.param)
+    hard_trajectory = jax.jit(
+        lambda params: _notebook_trajectory(namespace, inputs, params, wires, 0)
+    )(state.param)
+    value, gradients = jax.jit(
+        jax.value_and_grad(
+            lambda params: namespace["loss_f"](
+                params, wires, inputs, target, 0, 20, False, state.key
+            )[0]
+        )
+    )(state.param)
+    next_state, step_loss, auxiliary = namespace["train_step"](
+        state, inputs, target, wires, 0, 20, False
+    )
+    _, step_gradients = jax.value_and_grad(
+        lambda params: namespace["loss_f"](
+            params, wires, inputs, target, 0, 20, False, jax.random.split(state.key)[1]
+        )[0]
+    )(state.param)
+    jax.block_until_ready(next_state.param)
+    return {
+        f"{label}_params": flatten_float_tree(state.param),
+        f"{label}_soft_trajectory": np.asarray(trajectory),
+        f"{label}_hard_trajectory": np.asarray(hard_trajectory),
+        f"{label}_loss": np.asarray(value),
+        f"{label}_gradients": flatten_float_tree(gradients),
+        f"{label}_step_loss": np.asarray(step_loss),
+        f"{label}_step_hard_loss": np.asarray(auxiliary["hard"]),
+        f"{label}_step_gradients": flatten_float_tree(step_gradients),
+        f"{label}_updated_params": flatten_float_tree(next_state.param),
+        f"{label}_opt_state": flatten_float_tree(state.opt_state),
+        f"{label}_updated_opt_state": flatten_float_tree(next_state.opt_state),
+        f"{label}_updated_model_key": np.asarray(next_state.key),
+    }
+
+
+def build_notebook_fixture(
+    notebook_path: Path,
+) -> tuple[dict[str, np.ndarray], dict[str, Any]]:
+    """Build an X64-disabled fixture from executed vendored-notebook cells."""
+    if jax.config.x64_enabled:
+        raise RuntimeError("notebook sampling fixture must run with JAX X64 disabled")
+    namespace, execution = load_notebook_namespace(notebook_path)
+    hyperparams = namespace["hyperparams"]
+    state, wires = namespace["init_state"](
+        hyperparams, namespace["opt"], hyperparams["seed"]
+    )
+    config = SyncConfig()
+    data_key = jax.random.PRNGKey(config.seed)
+    _, sampled = _sample_batches(data_key, config)
+    inputs = jnp.asarray(sampled["training_inputs"])
+    target = make_target(config)
+    pairs = jnp.array([[0, 0], [0, 1], [1, 0], [1, 1]], dtype=jnp.float32)
+    patch_grid = jnp.arange(1, 13, dtype=jnp.float32).reshape(2, 3, 2)
+    arrays: dict[str, np.ndarray] = {
+        "boolean_pairs": np.asarray(pairs),
+        "boolean_gate_values": np.asarray(
+            namespace["bin_op_all_combinations"](pairs[:, 0], pairs[:, 1])
+        ),
+        "patch_grid": np.asarray(patch_grid),
+        "zero_boundary_patches": np.asarray(
+            namespace["get_grid_patches"](patch_grid, 3, 2, 0)
+        ),
+        "target": np.asarray(target),
+        "model_key": np.asarray(state.key),
+    }
+    arrays.update(sampled)
+    arrays.update(_wire_arrays(wires))
+    arrays.update(_gate_id_arrays(state.param))
+    arrays.update(
+        _notebook_parameter_results(namespace, "identity", state, wires, inputs, target)
+    )
+    fixed_params = nontrivial_fixed_params(state.param)
+    fixed_state = namespace["TrainState"](
+        fixed_params, namespace["opt"].init(fixed_params), state.key
+    )
+    arrays.update(
+        _notebook_parameter_results(
+            namespace, "nontrivial", fixed_state, wires, inputs, target
+        )
+    )
+    metadata = {
+        "schema_version": 2,
+        "kind": "vendored_notebook_execution_oracle",
+        "source_sha256": SOURCE_SHA256,
+        "environment": environment_metadata(),
+        "scientific_dtype": "float32",
+        "sampling_x64_enabled": False,
+        "execution": execution,
+    }
+    arrays["metadata_json"] = np.array(json.dumps(metadata, sort_keys=True))
+    return arrays, metadata
+
+
+def export_notebook_fixture(notebook_path: Path, fixture_path: Path) -> dict[str, Any]:
+    arrays, metadata = build_notebook_fixture(notebook_path)
+    fixture_path.parent.mkdir(parents=True, exist_ok=True)
+    np.savez_compressed(fixture_path, **arrays)
+    return {
+        "fixture": str(fixture_path),
+        "bytes": fixture_path.stat().st_size,
+        "sha256": sha256_file(fixture_path),
+        "metadata": metadata,
+    }
 
 
 def _tree_from_flat(template: Any, flat_values: np.ndarray) -> Any:
@@ -244,29 +398,31 @@ def build_candidate_from_reference(
     model_key = jnp.asarray(reference["model_key"])
 
     boolean_pairs = jnp.asarray(reference["boolean_pairs"])
-    fractional_pairs = jnp.asarray(reference["fractional_pairs_fp64"])
     patch_grid = jnp.asarray(reference["patch_grid"])
     arrays: dict[str, np.ndarray] = {
         "boolean_pairs": np.asarray(boolean_pairs),
         "boolean_gate_values": np.asarray(
             bin_op_all_combinations(boolean_pairs[:, 0], boolean_pairs[:, 1])
         ),
-        "fractional_pairs_fp64": np.asarray(fractional_pairs),
-        "fractional_gate_values_fp64": np.asarray(
-            bin_op_all_combinations(fractional_pairs[:, 0], fractional_pairs[:, 1])
-        ),
         "patch_grid": np.asarray(patch_grid),
         "zero_boundary_patches": np.asarray(get_grid_patches(patch_grid, 3, 2, False)),
-        "training_inputs": np.asarray(inputs),
         "target": np.asarray(target),
         "model_key": np.asarray(model_key),
-        "data_key_before": reference["data_key_before"],
-        "data_key_after": reference["data_key_after"],
     }
-    arrays.update(_wire_arrays(wires))
+    if "fractional_pairs_fp64" in reference:
+        fractional_pairs = jnp.asarray(reference["fractional_pairs_fp64"])
+        arrays["fractional_pairs_fp64"] = np.asarray(fractional_pairs)
+        arrays["fractional_gate_values_fp64"] = np.asarray(
+            bin_op_all_combinations(fractional_pairs[:, 0], fractional_pairs[:, 1])
+        )
+    _, regenerated_samples = _sample_batches(jax.random.PRNGKey(config.seed), config)
+    arrays.update(regenerated_samples)
+    arrays.update(_wire_arrays(template_wires))
     for label in ("identity", "nontrivial"):
         params = _tree_from_flat(template_state.params, reference[f"{label}_params"])
         state = TrainState(params, optimizer.init(params), model_key, jnp.array(0))
+        if label == "identity":
+            arrays.update(_gate_id_arrays(params))
         arrays.update(
             _parameter_results(label, state, wires, inputs, target, config, optimizer)
         )
@@ -286,6 +442,17 @@ def build_candidate_from_reference(
         ),
         "training_inputs_match": bool(
             np.array_equal(np.asarray(regenerated_inputs), reference["training_inputs"])
+        ),
+        "successive_training_batches_match": all(
+            np.array_equal(value, reference[name])
+            for name, value in regenerated_samples.items()
+            if name in reference
+        ),
+        "initial_params_match": bool(
+            np.array_equal(
+                flatten_float_tree(regenerated_state.params),
+                reference["identity_params"],
+            )
         ),
         "wires_match": all(
             np.array_equal(value, reference[name])
@@ -370,10 +537,16 @@ def verify_fixture(path: Path, report_path: Path | None = None) -> dict[str, Any
         "model_key",
         "data_key_before",
         "data_key_after",
+        "identity_updated_model_key",
+        "nontrivial_updated_model_key",
         "identity_hard_trajectory",
         "nontrivial_hard_trajectory",
     }
-    exact_names.update(name for name in expected_arrays if name.startswith("wire_"))
+    exact_names.update(
+        name
+        for name in expected_arrays
+        if name.startswith(("wire_", "hard_gate_id_", "training_inputs_", "data_key_"))
+    )
     results: dict[str, Any] = {}
     for name, expected in expected_arrays.items():
         if name == "metadata_json":
@@ -437,6 +610,12 @@ def verify_fixture(path: Path, report_path: Path | None = None) -> dict[str, Any
         },
         "comparisons": results,
     }
+    if reference_metadata.get("kind") == "vendored_notebook_execution_oracle":
+        report["direct_notebook_contract"] = {
+            "oracle_does_not_import_extraction": True,
+            "all_initialized_arrays_regenerated": all(rng_regeneration.values()),
+            "sampling_x64_enabled": reference_metadata["sampling_x64_enabled"],
+        }
     if report_path:
         report_path.parent.mkdir(parents=True, exist_ok=True)
         report_path.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")

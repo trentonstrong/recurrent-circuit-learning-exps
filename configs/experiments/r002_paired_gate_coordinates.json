@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "kind": "experiment_specification",
+  "experiment_id": "R002",
+  "status": "implemented; bounded preflight pending",
+  "spec_path": "experiments/R002/SPEC.md",
+  "source_sha256": "a9b3829db0d9fe0eb46148d516c18358aa648e3538aeaa682003b77cfbe757c8",
+  "scientific_recipe": {
+    "seeds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    "optimizer_updates": 500,
+    "runtime_ticks": 20,
+    "batch_size": 2,
+    "grid_size": [16, 16],
+    "channels": 8,
+    "learning_rate": 0.05,
+    "adam_b1": 0.9,
+    "adam_b2": 0.99,
+    "adam_eps": "Optax default from the recorded environment lock",
+    "clip_value": 100.0,
+    "loss": "summed_terminal_channel_0_squared_error",
+    "periodic": false,
+    "exterior": "constant_zero",
+    "kernel": "common_multilinear_truth_table",
+    "truth_column_order": ["00", "01", "10", "11"],
+    "common_rounding": "q>=0.5",
+    "truth_gate_id_bit_weights": [8, 4, 2, 1],
+    "initialization": "truth logits are logit(softmax(categorical logits) @ T), converted directly in FP32 without clamping",
+    "independent_trials": true
+  },
+  "conditions": [
+    {"name": "categorical_reference_decay", "representation": "categorical", "weight_decay": 0.01},
+    {"name": "truth_reference_decay", "representation": "truth", "weight_decay": 0.01},
+    {"name": "categorical_no_decay", "representation": "categorical", "weight_decay": 0.0},
+    {"name": "truth_no_decay", "representation": "truth", "weight_decay": 0.0}
+  ],
+  "evaluation": {
+    "checkpoint_updates": [0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500],
+    "probe_count": 32,
+    "probe_seed": 1000023,
+    "r001_manifest": "results/R001_20260909T231016Z_seed23_jaxgpu_attempt01/manifest.json",
+    "r001_probe_artifact": "artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/fixed_evaluation_set.npz",
+    "r001_probe_sha256": "d49ecf23fd932fba25b1068f8c90820265a05fd90daadc372089520889090b2f",
+    "primary_checkpoint_update": 500
+  },
+  "runtime": {
+    "environment": "envs/jax-gpu",
+    "concurrency": 1,
+    "concurrency_basis": "single-process baseline pending R002 representation profile; avoids competing JAX GPU preallocation",
+    "xla_flags": " --xla_gpu_deterministic_ops=true"
+  }
+}

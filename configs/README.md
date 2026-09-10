@@ -1,10 +1,11 @@
 # Configuration contract
 
-These JSON files are specifications for the first implementation, not inputs to
-an existing executable CLI.
+These JSON files are validated experiment specifications and runner inputs.
 
 - `experiments/r001_sync_reference.json` separates the audited scientific recipe
   from additional project evaluation and runtime selection.
+- `experiments/r002_paired_gate_coordinates.json` freezes the four-condition,
+  16-seed paired comparison and its shared evaluation/runtime contract.
 - `hardware/office_5090.json` records owner-reported hardware and unresolved local
   environment fields. It is not a dependency lock or a hardware benchmark.
 

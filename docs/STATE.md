@@ -1,8 +1,8 @@
 # Research state
 
-Updated: 2026-09-10. R001 reproduction and checkpoint reviews are complete.
-Next: finish direct notebook parity, then implement and validate the paired R002
-runner using the implementation handoff linked below.
+Updated: 2026-09-10. Direct notebook parity and bounded R002 validation are
+complete. Next: review the validation return, then explicitly launch the formal
+64-run R002 sweep if accepted.
 
 ## Objective
 
@@ -26,9 +26,9 @@ eventually periodic. Length and storage-size generalization need separate tests.
 
 | Experiment | Purpose | Status |
 | --- | --- | --- |
-| [R000](../experiments/R000/SPEC.md) | Pinned source, standalone JAX, numerical parity | Cross-runtime checks passed; direct notebook comparison pending |
+| [R000](../experiments/R000/SPEC.md) | Pinned source, standalone JAX, numerical parity | Direct notebook and cross-runtime checks passed |
 | [R001](../experiments/R001/SPEC.md) | Synchronous checkerboard, canonical seed 23 | Completed; fixed 32-grid probe exact at update 500 |
-| [R002](../experiments/R002/SPEC.md) | Paired gate-coordinate and weight-decay comparison | Proposed; implementation handoff available |
+| [R002](../experiments/R002/SPEC.md) | Paired gate-coordinate and weight-decay comparison | Implemented and preflight-validated; formal sweep not launched |
 | [R003](../experiments/R003/SPEC.md) | Same-function mixture interventions | Proposed mechanism study |
 
 Use a known recurrent learner as a positive control before redesigning the
@@ -51,7 +51,8 @@ notebook checksum, exact wiring and Boolean execution, FP64 gate probes, FP32
 20-tick rollouts, gradients, an AdamW update, and exact checkpoint resumption.
 The modern runtime must retain `jax_threefry_partitionable=false` to reproduce
 JAX 0.4.33's seeded arrays. This is implementation/runtime evidence, not a new
-training result.
+training result. The later direct-notebook result closes the independent source
+execution and X64-disabled sampling gaps.
 
 [R001 seed 23](../results/R001_20260909T231016Z_seed23_jaxgpu_attempt01/summary.md)
 completed the frozen 500-update recipe. Its added fixed 32-grid probe first had
@@ -74,7 +75,7 @@ convergence certificate for checkpoint 250. Sound unknown-value propagation
 establishes the target at tick 16 for every initial assignment on its 16 by 16
 zero-exterior grid. Its two-channel visible subsystem reaches a fixed point by
 tick 17. This is a property of the frozen hard circuit, not another training run
-or a size-generalization result; the R000 source parity gap remains separate.
+or a size-generalization result.
 
 The source and dimensionality audits are recorded in the
 [manifest](../references/difflogic_ca/source_manifest.json). These are completed
@@ -86,21 +87,25 @@ path bypassing the LUTs. That learner and budget differ from DiffLogic CA.
 Legacy code and raw artifacts have not been imported into this repository; no
 claim of reproducing those runs here is made.
 
-## Next question
+## Current validation boundary
 
-The next implementation task is the [R002 handoff](../experiments/R002/IMPLEMENTATION_HANDOFF.md):
-close direct notebook parity, build the paired runner, and validate it with a
-bounded preflight. Return the validation reports and exact sweep command before
-launching the full comparison, as required by the existing R001 review. The
-scientific question remains whether gate coordinates and weight decay change
-optimization behavior under the matched recipe.
+The [direct notebook parity result](../results/R000_20260910_direct_notebook_parity_attempt01/summary.md)
+executes the vendored definition cells as an independent historical-CPU oracle
+with X64 disabled. Notebook-to-extraction and notebook-array-to-modern-GPU
+comparisons pass the existing tolerance policy; Boolean execution, wiring,
+initialization, keys, and three successive sampled batches are exact.
 
-The [review of commit e94789f](../reviews/R001_e94789f/REVIEW.md) supports the
-R001 positive control and records a remaining validation gap: the committed R000
-fixtures compare the extracted implementation across runtimes. Add direct
-vendored-notebook execution parity, including the X64-disabled sampling mode
-used by R001, before launching R002. Shared access to the existing checkpoint
-bundle is now provided by the experiment-scoped
+The [R002 validation result](../results/R002_20260910_validation/summary.md)
+records the common multilinear kernel bridge, FP64 derivative checks, export
+checks, and all four two-update seed-23 preflights. Checkpoint resumption is exact
+within every condition and the pairing hashes agree. A failed first kernel check
+is retained: default GPU matrix-multiply precision was insufficient for `p @ T`,
+so the selected kernel declares highest dot precision. R002 is ready for review,
+not completed, and none of seeds 0--15 has been launched.
+
+The [review of commit e94789f](../reviews/R001_e94789f/REVIEW.md) identified the
+now-closed direct-notebook validation gap. Shared access to the existing R001
+checkpoint bundle is provided by the experiment-scoped
 [`experiment/R001` GitHub release](https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/tag/experiment/R001)
 for direct circuit and trajectory analysis.
 

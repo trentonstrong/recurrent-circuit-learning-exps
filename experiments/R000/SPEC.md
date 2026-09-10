@@ -1,9 +1,10 @@
 # R000 — Source capture and implementation parity
 
-Status: initial implementation and cross-runtime checks completed; direct
-vendored-notebook execution parity remains pending. See the
-[existing results](../../results/R000_20260909_jax_parity/summary.md) and the
-[follow-up implementation handoff](../R002/IMPLEMENTATION_HANDOFF.md).
+Status: completed, including direct vendored-notebook execution and
+X64-disabled sampling parity. See the
+[initial results](../../results/R000_20260909_jax_parity/summary.md),
+[direct parity result](../../results/R000_20260910_direct_notebook_parity_attempt01/summary.md),
+and [follow-up implementation handoff](../R002/IMPLEMENTATION_HANDOFF.md).
 The original scope below is retained. Read [AGENTS.md](../../AGENTS.md) and
 [workstation setup](../../docs/WORKSTATION_SETUP.md) before changes.
 

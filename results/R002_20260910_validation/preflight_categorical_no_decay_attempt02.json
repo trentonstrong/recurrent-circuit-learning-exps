@@ -1,0 +1,104 @@
+{
+  "checkpoint": {
+    "bytes": 26150,
+    "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_20260910_validation/preflight_categorical_no_decay_update001_attempt02.npz",
+    "sha256": "5dbd7d608603cb55dc38223946d5279b552044d3a818bdcfb06772b8cc4bec70"
+  },
+  "compile_seconds": 8.882692445069551,
+  "condition": "categorical_no_decay",
+  "device_memory": {
+    "bytes_in_use": 3747328,
+    "bytes_limit": 25266487296,
+    "peak_bytes_in_use": 1681886208
+  },
+  "effective_table_displacement_after_two_updates": {
+    "l2": 0.0012596743181347847,
+    "max_abs": 8.036327199079096e-05
+  },
+  "ended_at": "2026-09-10T02:26:09.316812+00:00",
+  "environment": {
+    "backend": "gpu",
+    "devices": [
+      "cuda:0"
+    ],
+    "jax": "0.10.2",
+    "jax_enable_x64": false,
+    "jax_threefry_partitionable": false,
+    "jaxlib": "0.10.2",
+    "numpy": "2.4.6",
+    "optax": "0.2.8",
+    "optax_adamw_defaults": {
+      "eps": "1e-08",
+      "eps_root": "0.0",
+      "mu_dtype": "None",
+      "nesterov": "False"
+    },
+    "platform": "Linux-7.1.8-arch1-3-x86_64-with-glibc2.44",
+    "python": "3.11.6"
+  },
+  "evaluation_after_two_updates": {
+    "common": {
+      "bit_errors": 256,
+      "summed_squared_error": 256.0
+    },
+    "native": {
+      "bit_errors": 256,
+      "summed_squared_error": 256.0
+    }
+  },
+  "first_clipped_element_count": 0,
+  "first_gradient_max_abs": 0.5192108154296875,
+  "first_parameter_update_l2": 1.509899616241455,
+  "first_pre_update_soft_loss": 231.26649475097656,
+  "formal_cohort": false,
+  "full_shape": {
+    "batch": 2,
+    "grid": [
+      16,
+      16
+    ],
+    "ticks": 20
+  },
+  "initial_effective_table_discrepancy": {
+    "atol": 1e-07,
+    "max_abs_error": 0.0,
+    "max_relative_error": 0.0,
+    "ok": true,
+    "rtol": 1e-06
+  },
+  "kernel": "common_multilinear_truth_table",
+  "kind": "R002_development_preflight",
+  "optimizer_updates": 2,
+  "pairing": {
+    "categorical_initial_params_sha256": "79b118676f6d0ba2f6a5eb38978f8fcf003a091ab684e34cdfc1ce081eb5bc43",
+    "training_stream_final_key": [
+      232720000,
+      1343815058
+    ],
+    "training_stream_sha256": "d15fe5ab4027406f62f5ca54172f6cde738728a7f32292c05e7ff86ad191dc93",
+    "truth_initial_params_sha256": "f598d902ad2bb1249dae13ac21dfff9e0c9c8bbe809ad8250ba803cd765694c8",
+    "wiring_sha256": "ab4065cbd4ebb853b822b624943c532ea8e1a638d93c7b2aed498180a7da0268"
+  },
+  "representation": "categorical",
+  "resume_checks": {
+    "data_key": true,
+    "loss": true,
+    "metadata": true,
+    "model_key": true,
+    "next_data_key": true,
+    "next_input": true,
+    "optimizer": true,
+    "params": true,
+    "update_index": true
+  },
+  "schema_version": 1,
+  "second_pre_update_soft_loss": 229.0361785888672,
+  "seed": 23,
+  "state_reset_after_compilation": true,
+  "status": "passed",
+  "synchronized_update_seconds": [
+    0.11959666991606355,
+    0.08202128298580647
+  ],
+  "weight_decay": 0.0
+}

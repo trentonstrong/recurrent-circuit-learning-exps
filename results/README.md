@@ -8,6 +8,12 @@ R001 positive control is recorded in
 Its large artifacts are published under the experiment-scoped
 [`experiment/R001` GitHub release](https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/tag/experiment/R001).
 
+The direct vendored-notebook oracle and X64-disabled sampling closure are in
+[`R000_20260910_direct_notebook_parity_attempt01`](R000_20260910_direct_notebook_parity_attempt01/summary.md).
+The common-kernel validation and four-condition seed-23 development preflight are
+in [`R002_20260910_validation`](R002_20260910_validation/summary.md). These are
+validation evidence only: the formal seeds 0--15 remain unlaunched.
+
 Create one directory per run, for example `R001_20260909_seed23_jaxgpu_attempt01`.
 Use separate identities for retries and interventions and explain their relation.
 Do not silently overwrite a failure with a successful rerun.

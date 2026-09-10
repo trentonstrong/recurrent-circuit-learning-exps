@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "kind": "implementation_validation_provenance",
+  "base_commit": "62c03894fe19e95644d75971136bdfc36bd04a61",
+  "validation_worktree_dirty": true,
+  "finalized_implementation": "enclosing git commit",
+  "source_notebook": "references/difflogic_ca/upstream/diffLogic_CA.ipynb",
+  "source_sha256": "a9b3829db0d9fe0eb46148d516c18358aa648e3538aeaa682003b77cfbe757c8",
+  "commands": [
+    "JAX_ENABLE_X64=0 uv run --project envs/jax-cpu --locked python scripts/r000.py export-notebook-fixture references/difflogic_ca/upstream/diffLogic_CA.ipynb artifacts/R000_20260910_direct_notebook_parity_attempt01/notebook_oracle_x64_disabled.npz --report results/R000_20260910_direct_notebook_parity_attempt01/notebook_oracle_report.json",
+    "JAX_ENABLE_X64=0 uv run --project envs/jax-cpu --locked python scripts/r000.py verify-fixture artifacts/R000_20260910_direct_notebook_parity_attempt01/notebook_oracle_x64_disabled.npz --report results/R000_20260910_direct_notebook_parity_attempt01/cpu_extraction_parity_report.json",
+    "JAX_ENABLE_X64=0 uv run --project envs/jax-gpu --locked python scripts/r000.py verify-fixture artifacts/R000_20260910_direct_notebook_parity_attempt01/notebook_oracle_x64_disabled.npz --report results/R000_20260910_direct_notebook_parity_attempt01/gpu_runtime_parity_report.json"
+  ]
+}

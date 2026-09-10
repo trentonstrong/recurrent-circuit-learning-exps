@@ -1,0 +1,186 @@
+{
+  "cases": {
+    "initial": {
+      "matched_coordinate_trajectory": {
+        "atol": 1e-06,
+        "max_abs_error": 1.5854835510253906e-05,
+        "max_relative_error": 1.7490120383315055e-05,
+        "ok": true,
+        "rtol": 0.0001
+      },
+      "matched_state_jvp": {
+        "atol": 1e-06,
+        "max_abs_error": 0.0,
+        "max_relative_error": 0.0,
+        "ok": true,
+        "rtol": 0.0001
+      },
+      "source_to_common_gradient": {
+        "atol": 1e-06,
+        "max_abs_error": 6.973743438720703e-06,
+        "max_relative_error": 1.0,
+        "ok": true,
+        "rtol": 0.0001
+      },
+      "source_to_common_loss": {
+        "atol": 1e-06,
+        "max_abs_error": 0.0001678466796875,
+        "max_relative_error": 7.257722381562218e-07,
+        "ok": true,
+        "rtol": 0.0001
+      },
+      "source_to_common_optimizer_state": {
+        "atol": 1e-06,
+        "max_abs_error": 7.003545761108398e-07,
+        "max_relative_error": 1.0,
+        "ok": true,
+        "rtol": 0.0001
+      },
+      "source_to_common_trajectory": {
+        "atol": 1e-06,
+        "max_abs_error": 1.9788742065429688e-05,
+        "max_relative_error": 2.182933797272516e-05,
+        "ok": true,
+        "rtol": 0.0001
+      },
+      "source_to_common_updated_params": {
+        "atol": 5e-05,
+        "max_abs_error": 2.002716064453125e-05,
+        "max_relative_error": 1.0,
+        "ok": true,
+        "rtol": 0.0001
+      }
+    },
+    "nontrivial": {
+      "matched_coordinate_trajectory": {
+        "atol": 1e-06,
+        "max_abs_error": 5.960464477539063e-08,
+        "max_relative_error": 1.1664681921037803e-07,
+        "ok": true,
+        "rtol": 0.0001
+      },
+      "matched_state_jvp": {
+        "atol": 1e-06,
+        "max_abs_error": 0.0,
+        "max_relative_error": 0.0,
+        "ok": true,
+        "rtol": 0.0001
+      },
+      "source_to_common_gradient": {
+        "atol": 1e-06,
+        "max_abs_error": 2.950429916381836e-06,
+        "max_relative_error": 1.952306087637618e+264,
+        "ok": true,
+        "rtol": 0.0001
+      },
+      "source_to_common_loss": {
+        "atol": 1e-06,
+        "max_abs_error": 1.52587890625e-05,
+        "max_relative_error": 1.1912891034691768e-07,
+        "ok": true,
+        "rtol": 0.0001
+      },
+      "source_to_common_optimizer_state": {
+        "atol": 1e-06,
+        "max_abs_error": 2.942979335784912e-07,
+        "max_relative_error": 1.8893284719073722e+263,
+        "ok": true,
+        "rtol": 0.0001
+      },
+      "source_to_common_trajectory": {
+        "atol": 1e-06,
+        "max_abs_error": 5.960464477539063e-08,
+        "max_relative_error": 1.1741536377686714e-07,
+        "ok": true,
+        "rtol": 0.0001
+      },
+      "source_to_common_updated_params": {
+        "atol": 5e-05,
+        "max_abs_error": 1.2636184692382812e-05,
+        "max_relative_error": 0.0014966512399003774,
+        "ok": true,
+        "rtol": 0.0001
+      }
+    }
+  },
+  "environment": {
+    "backend": "gpu",
+    "devices": [
+      "cuda:0"
+    ],
+    "jax": "0.10.2",
+    "jax_enable_x64": false,
+    "jax_threefry_partitionable": false,
+    "jaxlib": "0.10.2",
+    "numpy": "2.4.6",
+    "optax": "0.2.8",
+    "optax_adamw_defaults": {
+      "eps": "1e-08",
+      "eps_root": "0.0",
+      "mu_dtype": "None",
+      "nesterov": "False"
+    },
+    "platform": "Linux-7.1.8-arch1-3-x86_64-with-glibc2.44",
+    "python": "3.11.6"
+  },
+  "exports": {
+    "categorical_common": {
+      "execution": {
+        "atol": 0.0,
+        "max_abs_error": 0.0,
+        "max_relative_error": 0.0,
+        "ok": true,
+        "rtol": 0.0
+      },
+      "gate_id_sha256": "aab2b958df41bad3dc2b723f38de59899b6459f90a0c3206ffa82c86073a6e81"
+    },
+    "categorical_native": {
+      "execution": {
+        "atol": 0.0,
+        "max_abs_error": 0.0,
+        "max_relative_error": 0.0,
+        "ok": true,
+        "rtol": 0.0
+      },
+      "gate_id_sha256": "fa5788ddafe24c8aafa91947d4ad7f5d01cc61c52dcec321f811ff8768d7388a"
+    },
+    "truth_common": {
+      "execution": {
+        "atol": 0.0,
+        "max_abs_error": 0.0,
+        "max_relative_error": 0.0,
+        "ok": true,
+        "rtol": 0.0
+      },
+      "gate_id_sha256": "aab2b958df41bad3dc2b723f38de59899b6459f90a0c3206ffa82c86073a6e81"
+    },
+    "truth_native": {
+      "execution": {
+        "atol": 0.0,
+        "max_abs_error": 0.0,
+        "max_relative_error": 0.0,
+        "ok": true,
+        "rtol": 0.0
+      },
+      "gate_id_sha256": "aab2b958df41bad3dc2b723f38de59899b6459f90a0c3206ffa82c86073a6e81"
+    }
+  },
+  "gate_source_to_common": {
+    "atol": 1e-06,
+    "max_abs_error": 5.960464477539063e-08,
+    "max_relative_error": 1.0165316509327898e-07,
+    "ok": true,
+    "rtol": 0.0001
+  },
+  "initial_effective_table_match": {
+    "atol": 1e-07,
+    "max_abs_error": 5.960464477539063e-08,
+    "max_relative_error": 3.2074554093535014e-07,
+    "ok": true,
+    "rtol": 1e-06
+  },
+  "parameter_gradient_note": "Gradients across coordinate systems are intentionally not compared.",
+  "schema_version": 1,
+  "seed": 23,
+  "status": "passed"
+}
