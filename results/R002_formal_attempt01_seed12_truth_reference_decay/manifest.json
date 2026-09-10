@@ -1,0 +1,2670 @@
+{
+  "artifacts": [
+    {
+      "bytes": 23144,
+      "kind": "final_native_hard_circuit",
+      "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/final_native_circuit.npz",
+      "sha256": "6607158dedb3272c903c6df3817af8e54ea6314e2088024c7d560e5284535ffe"
+    },
+    {
+      "bytes": 23144,
+      "kind": "final_common_hard_circuit",
+      "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/final_common_circuit.npz",
+      "sha256": "6607158dedb3272c903c6df3817af8e54ea6314e2088024c7d560e5284535ffe"
+    }
+  ],
+  "checkpoints": [
+    {
+      "checkpoint": {
+        "bytes": 14100,
+        "kind": "R002_training_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/checkpoint_update_000.npz",
+        "sha256": "3d38bdfdb6fc574994b758bd34ba47086582b1a5aa02172f221f5bda5fbb5740"
+      },
+      "probe_trajectory": {
+        "bytes": 68632,
+        "kind": "selected_probe_trajectory",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/probe_trajectory_update_000.npz",
+        "sha256": "0d8ba47daeee137d11896cc6e94936ad9cf4b03fefbc4585f2b21681d2d29621"
+      },
+      "update": 0
+    },
+    {
+      "checkpoint": {
+        "bytes": 134563,
+        "kind": "R002_training_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/checkpoint_update_050.npz",
+        "sha256": "292d1336811846f0d6f232fd903291c94f0b92ae6711520700023d5ca87c0dc6"
+      },
+      "probe_trajectory": {
+        "bytes": 162654,
+        "kind": "selected_probe_trajectory",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/probe_trajectory_update_050.npz",
+        "sha256": "f1a9474116056756454f02823ed34b5677ddc8f08b8111106033dfb9a14613e4"
+      },
+      "update": 50
+    },
+    {
+      "checkpoint": {
+        "bytes": 143866,
+        "kind": "R002_training_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/checkpoint_update_100.npz",
+        "sha256": "4b9be462dce04357c4d2df339f499ac90f66fbe47431b31e917f246ee7bf88e9"
+      },
+      "probe_trajectory": {
+        "bytes": 159985,
+        "kind": "selected_probe_trajectory",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/probe_trajectory_update_100.npz",
+        "sha256": "3f9dd411f31381b255bf7e99d8efe1da32be5b17a377a942c02e645d97dabd7b"
+      },
+      "update": 100
+    },
+    {
+      "checkpoint": {
+        "bytes": 145867,
+        "kind": "R002_training_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/checkpoint_update_150.npz",
+        "sha256": "36787e06d204f4b568624659659b50b1d6568f6cc6da2db70d59b25aa16e40a6"
+      },
+      "probe_trajectory": {
+        "bytes": 149485,
+        "kind": "selected_probe_trajectory",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/probe_trajectory_update_150.npz",
+        "sha256": "07fadb7bfe197fd30301d28e0adb861d929b23cda420a6c35b57a8a3dffb1eb1"
+      },
+      "update": 150
+    },
+    {
+      "checkpoint": {
+        "bytes": 147774,
+        "kind": "R002_training_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/checkpoint_update_200.npz",
+        "sha256": "4572b1b26256122f7f56e4abb77c9bf50b5e58fd13529b8f769133cd1fabfd58"
+      },
+      "probe_trajectory": {
+        "bytes": 148878,
+        "kind": "selected_probe_trajectory",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/probe_trajectory_update_200.npz",
+        "sha256": "45bce327513188c03077b4f74c0d49d0d4492bc222f5b7e58e5218fe88375c7a"
+      },
+      "update": 200
+    },
+    {
+      "checkpoint": {
+        "bytes": 149380,
+        "kind": "R002_training_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/checkpoint_update_250.npz",
+        "sha256": "2fc4c1b970e466c57eb7f4ebf3d8c4db91559bde6df54d689d2792f76c4b1397"
+      },
+      "probe_trajectory": {
+        "bytes": 144749,
+        "kind": "selected_probe_trajectory",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/probe_trajectory_update_250.npz",
+        "sha256": "88f79e2d9b15c941c63a1a423bfb6e8c70e799e8649f57375647046f90612e21"
+      },
+      "update": 250
+    },
+    {
+      "checkpoint": {
+        "bytes": 150879,
+        "kind": "R002_training_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/checkpoint_update_300.npz",
+        "sha256": "55177539addd1cbaefa8a5a1ed649d6414a736c5a65823fb0a9d764113cdc428"
+      },
+      "probe_trajectory": {
+        "bytes": 141610,
+        "kind": "selected_probe_trajectory",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/probe_trajectory_update_300.npz",
+        "sha256": "bdb1e6e95b449b86497e863d1229ff1608a44637a59cf6753a8492653a41cbc0"
+      },
+      "update": 300
+    },
+    {
+      "checkpoint": {
+        "bytes": 151673,
+        "kind": "R002_training_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/checkpoint_update_350.npz",
+        "sha256": "ab2d711dc3503a03749c558690cca5409b06a593affde52d7282bec8edb98264"
+      },
+      "probe_trajectory": {
+        "bytes": 124605,
+        "kind": "selected_probe_trajectory",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/probe_trajectory_update_350.npz",
+        "sha256": "bb3f6a1712ba1a94cd6c8c320f701a20650aeb5c8b14972144e3b8f1dbf8eb06"
+      },
+      "update": 350
+    },
+    {
+      "checkpoint": {
+        "bytes": 152222,
+        "kind": "R002_training_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/checkpoint_update_400.npz",
+        "sha256": "81b9a470b6cda9fd753e1ed86338c0bee057a191d96fbc90ace3bf6215af7aa5"
+      },
+      "probe_trajectory": {
+        "bytes": 144548,
+        "kind": "selected_probe_trajectory",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/probe_trajectory_update_400.npz",
+        "sha256": "8b6251fd9feefc951a8dc0c6f7526e4d5fe15455645ef441dfb7cb8af7b304a6"
+      },
+      "update": 400
+    },
+    {
+      "checkpoint": {
+        "bytes": 152702,
+        "kind": "R002_training_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/checkpoint_update_450.npz",
+        "sha256": "80395a8b7a84e593ea20a07ad5de5b6dc965781db2eb315fd228accd2e6fb2c8"
+      },
+      "probe_trajectory": {
+        "bytes": 148027,
+        "kind": "selected_probe_trajectory",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/probe_trajectory_update_450.npz",
+        "sha256": "d2da7b46d31c10c30eeb19131b86ba7e82af142f201e98bc5d837b83c60640e4"
+      },
+      "update": 450
+    },
+    {
+      "checkpoint": {
+        "bytes": 152942,
+        "kind": "R002_training_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/checkpoint_update_500.npz",
+        "sha256": "d3d2aedb40e6840660f60b9a9e4351b4a6d821f375bd162eb36cb4b78304814e"
+      },
+      "probe_trajectory": {
+        "bytes": 150969,
+        "kind": "selected_probe_trajectory",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R002_formal_attempt01_seed12_truth_reference_decay/probe_trajectory_update_500.npz",
+        "sha256": "15d2b976d70f232343561834d50ea1419361dbd88ebaaa35a51b747daedae07d"
+      },
+      "update": 500
+    }
+  ],
+  "code": {
+    "commit": "d220b65da822707cd7db3dc90df69d9250aa0f77",
+    "dirty": true,
+    "status": [
+      "?? results/R002_formal_attempt01_seed00_categorical_no_decay/",
+      "?? results/R002_formal_attempt01_seed00_categorical_reference_decay/",
+      "?? results/R002_formal_attempt01_seed00_truth_no_decay/",
+      "?? results/R002_formal_attempt01_seed00_truth_reference_decay/",
+      "?? results/R002_formal_attempt01_seed01_categorical_no_decay/",
+      "?? results/R002_formal_attempt01_seed01_categorical_reference_decay/",
+      "?? results/R002_formal_attempt01_seed01_truth_no_decay/",
+      "?? results/R002_formal_attempt01_seed01_truth_reference_decay/",
+      "?? results/R002_formal_attempt01_seed02_categorical_no_decay/",
+      "?? results/R002_formal_attempt01_seed02_categorical_reference_decay/",
+      "?? results/R002_formal_attempt01_seed02_truth_no_decay/",
+      "?? results/R002_formal_attempt01_seed02_truth_reference_decay/",
+      "?? results/R002_formal_attempt01_seed03_categorical_no_decay/",
+      "?? results/R002_formal_attempt01_seed03_categorical_reference_decay/",
+      "?? results/R002_formal_attempt01_seed03_truth_no_decay/",
+      "?? results/R002_formal_attempt01_seed03_truth_reference_decay/",
+      "?? results/R002_formal_attempt01_seed04_categorical_no_decay/",
+      "?? results/R002_formal_attempt01_seed04_categorical_reference_decay/",
+      "?? results/R002_formal_attempt01_seed04_truth_no_decay/",
+      "?? results/R002_formal_attempt01_seed04_truth_reference_decay/",
+      "?? results/R002_formal_attempt01_seed05_categorical_no_decay/",
+      "?? results/R002_formal_attempt01_seed05_categorical_reference_decay/",
+      "?? results/R002_formal_attempt01_seed05_truth_no_decay/",
+      "?? results/R002_formal_attempt01_seed05_truth_reference_decay/",
+      "?? results/R002_formal_attempt01_seed06_categorical_no_decay/",
+      "?? results/R002_formal_attempt01_seed06_categorical_reference_decay/",
+      "?? results/R002_formal_attempt01_seed06_truth_no_decay/",
+      "?? results/R002_formal_attempt01_seed06_truth_reference_decay/",
+      "?? results/R002_formal_attempt01_seed07_categorical_no_decay/",
+      "?? results/R002_formal_attempt01_seed07_categorical_reference_decay/",
+      "?? results/R002_formal_attempt01_seed07_truth_no_decay/",
+      "?? results/R002_formal_attempt01_seed07_truth_reference_decay/",
+      "?? results/R002_formal_attempt01_seed08_categorical_no_decay/",
+      "?? results/R002_formal_attempt01_seed08_categorical_reference_decay/",
+      "?? results/R002_formal_attempt01_seed08_truth_no_decay/",
+      "?? results/R002_formal_attempt01_seed08_truth_reference_decay/",
+      "?? results/R002_formal_attempt01_seed09_categorical_no_decay/",
+      "?? results/R002_formal_attempt01_seed09_categorical_reference_decay/",
+      "?? results/R002_formal_attempt01_seed09_truth_no_decay/",
+      "?? results/R002_formal_attempt01_seed09_truth_reference_decay/",
+      "?? results/R002_formal_attempt01_seed10_categorical_no_decay/",
+      "?? results/R002_formal_attempt01_seed10_categorical_reference_decay/",
+      "?? results/R002_formal_attempt01_seed10_truth_no_decay/",
+      "?? results/R002_formal_attempt01_seed10_truth_reference_decay/",
+      "?? results/R002_formal_attempt01_seed11_categorical_no_decay/",
+      "?? results/R002_formal_attempt01_seed11_categorical_reference_decay/",
+      "?? results/R002_formal_attempt01_seed11_truth_no_decay/",
+      "?? results/R002_formal_attempt01_seed11_truth_reference_decay/",
+      "?? results/R002_formal_attempt01_seed12_categorical_reference_decay/"
+    ],
+    "tracked_patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "condition": "truth_reference_decay",
+  "config": {
+    "conditions": [
+      {
+        "name": "categorical_reference_decay",
+        "representation": "categorical",
+        "weight_decay": 0.01
+      },
+      {
+        "name": "truth_reference_decay",
+        "representation": "truth",
+        "weight_decay": 0.01
+      },
+      {
+        "name": "categorical_no_decay",
+        "representation": "categorical",
+        "weight_decay": 0.0
+      },
+      {
+        "name": "truth_no_decay",
+        "representation": "truth",
+        "weight_decay": 0.0
+      }
+    ],
+    "evaluation": {
+      "checkpoint_updates": [
+        0,
+        50,
+        100,
+        150,
+        200,
+        250,
+        300,
+        350,
+        400,
+        450,
+        500
+      ],
+      "primary_checkpoint_update": 500,
+      "probe_count": 32,
+      "probe_seed": 1000023,
+      "r001_manifest": "results/R001_20260909T231016Z_seed23_jaxgpu_attempt01/manifest.json",
+      "r001_probe_artifact": "artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/fixed_evaluation_set.npz",
+      "r001_probe_sha256": "d49ecf23fd932fba25b1068f8c90820265a05fd90daadc372089520889090b2f"
+    },
+    "experiment_id": "R002",
+    "kind": "experiment_specification",
+    "runtime": {
+      "concurrency": 1,
+      "concurrency_basis": "single-process baseline pending R002 representation profile; avoids competing JAX GPU preallocation",
+      "environment": "envs/jax-gpu",
+      "xla_flags": " --xla_gpu_deterministic_ops=true"
+    },
+    "schema_version": 1,
+    "scientific_recipe": {
+      "adam_b1": 0.9,
+      "adam_b2": 0.99,
+      "adam_eps": "Optax default from the recorded environment lock",
+      "batch_size": 2,
+      "channels": 8,
+      "clip_value": 100.0,
+      "common_rounding": "q>=0.5",
+      "exterior": "constant_zero",
+      "grid_size": [
+        16,
+        16
+      ],
+      "independent_trials": true,
+      "initialization": "truth logits are logit(softmax(categorical logits) @ T), converted directly in FP32 without clamping",
+      "kernel": "common_multilinear_truth_table",
+      "learning_rate": 0.05,
+      "loss": "summed_terminal_channel_0_squared_error",
+      "optimizer_updates": 500,
+      "periodic": false,
+      "runtime_ticks": 20,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "truth_column_order": [
+        "00",
+        "01",
+        "10",
+        "11"
+      ],
+      "truth_gate_id_bit_weights": [
+        8,
+        4,
+        2,
+        1
+      ]
+    },
+    "source_sha256": "a9b3829db0d9fe0eb46148d516c18358aa648e3538aeaa682003b77cfbe757c8",
+    "spec_path": "experiments/R002/SPEC.md",
+    "status": "implemented; bounded preflight pending"
+  },
+  "config_sha256": "9632f2135e8262903c40cdaeba211e4f5bebac22c2b8f45c0e2100b993111bb9",
+  "current_update": 500,
+  "device_memory": {
+    "bytes_in_use": 1278208,
+    "bytes_limit": 25266487296,
+    "peak_bytes_in_use": 1681053696
+  },
+  "ended_at": "2026-09-10T03:34:44.915858+00:00",
+  "environment": {
+    "backend": "gpu",
+    "devices": [
+      "cuda:0"
+    ],
+    "jax": "0.10.2",
+    "jax_enable_x64": false,
+    "jax_threefry_partitionable": false,
+    "jaxlib": "0.10.2",
+    "lock_path": "envs/jax-gpu/uv.lock",
+    "lock_sha256": "7a8e627cd9851d7426502bc3734bcedcfe48277575aec363877d4e7b717b2125",
+    "numpy": "2.4.6",
+    "optax": "0.2.8",
+    "optax_adamw_defaults": {
+      "eps": "1e-08",
+      "eps_root": "0.0",
+      "mu_dtype": "None",
+      "nesterov": "False"
+    },
+    "platform": "Linux-7.1.8-arch1-3-x86_64-with-glibc2.44",
+    "python": "3.11.6",
+    "uv": "uv 0.12.5 (210d1f678 2026-08-14 x86_64-unknown-linux-gnu)",
+    "xla_flags": " --xla_gpu_deterministic_ops=true"
+  },
+  "evaluation_compile_seconds": 1.7587280478328466,
+  "evaluations": [
+    {
+      "common": {
+        "bit_errors": 4085,
+        "exact_all_32": false,
+        "perfect_grid_count": 0,
+        "terminal_summed_squared_error": 4085.0
+      },
+      "common_soft_hard_gap": 660.6865234375,
+      "effective_table_displacement": {
+        "l2": 4.647642526833806e-06,
+        "max_abs": 5.960464477539063e-08
+      },
+      "gate_diagnostics": {
+        "definition": "one-cell hard readout dependency closure; recurrent unrolling not expanded",
+        "layers": {
+          "perceive": [
+            {
+              "gate_count": 128,
+              "index": 0,
+              "mean_truth_bit_entropy": 0.004672237532752908,
+              "minimum_rounding_margin": 0.4996368885040283,
+              "readout_cone_gate_count": 128,
+              "readout_cone_mean_truth_bit_entropy": 0.004672237532752908,
+              "readout_cone_minimum_rounding_margin": 0.4996368885040283
+            },
+            {
+              "gate_count": 64,
+              "index": 1,
+              "mean_truth_bit_entropy": 0.004672237532752908,
+              "minimum_rounding_margin": 0.4996368885040283,
+              "readout_cone_gate_count": 64,
+              "readout_cone_mean_truth_bit_entropy": 0.004672237532752908,
+              "readout_cone_minimum_rounding_margin": 0.4996368885040283
+            },
+            {
+              "gate_count": 32,
+              "index": 2,
+              "mean_truth_bit_entropy": 0.004672237532752908,
+              "minimum_rounding_margin": 0.4996368885040283,
+              "readout_cone_gate_count": 32,
+              "readout_cone_mean_truth_bit_entropy": 0.004672237532752908,
+              "readout_cone_minimum_rounding_margin": 0.4996368885040283
+            }
+          ],
+          "update": [
+            {
+              "gate_count": 256,
+              "index": 0,
+              "mean_truth_bit_entropy": 0.004672237532752908,
+              "minimum_rounding_margin": 0.4996368885040283,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.004672237532752908,
+              "readout_cone_minimum_rounding_margin": 0.4996368885040283
+            },
+            {
+              "gate_count": 256,
+              "index": 1,
+              "mean_truth_bit_entropy": 0.004672237532752908,
+              "minimum_rounding_margin": 0.4996368885040283,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.004672237532752908,
+              "readout_cone_minimum_rounding_margin": 0.4996368885040283
+            },
+            {
+              "gate_count": 256,
+              "index": 2,
+              "mean_truth_bit_entropy": 0.004672237532752908,
+              "minimum_rounding_margin": 0.4996368885040283,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.004672237532752908,
+              "readout_cone_minimum_rounding_margin": 0.4996368885040283
+            },
+            {
+              "gate_count": 256,
+              "index": 3,
+              "mean_truth_bit_entropy": 0.004672237532752908,
+              "minimum_rounding_margin": 0.4996368885040283,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.004672237532752908,
+              "readout_cone_minimum_rounding_margin": 0.4996368885040283
+            },
+            {
+              "gate_count": 256,
+              "index": 4,
+              "mean_truth_bit_entropy": 0.004672237532752908,
+              "minimum_rounding_margin": 0.4996368885040283,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.004672237532752908,
+              "readout_cone_minimum_rounding_margin": 0.4996368885040283
+            },
+            {
+              "gate_count": 256,
+              "index": 5,
+              "mean_truth_bit_entropy": 0.004672237532752908,
+              "minimum_rounding_margin": 0.4996368885040283,
+              "readout_cone_gate_count": 251,
+              "readout_cone_mean_truth_bit_entropy": 0.004672237532752908,
+              "readout_cone_minimum_rounding_margin": 0.4996368885040283
+            },
+            {
+              "gate_count": 256,
+              "index": 6,
+              "mean_truth_bit_entropy": 0.004672237532752908,
+              "minimum_rounding_margin": 0.4996368885040283,
+              "readout_cone_gate_count": 227,
+              "readout_cone_mean_truth_bit_entropy": 0.004672237532752908,
+              "readout_cone_minimum_rounding_margin": 0.4996368885040283
+            },
+            {
+              "gate_count": 256,
+              "index": 7,
+              "mean_truth_bit_entropy": 0.004672237532752908,
+              "minimum_rounding_margin": 0.4996368885040283,
+              "readout_cone_gate_count": 178,
+              "readout_cone_mean_truth_bit_entropy": 0.004672237532752907,
+              "readout_cone_minimum_rounding_margin": 0.4996368885040283
+            },
+            {
+              "gate_count": 256,
+              "index": 8,
+              "mean_truth_bit_entropy": 0.004672237532752908,
+              "minimum_rounding_margin": 0.4996368885040283,
+              "readout_cone_gate_count": 114,
+              "readout_cone_mean_truth_bit_entropy": 0.004672237532752907,
+              "readout_cone_minimum_rounding_margin": 0.4996368885040283
+            },
+            {
+              "gate_count": 256,
+              "index": 9,
+              "mean_truth_bit_entropy": 0.004672237532752908,
+              "minimum_rounding_margin": 0.4996368885040283,
+              "readout_cone_gate_count": 64,
+              "readout_cone_mean_truth_bit_entropy": 0.004672237532752908,
+              "readout_cone_minimum_rounding_margin": 0.4996368885040283
+            },
+            {
+              "gate_count": 128,
+              "index": 10,
+              "mean_truth_bit_entropy": 0.004672237532752908,
+              "minimum_rounding_margin": 0.4996368885040283,
+              "readout_cone_gate_count": 32,
+              "readout_cone_mean_truth_bit_entropy": 0.004672237532752908,
+              "readout_cone_minimum_rounding_margin": 0.4996368885040283
+            },
+            {
+              "gate_count": 64,
+              "index": 11,
+              "mean_truth_bit_entropy": 0.004672237532752908,
+              "minimum_rounding_margin": 0.4996368885040283,
+              "readout_cone_gate_count": 16,
+              "readout_cone_mean_truth_bit_entropy": 0.004672237532752908,
+              "readout_cone_minimum_rounding_margin": 0.4996368885040283
+            },
+            {
+              "gate_count": 32,
+              "index": 12,
+              "mean_truth_bit_entropy": 0.004672237532752908,
+              "minimum_rounding_margin": 0.4996368885040283,
+              "readout_cone_gate_count": 8,
+              "readout_cone_mean_truth_bit_entropy": 0.004672237532752908,
+              "readout_cone_minimum_rounding_margin": 0.4996368885040283
+            },
+            {
+              "gate_count": 16,
+              "index": 13,
+              "mean_truth_bit_entropy": 0.004672237532752908,
+              "minimum_rounding_margin": 0.4996368885040283,
+              "readout_cone_gate_count": 4,
+              "readout_cone_mean_truth_bit_entropy": 0.004672237532752908,
+              "readout_cone_minimum_rounding_margin": 0.4996368885040283
+            },
+            {
+              "gate_count": 8,
+              "index": 14,
+              "mean_truth_bit_entropy": 0.004672237532752908,
+              "minimum_rounding_margin": 0.4996368885040283,
+              "readout_cone_gate_count": 2,
+              "readout_cone_mean_truth_bit_entropy": 0.004672237532752908,
+              "readout_cone_minimum_rounding_margin": 0.4996368885040283
+            },
+            {
+              "gate_count": 8,
+              "index": 15,
+              "mean_truth_bit_entropy": 0.004672237532752908,
+              "minimum_rounding_margin": 0.4996368885040283,
+              "readout_cone_gate_count": 1,
+              "readout_cone_mean_truth_bit_entropy": 0.004672237532752908,
+              "readout_cone_minimum_rounding_margin": 0.4996368885040283
+            }
+          ]
+        }
+      },
+      "native": {
+        "bit_errors": 4085,
+        "exact_all_32": false,
+        "perfect_grid_count": 0,
+        "terminal_summed_squared_error": 4085.0
+      },
+      "native_soft_hard_gap": 660.6865234375,
+      "soft_terminal_summed_squared_error": 3424.3134765625,
+      "update": 0
+    },
+    {
+      "common": {
+        "bit_errors": 4085,
+        "exact_all_32": false,
+        "perfect_grid_count": 0,
+        "terminal_summed_squared_error": 4085.0
+      },
+      "common_soft_hard_gap": 1852.474609375,
+      "effective_table_displacement": {
+        "l2": 0.09117325395345688,
+        "max_abs": 0.00691218813881278
+      },
+      "gate_diagnostics": {
+        "definition": "one-cell hard readout dependency closure; recurrent unrolling not expanded",
+        "layers": {
+          "perceive": [
+            {
+              "gate_count": 128,
+              "index": 0,
+              "mean_truth_bit_entropy": 0.006806177609748848,
+              "minimum_rounding_margin": 0.4937489628791809,
+              "readout_cone_gate_count": 128,
+              "readout_cone_mean_truth_bit_entropy": 0.006806177609748848,
+              "readout_cone_minimum_rounding_margin": 0.4937489628791809
+            },
+            {
+              "gate_count": 64,
+              "index": 1,
+              "mean_truth_bit_entropy": 0.007986402214734347,
+              "minimum_rounding_margin": 0.4939066171646118,
+              "readout_cone_gate_count": 64,
+              "readout_cone_mean_truth_bit_entropy": 0.007986402214734347,
+              "readout_cone_minimum_rounding_margin": 0.4939066171646118
+            },
+            {
+              "gate_count": 32,
+              "index": 2,
+              "mean_truth_bit_entropy": 0.010771226875339598,
+              "minimum_rounding_margin": 0.49383091926574707,
+              "readout_cone_gate_count": 32,
+              "readout_cone_mean_truth_bit_entropy": 0.010771226875339598,
+              "readout_cone_minimum_rounding_margin": 0.49383091926574707
+            }
+          ],
+          "update": [
+            {
+              "gate_count": 256,
+              "index": 0,
+              "mean_truth_bit_entropy": 0.006490159629002536,
+              "minimum_rounding_margin": 0.4927248596213758,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.006490159629002536,
+              "readout_cone_minimum_rounding_margin": 0.4927248596213758
+            },
+            {
+              "gate_count": 256,
+              "index": 1,
+              "mean_truth_bit_entropy": 0.006435510345531894,
+              "minimum_rounding_margin": 0.4938148260116577,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.006435510345531894,
+              "readout_cone_minimum_rounding_margin": 0.4938148260116577
+            },
+            {
+              "gate_count": 256,
+              "index": 2,
+              "mean_truth_bit_entropy": 0.006368789992517175,
+              "minimum_rounding_margin": 0.493766188621521,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.006368789992517175,
+              "readout_cone_minimum_rounding_margin": 0.493766188621521
+            },
+            {
+              "gate_count": 256,
+              "index": 3,
+              "mean_truth_bit_entropy": 0.006319890783662522,
+              "minimum_rounding_margin": 0.4937729835510254,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.006319890783662522,
+              "readout_cone_minimum_rounding_margin": 0.4937729835510254
+            },
+            {
+              "gate_count": 256,
+              "index": 4,
+              "mean_truth_bit_entropy": 0.0062604393538610295,
+              "minimum_rounding_margin": 0.4938966631889343,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.0062604393538610295,
+              "readout_cone_minimum_rounding_margin": 0.4938966631889343
+            },
+            {
+              "gate_count": 256,
+              "index": 5,
+              "mean_truth_bit_entropy": 0.006209850617791253,
+              "minimum_rounding_margin": 0.4938949942588806,
+              "readout_cone_gate_count": 251,
+              "readout_cone_mean_truth_bit_entropy": 0.006224481308116721,
+              "readout_cone_minimum_rounding_margin": 0.4938949942588806
+            },
+            {
+              "gate_count": 256,
+              "index": 6,
+              "mean_truth_bit_entropy": 0.0061830484279682746,
+              "minimum_rounding_margin": 0.49385493993759155,
+              "readout_cone_gate_count": 227,
+              "readout_cone_mean_truth_bit_entropy": 0.006265815401563907,
+              "readout_cone_minimum_rounding_margin": 0.49385493993759155
+            },
+            {
+              "gate_count": 256,
+              "index": 7,
+              "mean_truth_bit_entropy": 0.006199371829276493,
+              "minimum_rounding_margin": 0.49379444122314453,
+              "readout_cone_gate_count": 178,
+              "readout_cone_mean_truth_bit_entropy": 0.006368067296763307,
+              "readout_cone_minimum_rounding_margin": 0.49379444122314453
+            },
+            {
+              "gate_count": 256,
+              "index": 8,
+              "mean_truth_bit_entropy": 0.006176144712534519,
+              "minimum_rounding_margin": 0.4937845468521118,
+              "readout_cone_gate_count": 114,
+              "readout_cone_mean_truth_bit_entropy": 0.0062959838130340956,
+              "readout_cone_minimum_rounding_margin": 0.4942430853843689
+            },
+            {
+              "gate_count": 256,
+              "index": 9,
+              "mean_truth_bit_entropy": 0.0061739477158407,
+              "minimum_rounding_margin": 0.4938254952430725,
+              "readout_cone_gate_count": 64,
+              "readout_cone_mean_truth_bit_entropy": 0.007119494090799346,
+              "readout_cone_minimum_rounding_margin": 0.4941728711128235
+            },
+            {
+              "gate_count": 128,
+              "index": 10,
+              "mean_truth_bit_entropy": 0.006778968420737061,
+              "minimum_rounding_margin": 0.4938860535621643,
+              "readout_cone_gate_count": 32,
+              "readout_cone_mean_truth_bit_entropy": 0.008876518155552189,
+              "readout_cone_minimum_rounding_margin": 0.4942231774330139
+            },
+            {
+              "gate_count": 64,
+              "index": 11,
+              "mean_truth_bit_entropy": 0.007755642519965194,
+              "minimum_rounding_margin": 0.4938827157020569,
+              "readout_cone_gate_count": 16,
+              "readout_cone_mean_truth_bit_entropy": 0.009758603573358436,
+              "readout_cone_minimum_rounding_margin": 0.49504674319177866
+            },
+            {
+              "gate_count": 32,
+              "index": 12,
+              "mean_truth_bit_entropy": 0.009286578171383359,
+              "minimum_rounding_margin": 0.4937583804130554,
+              "readout_cone_gate_count": 8,
+              "readout_cone_mean_truth_bit_entropy": 0.013163923675950994,
+              "readout_cone_minimum_rounding_margin": 0.4952317769639194
+            },
+            {
+              "gate_count": 16,
+              "index": 13,
+              "mean_truth_bit_entropy": 0.013083805739217885,
+              "minimum_rounding_margin": 0.49376487731933594,
+              "readout_cone_gate_count": 4,
+              "readout_cone_mean_truth_bit_entropy": 0.018991764154920317,
+              "readout_cone_minimum_rounding_margin": 0.4951762240380049
+            },
+            {
+              "gate_count": 8,
+              "index": 14,
+              "mean_truth_bit_entropy": 0.020769496457148,
+              "minimum_rounding_margin": 0.4935811161994934,
+              "readout_cone_gate_count": 2,
+              "readout_cone_mean_truth_bit_entropy": 0.03493853039892093,
+              "readout_cone_minimum_rounding_margin": 0.4951714058406651
+            },
+            {
+              "gate_count": 8,
+              "index": 15,
+              "mean_truth_bit_entropy": 0.020503542567160294,
+              "minimum_rounding_margin": 0.49376535415649414,
+              "readout_cone_gate_count": 1,
+              "readout_cone_mean_truth_bit_entropy": 0.03638999239224782,
+              "readout_cone_minimum_rounding_margin": 0.4952307315543294
+            }
+          ]
+        }
+      },
+      "native": {
+        "bit_errors": 4085,
+        "exact_all_32": false,
+        "perfect_grid_count": 0,
+        "terminal_summed_squared_error": 4085.0
+      },
+      "native_soft_hard_gap": 1852.474609375,
+      "soft_terminal_summed_squared_error": 2232.525390625,
+      "update": 50
+    },
+    {
+      "common": {
+        "bit_errors": 4085,
+        "exact_all_32": false,
+        "perfect_grid_count": 0,
+        "terminal_summed_squared_error": 4085.0
+      },
+      "common_soft_hard_gap": 2024.695068359375,
+      "effective_table_displacement": {
+        "l2": 1.568676233291626,
+        "max_abs": 0.3023880124092102
+      },
+      "gate_diagnostics": {
+        "definition": "one-cell hard readout dependency closure; recurrent unrolling not expanded",
+        "layers": {
+          "perceive": [
+            {
+              "gate_count": 128,
+              "index": 0,
+              "mean_truth_bit_entropy": 0.023586050692813033,
+              "minimum_rounding_margin": 0.25749439001083374,
+              "readout_cone_gate_count": 128,
+              "readout_cone_mean_truth_bit_entropy": 0.023586050692813033,
+              "readout_cone_minimum_rounding_margin": 0.25749439001083374
+            },
+            {
+              "gate_count": 64,
+              "index": 1,
+              "mean_truth_bit_entropy": 0.034521323031947826,
+              "minimum_rounding_margin": 0.25443869829177856,
+              "readout_cone_gate_count": 64,
+              "readout_cone_mean_truth_bit_entropy": 0.034521323031947826,
+              "readout_cone_minimum_rounding_margin": 0.25443869829177856
+            },
+            {
+              "gate_count": 32,
+              "index": 2,
+              "mean_truth_bit_entropy": 0.07277208181013942,
+              "minimum_rounding_margin": 0.24466711282730103,
+              "readout_cone_gate_count": 32,
+              "readout_cone_mean_truth_bit_entropy": 0.07277208181013942,
+              "readout_cone_minimum_rounding_margin": 0.24466711282730103
+            }
+          ],
+          "update": [
+            {
+              "gate_count": 256,
+              "index": 0,
+              "mean_truth_bit_entropy": 0.02162041486613896,
+              "minimum_rounding_margin": 0.19724902510643005,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.02162041486613896,
+              "readout_cone_minimum_rounding_margin": 0.19724902510643005
+            },
+            {
+              "gate_count": 256,
+              "index": 1,
+              "mean_truth_bit_entropy": 0.0168618058471513,
+              "minimum_rounding_margin": 0.2892967462539673,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.0168618058471513,
+              "readout_cone_minimum_rounding_margin": 0.2892967462539673
+            },
+            {
+              "gate_count": 256,
+              "index": 2,
+              "mean_truth_bit_entropy": 0.016243314819060578,
+              "minimum_rounding_margin": 0.2818114459514618,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.016243314819060578,
+              "readout_cone_minimum_rounding_margin": 0.2818114459514618
+            },
+            {
+              "gate_count": 256,
+              "index": 3,
+              "mean_truth_bit_entropy": 0.015023712171284467,
+              "minimum_rounding_margin": 0.2710297852754593,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.015023712171284467,
+              "readout_cone_minimum_rounding_margin": 0.2710297852754593
+            },
+            {
+              "gate_count": 256,
+              "index": 4,
+              "mean_truth_bit_entropy": 0.015726604254347135,
+              "minimum_rounding_margin": 0.29110002517700195,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.015726604254347135,
+              "readout_cone_minimum_rounding_margin": 0.29110002517700195
+            },
+            {
+              "gate_count": 256,
+              "index": 5,
+              "mean_truth_bit_entropy": 0.014941023965602606,
+              "minimum_rounding_margin": 0.27027493715286255,
+              "readout_cone_gate_count": 251,
+              "readout_cone_mean_truth_bit_entropy": 0.015082974842790944,
+              "readout_cone_minimum_rounding_margin": 0.27027493715286255
+            },
+            {
+              "gate_count": 256,
+              "index": 6,
+              "mean_truth_bit_entropy": 0.01275951624746183,
+              "minimum_rounding_margin": 0.27403877675533295,
+              "readout_cone_gate_count": 227,
+              "readout_cone_mean_truth_bit_entropy": 0.013202074130019463,
+              "readout_cone_minimum_rounding_margin": 0.27403877675533295
+            },
+            {
+              "gate_count": 256,
+              "index": 7,
+              "mean_truth_bit_entropy": 0.012862621288138157,
+              "minimum_rounding_margin": 0.3973708152770996,
+              "readout_cone_gate_count": 178,
+              "readout_cone_mean_truth_bit_entropy": 0.014655843852407768,
+              "readout_cone_minimum_rounding_margin": 0.3973708152770996
+            },
+            {
+              "gate_count": 256,
+              "index": 8,
+              "mean_truth_bit_entropy": 0.012668871163702963,
+              "minimum_rounding_margin": 0.27070213854312897,
+              "readout_cone_gate_count": 114,
+              "readout_cone_mean_truth_bit_entropy": 0.014950325975899393,
+              "readout_cone_minimum_rounding_margin": 0.3299664407968521
+            },
+            {
+              "gate_count": 256,
+              "index": 9,
+              "mean_truth_bit_entropy": 0.012692577683467852,
+              "minimum_rounding_margin": 0.36031293869018555,
+              "readout_cone_gate_count": 64,
+              "readout_cone_mean_truth_bit_entropy": 0.021636904742820057,
+              "readout_cone_minimum_rounding_margin": 0.38624725490808487
+            },
+            {
+              "gate_count": 128,
+              "index": 10,
+              "mean_truth_bit_entropy": 0.016514052236070147,
+              "minimum_rounding_margin": 0.333050012588501,
+              "readout_cone_gate_count": 32,
+              "readout_cone_mean_truth_bit_entropy": 0.03151708209080137,
+              "readout_cone_minimum_rounding_margin": 0.333050012588501
+            },
+            {
+              "gate_count": 64,
+              "index": 11,
+              "mean_truth_bit_entropy": 0.025603467570366852,
+              "minimum_rounding_margin": 0.32744094729423523,
+              "readout_cone_gate_count": 16,
+              "readout_cone_mean_truth_bit_entropy": 0.04549786668970515,
+              "readout_cone_minimum_rounding_margin": 0.3864567503333092
+            },
+            {
+              "gate_count": 32,
+              "index": 12,
+              "mean_truth_bit_entropy": 0.03735022778105785,
+              "minimum_rounding_margin": 0.40747350454330444,
+              "readout_cone_gate_count": 8,
+              "readout_cone_mean_truth_bit_entropy": 0.0784657247840291,
+              "readout_cone_minimum_rounding_margin": 0.40747350454330444
+            },
+            {
+              "gate_count": 16,
+              "index": 13,
+              "mean_truth_bit_entropy": 0.03771130094320278,
+              "minimum_rounding_margin": 0.4663066305220127,
+              "readout_cone_gate_count": 4,
+              "readout_cone_mean_truth_bit_entropy": 0.04497746167965685,
+              "readout_cone_minimum_rounding_margin": 0.47488229162991047
+            },
+            {
+              "gate_count": 8,
+              "index": 14,
+              "mean_truth_bit_entropy": 0.044260156899785706,
+              "minimum_rounding_margin": 0.47481987066566944,
+              "readout_cone_gate_count": 2,
+              "readout_cone_mean_truth_bit_entropy": 0.07940829277480829,
+              "readout_cone_minimum_rounding_margin": 0.47481987066566944
+            },
+            {
+              "gate_count": 8,
+              "index": 15,
+              "mean_truth_bit_entropy": 0.05513293621370241,
+              "minimum_rounding_margin": 0.4689823482185602,
+              "readout_cone_gate_count": 1,
+              "readout_cone_mean_truth_bit_entropy": 0.09142705364908865,
+              "readout_cone_minimum_rounding_margin": 0.4795749709010124
+            }
+          ]
+        }
+      },
+      "native": {
+        "bit_errors": 4085,
+        "exact_all_32": false,
+        "perfect_grid_count": 0,
+        "terminal_summed_squared_error": 4085.0
+      },
+      "native_soft_hard_gap": 2024.695068359375,
+      "soft_terminal_summed_squared_error": 2060.304931640625,
+      "update": 100
+    },
+    {
+      "common": {
+        "bit_errors": 4085,
+        "exact_all_32": false,
+        "perfect_grid_count": 0,
+        "terminal_summed_squared_error": 4085.0
+      },
+      "common_soft_hard_gap": 2037.49072265625,
+      "effective_table_displacement": {
+        "l2": 6.052506923675537,
+        "max_abs": 0.8355220556259155
+      },
+      "gate_diagnostics": {
+        "definition": "one-cell hard readout dependency closure; recurrent unrolling not expanded",
+        "layers": {
+          "perceive": [
+            {
+              "gate_count": 128,
+              "index": 0,
+              "mean_truth_bit_entropy": 0.053607165893993586,
+              "minimum_rounding_margin": 0.005841374397277832,
+              "readout_cone_gate_count": 128,
+              "readout_cone_mean_truth_bit_entropy": 0.053607165893993586,
+              "readout_cone_minimum_rounding_margin": 0.005841374397277832
+            },
+            {
+              "gate_count": 64,
+              "index": 1,
+              "mean_truth_bit_entropy": 0.03947246386620432,
+              "minimum_rounding_margin": 0.05291125178337097,
+              "readout_cone_gate_count": 64,
+              "readout_cone_mean_truth_bit_entropy": 0.03947246386620432,
+              "readout_cone_minimum_rounding_margin": 0.05291125178337097
+            },
+            {
+              "gate_count": 32,
+              "index": 2,
+              "mean_truth_bit_entropy": 0.20695553403083472,
+              "minimum_rounding_margin": 0.0022431910037994385,
+              "readout_cone_gate_count": 32,
+              "readout_cone_mean_truth_bit_entropy": 0.20695553403083472,
+              "readout_cone_minimum_rounding_margin": 0.0022431910037994385
+            }
+          ],
+          "update": [
+            {
+              "gate_count": 256,
+              "index": 0,
+              "mean_truth_bit_entropy": 0.0479475179267758,
+              "minimum_rounding_margin": 0.0007815957069396973,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.0479475179267758,
+              "readout_cone_minimum_rounding_margin": 0.0007815957069396973
+            },
+            {
+              "gate_count": 256,
+              "index": 1,
+              "mean_truth_bit_entropy": 0.03672270936632553,
+              "minimum_rounding_margin": 0.029399096965789795,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.03672270936632553,
+              "readout_cone_minimum_rounding_margin": 0.029399096965789795
+            },
+            {
+              "gate_count": 256,
+              "index": 2,
+              "mean_truth_bit_entropy": 0.038044992275562094,
+              "minimum_rounding_margin": 0.012987464666366577,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.038044992275562094,
+              "readout_cone_minimum_rounding_margin": 0.012987464666366577
+            },
+            {
+              "gate_count": 256,
+              "index": 3,
+              "mean_truth_bit_entropy": 0.03437321890444374,
+              "minimum_rounding_margin": 0.005189478397369385,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.03437321890444374,
+              "readout_cone_minimum_rounding_margin": 0.005189478397369385
+            },
+            {
+              "gate_count": 256,
+              "index": 4,
+              "mean_truth_bit_entropy": 0.03338701581603115,
+              "minimum_rounding_margin": 0.043524712324142456,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.03338701581603115,
+              "readout_cone_minimum_rounding_margin": 0.043524712324142456
+            },
+            {
+              "gate_count": 256,
+              "index": 5,
+              "mean_truth_bit_entropy": 0.03109517720079042,
+              "minimum_rounding_margin": 0.052684396505355835,
+              "readout_cone_gate_count": 251,
+              "readout_cone_mean_truth_bit_entropy": 0.03133177170158434,
+              "readout_cone_minimum_rounding_margin": 0.052684396505355835
+            },
+            {
+              "gate_count": 256,
+              "index": 6,
+              "mean_truth_bit_entropy": 0.023913747676314608,
+              "minimum_rounding_margin": 0.06920015811920166,
+              "readout_cone_gate_count": 227,
+              "readout_cone_mean_truth_bit_entropy": 0.02461362202306914,
+              "readout_cone_minimum_rounding_margin": 0.06920015811920166
+            },
+            {
+              "gate_count": 256,
+              "index": 7,
+              "mean_truth_bit_entropy": 0.030204910127758097,
+              "minimum_rounding_margin": 0.028493404388427734,
+              "readout_cone_gate_count": 178,
+              "readout_cone_mean_truth_bit_entropy": 0.03679759239661786,
+              "readout_cone_minimum_rounding_margin": 0.028493404388427734
+            },
+            {
+              "gate_count": 256,
+              "index": 8,
+              "mean_truth_bit_entropy": 0.024783050828350216,
+              "minimum_rounding_margin": 0.06795841455459595,
+              "readout_cone_gate_count": 114,
+              "readout_cone_mean_truth_bit_entropy": 0.03417332920469781,
+              "readout_cone_minimum_rounding_margin": 0.12536120414733887
+            },
+            {
+              "gate_count": 256,
+              "index": 9,
+              "mean_truth_bit_entropy": 0.022439686410015994,
+              "minimum_rounding_margin": 0.13105493783950806,
+              "readout_cone_gate_count": 64,
+              "readout_cone_mean_truth_bit_entropy": 0.04419070627590013,
+              "readout_cone_minimum_rounding_margin": 0.13105493783950806
+            },
+            {
+              "gate_count": 128,
+              "index": 10,
+              "mean_truth_bit_entropy": 0.02880185442720299,
+              "minimum_rounding_margin": 0.14276674389839172,
+              "readout_cone_gate_count": 32,
+              "readout_cone_mean_truth_bit_entropy": 0.0629179393221888,
+              "readout_cone_minimum_rounding_margin": 0.14276674389839172
+            },
+            {
+              "gate_count": 64,
+              "index": 11,
+              "mean_truth_bit_entropy": 0.047601409351504316,
+              "minimum_rounding_margin": 0.07696324586868286,
+              "readout_cone_gate_count": 16,
+              "readout_cone_mean_truth_bit_entropy": 0.07938115126644299,
+              "readout_cone_minimum_rounding_margin": 0.07915431261062622
+            },
+            {
+              "gate_count": 32,
+              "index": 12,
+              "mean_truth_bit_entropy": 0.058383520223838664,
+              "minimum_rounding_margin": 0.006898045539855957,
+              "readout_cone_gate_count": 8,
+              "readout_cone_mean_truth_bit_entropy": 0.13716077258453535,
+              "readout_cone_minimum_rounding_margin": 0.006898045539855957
+            },
+            {
+              "gate_count": 16,
+              "index": 13,
+              "mean_truth_bit_entropy": 0.06946638755650367,
+              "minimum_rounding_margin": 0.1500614583492279,
+              "readout_cone_gate_count": 4,
+              "readout_cone_mean_truth_bit_entropy": 0.08702655641698918,
+              "readout_cone_minimum_rounding_margin": 0.41532015800476074
+            },
+            {
+              "gate_count": 8,
+              "index": 14,
+              "mean_truth_bit_entropy": 0.05341932228420369,
+              "minimum_rounding_margin": 0.46152112260460854,
+              "readout_cone_gate_count": 2,
+              "readout_cone_mean_truth_bit_entropy": 0.09854336831726418,
+              "readout_cone_minimum_rounding_margin": 0.46152112260460854
+            },
+            {
+              "gate_count": 8,
+              "index": 15,
+              "mean_truth_bit_entropy": 0.08179293542933455,
+              "minimum_rounding_margin": 0.3902036026120186,
+              "readout_cone_gate_count": 1,
+              "readout_cone_mean_truth_bit_entropy": 0.11207693355651652,
+              "readout_cone_minimum_rounding_margin": 0.4728774055838585
+            }
+          ]
+        }
+      },
+      "native": {
+        "bit_errors": 4085,
+        "exact_all_32": false,
+        "perfect_grid_count": 0,
+        "terminal_summed_squared_error": 4085.0
+      },
+      "native_soft_hard_gap": 2037.49072265625,
+      "soft_terminal_summed_squared_error": 2047.50927734375,
+      "update": 150
+    },
+    {
+      "common": {
+        "bit_errors": 4085,
+        "exact_all_32": false,
+        "perfect_grid_count": 0,
+        "terminal_summed_squared_error": 4085.0
+      },
+      "common_soft_hard_gap": 2040.6324462890625,
+      "effective_table_displacement": {
+        "l2": 10.431892395019531,
+        "max_abs": 0.9887930750846863
+      },
+      "gate_diagnostics": {
+        "definition": "one-cell hard readout dependency closure; recurrent unrolling not expanded",
+        "layers": {
+          "perceive": [
+            {
+              "gate_count": 128,
+              "index": 0,
+              "mean_truth_bit_entropy": 0.057902261374199133,
+              "minimum_rounding_margin": 0.0021929144859313965,
+              "readout_cone_gate_count": 128,
+              "readout_cone_mean_truth_bit_entropy": 0.057902261374199133,
+              "readout_cone_minimum_rounding_margin": 0.0021929144859313965
+            },
+            {
+              "gate_count": 64,
+              "index": 1,
+              "mean_truth_bit_entropy": 0.08236770901000419,
+              "minimum_rounding_margin": 0.006374716758728027,
+              "readout_cone_gate_count": 64,
+              "readout_cone_mean_truth_bit_entropy": 0.08236770901000419,
+              "readout_cone_minimum_rounding_margin": 0.006374716758728027
+            },
+            {
+              "gate_count": 32,
+              "index": 2,
+              "mean_truth_bit_entropy": 0.10373400751082884,
+              "minimum_rounding_margin": 0.06256169080734253,
+              "readout_cone_gate_count": 32,
+              "readout_cone_mean_truth_bit_entropy": 0.10373400751082884,
+              "readout_cone_minimum_rounding_margin": 0.06256169080734253
+            }
+          ],
+          "update": [
+            {
+              "gate_count": 256,
+              "index": 0,
+              "mean_truth_bit_entropy": 0.04354370176225886,
+              "minimum_rounding_margin": 0.0040274858474731445,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.04354370176225886,
+              "readout_cone_minimum_rounding_margin": 0.0040274858474731445
+            },
+            {
+              "gate_count": 256,
+              "index": 1,
+              "mean_truth_bit_entropy": 0.03750027429183043,
+              "minimum_rounding_margin": 0.02353382110595703,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.03750027429183043,
+              "readout_cone_minimum_rounding_margin": 0.02353382110595703
+            },
+            {
+              "gate_count": 256,
+              "index": 2,
+              "mean_truth_bit_entropy": 0.03599367268721414,
+              "minimum_rounding_margin": 0.007876276969909668,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.03599367268721414,
+              "readout_cone_minimum_rounding_margin": 0.007876276969909668
+            },
+            {
+              "gate_count": 256,
+              "index": 3,
+              "mean_truth_bit_entropy": 0.03125510742361399,
+              "minimum_rounding_margin": 0.005938082933425903,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.03125510742361399,
+              "readout_cone_minimum_rounding_margin": 0.005938082933425903
+            },
+            {
+              "gate_count": 256,
+              "index": 4,
+              "mean_truth_bit_entropy": 0.03226094293296873,
+              "minimum_rounding_margin": 0.04943192005157471,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.03226094293296873,
+              "readout_cone_minimum_rounding_margin": 0.04943192005157471
+            },
+            {
+              "gate_count": 256,
+              "index": 5,
+              "mean_truth_bit_entropy": 0.02763075424264843,
+              "minimum_rounding_margin": 0.05411195755004883,
+              "readout_cone_gate_count": 251,
+              "readout_cone_mean_truth_bit_entropy": 0.02796991133025216,
+              "readout_cone_minimum_rounding_margin": 0.05411195755004883
+            },
+            {
+              "gate_count": 256,
+              "index": 6,
+              "mean_truth_bit_entropy": 0.022943305671033913,
+              "minimum_rounding_margin": 0.01738142967224121,
+              "readout_cone_gate_count": 227,
+              "readout_cone_mean_truth_bit_entropy": 0.022452387813316963,
+              "readout_cone_minimum_rounding_margin": 0.01738142967224121
+            },
+            {
+              "gate_count": 256,
+              "index": 7,
+              "mean_truth_bit_entropy": 0.0255437082990111,
+              "minimum_rounding_margin": 0.026505857706069946,
+              "readout_cone_gate_count": 178,
+              "readout_cone_mean_truth_bit_entropy": 0.02817554119982638,
+              "readout_cone_minimum_rounding_margin": 0.026505857706069946
+            },
+            {
+              "gate_count": 256,
+              "index": 8,
+              "mean_truth_bit_entropy": 0.021376562686711002,
+              "minimum_rounding_margin": 0.008314430713653564,
+              "readout_cone_gate_count": 114,
+              "readout_cone_mean_truth_bit_entropy": 0.02841482035713941,
+              "readout_cone_minimum_rounding_margin": 0.008314430713653564
+            },
+            {
+              "gate_count": 256,
+              "index": 9,
+              "mean_truth_bit_entropy": 0.022061713596800682,
+              "minimum_rounding_margin": 0.003707587718963623,
+              "readout_cone_gate_count": 64,
+              "readout_cone_mean_truth_bit_entropy": 0.04175863096307107,
+              "readout_cone_minimum_rounding_margin": 0.003707587718963623
+            },
+            {
+              "gate_count": 128,
+              "index": 10,
+              "mean_truth_bit_entropy": 0.02457566598108289,
+              "minimum_rounding_margin": 0.15056940913200378,
+              "readout_cone_gate_count": 32,
+              "readout_cone_mean_truth_bit_entropy": 0.0430711762412868,
+              "readout_cone_minimum_rounding_margin": 0.15056940913200378
+            },
+            {
+              "gate_count": 64,
+              "index": 11,
+              "mean_truth_bit_entropy": 0.03354500771987777,
+              "minimum_rounding_margin": 0.11514014005661011,
+              "readout_cone_gate_count": 16,
+              "readout_cone_mean_truth_bit_entropy": 0.04506786504777653,
+              "readout_cone_minimum_rounding_margin": 0.16770115494728088
+            },
+            {
+              "gate_count": 32,
+              "index": 12,
+              "mean_truth_bit_entropy": 0.046704095834474636,
+              "minimum_rounding_margin": 0.1724255084991455,
+              "readout_cone_gate_count": 8,
+              "readout_cone_mean_truth_bit_entropy": 0.09780548276507516,
+              "readout_cone_minimum_rounding_margin": 0.3522087037563324
+            },
+            {
+              "gate_count": 16,
+              "index": 13,
+              "mean_truth_bit_entropy": 0.052836770825939024,
+              "minimum_rounding_margin": 0.443345844745636,
+              "readout_cone_gate_count": 4,
+              "readout_cone_mean_truth_bit_entropy": 0.0664295715595661,
+              "readout_cone_minimum_rounding_margin": 0.4607766829431057
+            },
+            {
+              "gate_count": 8,
+              "index": 14,
+              "mean_truth_bit_entropy": 0.057339243841218024,
+              "minimum_rounding_margin": 0.4593871049582958,
+              "readout_cone_gate_count": 2,
+              "readout_cone_mean_truth_bit_entropy": 0.10518604422277167,
+              "readout_cone_minimum_rounding_margin": 0.4593871049582958
+            },
+            {
+              "gate_count": 8,
+              "index": 15,
+              "mean_truth_bit_entropy": 0.08915413786415075,
+              "minimum_rounding_margin": 0.24489831924438477,
+              "readout_cone_gate_count": 1,
+              "readout_cone_mean_truth_bit_entropy": 0.12000667939976568,
+              "readout_cone_minimum_rounding_margin": 0.47087088227272034
+            }
+          ]
+        }
+      },
+      "native": {
+        "bit_errors": 4085,
+        "exact_all_32": false,
+        "perfect_grid_count": 0,
+        "terminal_summed_squared_error": 4085.0
+      },
+      "native_soft_hard_gap": 2040.6324462890625,
+      "soft_terminal_summed_squared_error": 2044.3675537109375,
+      "update": 200
+    },
+    {
+      "common": {
+        "bit_errors": 4085,
+        "exact_all_32": false,
+        "perfect_grid_count": 0,
+        "terminal_summed_squared_error": 4085.0
+      },
+      "common_soft_hard_gap": 2051.50537109375,
+      "effective_table_displacement": {
+        "l2": 14.732868194580078,
+        "max_abs": 0.9986964464187622
+      },
+      "gate_diagnostics": {
+        "definition": "one-cell hard readout dependency closure; recurrent unrolling not expanded",
+        "layers": {
+          "perceive": [
+            {
+              "gate_count": 128,
+              "index": 0,
+              "mean_truth_bit_entropy": 0.06138704338780851,
+              "minimum_rounding_margin": 0.06361964344978333,
+              "readout_cone_gate_count": 128,
+              "readout_cone_mean_truth_bit_entropy": 0.06138704338780851,
+              "readout_cone_minimum_rounding_margin": 0.06361964344978333
+            },
+            {
+              "gate_count": 64,
+              "index": 1,
+              "mean_truth_bit_entropy": 0.10427228717935424,
+              "minimum_rounding_margin": 0.0019004344940185547,
+              "readout_cone_gate_count": 64,
+              "readout_cone_mean_truth_bit_entropy": 0.10427228717935424,
+              "readout_cone_minimum_rounding_margin": 0.0019004344940185547
+            },
+            {
+              "gate_count": 32,
+              "index": 2,
+              "mean_truth_bit_entropy": 0.0716438072653765,
+              "minimum_rounding_margin": 0.285383403301239,
+              "readout_cone_gate_count": 32,
+              "readout_cone_mean_truth_bit_entropy": 0.0716438072653765,
+              "readout_cone_minimum_rounding_margin": 0.285383403301239
+            }
+          ],
+          "update": [
+            {
+              "gate_count": 256,
+              "index": 0,
+              "mean_truth_bit_entropy": 0.07325241732321988,
+              "minimum_rounding_margin": 0.003512442111968994,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.07325241732321988,
+              "readout_cone_minimum_rounding_margin": 0.003512442111968994
+            },
+            {
+              "gate_count": 256,
+              "index": 1,
+              "mean_truth_bit_entropy": 0.05636835481030147,
+              "minimum_rounding_margin": 0.0004024505615234375,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.05636835481030147,
+              "readout_cone_minimum_rounding_margin": 0.0004024505615234375
+            },
+            {
+              "gate_count": 256,
+              "index": 2,
+              "mean_truth_bit_entropy": 0.05025821763680208,
+              "minimum_rounding_margin": 0.005953103303909302,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.05025821763680208,
+              "readout_cone_minimum_rounding_margin": 0.005953103303909302
+            },
+            {
+              "gate_count": 256,
+              "index": 3,
+              "mean_truth_bit_entropy": 0.05380577966271153,
+              "minimum_rounding_margin": 0.001134037971496582,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.05380577966271153,
+              "readout_cone_minimum_rounding_margin": 0.001134037971496582
+            },
+            {
+              "gate_count": 256,
+              "index": 4,
+              "mean_truth_bit_entropy": 0.047836054391462976,
+              "minimum_rounding_margin": 0.006456136703491211,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.047836054391462976,
+              "readout_cone_minimum_rounding_margin": 0.006456136703491211
+            },
+            {
+              "gate_count": 256,
+              "index": 5,
+              "mean_truth_bit_entropy": 0.044606139894960456,
+              "minimum_rounding_margin": 0.004831910133361816,
+              "readout_cone_gate_count": 251,
+              "readout_cone_mean_truth_bit_entropy": 0.0452700448097776,
+              "readout_cone_minimum_rounding_margin": 0.004831910133361816
+            },
+            {
+              "gate_count": 256,
+              "index": 6,
+              "mean_truth_bit_entropy": 0.041940613661062894,
+              "minimum_rounding_margin": 0.028986454010009766,
+              "readout_cone_gate_count": 227,
+              "readout_cone_mean_truth_bit_entropy": 0.04264752035798222,
+              "readout_cone_minimum_rounding_margin": 0.028986454010009766
+            },
+            {
+              "gate_count": 256,
+              "index": 7,
+              "mean_truth_bit_entropy": 0.03510845509803075,
+              "minimum_rounding_margin": 0.0013104677200317383,
+              "readout_cone_gate_count": 178,
+              "readout_cone_mean_truth_bit_entropy": 0.03610068301322239,
+              "readout_cone_minimum_rounding_margin": 0.0013104677200317383
+            },
+            {
+              "gate_count": 256,
+              "index": 8,
+              "mean_truth_bit_entropy": 0.03038729555884077,
+              "minimum_rounding_margin": 0.03418898582458496,
+              "readout_cone_gate_count": 114,
+              "readout_cone_mean_truth_bit_entropy": 0.042399688009124276,
+              "readout_cone_minimum_rounding_margin": 0.03418898582458496
+            },
+            {
+              "gate_count": 256,
+              "index": 9,
+              "mean_truth_bit_entropy": 0.026377679564494064,
+              "minimum_rounding_margin": 0.02592441439628601,
+              "readout_cone_gate_count": 64,
+              "readout_cone_mean_truth_bit_entropy": 0.04349042936330387,
+              "readout_cone_minimum_rounding_margin": 0.17665183544158936
+            },
+            {
+              "gate_count": 128,
+              "index": 10,
+              "mean_truth_bit_entropy": 0.033093120241977705,
+              "minimum_rounding_margin": 0.04859462380409241,
+              "readout_cone_gate_count": 32,
+              "readout_cone_mean_truth_bit_entropy": 0.04163514875325257,
+              "readout_cone_minimum_rounding_margin": 0.13283926248550415
+            },
+            {
+              "gate_count": 64,
+              "index": 11,
+              "mean_truth_bit_entropy": 0.030039197714520707,
+              "minimum_rounding_margin": 0.08984792232513428,
+              "readout_cone_gate_count": 16,
+              "readout_cone_mean_truth_bit_entropy": 0.04000672650934736,
+              "readout_cone_minimum_rounding_margin": 0.14995211362838745
+            },
+            {
+              "gate_count": 32,
+              "index": 12,
+              "mean_truth_bit_entropy": 0.04750371226489749,
+              "minimum_rounding_margin": 0.2603675425052643,
+              "readout_cone_gate_count": 8,
+              "readout_cone_mean_truth_bit_entropy": 0.10548927056293575,
+              "readout_cone_minimum_rounding_margin": 0.2603675425052643
+            },
+            {
+              "gate_count": 16,
+              "index": 13,
+              "mean_truth_bit_entropy": 0.046081269750823176,
+              "minimum_rounding_margin": 0.4591143727302551,
+              "readout_cone_gate_count": 4,
+              "readout_cone_mean_truth_bit_entropy": 0.05836254879831921,
+              "readout_cone_minimum_rounding_margin": 0.4614717774093151
+            },
+            {
+              "gate_count": 8,
+              "index": 14,
+              "mean_truth_bit_entropy": 0.07058065720843942,
+              "minimum_rounding_margin": 0.4215892553329468,
+              "readout_cone_gate_count": 2,
+              "readout_cone_mean_truth_bit_entropy": 0.149840738861936,
+              "readout_cone_minimum_rounding_margin": 0.4215892553329468
+            },
+            {
+              "gate_count": 8,
+              "index": 15,
+              "mean_truth_bit_entropy": 0.06313329516061053,
+              "minimum_rounding_margin": 0.47284730337560177,
+              "readout_cone_gate_count": 1,
+              "readout_cone_mean_truth_bit_entropy": 0.11805777956671355,
+              "readout_cone_minimum_rounding_margin": 0.47284730337560177
+            }
+          ]
+        }
+      },
+      "native": {
+        "bit_errors": 4085,
+        "exact_all_32": false,
+        "perfect_grid_count": 0,
+        "terminal_summed_squared_error": 4085.0
+      },
+      "native_soft_hard_gap": 2051.50537109375,
+      "soft_terminal_summed_squared_error": 2033.49462890625,
+      "update": 250
+    },
+    {
+      "common": {
+        "bit_errors": 4045,
+        "exact_all_32": false,
+        "perfect_grid_count": 0,
+        "terminal_summed_squared_error": 4045.0
+      },
+      "common_soft_hard_gap": 2049.2628173828125,
+      "effective_table_displacement": {
+        "l2": 19.91480827331543,
+        "max_abs": 0.999542772769928
+      },
+      "gate_diagnostics": {
+        "definition": "one-cell hard readout dependency closure; recurrent unrolling not expanded",
+        "layers": {
+          "perceive": [
+            {
+              "gate_count": 128,
+              "index": 0,
+              "mean_truth_bit_entropy": 0.07159180585830134,
+              "minimum_rounding_margin": 0.013336122035980225,
+              "readout_cone_gate_count": 128,
+              "readout_cone_mean_truth_bit_entropy": 0.07159180585830134,
+              "readout_cone_minimum_rounding_margin": 0.013336122035980225
+            },
+            {
+              "gate_count": 64,
+              "index": 1,
+              "mean_truth_bit_entropy": 0.10423625813213502,
+              "minimum_rounding_margin": 0.0006164014339447021,
+              "readout_cone_gate_count": 64,
+              "readout_cone_mean_truth_bit_entropy": 0.10423625813213502,
+              "readout_cone_minimum_rounding_margin": 0.0006164014339447021
+            },
+            {
+              "gate_count": 32,
+              "index": 2,
+              "mean_truth_bit_entropy": 0.06855628750845934,
+              "minimum_rounding_margin": 0.18180960416793823,
+              "readout_cone_gate_count": 32,
+              "readout_cone_mean_truth_bit_entropy": 0.06855628750845934,
+              "readout_cone_minimum_rounding_margin": 0.18180960416793823
+            }
+          ],
+          "update": [
+            {
+              "gate_count": 256,
+              "index": 0,
+              "mean_truth_bit_entropy": 0.09470660035694885,
+              "minimum_rounding_margin": 0.008347630500793457,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.09470660035694885,
+              "readout_cone_minimum_rounding_margin": 0.008347630500793457
+            },
+            {
+              "gate_count": 256,
+              "index": 1,
+              "mean_truth_bit_entropy": 0.07335379621966867,
+              "minimum_rounding_margin": 0.010733723640441895,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.07335379621966867,
+              "readout_cone_minimum_rounding_margin": 0.010733723640441895
+            },
+            {
+              "gate_count": 256,
+              "index": 2,
+              "mean_truth_bit_entropy": 0.06875753802055637,
+              "minimum_rounding_margin": 0.01173439621925354,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.06875753802055637,
+              "readout_cone_minimum_rounding_margin": 0.01173439621925354
+            },
+            {
+              "gate_count": 256,
+              "index": 3,
+              "mean_truth_bit_entropy": 0.0689133351297007,
+              "minimum_rounding_margin": 0.011147797107696533,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.0689133351297007,
+              "readout_cone_minimum_rounding_margin": 0.011147797107696533
+            },
+            {
+              "gate_count": 256,
+              "index": 4,
+              "mean_truth_bit_entropy": 0.059424602169493,
+              "minimum_rounding_margin": 0.017974257469177246,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.059424602169493,
+              "readout_cone_minimum_rounding_margin": 0.017974257469177246
+            },
+            {
+              "gate_count": 256,
+              "index": 5,
+              "mean_truth_bit_entropy": 0.05880715741272902,
+              "minimum_rounding_margin": 0.008062005043029785,
+              "readout_cone_gate_count": 251,
+              "readout_cone_mean_truth_bit_entropy": 0.05973904719774099,
+              "readout_cone_minimum_rounding_margin": 0.008062005043029785
+            },
+            {
+              "gate_count": 256,
+              "index": 6,
+              "mean_truth_bit_entropy": 0.057481590475486434,
+              "minimum_rounding_margin": 0.004736065864562988,
+              "readout_cone_gate_count": 227,
+              "readout_cone_mean_truth_bit_entropy": 0.057061899029843585,
+              "readout_cone_minimum_rounding_margin": 0.004736065864562988
+            },
+            {
+              "gate_count": 256,
+              "index": 7,
+              "mean_truth_bit_entropy": 0.04753519682934972,
+              "minimum_rounding_margin": 0.0033133625984191895,
+              "readout_cone_gate_count": 178,
+              "readout_cone_mean_truth_bit_entropy": 0.047435104228977946,
+              "readout_cone_minimum_rounding_margin": 0.0033133625984191895
+            },
+            {
+              "gate_count": 256,
+              "index": 8,
+              "mean_truth_bit_entropy": 0.041720038844755156,
+              "minimum_rounding_margin": 0.018633008003234863,
+              "readout_cone_gate_count": 114,
+              "readout_cone_mean_truth_bit_entropy": 0.048772183431246965,
+              "readout_cone_minimum_rounding_margin": 0.01933908462524414
+            },
+            {
+              "gate_count": 256,
+              "index": 9,
+              "mean_truth_bit_entropy": 0.03672022818034945,
+              "minimum_rounding_margin": 0.050813257694244385,
+              "readout_cone_gate_count": 64,
+              "readout_cone_mean_truth_bit_entropy": 0.05097949847336267,
+              "readout_cone_minimum_rounding_margin": 0.07593685388565063
+            },
+            {
+              "gate_count": 128,
+              "index": 10,
+              "mean_truth_bit_entropy": 0.04151722512915644,
+              "minimum_rounding_margin": 0.002250760793685913,
+              "readout_cone_gate_count": 32,
+              "readout_cone_mean_truth_bit_entropy": 0.053652307135755105,
+              "readout_cone_minimum_rounding_margin": 0.11427435278892517
+            },
+            {
+              "gate_count": 64,
+              "index": 11,
+              "mean_truth_bit_entropy": 0.03702433707856035,
+              "minimum_rounding_margin": 0.1847059428691864,
+              "readout_cone_gate_count": 16,
+              "readout_cone_mean_truth_bit_entropy": 0.046970420675437885,
+              "readout_cone_minimum_rounding_margin": 0.18871212005615234
+            },
+            {
+              "gate_count": 32,
+              "index": 12,
+              "mean_truth_bit_entropy": 0.05552656146833841,
+              "minimum_rounding_margin": 0.19062799215316772,
+              "readout_cone_gate_count": 8,
+              "readout_cone_mean_truth_bit_entropy": 0.09155218497226311,
+              "readout_cone_minimum_rounding_margin": 0.23989886045455933
+            },
+            {
+              "gate_count": 16,
+              "index": 13,
+              "mean_truth_bit_entropy": 0.07472677684039,
+              "minimum_rounding_margin": 0.23550766706466675,
+              "readout_cone_gate_count": 4,
+              "readout_cone_mean_truth_bit_entropy": 0.17306841679705087,
+              "readout_cone_minimum_rounding_margin": 0.23550766706466675
+            },
+            {
+              "gate_count": 8,
+              "index": 14,
+              "mean_truth_bit_entropy": 0.08766329315564982,
+              "minimum_rounding_margin": 0.10350149869918823,
+              "readout_cone_gate_count": 2,
+              "readout_cone_mean_truth_bit_entropy": 0.23026002694296022,
+              "readout_cone_minimum_rounding_margin": 0.10350149869918823
+            },
+            {
+              "gate_count": 8,
+              "index": 15,
+              "mean_truth_bit_entropy": 0.04964242016325693,
+              "minimum_rounding_margin": 0.47440171241760254,
+              "readout_cone_gate_count": 1,
+              "readout_cone_mean_truth_bit_entropy": 0.08721239820014823,
+              "readout_cone_minimum_rounding_margin": 0.4804729763418436
+            }
+          ]
+        }
+      },
+      "native": {
+        "bit_errors": 4045,
+        "exact_all_32": false,
+        "perfect_grid_count": 0,
+        "terminal_summed_squared_error": 4045.0
+      },
+      "native_soft_hard_gap": 2049.2628173828125,
+      "soft_terminal_summed_squared_error": 1995.7371826171875,
+      "update": 300
+    },
+    {
+      "common": {
+        "bit_errors": 3907,
+        "exact_all_32": false,
+        "perfect_grid_count": 0,
+        "terminal_summed_squared_error": 3907.0
+      },
+      "common_soft_hard_gap": 2002.800537109375,
+      "effective_table_displacement": {
+        "l2": 24.012304306030273,
+        "max_abs": 0.9996207356452942
+      },
+      "gate_diagnostics": {
+        "definition": "one-cell hard readout dependency closure; recurrent unrolling not expanded",
+        "layers": {
+          "perceive": [
+            {
+              "gate_count": 128,
+              "index": 0,
+              "mean_truth_bit_entropy": 0.08141207113453061,
+              "minimum_rounding_margin": 0.015207529067993164,
+              "readout_cone_gate_count": 128,
+              "readout_cone_mean_truth_bit_entropy": 0.08141207113453061,
+              "readout_cone_minimum_rounding_margin": 0.015207529067993164
+            },
+            {
+              "gate_count": 64,
+              "index": 1,
+              "mean_truth_bit_entropy": 0.08874003193084722,
+              "minimum_rounding_margin": 0.007829099893569946,
+              "readout_cone_gate_count": 64,
+              "readout_cone_mean_truth_bit_entropy": 0.08874003193084722,
+              "readout_cone_minimum_rounding_margin": 0.007829099893569946
+            },
+            {
+              "gate_count": 32,
+              "index": 2,
+              "mean_truth_bit_entropy": 0.05560191706040667,
+              "minimum_rounding_margin": 0.09855616092681885,
+              "readout_cone_gate_count": 32,
+              "readout_cone_mean_truth_bit_entropy": 0.05560191706040667,
+              "readout_cone_minimum_rounding_margin": 0.09855616092681885
+            }
+          ],
+          "update": [
+            {
+              "gate_count": 256,
+              "index": 0,
+              "mean_truth_bit_entropy": 0.09743670122391518,
+              "minimum_rounding_margin": 0.0019545257091522217,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.09743670122391518,
+              "readout_cone_minimum_rounding_margin": 0.0019545257091522217
+            },
+            {
+              "gate_count": 256,
+              "index": 1,
+              "mean_truth_bit_entropy": 0.0755384851090891,
+              "minimum_rounding_margin": 0.010438859462738037,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.0755384851090891,
+              "readout_cone_minimum_rounding_margin": 0.010438859462738037
+            },
+            {
+              "gate_count": 256,
+              "index": 2,
+              "mean_truth_bit_entropy": 0.06830780712631945,
+              "minimum_rounding_margin": 0.030623674392700195,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.06830780712631945,
+              "readout_cone_minimum_rounding_margin": 0.030623674392700195
+            },
+            {
+              "gate_count": 256,
+              "index": 3,
+              "mean_truth_bit_entropy": 0.07627815004601715,
+              "minimum_rounding_margin": 0.00975722074508667,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.07627815004601715,
+              "readout_cone_minimum_rounding_margin": 0.00975722074508667
+            },
+            {
+              "gate_count": 256,
+              "index": 4,
+              "mean_truth_bit_entropy": 0.07150017872909065,
+              "minimum_rounding_margin": 0.0020084381103515625,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.07150017872909065,
+              "readout_cone_minimum_rounding_margin": 0.0020084381103515625
+            },
+            {
+              "gate_count": 256,
+              "index": 5,
+              "mean_truth_bit_entropy": 0.06289693192936457,
+              "minimum_rounding_margin": 0.04279005527496338,
+              "readout_cone_gate_count": 251,
+              "readout_cone_mean_truth_bit_entropy": 0.0638750590645146,
+              "readout_cone_minimum_rounding_margin": 0.04279005527496338
+            },
+            {
+              "gate_count": 256,
+              "index": 6,
+              "mean_truth_bit_entropy": 0.05684452430122296,
+              "minimum_rounding_margin": 0.03362336754798889,
+              "readout_cone_gate_count": 227,
+              "readout_cone_mean_truth_bit_entropy": 0.05713164232045127,
+              "readout_cone_minimum_rounding_margin": 0.03362336754798889
+            },
+            {
+              "gate_count": 256,
+              "index": 7,
+              "mean_truth_bit_entropy": 0.05495604419164774,
+              "minimum_rounding_margin": 0.013265848159790039,
+              "readout_cone_gate_count": 178,
+              "readout_cone_mean_truth_bit_entropy": 0.056040729553796305,
+              "readout_cone_minimum_rounding_margin": 0.013265848159790039
+            },
+            {
+              "gate_count": 256,
+              "index": 8,
+              "mean_truth_bit_entropy": 0.0432835236800837,
+              "minimum_rounding_margin": 0.008104085922241211,
+              "readout_cone_gate_count": 114,
+              "readout_cone_mean_truth_bit_entropy": 0.04812449737952813,
+              "readout_cone_minimum_rounding_margin": 0.02958589792251587
+            },
+            {
+              "gate_count": 256,
+              "index": 9,
+              "mean_truth_bit_entropy": 0.04385911821114391,
+              "minimum_rounding_margin": 0.024334251880645752,
+              "readout_cone_gate_count": 64,
+              "readout_cone_mean_truth_bit_entropy": 0.07500471047512583,
+              "readout_cone_minimum_rounding_margin": 0.054227203130722046
+            },
+            {
+              "gate_count": 128,
+              "index": 10,
+              "mean_truth_bit_entropy": 0.05052266285097312,
+              "minimum_rounding_margin": 0.004726231098175049,
+              "readout_cone_gate_count": 32,
+              "readout_cone_mean_truth_bit_entropy": 0.08428895462973349,
+              "readout_cone_minimum_rounding_margin": 0.04417884349822998
+            },
+            {
+              "gate_count": 64,
+              "index": 11,
+              "mean_truth_bit_entropy": 0.04830918502813238,
+              "minimum_rounding_margin": 0.06931176781654358,
+              "readout_cone_gate_count": 16,
+              "readout_cone_mean_truth_bit_entropy": 0.060397420094739765,
+              "readout_cone_minimum_rounding_margin": 0.2202136516571045
+            },
+            {
+              "gate_count": 32,
+              "index": 12,
+              "mean_truth_bit_entropy": 0.08619040996785293,
+              "minimum_rounding_margin": 0.007208764553070068,
+              "readout_cone_gate_count": 8,
+              "readout_cone_mean_truth_bit_entropy": 0.1643758152652558,
+              "readout_cone_minimum_rounding_margin": 0.04300713539123535
+            },
+            {
+              "gate_count": 16,
+              "index": 13,
+              "mean_truth_bit_entropy": 0.06545780646321239,
+              "minimum_rounding_margin": 0.22552573680877686,
+              "readout_cone_gate_count": 4,
+              "readout_cone_mean_truth_bit_entropy": 0.18668883618645332,
+              "readout_cone_minimum_rounding_margin": 0.22552573680877686
+            },
+            {
+              "gate_count": 8,
+              "index": 14,
+              "mean_truth_bit_entropy": 0.08728256929025364,
+              "minimum_rounding_margin": 0.19183921813964844,
+              "readout_cone_gate_count": 2,
+              "readout_cone_mean_truth_bit_entropy": 0.12900494226358394,
+              "readout_cone_minimum_rounding_margin": 0.4167942553758621
+            },
+            {
+              "gate_count": 8,
+              "index": 15,
+              "mean_truth_bit_entropy": 0.051751294427169976,
+              "minimum_rounding_margin": 0.41418418288230896,
+              "readout_cone_gate_count": 1,
+              "readout_cone_mean_truth_bit_entropy": 0.051005658081375735,
+              "readout_cone_minimum_rounding_margin": 0.4868258172646165
+            }
+          ]
+        }
+      },
+      "native": {
+        "bit_errors": 3907,
+        "exact_all_32": false,
+        "perfect_grid_count": 0,
+        "terminal_summed_squared_error": 3907.0
+      },
+      "native_soft_hard_gap": 2002.800537109375,
+      "soft_terminal_summed_squared_error": 1904.199462890625,
+      "update": 350
+    },
+    {
+      "common": {
+        "bit_errors": 2700,
+        "exact_all_32": false,
+        "perfect_grid_count": 0,
+        "terminal_summed_squared_error": 2700.0
+      },
+      "common_soft_hard_gap": 1327.4375,
+      "effective_table_displacement": {
+        "l2": 27.41783332824707,
+        "max_abs": 0.9996359944343567
+      },
+      "gate_diagnostics": {
+        "definition": "one-cell hard readout dependency closure; recurrent unrolling not expanded",
+        "layers": {
+          "perceive": [
+            {
+              "gate_count": 128,
+              "index": 0,
+              "mean_truth_bit_entropy": 0.07108859888188776,
+              "minimum_rounding_margin": 0.03511703014373779,
+              "readout_cone_gate_count": 128,
+              "readout_cone_mean_truth_bit_entropy": 0.07108859888188776,
+              "readout_cone_minimum_rounding_margin": 0.03511703014373779
+            },
+            {
+              "gate_count": 64,
+              "index": 1,
+              "mean_truth_bit_entropy": 0.050208138219047085,
+              "minimum_rounding_margin": 0.001865088939666748,
+              "readout_cone_gate_count": 64,
+              "readout_cone_mean_truth_bit_entropy": 0.050208138219047085,
+              "readout_cone_minimum_rounding_margin": 0.001865088939666748
+            },
+            {
+              "gate_count": 32,
+              "index": 2,
+              "mean_truth_bit_entropy": 0.03687112194398805,
+              "minimum_rounding_margin": 0.34449172019958496,
+              "readout_cone_gate_count": 32,
+              "readout_cone_mean_truth_bit_entropy": 0.03687112194398805,
+              "readout_cone_minimum_rounding_margin": 0.34449172019958496
+            }
+          ],
+          "update": [
+            {
+              "gate_count": 256,
+              "index": 0,
+              "mean_truth_bit_entropy": 0.08272722946264582,
+              "minimum_rounding_margin": 0.015710830688476562,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.08272722946264582,
+              "readout_cone_minimum_rounding_margin": 0.015710830688476562
+            },
+            {
+              "gate_count": 256,
+              "index": 1,
+              "mean_truth_bit_entropy": 0.07784018169719678,
+              "minimum_rounding_margin": 0.02414727210998535,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.07784018169719678,
+              "readout_cone_minimum_rounding_margin": 0.02414727210998535
+            },
+            {
+              "gate_count": 256,
+              "index": 2,
+              "mean_truth_bit_entropy": 0.07646118827885227,
+              "minimum_rounding_margin": 0.0011807084083557129,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.07646118827885227,
+              "readout_cone_minimum_rounding_margin": 0.0011807084083557129
+            },
+            {
+              "gate_count": 256,
+              "index": 3,
+              "mean_truth_bit_entropy": 0.0781250350689391,
+              "minimum_rounding_margin": 0.02184760570526123,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.0781250350689391,
+              "readout_cone_minimum_rounding_margin": 0.02184760570526123
+            },
+            {
+              "gate_count": 256,
+              "index": 4,
+              "mean_truth_bit_entropy": 0.08196589681736369,
+              "minimum_rounding_margin": 0.02914869785308838,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.08196589681736369,
+              "readout_cone_minimum_rounding_margin": 0.02914869785308838
+            },
+            {
+              "gate_count": 256,
+              "index": 5,
+              "mean_truth_bit_entropy": 0.06188954347527841,
+              "minimum_rounding_margin": 0.002247333526611328,
+              "readout_cone_gate_count": 251,
+              "readout_cone_mean_truth_bit_entropy": 0.06277555409258462,
+              "readout_cone_minimum_rounding_margin": 0.002247333526611328
+            },
+            {
+              "gate_count": 256,
+              "index": 6,
+              "mean_truth_bit_entropy": 0.06134508839800808,
+              "minimum_rounding_margin": 0.008724808692932129,
+              "readout_cone_gate_count": 227,
+              "readout_cone_mean_truth_bit_entropy": 0.06018376980000649,
+              "readout_cone_minimum_rounding_margin": 0.008724808692932129
+            },
+            {
+              "gate_count": 256,
+              "index": 7,
+              "mean_truth_bit_entropy": 0.06212761650370904,
+              "minimum_rounding_margin": 0.0037818551063537598,
+              "readout_cone_gate_count": 178,
+              "readout_cone_mean_truth_bit_entropy": 0.06368741828507761,
+              "readout_cone_minimum_rounding_margin": 0.0037818551063537598
+            },
+            {
+              "gate_count": 256,
+              "index": 8,
+              "mean_truth_bit_entropy": 0.04924815569097414,
+              "minimum_rounding_margin": 0.052714914083480835,
+              "readout_cone_gate_count": 114,
+              "readout_cone_mean_truth_bit_entropy": 0.0548993354723421,
+              "readout_cone_minimum_rounding_margin": 0.08397895097732544
+            },
+            {
+              "gate_count": 256,
+              "index": 9,
+              "mean_truth_bit_entropy": 0.05066137340528823,
+              "minimum_rounding_margin": 0.0018637776374816895,
+              "readout_cone_gate_count": 64,
+              "readout_cone_mean_truth_bit_entropy": 0.07978160606131104,
+              "readout_cone_minimum_rounding_margin": 0.005776822566986084
+            },
+            {
+              "gate_count": 128,
+              "index": 10,
+              "mean_truth_bit_entropy": 0.04975406793161727,
+              "minimum_rounding_margin": 0.016866743564605713,
+              "readout_cone_gate_count": 32,
+              "readout_cone_mean_truth_bit_entropy": 0.08323360245109825,
+              "readout_cone_minimum_rounding_margin": 0.016866743564605713
+            },
+            {
+              "gate_count": 64,
+              "index": 11,
+              "mean_truth_bit_entropy": 0.05853078070430965,
+              "minimum_rounding_margin": 0.006463050842285156,
+              "readout_cone_gate_count": 16,
+              "readout_cone_mean_truth_bit_entropy": 0.10780005135446678,
+              "readout_cone_minimum_rounding_margin": 0.006463050842285156
+            },
+            {
+              "gate_count": 32,
+              "index": 12,
+              "mean_truth_bit_entropy": 0.07794724675753477,
+              "minimum_rounding_margin": 0.03200167417526245,
+              "readout_cone_gate_count": 8,
+              "readout_cone_mean_truth_bit_entropy": 0.13450432623067143,
+              "readout_cone_minimum_rounding_margin": 0.03200167417526245
+            },
+            {
+              "gate_count": 16,
+              "index": 13,
+              "mean_truth_bit_entropy": 0.032218656608757244,
+              "minimum_rounding_margin": 0.4460134953260422,
+              "readout_cone_gate_count": 4,
+              "readout_cone_mean_truth_bit_entropy": 0.05574239154922131,
+              "readout_cone_minimum_rounding_margin": 0.4460134953260422
+            },
+            {
+              "gate_count": 8,
+              "index": 14,
+              "mean_truth_bit_entropy": 0.06438965688063117,
+              "minimum_rounding_margin": 0.36551326513290405,
+              "readout_cone_gate_count": 2,
+              "readout_cone_mean_truth_bit_entropy": 0.10383976790914416,
+              "readout_cone_minimum_rounding_margin": 0.36551326513290405
+            },
+            {
+              "gate_count": 8,
+              "index": 15,
+              "mean_truth_bit_entropy": 0.03416718441300521,
+              "minimum_rounding_margin": 0.46602970361709595,
+              "readout_cone_gate_count": 1,
+              "readout_cone_mean_truth_bit_entropy": 0.029269002861096217,
+              "readout_cone_minimum_rounding_margin": 0.48716943990439177
+            }
+          ]
+        }
+      },
+      "native": {
+        "bit_errors": 2700,
+        "exact_all_32": false,
+        "perfect_grid_count": 0,
+        "terminal_summed_squared_error": 2700.0
+      },
+      "native_soft_hard_gap": 1327.4375,
+      "soft_terminal_summed_squared_error": 1372.5625,
+      "update": 400
+    },
+    {
+      "common": {
+        "bit_errors": 2108,
+        "exact_all_32": false,
+        "perfect_grid_count": 0,
+        "terminal_summed_squared_error": 2108.0
+      },
+      "common_soft_hard_gap": 1211.1798095703125,
+      "effective_table_displacement": {
+        "l2": 28.72609519958496,
+        "max_abs": 0.9996363520622253
+      },
+      "gate_diagnostics": {
+        "definition": "one-cell hard readout dependency closure; recurrent unrolling not expanded",
+        "layers": {
+          "perceive": [
+            {
+              "gate_count": 128,
+              "index": 0,
+              "mean_truth_bit_entropy": 0.07613273462891196,
+              "minimum_rounding_margin": 0.06275063753128052,
+              "readout_cone_gate_count": 128,
+              "readout_cone_mean_truth_bit_entropy": 0.07613273462891196,
+              "readout_cone_minimum_rounding_margin": 0.06275063753128052
+            },
+            {
+              "gate_count": 64,
+              "index": 1,
+              "mean_truth_bit_entropy": 0.04756144072682294,
+              "minimum_rounding_margin": 0.08693811297416687,
+              "readout_cone_gate_count": 64,
+              "readout_cone_mean_truth_bit_entropy": 0.04756144072682294,
+              "readout_cone_minimum_rounding_margin": 0.08693811297416687
+            },
+            {
+              "gate_count": 32,
+              "index": 2,
+              "mean_truth_bit_entropy": 0.0378814243618608,
+              "minimum_rounding_margin": 0.06139105558395386,
+              "readout_cone_gate_count": 32,
+              "readout_cone_mean_truth_bit_entropy": 0.0378814243618608,
+              "readout_cone_minimum_rounding_margin": 0.06139105558395386
+            }
+          ],
+          "update": [
+            {
+              "gate_count": 256,
+              "index": 0,
+              "mean_truth_bit_entropy": 0.08459402551075597,
+              "minimum_rounding_margin": 0.011904418468475342,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.08459402551075597,
+              "readout_cone_minimum_rounding_margin": 0.011904418468475342
+            },
+            {
+              "gate_count": 256,
+              "index": 1,
+              "mean_truth_bit_entropy": 0.0861038321063108,
+              "minimum_rounding_margin": 0.0030036568641662598,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.0861038321063108,
+              "readout_cone_minimum_rounding_margin": 0.0030036568641662598
+            },
+            {
+              "gate_count": 256,
+              "index": 2,
+              "mean_truth_bit_entropy": 0.07776324423177522,
+              "minimum_rounding_margin": 0.02485838532447815,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.07776324423177522,
+              "readout_cone_minimum_rounding_margin": 0.02485838532447815
+            },
+            {
+              "gate_count": 256,
+              "index": 3,
+              "mean_truth_bit_entropy": 0.07751291037043455,
+              "minimum_rounding_margin": 0.0006094276905059814,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.07751291037043455,
+              "readout_cone_minimum_rounding_margin": 0.0006094276905059814
+            },
+            {
+              "gate_count": 256,
+              "index": 4,
+              "mean_truth_bit_entropy": 0.08518411944790447,
+              "minimum_rounding_margin": 0.004131734371185303,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.08518411944790447,
+              "readout_cone_minimum_rounding_margin": 0.004131734371185303
+            },
+            {
+              "gate_count": 256,
+              "index": 5,
+              "mean_truth_bit_entropy": 0.06969804525772993,
+              "minimum_rounding_margin": 0.0040795207023620605,
+              "readout_cone_gate_count": 251,
+              "readout_cone_mean_truth_bit_entropy": 0.0705453925559172,
+              "readout_cone_minimum_rounding_margin": 0.0040795207023620605
+            },
+            {
+              "gate_count": 256,
+              "index": 6,
+              "mean_truth_bit_entropy": 0.06889453951390245,
+              "minimum_rounding_margin": 0.0121840238571167,
+              "readout_cone_gate_count": 227,
+              "readout_cone_mean_truth_bit_entropy": 0.0684042421729378,
+              "readout_cone_minimum_rounding_margin": 0.0121840238571167
+            },
+            {
+              "gate_count": 256,
+              "index": 7,
+              "mean_truth_bit_entropy": 0.06863698758729694,
+              "minimum_rounding_margin": 0.0023308396339416504,
+              "readout_cone_gate_count": 178,
+              "readout_cone_mean_truth_bit_entropy": 0.06859215649474354,
+              "readout_cone_minimum_rounding_margin": 0.0023308396339416504
+            },
+            {
+              "gate_count": 256,
+              "index": 8,
+              "mean_truth_bit_entropy": 0.05883204870356276,
+              "minimum_rounding_margin": 0.018392741680145264,
+              "readout_cone_gate_count": 114,
+              "readout_cone_mean_truth_bit_entropy": 0.06261504149329172,
+              "readout_cone_minimum_rounding_margin": 0.02317601442337036
+            },
+            {
+              "gate_count": 256,
+              "index": 9,
+              "mean_truth_bit_entropy": 0.0561049720155162,
+              "minimum_rounding_margin": 0.020656049251556396,
+              "readout_cone_gate_count": 64,
+              "readout_cone_mean_truth_bit_entropy": 0.08132725436499842,
+              "readout_cone_minimum_rounding_margin": 0.020656049251556396
+            },
+            {
+              "gate_count": 128,
+              "index": 10,
+              "mean_truth_bit_entropy": 0.05779615380622889,
+              "minimum_rounding_margin": 0.03413182497024536,
+              "readout_cone_gate_count": 32,
+              "readout_cone_mean_truth_bit_entropy": 0.09060481562860112,
+              "readout_cone_minimum_rounding_margin": 0.09367755055427551
+            },
+            {
+              "gate_count": 64,
+              "index": 11,
+              "mean_truth_bit_entropy": 0.0575885816895272,
+              "minimum_rounding_margin": 0.06641140580177307,
+              "readout_cone_gate_count": 16,
+              "readout_cone_mean_truth_bit_entropy": 0.08450180412466723,
+              "readout_cone_minimum_rounding_margin": 0.06641140580177307
+            },
+            {
+              "gate_count": 32,
+              "index": 12,
+              "mean_truth_bit_entropy": 0.07117217197864428,
+              "minimum_rounding_margin": 0.015970051288604736,
+              "readout_cone_gate_count": 8,
+              "readout_cone_mean_truth_bit_entropy": 0.10025109186894687,
+              "readout_cone_minimum_rounding_margin": 0.015970051288604736
+            },
+            {
+              "gate_count": 16,
+              "index": 13,
+              "mean_truth_bit_entropy": 0.05274362116134575,
+              "minimum_rounding_margin": 0.3269627094268799,
+              "readout_cone_gate_count": 4,
+              "readout_cone_mean_truth_bit_entropy": 0.03391822834248355,
+              "readout_cone_minimum_rounding_margin": 0.4559416025876999
+            },
+            {
+              "gate_count": 8,
+              "index": 14,
+              "mean_truth_bit_entropy": 0.10560724299766407,
+              "minimum_rounding_margin": 0.17854198813438416,
+              "readout_cone_gate_count": 2,
+              "readout_cone_mean_truth_bit_entropy": 0.08674882222671168,
+              "readout_cone_minimum_rounding_margin": 0.3543853163719177
+            },
+            {
+              "gate_count": 8,
+              "index": 15,
+              "mean_truth_bit_entropy": 0.06059228176122769,
+              "minimum_rounding_margin": 0.25875627994537354,
+              "readout_cone_gate_count": 1,
+              "readout_cone_mean_truth_bit_entropy": 0.010991646768971934,
+              "readout_cone_minimum_rounding_margin": 0.4962072146590799
+            }
+          ]
+        }
+      },
+      "native": {
+        "bit_errors": 2108,
+        "exact_all_32": false,
+        "perfect_grid_count": 0,
+        "terminal_summed_squared_error": 2108.0
+      },
+      "native_soft_hard_gap": 1211.1798095703125,
+      "soft_terminal_summed_squared_error": 896.8201904296875,
+      "update": 450
+    },
+    {
+      "common": {
+        "bit_errors": 2165,
+        "exact_all_32": false,
+        "perfect_grid_count": 0,
+        "terminal_summed_squared_error": 2165.0
+      },
+      "common_soft_hard_gap": 1414.589599609375,
+      "effective_table_displacement": {
+        "l2": 29.36467742919922,
+        "max_abs": 0.9996363520622253
+      },
+      "gate_diagnostics": {
+        "definition": "one-cell hard readout dependency closure; recurrent unrolling not expanded",
+        "layers": {
+          "perceive": [
+            {
+              "gate_count": 128,
+              "index": 0,
+              "mean_truth_bit_entropy": 0.07985788000400512,
+              "minimum_rounding_margin": 0.0034780502319335938,
+              "readout_cone_gate_count": 128,
+              "readout_cone_mean_truth_bit_entropy": 0.07985788000400512,
+              "readout_cone_minimum_rounding_margin": 0.0034780502319335938
+            },
+            {
+              "gate_count": 64,
+              "index": 1,
+              "mean_truth_bit_entropy": 0.046125239794525694,
+              "minimum_rounding_margin": 0.0740119218826294,
+              "readout_cone_gate_count": 64,
+              "readout_cone_mean_truth_bit_entropy": 0.046125239794525694,
+              "readout_cone_minimum_rounding_margin": 0.0740119218826294
+            },
+            {
+              "gate_count": 32,
+              "index": 2,
+              "mean_truth_bit_entropy": 0.035805939543621164,
+              "minimum_rounding_margin": 0.05806100368499756,
+              "readout_cone_gate_count": 32,
+              "readout_cone_mean_truth_bit_entropy": 0.035805939543621164,
+              "readout_cone_minimum_rounding_margin": 0.05806100368499756
+            }
+          ],
+          "update": [
+            {
+              "gate_count": 256,
+              "index": 0,
+              "mean_truth_bit_entropy": 0.08820995269582105,
+              "minimum_rounding_margin": 0.005567967891693115,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.08820995269582105,
+              "readout_cone_minimum_rounding_margin": 0.005567967891693115
+            },
+            {
+              "gate_count": 256,
+              "index": 1,
+              "mean_truth_bit_entropy": 0.08857382804914868,
+              "minimum_rounding_margin": 0.004695713520050049,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.08857382804914868,
+              "readout_cone_minimum_rounding_margin": 0.004695713520050049
+            },
+            {
+              "gate_count": 256,
+              "index": 2,
+              "mean_truth_bit_entropy": 0.08054049677494769,
+              "minimum_rounding_margin": 0.009956777095794678,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.08054049677494769,
+              "readout_cone_minimum_rounding_margin": 0.009956777095794678
+            },
+            {
+              "gate_count": 256,
+              "index": 3,
+              "mean_truth_bit_entropy": 0.07895361701627174,
+              "minimum_rounding_margin": 0.006679117679595947,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.07895361701627174,
+              "readout_cone_minimum_rounding_margin": 0.006679117679595947
+            },
+            {
+              "gate_count": 256,
+              "index": 4,
+              "mean_truth_bit_entropy": 0.08177934603290711,
+              "minimum_rounding_margin": 0.012704014778137207,
+              "readout_cone_gate_count": 256,
+              "readout_cone_mean_truth_bit_entropy": 0.08177934603290711,
+              "readout_cone_minimum_rounding_margin": 0.012704014778137207
+            },
+            {
+              "gate_count": 256,
+              "index": 5,
+              "mean_truth_bit_entropy": 0.07514990922319627,
+              "minimum_rounding_margin": 0.0071118175983428955,
+              "readout_cone_gate_count": 251,
+              "readout_cone_mean_truth_bit_entropy": 0.07553708588597682,
+              "readout_cone_minimum_rounding_margin": 0.0071118175983428955
+            },
+            {
+              "gate_count": 256,
+              "index": 6,
+              "mean_truth_bit_entropy": 0.07365705838957276,
+              "minimum_rounding_margin": 0.013672292232513428,
+              "readout_cone_gate_count": 227,
+              "readout_cone_mean_truth_bit_entropy": 0.07441134608463122,
+              "readout_cone_minimum_rounding_margin": 0.013672292232513428
+            },
+            {
+              "gate_count": 256,
+              "index": 7,
+              "mean_truth_bit_entropy": 0.07301113644891674,
+              "minimum_rounding_margin": 7.331371307373047e-06,
+              "readout_cone_gate_count": 178,
+              "readout_cone_mean_truth_bit_entropy": 0.07338696509365551,
+              "readout_cone_minimum_rounding_margin": 0.01454421877861023
+            },
+            {
+              "gate_count": 256,
+              "index": 8,
+              "mean_truth_bit_entropy": 0.06570235211491128,
+              "minimum_rounding_margin": 0.0011661350727081299,
+              "readout_cone_gate_count": 114,
+              "readout_cone_mean_truth_bit_entropy": 0.07178682958208316,
+              "readout_cone_minimum_rounding_margin": 0.0038027167320251465
+            },
+            {
+              "gate_count": 256,
+              "index": 9,
+              "mean_truth_bit_entropy": 0.060757731312277984,
+              "minimum_rounding_margin": 0.058100104331970215,
+              "readout_cone_gate_count": 64,
+              "readout_cone_mean_truth_bit_entropy": 0.08491181860331345,
+              "readout_cone_minimum_rounding_margin": 0.08281826972961426
+            },
+            {
+              "gate_count": 128,
+              "index": 10,
+              "mean_truth_bit_entropy": 0.060731195804572605,
+              "minimum_rounding_margin": 0.007233142852783203,
+              "readout_cone_gate_count": 32,
+              "readout_cone_mean_truth_bit_entropy": 0.09173363961892028,
+              "readout_cone_minimum_rounding_margin": 0.04392188787460327
+            },
+            {
+              "gate_count": 64,
+              "index": 11,
+              "mean_truth_bit_entropy": 0.059863695971332606,
+              "minimum_rounding_margin": 0.0069966912269592285,
+              "readout_cone_gate_count": 16,
+              "readout_cone_mean_truth_bit_entropy": 0.0744943063816716,
+              "readout_cone_minimum_rounding_margin": 0.016891777515411377
+            },
+            {
+              "gate_count": 32,
+              "index": 12,
+              "mean_truth_bit_entropy": 0.07215558769564112,
+              "minimum_rounding_margin": 0.13161617517471313,
+              "readout_cone_gate_count": 8,
+              "readout_cone_mean_truth_bit_entropy": 0.09487216044228695,
+              "readout_cone_minimum_rounding_margin": 0.19342440366744995
+            },
+            {
+              "gate_count": 16,
+              "index": 13,
+              "mean_truth_bit_entropy": 0.0775533830595747,
+              "minimum_rounding_margin": 0.07053866982460022,
+              "readout_cone_gate_count": 4,
+              "readout_cone_mean_truth_bit_entropy": 0.03687251448194592,
+              "readout_cone_minimum_rounding_margin": 0.4369509220123291
+            },
+            {
+              "gate_count": 8,
+              "index": 14,
+              "mean_truth_bit_entropy": 0.1254029990125053,
+              "minimum_rounding_margin": 0.09298700094223022,
+              "readout_cone_gate_count": 2,
+              "readout_cone_mean_truth_bit_entropy": 0.11188499070138562,
+              "readout_cone_minimum_rounding_margin": 0.27329403162002563
+            },
+            {
+              "gate_count": 8,
+              "index": 15,
+              "mean_truth_bit_entropy": 0.06884495222892638,
+              "minimum_rounding_margin": 0.08264881372451782,
+              "readout_cone_gate_count": 1,
+              "readout_cone_mean_truth_bit_entropy": 0.007767183037410234,
+              "readout_cone_minimum_rounding_margin": 0.49752807547338307
+            }
+          ]
+        }
+      },
+      "native": {
+        "bit_errors": 2165,
+        "exact_all_32": false,
+        "perfect_grid_count": 0,
+        "terminal_summed_squared_error": 2165.0
+      },
+      "native_soft_hard_gap": 1414.589599609375,
+      "soft_terminal_summed_squared_error": 750.410400390625,
+      "update": 500
+    }
+  ],
+  "experiment_id": "R002",
+  "failure_reason": null,
+  "final_training_metric": {
+    "clipped_element_count": 0,
+    "common_gate_id_changes": 5,
+    "gradient_l2": 3.6393661499023438,
+    "gradient_max_abs": 1.7475323677062988,
+    "native_gate_id_changes": 5,
+    "parameter_update_l2": 1.8144404888153076,
+    "pre_update_soft_loss": 44.722557067871094,
+    "q_step_l2": 0.13882412016391754,
+    "q_step_max_abs": 0.023687899112701416,
+    "synchronized_seconds": 0.08237818209454417,
+    "update": 500
+  },
+  "first_exact_saved_checkpoint": {
+    "common": null,
+    "native": null
+  },
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 5090, 610.57.04, 32607 MiB, 12.0",
+    "kernel": "7.1.8-arch1-3"
+  },
+  "kernel": "common_multilinear_truth_table",
+  "median_update_seconds": 0.08195689448621124,
+  "metric_definitions": {
+    "first_exact": "first saved checkpoint with zero hard bit errors on all 32 probe grids",
+    "soft_hard_gap": "hard terminal SSE minus soft terminal SSE on the fixed 32-grid probe",
+    "training_loss": "pre-update terminal channel-0 squared error summed over batch and grid"
+  },
+  "pairing": {
+    "categorical_initial_params_sha256": "79b118676f6d0ba2f6a5eb38978f8fcf003a091ab684e34cdfc1ce081eb5bc43",
+    "initial_effective_table_discrepancy": {
+      "atol": 1e-07,
+      "max_abs_error": 5.960464477539063e-08,
+      "max_relative_error": 3.2074554093535014e-07,
+      "ok": true,
+      "rtol": 1e-06
+    },
+    "training_stream_sha256": "e56d599f7736c1c124b3de0336b0f71176b9de7030acb72251af3d16538e5522",
+    "truth_initial_params_sha256": "f598d902ad2bb1249dae13ac21dfff9e0c9c8bbe809ad8250ba803cd765694c8",
+    "wiring_sha256": "f32b40d780f8f485f7007b2b312a5381e12589d6f0efb126ae456f4a65278bd9"
+  },
+  "posthoc_boolean_simplification": {
+    "declared_enumeration_cap": 16,
+    "note": "analysis only; never changes trial status or training",
+    "status": "pending_completed_hard_circuit"
+  },
+  "probe": {
+    "bytes": 18268,
+    "kind": "R001_fixed_evaluation_set",
+    "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/fixed_evaluation_set.npz",
+    "sha256": "d49ecf23fd932fba25b1068f8c90820265a05fd90daadc372089520889090b2f"
+  },
+  "representation": "truth",
+  "run_id": "R002_formal_attempt01_seed12_truth_reference_decay",
+  "schema_version": 1,
+  "seed": 12,
+  "started_at": "2026-09-10T03:33:51.589753+00:00",
+  "status": "completed",
+  "synchronized_update_seconds": 41.027783463709056,
+  "training_compile_seconds": 9.204407420009375,
+  "training_loop_wall_seconds": 53.22004801197909,
+  "weight_decay": 0.01
+}

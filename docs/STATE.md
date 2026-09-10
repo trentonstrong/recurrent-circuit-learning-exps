@@ -1,8 +1,8 @@
 # Research state
 
-Updated: 2026-09-10. Direct notebook parity and bounded R002 validation are
-complete. Next: review the validation return, then explicitly launch the formal
-64-run R002 sweep if accepted.
+Updated: 2026-09-10. The formal 64-run R002 paired sweep is complete. Next:
+review its aggregate comparison, then separately validate the successful-circuit
+simplification and publish the 317 MB artifact bundle to durable storage.
 
 ## Objective
 
@@ -28,7 +28,7 @@ eventually periodic. Length and storage-size generalization need separate tests.
 | --- | --- | --- |
 | [R000](../experiments/R000/SPEC.md) | Pinned source, standalone JAX, numerical parity | Direct notebook and cross-runtime checks passed |
 | [R001](../experiments/R001/SPEC.md) | Synchronous checkerboard, canonical seed 23 | Completed; fixed 32-grid probe exact at update 500 |
-| [R002](../experiments/R002/SPEC.md) | Paired gate-coordinate and weight-decay comparison | Implemented and preflight-validated; formal sweep not launched |
+| [R002](../experiments/R002/SPEC.md) | Paired gate-coordinate and weight-decay comparison | Formal 64-run sweep completed; no supported coordinate or decay advantage |
 | [R003](../experiments/R003/SPEC.md) | Same-function mixture interventions | Proposed mechanism study |
 
 Use a known recurrent learner as a positive control before redesigning the
@@ -100,8 +100,24 @@ records the common multilinear kernel bridge, FP64 derivative checks, export
 checks, and all four two-update seed-23 preflights. Checkpoint resumption is exact
 within every condition and the pairing hashes agree. A failed first kernel check
 is retained: default GPU matrix-multiply precision was insufficient for `p @ T`,
-so the selected kernel declares highest dot precision. R002 is ready for review,
-not completed, and none of seeds 0--15 has been launched.
+so the selected kernel declares highest dot precision. That validation supported
+the subsequently completed formal launch.
+
+## Formal R002 result
+
+The [`formal_attempt01`](../results/R002_formal_attempt01/summary.md) sweep
+completed all 64 frozen trials: seeds 0--15 paired across four gate-coordinate
+and decay conditions. Exact update-500 success on the fixed 32-grid probe was
+1/16 for categorical/reference-decay, 1/16 for truth/reference-decay, 2/16 for
+categorical/no-decay, and 0/16 for truth/no-decay. Native and common hardening
+agree on every exact-success classification.
+
+All paired success tests have two-sided exact p-values at least 0.5, and all
+paired-bootstrap intervals for mean common-hard error differences cross zero.
+This cohort therefore does not support a gate-coordinate or weight-decay
+advantage. The sparse successes and wide intervals do not establish equivalence.
+R002-specific Boolean simplification of the successful circuits and durable
+publication of the 317 MB artifact bundle remain separate follow-up work.
 
 The [review of commit e94789f](../reviews/R001_e94789f/REVIEW.md) identified the
 now-closed direct-notebook validation gap. Shared access to the existing R001

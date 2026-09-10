@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "experiment_id": "R002",
+  "sweep_id": "formal_attempt01",
+  "generated_at": "2026-09-10T03:52:14Z",
+  "status": "completed",
+  "conclusion": "No gate-coordinate or weight-decay advantage is supported by this 16-seed paired cohort.",
+  "identities": {
+    "code_commit": "d220b65da822707cd7db3dc90df69d9250aa0f77",
+    "config_sha256": "9632f2135e8262903c40cdaeba211e4f5bebac22c2b8f45c0e2100b993111bb9",
+    "probe_sha256": "d49ecf23fd932fba25b1068f8c90820265a05fd90daadc372089520889090b2f"
+  },
+  "integrity": {
+    "completed_trials": 64,
+    "failed_trials": 0,
+    "trials_per_condition": 16,
+    "trials_per_seed": 4,
+    "metrics_streams_verified": 64,
+    "updates_per_metrics_stream": 500,
+    "artifact_records_verified": 1536,
+    "artifact_identity_failures": 0,
+    "pairing_failures": 0,
+    "initial_effective_table_match_failures": 0,
+    "maximum_initial_effective_table_absolute_error": 5.960464477539063e-08
+  },
+  "uncertainty_methods": {
+    "success_rate": "Two-sided 95% Wilson score interval.",
+    "paired_success": "Two-sided exact McNemar test over discordant seeds.",
+    "paired_common_error": "Two-sided percentile interval from 100000 paired-seed bootstrap resamples of the mean difference, Python random.Random seed 20260910. Positive differences favor the second named condition because lower error is better."
+  },
+  "conditions": {
+    "categorical_reference_decay": {
+      "successes": 1,
+      "trials": 16,
+      "success_rate": 0.0625,
+      "success_rate_wilson_95": [0.01111934476464252, 0.28328737570298945],
+      "success_seeds": [4],
+      "median_final_common_bit_errors": 1373.0,
+      "final_common_bit_errors_iqr": [772.0, 2654.5],
+      "median_final_soft_sse": 617.653564453125,
+      "median_final_common_soft_hard_gap": 849.6178588867188
+    },
+    "truth_reference_decay": {
+      "successes": 1,
+      "trials": 16,
+      "success_rate": 0.0625,
+      "success_rate_wilson_95": [0.01111934476464252, 0.28328737570298945],
+      "success_seeds": [14],
+      "median_final_common_bit_errors": 2083.5,
+      "final_common_bit_errors_iqr": [975.5, 2630.25],
+      "median_final_soft_sse": 517.23681640625,
+      "median_final_common_soft_hard_gap": 1442.0604248046875
+    },
+    "categorical_no_decay": {
+      "successes": 2,
+      "trials": 16,
+      "success_rate": 0.125,
+      "success_rate_wilson_95": [0.03497748774324047, 0.36022827265758695],
+      "success_seeds": [4, 15],
+      "median_final_common_bit_errors": 1938.0,
+      "final_common_bit_errors_iqr": [567.5, 3061.0],
+      "median_final_soft_sse": 865.8533325195312,
+      "median_final_common_soft_hard_gap": 1071.97607421875
+    },
+    "truth_no_decay": {
+      "successes": 0,
+      "trials": 16,
+      "success_rate": 0.0,
+      "success_rate_wilson_95": [0.0, 0.1936076805344365],
+      "success_seeds": [],
+      "median_final_common_bit_errors": 2069.5,
+      "final_common_bit_errors_iqr": [1350.0, 2219.0],
+      "median_final_soft_sse": 635.2340393066406,
+      "median_final_common_soft_hard_gap": 1210.8276748657227
+    }
+  },
+  "paired_comparisons": {
+    "truth_vs_categorical_reference_decay": {
+      "success_rate_difference": 0.0,
+      "truth_only_successes": 1,
+      "categorical_only_successes": 1,
+      "exact_mcnemar_two_sided_p": 1.0,
+      "mean_common_bit_error_difference": 323.1875,
+      "mean_common_bit_error_difference_bootstrap_95": [-318.25, 979.9390624999996]
+    },
+    "truth_vs_categorical_no_decay": {
+      "success_rate_difference": -0.125,
+      "truth_only_successes": 0,
+      "categorical_only_successes": 2,
+      "exact_mcnemar_two_sided_p": 0.5,
+      "mean_common_bit_error_difference": 143.75,
+      "mean_common_bit_error_difference_bootstrap_95": [-549.8765625, 737.6906249999993]
+    },
+    "no_decay_vs_decay_categorical": {
+      "success_rate_difference": 0.0625,
+      "no_decay_only_successes": 1,
+      "decay_only_successes": 0,
+      "exact_mcnemar_two_sided_p": 1.0,
+      "mean_common_bit_error_difference": 270.25,
+      "mean_common_bit_error_difference_bootstrap_95": [-564.5, 1122.6890624999996]
+    },
+    "no_decay_vs_decay_truth": {
+      "success_rate_difference": -0.0625,
+      "no_decay_only_successes": 0,
+      "decay_only_successes": 1,
+      "exact_mcnemar_two_sided_p": 1.0,
+      "mean_common_bit_error_difference": 90.8125,
+      "mean_common_bit_error_difference_bootstrap_95": [-591.3765625, 793.1921874999989]
+    }
+  },
+  "runtime": {
+    "cohort_started_at": "2026-09-10T02:40:16.344084+00:00",
+    "cohort_ended_at": "2026-09-10T03:50:03.417661+00:00",
+    "elapsed_seconds": 4187.073577,
+    "summed_training_compile_seconds": 569.0758943841793,
+    "summed_evaluation_compile_seconds": 140.54808531608433,
+    "summed_synchronized_update_seconds": 2623.1615667173173,
+    "summed_training_loop_wall_seconds": 3470.0000020987354,
+    "recorded_peak_device_memory_bytes": 1681023744,
+    "recorded_peak_device_memory_note": "Single-process allocator high-water mark; not an independent per-condition peak comparison."
+  },
+  "boundaries": {
+    "probe_grids_are_independent_trials": false,
+    "posthoc_boolean_simplification": "pending separate validated review",
+    "artifact_storage": "local only; durable publication pending",
+    "artifact_bytes": 317110063,
+    "result_record_bytes": 19425729
+  }
+}

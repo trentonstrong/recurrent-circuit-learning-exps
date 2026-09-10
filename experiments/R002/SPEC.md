@@ -1,11 +1,16 @@
 # R002 — Matched gate coordinates and weight decay
 
-Status: implemented and bounded-preflight validated; full sweep not launched.
+Status: formal 64-run sweep completed in
+[`formal_attempt01`](../../results/R002_formal_attempt01/summary.md).
 The [implementation handoff](IMPLEMENTATION_HANDOFF.md) specified direct notebook
 parity, the paired runner, and bounded validation. Those checks are recorded in
 the [R000 parity result](../../results/R000_20260910_direct_notebook_parity_attempt01/summary.md)
 and [R002 validation result](../../results/R002_20260910_validation/summary.md).
 The [full handoff](../../docs/RECURRENT_BASELINE_HANDOFF.md) is the detailed protocol.
+The paired cohort found 1/16 exact categorical/reference-decay trials, 1/16
+exact truth/reference-decay trials, 2/16 exact categorical/no-decay trials, and
+0/16 exact truth/no-decay trials. Paired uncertainty does not support an
+advantage for either coordinate system or decay setting.
 
 Use 16 paired seeds, 0–15, with the synchronous architecture and 500 updates:
 
