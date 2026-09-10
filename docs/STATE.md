@@ -1,6 +1,6 @@
 # Research state
 
-Updated: 2026-09-09. R000 implementation and office-5090 parity are complete.
+Updated: 2026-09-10. R000 implementation and office-5090 parity are complete.
 The canonical R001 seed-23 run completed and established the recurrent positive
 control. Review that evidence before starting R002.
 
@@ -59,6 +59,15 @@ zero native-hard bit errors at checkpoint 250 and remained exact through the
 primary update-500 checkpoint. The final soft summed squared error on that set
 was 0.1815665. This establishes one working recurrent-learning example, not a
 success-rate estimate or a sequence-compression result.
+
+The [checkpoint review](../reviews/R001_checkpoints/REVIEW.md) independently
+replays the released hard circuits and all saved hard probe trajectories. Exact
+simplification leaves three binary operations in the full eight-channel local
+rule at checkpoint 250 and four at checkpoint 500, plus routing and state.
+The visible recurrent cores use two and three state channels respectively.
+Some recorded gate changes preserve the complete hard update rule; others
+preserve visible behavior or only the terminal result. These measurements do
+not establish continuous neutral optimizer paths or complete description lengths.
 
 The source and dimensionality audits are recorded in the
 [manifest](../references/difflogic_ca/source_manifest.json). These are completed
