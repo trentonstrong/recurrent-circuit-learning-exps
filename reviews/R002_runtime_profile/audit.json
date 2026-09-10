@@ -1,0 +1,2166 @@
+{
+  "source_commit": "60ef04441ff16e26e395e28b9c5c63cb7d2849af",
+  "verification": {
+    "result_files_hash_verified": 9,
+    "trajectory_records_checked": 8448,
+    "mode_count": 128,
+    "unique_rule_hashes": 96,
+    "fresh_probe_raw_bytes_reconstructed": true,
+    "scope": "Committed records and their internal mathematical consistency; separate subset replay verifies available Boolean source payloads."
+  },
+  "primary_common_table": [
+    {
+      "condition": "categorical_reference_decay",
+      "tick20_original_successes": 1,
+      "tick64_original_successes": 4,
+      "tick64_all66_successes": 4,
+      "universal_correct": 4,
+      "all_original_orbits_certified_eventually_correct": 4,
+      "core_size_median": 26.0,
+      "core_size_min": 2,
+      "core_size_max": 36,
+      "disjoint_classification_counts": {
+        "universal_eventual_target": 4,
+        "universal_persistent_wrong_bit": 8,
+        "unresolved_orbits_and_universal_test": 1,
+        "all_66_orbits_eventually_wrong": 2,
+        "mixed_correct_wrong_cycle_phases": 1
+      }
+    },
+    {
+      "condition": "truth_reference_decay",
+      "tick20_original_successes": 1,
+      "tick64_original_successes": 6,
+      "tick64_all66_successes": 5,
+      "universal_correct": 3,
+      "all_original_orbits_certified_eventually_correct": 4,
+      "core_size_median": 125.5,
+      "core_size_min": 75,
+      "core_size_max": 236,
+      "disjoint_classification_counts": {
+        "all_66_orbits_eventually_correct": 1,
+        "universal_persistent_wrong_bit": 9,
+        "mixed_correct_wrong_cycle_phases": 2,
+        "universal_eventual_target": 3,
+        "all_66_orbits_eventually_wrong": 1
+      }
+    },
+    {
+      "condition": "categorical_no_decay",
+      "tick20_original_successes": 2,
+      "tick64_original_successes": 5,
+      "tick64_all66_successes": 5,
+      "universal_correct": 5,
+      "all_original_orbits_certified_eventually_correct": 5,
+      "core_size_median": 10.0,
+      "core_size_min": 2,
+      "core_size_max": 35,
+      "disjoint_classification_counts": {
+        "all_66_orbits_eventually_wrong": 3,
+        "universal_persistent_wrong_bit": 7,
+        "universal_eventual_target": 5,
+        "unresolved_orbits_and_universal_test": 1
+      }
+    },
+    {
+      "condition": "truth_no_decay",
+      "tick20_original_successes": 0,
+      "tick64_original_successes": 0,
+      "tick64_all66_successes": 0,
+      "universal_correct": 0,
+      "all_original_orbits_certified_eventually_correct": 0,
+      "core_size_median": 99.0,
+      "core_size_min": 44,
+      "core_size_max": 199,
+      "disjoint_classification_counts": {
+        "universal_persistent_wrong_bit": 12,
+        "all_66_orbits_eventually_wrong": 2,
+        "mixed_correct_wrong_cycle_phases": 2
+      }
+    }
+  ],
+  "primary_disjoint_counts": {
+    "all_66_orbits_eventually_wrong": 8,
+    "universal_eventual_target": 12,
+    "universal_persistent_wrong_bit": 36,
+    "all_66_orbits_eventually_correct": 1,
+    "unresolved_orbits_and_universal_test": 2,
+    "mixed_correct_wrong_cycle_phases": 5
+  },
+  "structure_pairs": {
+    "reference_decay": {
+      "paired_truth_minus_categorical_core_sizes": [
+        117,
+        154,
+        51,
+        62,
+        74,
+        160,
+        53,
+        101,
+        133,
+        139,
+        55,
+        143,
+        206,
+        128,
+        85,
+        61
+      ],
+      "truth_larger_pairs": 16
+    },
+    "no_decay": {
+      "paired_truth_minus_categorical_core_sizes": [
+        151,
+        136,
+        53,
+        35,
+        98,
+        108,
+        87,
+        127,
+        81,
+        78,
+        31,
+        36,
+        180,
+        159,
+        86,
+        52
+      ],
+      "truth_larger_pairs": 16
+    }
+  },
+  "phase_examples": [
+    {
+      "seed": 2,
+      "run_id": "R002_formal_attempt01_seed02_truth_reference_decay",
+      "full_periods": [
+        8
+      ],
+      "visible_periods": [
+        4
+      ],
+      "target_fractions": [
+        0.25
+      ],
+      "perfect_counts_at_ticks_64_through_79": {
+        "original_probe": [
+          32,
+          0,
+          0,
+          0,
+          32,
+          0,
+          0,
+          0,
+          32,
+          0,
+          0,
+          0,
+          32,
+          0,
+          0,
+          0
+        ],
+        "fresh_probe": [
+          32,
+          0,
+          0,
+          0,
+          32,
+          0,
+          0,
+          0,
+          32,
+          0,
+          0,
+          0,
+          32,
+          0,
+          0,
+          0
+        ],
+        "all_zero": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        "all_one": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "seed": 14,
+      "run_id": "R002_formal_attempt01_seed14_truth_reference_decay",
+      "full_periods": [
+        2
+      ],
+      "visible_periods": [
+        2
+      ],
+      "target_fractions": [
+        0.5
+      ],
+      "perfect_counts_at_ticks_64_through_79": {
+        "original_probe": [
+          32,
+          0,
+          32,
+          0,
+          32,
+          0,
+          32,
+          0,
+          32,
+          0,
+          32,
+          0,
+          32,
+          0,
+          32,
+          0
+        ],
+        "fresh_probe": [
+          32,
+          0,
+          32,
+          0,
+          32,
+          0,
+          32,
+          0,
+          32,
+          0,
+          32,
+          0,
+          32,
+          0,
+          32,
+          0
+        ],
+        "all_zero": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "all_one": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      }
+    }
+  ],
+  "primary_modes": [
+    {
+      "run_id": "R002_formal_attempt01_seed00_categorical_no_decay",
+      "seed": 0,
+      "condition": "categorical_no_decay",
+      "classification": "all_66_orbits_eventually_wrong",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 18,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed00_categorical_reference_decay",
+      "seed": 0,
+      "condition": "categorical_reference_decay",
+      "classification": "universal_eventual_target",
+      "cycle_behavior_counts": {
+        "all_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": true,
+      "all_66_success_at_64": true,
+      "certified_settling_tick": 34,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": 33,
+        "fresh_probe": 33,
+        "all_zero": 32,
+        "all_one": 32
+      },
+      "visible_core_binary_nodes": 3,
+      "visible_core_state_channels": [
+        0,
+        3,
+        5
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed00_truth_no_decay",
+      "seed": 0,
+      "condition": "truth_no_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 169,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed00_truth_reference_decay",
+      "seed": 0,
+      "condition": "truth_reference_decay",
+      "classification": "all_66_orbits_eventually_correct",
+      "cycle_behavior_counts": {
+        "all_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": true,
+      "all_66_success_at_64": true,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": 45,
+        "fresh_probe": 39,
+        "all_zero": 31,
+        "all_one": 41
+      },
+      "visible_core_binary_nodes": 120,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed01_categorical_no_decay",
+      "seed": 1,
+      "condition": "categorical_no_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 14,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed01_categorical_reference_decay",
+      "seed": 1,
+      "condition": "categorical_reference_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 12,
+      "visible_core_state_channels": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed01_truth_no_decay",
+      "seed": 1,
+      "condition": "truth_no_decay",
+      "classification": "all_66_orbits_eventually_wrong",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 150,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed01_truth_reference_decay",
+      "seed": 1,
+      "condition": "truth_reference_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 166,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed02_categorical_no_decay",
+      "seed": 2,
+      "condition": "categorical_no_decay",
+      "classification": "all_66_orbits_eventually_wrong",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 21,
+      "visible_core_state_channels": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed02_categorical_reference_decay",
+      "seed": 2,
+      "condition": "categorical_reference_decay",
+      "classification": "unresolved_orbits_and_universal_test",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 62,
+        "unresolved_by_cap": 4
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 32,
+      "visible_core_state_channels": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed02_truth_no_decay",
+      "seed": 2,
+      "condition": "truth_no_decay",
+      "classification": "all_66_orbits_eventually_wrong",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 74,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed02_truth_reference_decay",
+      "seed": 2,
+      "condition": "truth_reference_decay",
+      "classification": "mixed_correct_wrong_cycle_phases",
+      "cycle_behavior_counts": {
+        "some_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": true,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": 56,
+        "fresh_probe": 56,
+        "all_zero": 47,
+        "all_one": 56
+      },
+      "visible_core_binary_nodes": 83,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed03_categorical_no_decay",
+      "seed": 3,
+      "condition": "categorical_no_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 9,
+      "visible_core_state_channels": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed03_categorical_reference_decay",
+      "seed": 3,
+      "condition": "categorical_reference_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 13,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed03_truth_no_decay",
+      "seed": 3,
+      "condition": "truth_no_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 44,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed03_truth_reference_decay",
+      "seed": 3,
+      "condition": "truth_reference_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 75,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed04_categorical_no_decay",
+      "seed": 4,
+      "condition": "categorical_no_decay",
+      "classification": "universal_eventual_target",
+      "cycle_behavior_counts": {
+        "all_phases_correct": 66
+      },
+      "original_success_at_20": true,
+      "original_success_at_64": true,
+      "all_66_success_at_64": true,
+      "certified_settling_tick": 16,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": 16,
+        "fresh_probe": 16,
+        "all_zero": 15,
+        "all_one": 14
+      },
+      "visible_core_binary_nodes": 2,
+      "visible_core_state_channels": [
+        0,
+        6
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed04_categorical_reference_decay",
+      "seed": 4,
+      "condition": "categorical_reference_decay",
+      "classification": "universal_eventual_target",
+      "cycle_behavior_counts": {
+        "all_phases_correct": 66
+      },
+      "original_success_at_20": true,
+      "original_success_at_64": true,
+      "all_66_success_at_64": true,
+      "certified_settling_tick": 16,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": 16,
+        "fresh_probe": 16,
+        "all_zero": 15,
+        "all_one": 14
+      },
+      "visible_core_binary_nodes": 2,
+      "visible_core_state_channels": [
+        0,
+        6
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed04_truth_no_decay",
+      "seed": 4,
+      "condition": "truth_no_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 100,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed04_truth_reference_decay",
+      "seed": 4,
+      "condition": "truth_reference_decay",
+      "classification": "universal_eventual_target",
+      "cycle_behavior_counts": {
+        "all_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": true,
+      "all_66_success_at_64": true,
+      "certified_settling_tick": 29,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": 23,
+        "fresh_probe": 23,
+        "all_zero": 22,
+        "all_one": 22
+      },
+      "visible_core_binary_nodes": 76,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed05_categorical_no_decay",
+      "seed": 5,
+      "condition": "categorical_no_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 9,
+      "visible_core_state_channels": [
+        0,
+        1,
+        3,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed05_categorical_reference_decay",
+      "seed": 5,
+      "condition": "categorical_reference_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 36,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed05_truth_no_decay",
+      "seed": 5,
+      "condition": "truth_no_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 117,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed05_truth_reference_decay",
+      "seed": 5,
+      "condition": "truth_reference_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 196,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed06_categorical_no_decay",
+      "seed": 6,
+      "condition": "categorical_no_decay",
+      "classification": "universal_eventual_target",
+      "cycle_behavior_counts": {
+        "all_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": true,
+      "all_66_success_at_64": true,
+      "certified_settling_tick": 31,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": 30,
+        "fresh_probe": 30,
+        "all_zero": 30,
+        "all_one": 30
+      },
+      "visible_core_binary_nodes": 14,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed06_categorical_reference_decay",
+      "seed": 6,
+      "condition": "categorical_reference_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 24,
+      "visible_core_state_channels": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed06_truth_no_decay",
+      "seed": 6,
+      "condition": "truth_no_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 101,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed06_truth_reference_decay",
+      "seed": 6,
+      "condition": "truth_reference_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 77,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed07_categorical_no_decay",
+      "seed": 7,
+      "condition": "categorical_no_decay",
+      "classification": "universal_eventual_target",
+      "cycle_behavior_counts": {
+        "all_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": true,
+      "all_66_success_at_64": true,
+      "certified_settling_tick": 23,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": 23,
+        "fresh_probe": 23,
+        "all_zero": 22,
+        "all_one": 23
+      },
+      "visible_core_binary_nodes": 3,
+      "visible_core_state_channels": [
+        0,
+        5,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed07_categorical_reference_decay",
+      "seed": 7,
+      "condition": "categorical_reference_decay",
+      "classification": "universal_eventual_target",
+      "cycle_behavior_counts": {
+        "all_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": true,
+      "all_66_success_at_64": true,
+      "certified_settling_tick": 30,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": 30,
+        "fresh_probe": 30,
+        "all_zero": 25,
+        "all_one": 24
+      },
+      "visible_core_binary_nodes": 30,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed07_truth_no_decay",
+      "seed": 7,
+      "condition": "truth_no_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 130,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed07_truth_reference_decay",
+      "seed": 7,
+      "condition": "truth_reference_decay",
+      "classification": "universal_eventual_target",
+      "cycle_behavior_counts": {
+        "all_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": true,
+      "all_66_success_at_64": true,
+      "certified_settling_tick": 48,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": 48,
+        "fresh_probe": 48,
+        "all_zero": 43,
+        "all_one": 48
+      },
+      "visible_core_binary_nodes": 131,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed08_categorical_no_decay",
+      "seed": 8,
+      "condition": "categorical_no_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 17,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed08_categorical_reference_decay",
+      "seed": 8,
+      "condition": "categorical_reference_decay",
+      "classification": "all_66_orbits_eventually_wrong",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 12,
+      "visible_core_state_channels": [
+        0,
+        2,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed08_truth_no_decay",
+      "seed": 8,
+      "condition": "truth_no_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 98,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed08_truth_reference_decay",
+      "seed": 8,
+      "condition": "truth_reference_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 145,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed09_categorical_no_decay",
+      "seed": 9,
+      "condition": "categorical_no_decay",
+      "classification": "universal_eventual_target",
+      "cycle_behavior_counts": {
+        "all_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": true,
+      "all_66_success_at_64": true,
+      "certified_settling_tick": 25,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": 25,
+        "fresh_probe": 25,
+        "all_zero": 25,
+        "all_one": 22
+      },
+      "visible_core_binary_nodes": 5,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed09_categorical_reference_decay",
+      "seed": 9,
+      "condition": "categorical_reference_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 7,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        4,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed09_truth_no_decay",
+      "seed": 9,
+      "condition": "truth_no_decay",
+      "classification": "mixed_correct_wrong_cycle_phases",
+      "cycle_behavior_counts": {
+        "some_phases_correct": 17,
+        "all_phases_correct": 47,
+        "no_phases_correct": 2
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": 25,
+        "all_one": 26
+      },
+      "visible_core_binary_nodes": 83,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed09_truth_reference_decay",
+      "seed": 9,
+      "condition": "truth_reference_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 146,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed10_categorical_no_decay",
+      "seed": 10,
+      "condition": "categorical_no_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": 18
+      },
+      "visible_core_binary_nodes": 35,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed10_categorical_reference_decay",
+      "seed": 10,
+      "condition": "categorical_reference_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 31,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed10_truth_no_decay",
+      "seed": 10,
+      "condition": "truth_no_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 66,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed10_truth_reference_decay",
+      "seed": 10,
+      "condition": "truth_reference_decay",
+      "classification": "universal_eventual_target",
+      "cycle_behavior_counts": {
+        "all_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": true,
+      "all_66_success_at_64": true,
+      "certified_settling_tick": 29,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": 29,
+        "fresh_probe": 29,
+        "all_zero": 29,
+        "all_one": 26
+      },
+      "visible_core_binary_nodes": 86,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed11_categorical_no_decay",
+      "seed": 11,
+      "condition": "categorical_no_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 11,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        6
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed11_categorical_reference_decay",
+      "seed": 11,
+      "condition": "categorical_reference_decay",
+      "classification": "all_66_orbits_eventually_wrong",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 28,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed11_truth_no_decay",
+      "seed": 11,
+      "condition": "truth_no_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 47,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed11_truth_reference_decay",
+      "seed": 11,
+      "condition": "truth_reference_decay",
+      "classification": "all_66_orbits_eventually_wrong",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 171,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed12_categorical_no_decay",
+      "seed": 12,
+      "condition": "categorical_no_decay",
+      "classification": "all_66_orbits_eventually_wrong",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 19,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed12_categorical_reference_decay",
+      "seed": 12,
+      "condition": "categorical_reference_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 30,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed12_truth_no_decay",
+      "seed": 12,
+      "condition": "truth_no_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 199,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed12_truth_reference_decay",
+      "seed": 12,
+      "condition": "truth_reference_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 59,
+        "unresolved_by_cap": 7
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 236,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed13_categorical_no_decay",
+      "seed": 13,
+      "condition": "categorical_no_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 4,
+      "visible_core_state_channels": [
+        0,
+        4,
+        6
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed13_categorical_reference_decay",
+      "seed": 13,
+      "condition": "categorical_reference_decay",
+      "classification": "universal_eventual_target",
+      "cycle_behavior_counts": {
+        "all_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": true,
+      "all_66_success_at_64": true,
+      "certified_settling_tick": 25,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": 22,
+        "fresh_probe": 23,
+        "all_zero": 22,
+        "all_one": 21
+      },
+      "visible_core_binary_nodes": 31,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        6
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed13_truth_no_decay",
+      "seed": 13,
+      "condition": "truth_no_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 163,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed13_truth_reference_decay",
+      "seed": 13,
+      "condition": "truth_reference_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 159,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed14_categorical_no_decay",
+      "seed": 14,
+      "condition": "categorical_no_decay",
+      "classification": "unresolved_orbits_and_universal_test",
+      "cycle_behavior_counts": {
+        "unresolved_by_cap": 64,
+        "no_phases_correct": 2
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 3,
+      "visible_core_state_channels": [
+        0
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed14_categorical_reference_decay",
+      "seed": 14,
+      "condition": "categorical_reference_decay",
+      "classification": "mixed_correct_wrong_cycle_phases",
+      "cycle_behavior_counts": {
+        "some_phases_correct": 46,
+        "no_phases_correct": 20
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": 15,
+        "all_one": 14
+      },
+      "visible_core_binary_nodes": 5,
+      "visible_core_state_channels": [
+        0,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed14_truth_no_decay",
+      "seed": 14,
+      "condition": "truth_no_decay",
+      "classification": "mixed_correct_wrong_cycle_phases",
+      "cycle_behavior_counts": {
+        "some_phases_correct": 64,
+        "no_phases_correct": 2
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": 15,
+        "all_one": 14
+      },
+      "visible_core_binary_nodes": 89,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed14_truth_reference_decay",
+      "seed": 14,
+      "condition": "truth_reference_decay",
+      "classification": "mixed_correct_wrong_cycle_phases",
+      "cycle_behavior_counts": {
+        "some_phases_correct": 66
+      },
+      "original_success_at_20": true,
+      "original_success_at_64": true,
+      "all_66_success_at_64": true,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": 20,
+        "fresh_probe": 20,
+        "all_zero": 16,
+        "all_one": 14
+      },
+      "visible_core_binary_nodes": 90,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed15_categorical_no_decay",
+      "seed": 15,
+      "condition": "categorical_no_decay",
+      "classification": "universal_eventual_target",
+      "cycle_behavior_counts": {
+        "all_phases_correct": 66
+      },
+      "original_success_at_20": true,
+      "original_success_at_64": true,
+      "all_66_success_at_64": true,
+      "certified_settling_tick": 20,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": 20,
+        "fresh_probe": 20,
+        "all_zero": 19,
+        "all_one": 20
+      },
+      "visible_core_binary_nodes": 9,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed15_categorical_reference_decay",
+      "seed": 15,
+      "condition": "categorical_reference_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 36,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed15_truth_no_decay",
+      "seed": 15,
+      "condition": "truth_no_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 61,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "run_id": "R002_formal_attempt01_seed15_truth_reference_decay",
+      "seed": 15,
+      "condition": "truth_reference_decay",
+      "classification": "universal_persistent_wrong_bit",
+      "cycle_behavior_counts": {
+        "no_phases_correct": 66
+      },
+      "original_success_at_20": false,
+      "original_success_at_64": false,
+      "all_66_success_at_64": false,
+      "certified_settling_tick": null,
+      "first_simultaneous_hit_by_group": {
+        "original_probe": null,
+        "fresh_probe": null,
+        "all_zero": null,
+        "all_one": null
+      },
+      "visible_core_binary_nodes": 97,
+      "visible_core_state_channels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  ]
+}

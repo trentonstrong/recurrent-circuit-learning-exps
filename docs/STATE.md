@@ -184,6 +184,26 @@ These are exploratory diagnostics on the same 16 paired training seeds, not
 new training trials, basin-volume estimates, minimum circuit descriptions, or
 evidence of grid-size or sequence generalization.
 
+The [independent runtime-profile review](../reviews/R002_runtime_profile/REVIEW.md)
+checks all nine committed result-file hashes and all 8,448 trajectory records,
+and replays the six available source runs in both hardening modes through tick
+256 (792 logical trajectories). It distinguishes 12 universally convergent
+common-hard circuits, one additional circuit with correct fixed points on all
+66 starts, five with mixed correct/wrong cycle phases, 36 universal persistent
+failures, eight with target-free cycles on all 66 starts, and two unresolved
+by both forms of analysis. At tick 64, 15 circuits pass the original probes but
+14 pass all 66 starts: truth/reference-decay seed 2 has full period eight,
+visible period four, and a different phase for the zero initialization.
+
+The same review finds a complete separation in the current simplified visible
+core operation counts: categorical circuits span 2–36, direct-truth circuits
+44–236, with direct truth larger in every paired seed under both decay settings.
+These are representation-dependent constructive counts, not proven minima.
+This gives a concrete motivation for R003's proposed geometry diagnostic; it
+does not yet identify the cause of the size difference. Source replay in the
+independent review covers six runs, not the other 58 or the external tick-metric
+and witness payloads.
+
 The [review of commit e94789f](../reviews/R001_e94789f/REVIEW.md) identified the
 now-closed direct-notebook validation gap. Shared access to the existing R001
 checkpoint bundle is provided by the experiment-scoped
