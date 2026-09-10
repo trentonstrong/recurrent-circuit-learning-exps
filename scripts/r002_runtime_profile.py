@@ -1539,7 +1539,7 @@ def main() -> None:
             handle.close()
         per_seed_path = result_directory / "per_seed.csv"
         with per_seed_path.open("w", newline="") as handle:
-            writer = csv.writer(handle)
+            writer = csv.writer(handle, lineterminator="\n")
             writer.writerow(
                 [
                     "seed",
