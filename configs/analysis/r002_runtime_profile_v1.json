@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "protocol_id": "R002_runtime_profile_v1",
+  "source_cohort": "R002_formal_attempt01",
+  "training_code_commit": "d220b65da822707cd7db3dc90df69d9250aa0f77",
+  "optimizer_update": 500,
+  "hardening_modes": ["common", "native"],
+  "grid_size": [16, 16],
+  "channels": 8,
+  "boundary": "constant_zero",
+  "observer_channel": 0,
+  "target": "anchored_2x2_checkerboard",
+  "horizon": 256,
+  "report_ticks": [20, 21, 22, 25, 32, 64, 128, 256],
+  "initializations": {
+    "original_probe_count": 32,
+    "fresh_probe_count": 32,
+    "fresh_probe_bit_generator": "numpy.random.PCG64",
+    "fresh_probe_seed": 20260910,
+    "all_zero_count": 1,
+    "all_one_count": 1
+  },
+  "universal_state_diagnostic": {
+    "method": "sound_set_valued_boolean_propagation",
+    "tick_cap": 256
+  },
+  "simplifier": "reviews/R002_circuits/refine_circuits.py:FactoredDAG",
+  "original_probe_sha256": "d49ecf23fd932fba25b1068f8c90820265a05fd90daadc372089520889090b2f"
+}
