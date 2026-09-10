@@ -1,13 +1,12 @@
 # Research state
 
 Updated: 2026-09-10. The formal 64-run R002 paired sweep, independent trajectory
-review, artifact publication, and selected six-run hard-circuit review are
-complete. The circuit review distinguishes late convergence, phase-dependent
-success, and persistent Boolean failure. The next agreed analysis is to profile
-runtime behavior across all 64 frozen circuits; its
-[implementation handoff](../experiments/R002/RUNTIME_PROFILE_HANDOFF.md) is ready.
-The profile itself is not yet implemented or run. A uniform training-budget
-continuation and R003's same-function mechanism diagnostic remain separate options.
+review, artifact publication, selected six-run hard-circuit review, and bounded
+full-cohort runtime profile are complete. The profile distinguishes late
+convergence, phase-dependent success, and persistent Boolean failure without
+changing the frozen tick-20 outcomes. A uniform training-budget continuation
+and R003's same-function mechanism diagnostic remain separate options; neither
+has been launched.
 
 ## Objective
 
@@ -33,7 +32,7 @@ eventually periodic. Length and storage-size generalization need separate tests.
 | --- | --- | --- |
 | [R000](../experiments/R000/SPEC.md) | Pinned source, standalone JAX, numerical parity | Direct notebook and cross-runtime checks passed |
 | [R001](../experiments/R001/SPEC.md) | Synchronous checkerboard, canonical seed 23 | Completed; fixed 32-grid probe exact at update 500 |
-| [R002](../experiments/R002/SPEC.md) | Paired gate-coordinate and weight-decay comparison | Formal 64-run sweep completed; no supported coordinate or decay advantage |
+| [R002](../experiments/R002/SPEC.md) | Paired gate-coordinate and weight-decay comparison | Sweep and bounded runtime profile completed; no supported coordinate or decay advantage |
 | [R003](../experiments/R003/SPEC.md) | Same-function mixture interventions | Proposed mechanism study |
 
 Use a known recurrent learner as a positive control before redesigning the
@@ -158,16 +157,32 @@ This establishes equality between saved discrete snapshots, not a continuous
 neutral optimizer path. Reported simplified gate counts are constructive
 representation-dependent bounds, not minimum or complete description lengths.
 These selected outcomes do not establish condition-wide complexity differences
-or generalization across grid sizes. No new training or full-cohort runtime
-profile has been performed.
+or generalization across grid sizes.
 
-The agreed `R002_runtime_profile_v1` diagnostic holds update-500 circuits fixed
-and measures ticks 0 through 256 for common and native hardening. It retains
-the original 32 probes and adds one shared set of 32 fresh probes plus zero/one
-initializations. The handoff specifies exact full-state cycle detection,
-finite-window versus certified settling, phase witnesses, universal-state
-certificates, and circuit-size proxies. Validation is followed by the bounded
-full-cohort analysis; original tick-20 classifications remain unchanged.
+The completed
+[`R002_runtime_profile_v1`](../results/R002_formal_attempt01_runtime_profile_attempt01/summary.md)
+diagnostic holds all update-500 circuits fixed and measures ticks 0 through 256
+for common and native hardening. It accounts for 128 run/hardening modes and
+8,448 trajectories from the original probes, one shared fresh probe set, and
+the zero/one states. Of 120 modes that failed at tick 20, 22 are demonstrably
+late generators under a declared later readout or universal certificate. Of
+the eight original-success modes, the two seed-14 truth/reference modes remain
+phase dependent; all eight also succeed at tick 20 on the sampled fresh and
+constant initializations. Universal propagation certifies persistent failure
+for 72 modes. Four modes remain unresolved by both the bounded replay and the
+universal abstraction, while another two have unresolved sampled orbits but a
+persistent-failure certificate. Common and native counts agree for these
+headlines, so the corresponding primary common-hard counts are 11, 1, 36, and
+2 circuits respectively.
+
+The analysis verified all 256 unique source artifacts before execution, found
+96 unique Boolean rules among the 128 labeled modes, and retained all source
+identities while reusing 32 byte-identical profiles. Exact full-state cycles,
+ten wrong-phase witnesses, every-tick error/Hamming arrays, universal traces,
+figures, and a compact review bundle are recorded under the analysis manifest.
+These are exploratory diagnostics on the same 16 paired training seeds, not
+new training trials, basin-volume estimates, minimum circuit descriptions, or
+evidence of grid-size or sequence generalization.
 
 The [review of commit e94789f](../reviews/R001_e94789f/REVIEW.md) identified the
 now-closed direct-notebook validation gap. Shared access to the existing R001

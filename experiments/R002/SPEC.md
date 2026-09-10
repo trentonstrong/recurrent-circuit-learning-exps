@@ -1,7 +1,10 @@
 # R002 — Matched gate coordinates and weight decay
 
 Status: formal 64-run sweep completed in
-[`formal_attempt01`](../../results/R002_formal_attempt01/summary.md).
+[`formal_attempt01`](../../results/R002_formal_attempt01/summary.md), followed by
+the completed bounded
+[`R002_runtime_profile_v1`](../../results/R002_formal_attempt01_runtime_profile_attempt01/summary.md)
+analysis of all frozen update-500 circuits.
 The [implementation handoff](IMPLEMENTATION_HANDOFF.md) specified direct notebook
 parity, the paired runner, and bounded validation. Those checks are recorded in
 the [R000 parity result](../../results/R000_20260910_direct_notebook_parity_attempt01/summary.md)
@@ -14,11 +17,19 @@ advantage for either coordinate system or decay setting. Its checkpoint,
 trajectory, and final-circuit payloads are published under the experiment-scoped
 [`experiment/R002` release](https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/tag/experiment/R002).
 
-The [selected circuit review](../../reviews/R002_circuits/REVIEW.md) is complete.
-The subsequent [runtime-profile handoff](RUNTIME_PROFILE_HANDOFF.md) specifies an
-agreed posthoc diagnostic across all 64 frozen final circuits. That profile is
-ready for implementation; it has not run and does not revise this experiment's
-20-tick readout or original success scores.
+The [selected circuit review](../../reviews/R002_circuits/REVIEW.md) and its
+subsequent [runtime-profile protocol](RUNTIME_PROFILE_HANDOFF.md) are complete.
+The bounded posthoc profile accounts for all 64 frozen final circuits in both
+hardening modes, 66 initializations per mode, and ticks 0 through 256. It does
+not revise this experiment's 20-tick readout or original success scores.
+
+Across the 128 labeled run/hardening modes, 22 of 120 original failures are
+demonstrably late generators, two of eight original successes are phase
+dependent, 72 modes have a certified persistent visible failure, and four
+remain unresolved by both replay and abstraction. Common and native headline
+counts agree. Detailed paired results, exact-cycle records, universal traces,
+ten wrong-phase witnesses, figures, and the compact review bundle are linked
+from the runtime-profile manifest.
 
 Use 16 paired seeds, 0–15, with the synchronous architecture and 500 updates:
 

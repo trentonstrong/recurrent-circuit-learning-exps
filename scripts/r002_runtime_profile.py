@@ -92,6 +92,15 @@ def code_provenance() -> dict[str, Any]:
     }
 
 
+def cpu_model_name() -> str:
+    cpuinfo = Path("/proc/cpuinfo")
+    if cpuinfo.is_file():
+        for line in cpuinfo.read_text().splitlines():
+            if line.startswith("model name"):
+                return line.split(":", 1)[1].strip()
+    return platform.processor() or "unknown"
+
+
 def validate_config(config: dict[str, Any]) -> None:
     expected = {
         "protocol_id": "R002_runtime_profile_v1",
@@ -907,6 +916,26 @@ def aggregate_results(modes: list[dict[str, Any]], report_ticks: list[int]) -> d
         != "all_initial_states_visible_target_certified"
         or any(record["cycle_behavior"] == "some_phases_correct" for record in mode["trajectories"])
     ]
+    persistent_failures = [
+        mode
+        for mode in modes
+        if mode["universal_state_certificate"]["status"]
+        == "persistent_visible_failure_certified"
+    ]
+    unresolved = [
+        mode
+        for mode in modes
+        if any(record["cycle_entry_tick"] is None for record in mode["trajectories"])
+        and mode["universal_state_certificate"]["status"] == "inconclusive"
+    ]
+    sampled_initialization_failures = [
+        mode
+        for mode in original_successes
+        if any(
+            not mode["initialization_groups"][group]["report_ticks"]["20"]["all_correct"]
+            for group in ("fresh_probe", "all_zero", "all_one")
+        )
+    ]
     return {
         "main_table": table,
         "per_seed": per_seed,
@@ -917,16 +946,31 @@ def aggregate_results(modes: list[dict[str, Any]], report_ticks: list[int]) -> d
             "original_success_mode_count": len(original_successes),
             "phase_or_initialization_dependent_success_mode_count": len(dependent),
             "phase_or_initialization_dependent_success_modes": [f"{m['run_id']}::{m['hardening']}" for m in dependent],
-            "certified_persistent_failure_mode_count": sum(
-                mode["universal_state_certificate"]["status"]
-                == "persistent_visible_failure_certified"
-                for mode in modes
+            "certified_persistent_failure_mode_count": len(persistent_failures),
+            "unresolved_mode_count": len(unresolved),
+            "original_success_with_sampled_initialization_failure_mode_count": len(
+                sampled_initialization_failures
             ),
-            "unresolved_mode_count": sum(
-                any(record["cycle_entry_tick"] is None for record in mode["trajectories"])
-                and mode["universal_state_certificate"]["status"] == "inconclusive"
-                for mode in modes
-            ),
+            "primary_common_hardening": {
+                "original_failure_count": sum(
+                    mode["hardening"] == "common" for mode in original_failures
+                ),
+                "demonstrably_late_generator_count": sum(
+                    mode["hardening"] == "common" for mode in late
+                ),
+                "original_success_count": sum(
+                    mode["hardening"] == "common" for mode in original_successes
+                ),
+                "phase_or_initialization_dependent_success_count": sum(
+                    mode["hardening"] == "common" for mode in dependent
+                ),
+                "certified_persistent_failure_count": sum(
+                    mode["hardening"] == "common" for mode in persistent_failures
+                ),
+                "unresolved_count": sum(
+                    mode["hardening"] == "common" for mode in unresolved
+                ),
+            },
         },
     }
 
@@ -1067,6 +1111,14 @@ def render_structure_svg(path: Path, modes: list[dict[str, Any]], horizon: int) 
         lines.append(
             f'<circle cx="{x:.2f}" cy="{y:.2f}" r="4" fill="{colors[mode["condition"]]}" fill-opacity="0.75"/>'
         )
+    for index, condition in enumerate(EXPECTED_CONDITIONS):
+        y = 68 + index * 18
+        lines.append(
+            f'<circle cx="650" cy="{y}" r="4" fill="{colors[condition]}"/>'
+        )
+        lines.append(
+            f'<text x="660" y="{y+4}" font-family="sans-serif" font-size="11">{condition}</text>'
+        )
     lines.extend(
         [
             f'<line x1="{left}" y1="{height-bottom}" x2="{width-right}" y2="{height-bottom}" stroke="black"/>',
@@ -1081,6 +1133,7 @@ def render_structure_svg(path: Path, modes: list[dict[str, Any]], horizon: int) 
 
 def summary_markdown(analysis_id: str, aggregate: dict[str, Any]) -> str:
     headline = aggregate["headline"]
+    primary = headline["primary_common_hardening"]
     rows = []
     for row in aggregate["main_table"]:
         later = row["original_all_correct_run_count_by_tick"]
@@ -1097,12 +1150,21 @@ change the original tick-20 experiment outcomes.
 
 Across the 128 run/hardening modes, {headline['demonstrably_late_generator_mode_count']}
 original tick-20 failures are demonstrably late generators under at least one
-declared later readout or a universal-state certificate.
+declared later readout or a universal-state certificate. The primary common-hard
+count is {primary['demonstrably_late_generator_count']} of
+{primary['original_failure_count']} circuits.
 {headline['phase_or_initialization_dependent_success_mode_count']} original-success
-modes depend on phase or lack an initialization-independent certificate.
+modes depend on phase or lack an initialization-independent certificate (the
+primary common-hard count is {primary['phase_or_initialization_dependent_success_count']}
+of {primary['original_success_count']}).
+{headline['original_success_with_sampled_initialization_failure_mode_count']}
+original-success modes fail at tick 20 on at least one sampled fresh, all-zero,
+or all-one initialization group.
 {headline['certified_persistent_failure_mode_count']} modes have a certified
 persistent visible failure, while {headline['unresolved_mode_count']} modes remain
-unresolved by the replay and abstraction cap.
+unresolved by the replay and abstraction cap. The corresponding primary
+common-hard counts are {primary['certified_persistent_failure_count']} and
+{primary['unresolved_count']} circuits.
 
 ## Main comparison
 
@@ -1214,6 +1276,11 @@ def main() -> None:
         "workers": args.workers,
         "execution": {
             "device": "CPU",
+            "hardware": {
+                "cpu_model": cpu_model_name(),
+                "machine": platform.machine(),
+                "logical_cpu_count": os.cpu_count(),
+            },
             "compilation": "none",
             "executor": "independent NumPy Boolean/integer executor",
             "simplifier": config["simplifier"],
