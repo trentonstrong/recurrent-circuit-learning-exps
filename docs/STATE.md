@@ -3,8 +3,10 @@
 Updated: 2026-09-10. The formal 64-run R002 paired sweep, independent trajectory
 review, artifact publication, and selected six-run hard-circuit review are
 complete. The circuit review distinguishes late convergence, phase-dependent
-success, and persistent Boolean failure. Next proposed measurement: profile
-runtime behavior across all 64 frozen circuits. A uniform training-budget
+success, and persistent Boolean failure. The next agreed analysis is to profile
+runtime behavior across all 64 frozen circuits; its
+[implementation handoff](../experiments/R002/RUNTIME_PROFILE_HANDOFF.md) is ready.
+The profile itself is not yet implemented or run. A uniform training-budget
 continuation and R003's same-function mechanism diagnostic remain separate options.
 
 ## Objective
@@ -158,6 +160,14 @@ representation-dependent bounds, not minimum or complete description lengths.
 These selected outcomes do not establish condition-wide complexity differences
 or generalization across grid sizes. No new training or full-cohort runtime
 profile has been performed.
+
+The agreed `R002_runtime_profile_v1` diagnostic holds update-500 circuits fixed
+and measures ticks 0 through 256 for common and native hardening. It retains
+the original 32 probes and adds one shared set of 32 fresh probes plus zero/one
+initializations. The handoff specifies exact full-state cycle detection,
+finite-window versus certified settling, phase witnesses, universal-state
+certificates, and circuit-size proxies. Validation is followed by the bounded
+full-cohort analysis; original tick-20 classifications remain unchanged.
 
 The [review of commit e94789f](../reviews/R001_e94789f/REVIEW.md) identified the
 now-closed direct-notebook validation gap. Shared access to the existing R001

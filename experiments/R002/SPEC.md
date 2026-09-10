@@ -14,6 +14,12 @@ advantage for either coordinate system or decay setting. Its checkpoint,
 trajectory, and final-circuit payloads are published under the experiment-scoped
 [`experiment/R002` release](https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/tag/experiment/R002).
 
+The [selected circuit review](../../reviews/R002_circuits/REVIEW.md) is complete.
+The subsequent [runtime-profile handoff](RUNTIME_PROFILE_HANDOFF.md) specifies an
+agreed posthoc diagnostic across all 64 frozen final circuits. That profile is
+ready for implementation; it has not run and does not revise this experiment's
+20-tick readout or original success scores.
+
 Use 16 paired seeds, 0–15, with the synchronous architecture and 500 updates:
 
 | Condition | Gate coordinates | AdamW weight decay |
