@@ -1,8 +1,8 @@
 # Research state
 
-Updated: 2026-09-10. R000 implementation and office-5090 parity are complete.
-The canonical R001 seed-23 run completed and established the recurrent positive
-control. Review that evidence before starting R002.
+Updated: 2026-09-10. R001 reproduction and checkpoint reviews are complete.
+Next: finish direct notebook parity, then implement and validate the paired R002
+runner using the implementation handoff linked below.
 
 ## Objective
 
@@ -26,9 +26,9 @@ eventually periodic. Length and storage-size generalization need separate tests.
 
 | Experiment | Purpose | Status |
 | --- | --- | --- |
-| [R000](../experiments/R000/SPEC.md) | Pinned source, standalone JAX, numerical parity | Passed on CPU oracle and office 5090 |
+| [R000](../experiments/R000/SPEC.md) | Pinned source, standalone JAX, numerical parity | Cross-runtime checks passed; direct notebook comparison pending |
 | [R001](../experiments/R001/SPEC.md) | Synchronous checkerboard, canonical seed 23 | Completed; fixed 32-grid probe exact at update 500 |
-| [R002](../experiments/R002/SPEC.md) | Paired gate-coordinate and weight-decay comparison | Proposed; follows R001 review |
+| [R002](../experiments/R002/SPEC.md) | Paired gate-coordinate and weight-decay comparison | Proposed; implementation handoff available |
 | [R003](../experiments/R003/SPEC.md) | Same-function mixture interventions | Proposed mechanism study |
 
 Use a known recurrent learner as a positive control before redesigning the
@@ -88,10 +88,12 @@ claim of reproducing those runs here is made.
 
 ## Next question
 
-With the pinned synchronous recipe working under a recorded environment, the
-next question is whether the matched gate-coordinate and weight-decay conditions
-in R002 change optimization behavior. Do not launch that comparison until the
-R000/R001 evidence and protocol are reviewed.
+The next implementation task is the [R002 handoff](../experiments/R002/IMPLEMENTATION_HANDOFF.md):
+close direct notebook parity, build the paired runner, and validate it with a
+bounded preflight. Return the validation reports and exact sweep command before
+launching the full comparison, as required by the existing R001 review. The
+scientific question remains whether gate coordinates and weight decay change
+optimization behavior under the matched recipe.
 
 The [review of commit e94789f](../reviews/R001_e94789f/REVIEW.md) supports the
 R001 positive control and records a remaining validation gap: the committed R000

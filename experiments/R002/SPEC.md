@@ -1,6 +1,8 @@
 # R002 — Matched gate coordinates and weight decay
 
-Status: proposed; finalize implementation and launch after R001 review.
+Status: proposed; implementation handoff prepared, full sweep not launched.
+The [implementation handoff](IMPLEMENTATION_HANDOFF.md) specifies the next local
+Codex task: direct notebook parity, paired runner, and bounded validation.
 The [full handoff](../../docs/RECURRENT_BASELINE_HANDOFF.md) is the detailed protocol.
 
 Use 16 paired seeds, 0–15, with the synchronous architecture and 500 updates:

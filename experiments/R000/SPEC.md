@@ -1,8 +1,11 @@
 # R000 — Source capture and implementation parity
 
-Status: ready for implementation. No training result exists. This is the first
-local Codex task; read [AGENTS.md](../../AGENTS.md) and
-[workstation setup](../../docs/WORKSTATION_SETUP.md) first.
+Status: initial implementation and cross-runtime checks completed; direct
+vendored-notebook execution parity remains pending. See the
+[existing results](../../results/R000_20260909_jax_parity/summary.md) and the
+[follow-up implementation handoff](../R002/IMPLEMENTATION_HANDOFF.md).
+The original scope below is retained. Read [AGENTS.md](../../AGENTS.md) and
+[workstation setup](../../docs/WORKSTATION_SETUP.md) before changes.
 
 ## Question
 
