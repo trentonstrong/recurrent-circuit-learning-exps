@@ -1,0 +1,18 @@
+{
+  "run_id": "R002_formal_attempt01_seed14_truth_reference_decay",
+  "checkpoint_update": 500,
+  "hardening": "common",
+  "construction": "Full eight-channel state at runtime tick 21 of original probe 0.",
+  "array_shape": [
+    16,
+    16,
+    8
+  ],
+  "array_dtype": "uint8",
+  "codec": "C-order flattened Boolean bits, numpy.packbits bitorder=big, bytes encoded as lowercase hex",
+  "initial_state_packed_hex": "d75555d4d45555d4d45555d4d45515955ffdfd7d7dfdfd7d7dfdfd7d7dfdbe755fffff7f7fffff7f7fffff7f7fffff75df7f7fffff7f7fffff7f7fffff7f7ff5df7f7fffff7f7fffff7f7fffff7f7ff55fffff7f7fffff7f7fffff7f7fffff755fffff7f7fffff7f7fffff7f7fffff75df7f7fffff7f7fffff7f7fffff7f7ff5df7f7fffff7f7fffff7f7fffff7f7ff55fffff7f7fffff7f7fffff7f7fffff755fffff7f7fffff7f7fffff7f7fffff75df7f7fffff7f7fffff7f7fffff7f7ff5df7f7fffff7f7fffff7f7fffff7f7ff55fffff7f7fffff7f7fffff7f7fffff755fffff7f7fffff7f7fffff7f7fffff77d75757d7d75757d7d75757d7d75757d7",
+  "initial_state_array_sha256": "327f1f673b60d4417be77d43b78a7b7420b35425b00642b24954c4f45082b008",
+  "visible_errors_at_tick_20": 128,
+  "full_state_repeats_after_two_ticks": true,
+  "conclusion": "This valid initial state fails every even readout tick, including the trained tick 20."
+}

@@ -1,9 +1,11 @@
 # Research state
 
 Updated: 2026-09-10. The formal 64-run R002 paired sweep, independent trajectory
-review, and artifact publication are complete. Next: choose between a uniform
-budget continuation and R003's same-function mechanism diagnostic; validated
-successful-circuit simplification remains available as a separate analysis.
+review, artifact publication, and selected six-run hard-circuit review are
+complete. The circuit review distinguishes late convergence, phase-dependent
+success, and persistent Boolean failure. Next proposed measurement: profile
+runtime behavior across all 64 frozen circuits. A uniform training-budget
+continuation and R003's same-function mechanism diagnostic remain separate options.
 
 ## Objective
 
@@ -120,9 +122,11 @@ advantage. The sparse successes and wide intervals do not establish equivalence.
 The 317 MB checkpoint, trajectory, and final-circuit collection is published in
 the experiment-scoped
 [`experiment/R002` GitHub release](https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/tag/experiment/R002).
-All release assets were downloaded and verified after publication. R002-specific
-Boolean simplification of the successful circuits remains separate follow-up
-work.
+All release assets were downloaded and verified after publication. The
+[selected circuit review](../reviews/R002_circuits/REVIEW.md) additionally verifies
+144 uploaded payloads and independently replays all 66 saved checkpoints from
+six selected runs in both hardening modes. The missing shared probe was
+reconstructed byte-for-byte against its recorded SHA-256.
 
 The [independent R002 review](../reviews/R002_formal_attempt01/REVIEW.md) verifies
 all 128 committed result files and recomputes the paired statistics. Direct truth
@@ -132,6 +136,28 @@ trials have lower fixed-probe soft loss at update 500 than at 400. These are
 trajectory observations, not evidence of neutral paths or stationary failures.
 The review distinguishes a possible uniform budget extension from R003's direct
 same-function mechanism test; neither follow-up has been launched.
+
+The selected circuit review finds that both successful seed-4 categorical runs
+share a two-operation, two-channel visible core: a rotated version of R001's
+checkpoint-250 generator. Sound set-valued propagation certifies the target
+from tick 16 for every initial state on the fixed 16 by 16 zero-exterior grid.
+The seed-13 categorical/reference-decay near miss is correct on all original
+probes by tick 22 and certified for all initializations by tick 25; it remains
+a failure under the frozen tick-20 criterion. Seed 15 categorical/no-decay is
+certified from tick 20. The successful seed-14 direct-truth circuit instead has
+an exact two-cycle on the probes, with 128 visible errors per grid in the odd
+phase; an explicit initial-state witness fails the prescribed even readout.
+Seed 8 direct-truth/reference-decay has a visible cell that is provably wrong
+from tick 14 onward for every initialization despite its improving soft loss.
+
+In categorical/reference-decay seed 4, 90 gate-ID differences summed between
+saved checkpoints 300 through 500 preserve the entire hard local function.
+This establishes equality between saved discrete snapshots, not a continuous
+neutral optimizer path. Reported simplified gate counts are constructive
+representation-dependent bounds, not minimum or complete description lengths.
+These selected outcomes do not establish condition-wide complexity differences
+or generalization across grid sizes. No new training or full-cohort runtime
+profile has been performed.
 
 The [review of commit e94789f](../reviews/R001_e94789f/REVIEW.md) identified the
 now-closed direct-notebook validation gap. Shared access to the existing R001

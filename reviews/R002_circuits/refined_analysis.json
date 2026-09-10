@@ -1,0 +1,6302 @@
+{
+  "method": "Exact associative AND normalization, complement cancellation, and absorption; complemented AND/XOR DAG; not a minimum circuit.",
+  "runs": {
+    "R002_formal_attempt01_seed04_categorical_reference_decay": {
+      "basic": {
+        "binary_nodes_all_channels": 12,
+        "and_nodes": 12,
+        "xor_nodes": 0,
+        "visible_recurrent_channels": [
+          0,
+          6
+        ],
+        "visible_core_binary_nodes": 2,
+        "relevant_local_inputs": 12,
+        "output_expressions": [
+          "~(~(~s6[+1,+1] & ~s6[-1,-1]) & ~s6[-1,+1])",
+          "~((((((s5[+0,+0] & ~s5[+0,+1]) & s5[+1,-1]) & s5[+1,+0]) & ~s5[+0,+1]) & ((~s3[+0,+0] & ~s3[+0,+1]) & ~s3[+1,+0])) & ~s5[+0,+0])",
+          "~(((~s3[+0,+0] & ~s3[+0,+1]) & ~s3[+1,-1]) & ~s3[+1,+0])",
+          "1",
+          "1",
+          "1",
+          "s0[-1,+1]",
+          "1"
+        ],
+        "output_literals": [
+          303,
+          401,
+          281,
+          1,
+          1,
+          1,
+          34,
+          1
+        ],
+        "reachable_nodes": {
+          "0": [
+            "constant"
+          ],
+          "7": [
+            "input",
+            6
+          ],
+          "17": [
+            "input",
+            16
+          ],
+          "23": [
+            "input",
+            22
+          ],
+          "36": [
+            "input",
+            35
+          ],
+          "38": [
+            "input",
+            37
+          ],
+          "44": [
+            "input",
+            43
+          ],
+          "46": [
+            "input",
+            45
+          ],
+          "52": [
+            "input",
+            51
+          ],
+          "54": [
+            "input",
+            53
+          ],
+          "60": [
+            "input",
+            59
+          ],
+          "62": [
+            "input",
+            61
+          ],
+          "71": [
+            "input",
+            70
+          ],
+          "76": [
+            "AND",
+            73,
+            89
+          ],
+          "94": [
+            "AND",
+            76,
+            93
+          ],
+          "108": [
+            "AND",
+            105,
+            152
+          ],
+          "127": [
+            "AND",
+            15,
+            143
+          ],
+          "134": [
+            "AND",
+            108,
+            188
+          ],
+          "140": [
+            "AND",
+            121,
+            216
+          ],
+          "151": [
+            "AND",
+            47,
+            255
+          ],
+          "158": [
+            "AND",
+            124,
+            268
+          ],
+          "164": [
+            "AND",
+            121,
+            152
+          ],
+          "173": [
+            "AND",
+            93,
+            316
+          ],
+          "194": [
+            "AND",
+            328,
+            346
+          ],
+          "200": [
+            "AND",
+            77,
+            388
+          ]
+        }
+      },
+      "refined": {
+        "binary_nodes_all_channels": 5,
+        "and_nodes": 5,
+        "xor_nodes": 0,
+        "visible_recurrent_channels": [
+          0,
+          6
+        ],
+        "visible_core_binary_nodes": 2,
+        "relevant_local_inputs": 8,
+        "output_expressions": [
+          "~(~(~s6[+1,+1] & ~s6[-1,-1]) & ~s6[-1,+1])",
+          "1",
+          "~(((~s3[+0,+0] & ~s3[+0,+1]) & ~s3[+1,-1]) & ~s3[+1,+0])",
+          "1",
+          "1",
+          "1",
+          "s0[-1,+1]",
+          "1"
+        ],
+        "output_literals": [
+          303,
+          1,
+          281,
+          1,
+          1,
+          1,
+          34,
+          1
+        ],
+        "reachable_nodes": {
+          "0": [
+            "constant"
+          ],
+          "7": [
+            "input",
+            6
+          ],
+          "17": [
+            "input",
+            16
+          ],
+          "23": [
+            "input",
+            22
+          ],
+          "36": [
+            "input",
+            35
+          ],
+          "44": [
+            "input",
+            43
+          ],
+          "52": [
+            "input",
+            51
+          ],
+          "60": [
+            "input",
+            59
+          ],
+          "71": [
+            "input",
+            70
+          ],
+          "76": [
+            "AND",
+            73,
+            89
+          ],
+          "108": [
+            "AND",
+            105,
+            152
+          ],
+          "127": [
+            "AND",
+            15,
+            143
+          ],
+          "140": [
+            "AND",
+            121,
+            216
+          ],
+          "151": [
+            "AND",
+            47,
+            255
+          ]
+        }
+      },
+      "abstract_certificate": {
+        "size": 16,
+        "tick_budget": 64,
+        "known_visible_bits_by_tick": [
+          0,
+          2,
+          5,
+          8,
+          17,
+          22,
+          37,
+          44,
+          65,
+          74,
+          101,
+          112,
+          145,
+          158,
+          197,
+          212,
+          256,
+          256
+        ],
+        "known_wrong_visible_bits_by_tick": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "first_all_visible_correct": 16,
+        "abstract_fixed_point_tick": 17,
+        "certifies_all_initial_states_and_future_ticks": true
+      },
+      "provably_wrong_cells_after_tick_64": [],
+      "all_probe_visible_period2_from_tick20": true,
+      "all_probe_full_state_period2_from_tick20": true,
+      "full_state_fixed_from_tick20": true,
+      "all_probes_same_visible_at_tick20": true,
+      "all_probes_same_visible_at_tick21": true,
+      "visible_wrong_pixels_tick20_first_probe": [],
+      "original_probe_errors_by_tick": [
+        4089,
+        4124,
+        3990,
+        4092,
+        3761,
+        3945,
+        3432,
+        3543,
+        2994,
+        3175,
+        2396,
+        2471,
+        1705,
+        1761,
+        808,
+        794,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first_probe_thresholded_soft_errors": {
+        "250": {
+          "thresholded_soft_errors": 0,
+          "common_hard_errors": 0,
+          "soft_sse": 0.8779229521751404
+        },
+        "400": {
+          "thresholded_soft_errors": 0,
+          "common_hard_errors": 0,
+          "soft_sse": 0.08428254723548889
+        },
+        "450": {
+          "thresholded_soft_errors": 0,
+          "common_hard_errors": 0,
+          "soft_sse": 0.012942235916852951
+        },
+        "500": {
+          "thresholded_soft_errors": 0,
+          "common_hard_errors": 0,
+          "soft_sse": 0.011887870728969574
+        }
+      },
+      "two_field_equations_exhaustively_verified": true
+    },
+    "R002_formal_attempt01_seed13_categorical_reference_decay": {
+      "basic": {
+        "binary_nodes_all_channels": 40,
+        "and_nodes": 37,
+        "xor_nodes": 3,
+        "visible_recurrent_channels": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ],
+        "visible_core_binary_nodes": 35,
+        "relevant_local_inputs": 23,
+        "output_expressions": [
+          "~(~((((~s2[+0,+1] & ~s2[-1,+0]) & ~(s6[+0,+1] ^ s6[-1,+0])) & ~(s0[-1,-1] & ~s0[-1,+1])) & ~(((~s3[-1,+1] & ~s3[-1,-1]) & ~s3[-1,+1]) & ~s3[-1,+1])) & ~((~(s6[+0,+1] ^ s6[-1,+0]) & ~s3[-1,+1]) & ~((((~(~s2[+0,+0] & ~s2[+1,+1]) & ~s2[-1,+1]) & ~(~s3[+0,+1] & ~s3[-1,+0])) ^ s3[-1,+1]) & ~s2[-1,+1])))",
+          "(((~((s2[+0,+0] & ~s3[+0,+0]) & s6[-1,+1]) & ~s3[-1,+1]) & ~s1[-1,+1]) & (~((((s2[+0,+1] ^ s2[-1,+0]) & (~s2[+1,-1] & ~s2[-1,+1])) & ~s0[-1,+1]) & ~(s3[-1,-1] & ~s3[-1,+1])) & ~s3[-1,+1]))",
+          "(~(~s6[+0,+1] & ~s6[-1,+0]) & ~s2[-1,+1])",
+          "(((~((s2[+0,+0] & ~s3[+0,+0]) & s6[-1,+1]) & ~s3[-1,+1]) & ~s1[-1,+1]) & (~((((s2[+0,+1] ^ s2[-1,+0]) & (~s2[+1,-1] & ~s2[-1,+1])) & ~s0[-1,+1]) & ~(s3[-1,-1] & ~s3[-1,+1])) & ~s3[-1,+1]))",
+          "s0[-1,+1]",
+          "~(~(~(s5[+0,+1] & s5[-1,+0]) & ~(~s3[-1,+1] & ~s3[-1,-1])) & ~(~(~s0[+0,+1] & ~s0[-1,+0]) & ~s2[-1,+0]))",
+          "((~(~s0[+0,+1] & ~s0[-1,+0]) & ~s1[-1,+1]) & ~s3[-1,+1])",
+          "(s7[+0,+1] & s7[-1,+0])"
+        ],
+        "output_literals": [
+          563,
+          558,
+          508,
+          558,
+          34,
+          561,
+          552,
+          336
+        ],
+        "reachable_nodes": {
+          "1": [
+            "input",
+            0
+          ],
+          "4": [
+            "input",
+            3
+          ],
+          "9": [
+            "input",
+            8
+          ],
+          "11": [
+            "input",
+            10
+          ],
+          "12": [
+            "input",
+            11
+          ],
+          "14": [
+            "input",
+            13
+          ],
+          "15": [
+            "input",
+            14
+          ],
+          "16": [
+            "input",
+            15
+          ],
+          "17": [
+            "input",
+            16
+          ],
+          "18": [
+            "input",
+            17
+          ],
+          "19": [
+            "input",
+            18
+          ],
+          "20": [
+            "input",
+            19
+          ],
+          "23": [
+            "input",
+            22
+          ],
+          "35": [
+            "input",
+            34
+          ],
+          "36": [
+            "input",
+            35
+          ],
+          "41": [
+            "input",
+            40
+          ],
+          "43": [
+            "input",
+            42
+          ],
+          "44": [
+            "input",
+            43
+          ],
+          "46": [
+            "input",
+            45
+          ],
+          "47": [
+            "input",
+            46
+          ],
+          "48": [
+            "input",
+            47
+          ],
+          "51": [
+            "input",
+            50
+          ],
+          "67": [
+            "input",
+            66
+          ],
+          "107": [
+            "AND",
+            71,
+            135
+          ],
+          "116": [
+            "AND",
+            9,
+            41
+          ],
+          "121": [
+            "AND",
+            2,
+            35
+          ],
+          "124": [
+            "AND",
+            8,
+            41
+          ],
+          "129": [
+            "AND",
+            19,
+            83
+          ],
+          "133": [
+            "AND",
+            23,
+            87
+          ],
+          "134": [
+            "AND",
+            39,
+            215
+          ],
+          "135": [
+            "AND",
+            25,
+            89
+          ],
+          "141": [
+            "AND",
+            31,
+            95
+          ],
+          "155": [
+            "XOR",
+            22,
+            86
+          ],
+          "159": [
+            "XOR",
+            30,
+            94
+          ],
+          "166": [
+            "AND",
+            28,
+            92
+          ],
+          "168": [
+            "AND",
+            32,
+            96
+          ],
+          "171": [
+            "AND",
+            39,
+            103
+          ],
+          "187": [
+            "AND",
+            70,
+            73
+          ],
+          "191": [
+            "AND",
+            41,
+            232
+          ],
+          "192": [
+            "AND",
+            233,
+            333
+          ],
+          "205": [
+            "AND",
+            266,
+            319
+          ],
+          "206": [
+            "AND",
+            37,
+            259
+          ],
+          "213": [
+            "AND",
+            46,
+            374
+          ],
+          "218": [
+            "AND",
+            268,
+            271
+          ],
+          "219": [
+            "AND",
+            41,
+            319
+          ],
+          "229": [
+            "AND",
+            310,
+            342
+          ],
+          "232": [
+            "AND",
+            243,
+            410
+          ],
+          "233": [
+            "AND",
+            41,
+            382
+          ],
+          "236": [
+            "AND",
+            35,
+            458
+          ],
+          "237": [
+            "AND",
+            464,
+            467
+          ],
+          "238": [
+            "XOR",
+            40,
+            436
+          ],
+          "245": [
+            "AND",
+            23,
+            259
+          ],
+          "254": [
+            "AND",
+            39,
+            283
+          ],
+          "257": [
+            "AND",
+            41,
+            427
+          ],
+          "264": [
+            "AND",
+            37,
+            514
+          ],
+          "267": [
+            "AND",
+            249,
+            472
+          ],
+          "273": [
+            "AND",
+            39,
+            476
+          ],
+          "275": [
+            "AND",
+            41,
+            535
+          ],
+          "276": [
+            "AND",
+            41,
+            412
+          ],
+          "278": [
+            "AND",
+            438,
+            547
+          ],
+          "279": [
+            "AND",
+            528,
+            550
+          ],
+          "280": [
+            "AND",
+            385,
+            491
+          ],
+          "281": [
+            "AND",
+            475,
+            557
+          ]
+        }
+      },
+      "refined": {
+        "binary_nodes_all_channels": 36,
+        "and_nodes": 33,
+        "xor_nodes": 3,
+        "visible_recurrent_channels": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ],
+        "visible_core_binary_nodes": 31,
+        "relevant_local_inputs": 23,
+        "output_expressions": [
+          "~(~((((~s2[+0,+1] & ~s2[-1,+0]) & ~(~s3[-1,+1] & ~s3[-1,-1])) & ~(s0[-1,-1] & ~s0[-1,+1])) & ~(s6[+0,+1] ^ s6[-1,+0])) & ~((~(s6[+0,+1] ^ s6[-1,+0]) & ~s3[-1,+1]) & ~((((~(~s2[+0,+0] & ~s2[+1,+1]) & ~s2[-1,+1]) & ~(~s3[+0,+1] & ~s3[-1,+0])) ^ s3[-1,+1]) & ~s2[-1,+1])))",
+          "(((~s1[-1,+1] & ~s3[-1,+1]) & ~((s2[+0,+0] & s6[-1,+1]) & ~s3[+0,+0])) & ~((((~s0[-1,+1] & ~s2[-1,+1]) & ~s2[+1,-1]) & ~(s3[-1,-1] & ~s3[-1,+1])) & (s2[+0,+1] ^ s2[-1,+0])))",
+          "(~(~s6[+0,+1] & ~s6[-1,+0]) & ~s2[-1,+1])",
+          "(((~s1[-1,+1] & ~s3[-1,+1]) & ~((s2[+0,+0] & s6[-1,+1]) & ~s3[+0,+0])) & ~((((~s0[-1,+1] & ~s2[-1,+1]) & ~s2[+1,-1]) & ~(s3[-1,-1] & ~s3[-1,+1])) & (s2[+0,+1] ^ s2[-1,+0])))",
+          "s0[-1,+1]",
+          "~(~(~(s5[+0,+1] & s5[-1,+0]) & ~(~s3[-1,+1] & ~s3[-1,-1])) & ~(~(~s0[+0,+1] & ~s0[-1,+0]) & ~s2[-1,+0]))",
+          "((~s1[-1,+1] & ~s3[-1,+1]) & ~(~s0[+0,+1] & ~s0[-1,+0]))",
+          "(s7[+0,+1] & s7[-1,+0])"
+        ],
+        "output_literals": [
+          601,
+          596,
+          530,
+          596,
+          34,
+          599,
+          590,
+          336
+        ],
+        "reachable_nodes": {
+          "1": [
+            "input",
+            0
+          ],
+          "4": [
+            "input",
+            3
+          ],
+          "9": [
+            "input",
+            8
+          ],
+          "11": [
+            "input",
+            10
+          ],
+          "12": [
+            "input",
+            11
+          ],
+          "14": [
+            "input",
+            13
+          ],
+          "15": [
+            "input",
+            14
+          ],
+          "16": [
+            "input",
+            15
+          ],
+          "17": [
+            "input",
+            16
+          ],
+          "18": [
+            "input",
+            17
+          ],
+          "19": [
+            "input",
+            18
+          ],
+          "20": [
+            "input",
+            19
+          ],
+          "23": [
+            "input",
+            22
+          ],
+          "35": [
+            "input",
+            34
+          ],
+          "36": [
+            "input",
+            35
+          ],
+          "41": [
+            "input",
+            40
+          ],
+          "43": [
+            "input",
+            42
+          ],
+          "44": [
+            "input",
+            43
+          ],
+          "46": [
+            "input",
+            45
+          ],
+          "47": [
+            "input",
+            46
+          ],
+          "48": [
+            "input",
+            47
+          ],
+          "51": [
+            "input",
+            50
+          ],
+          "67": [
+            "input",
+            66
+          ],
+          "107": [
+            "AND",
+            71,
+            135
+          ],
+          "116": [
+            "AND",
+            9,
+            41
+          ],
+          "121": [
+            "AND",
+            2,
+            35
+          ],
+          "124": [
+            "AND",
+            8,
+            41
+          ],
+          "129": [
+            "AND",
+            19,
+            83
+          ],
+          "133": [
+            "AND",
+            23,
+            87
+          ],
+          "134": [
+            "AND",
+            39,
+            215
+          ],
+          "135": [
+            "AND",
+            25,
+            89
+          ],
+          "141": [
+            "AND",
+            31,
+            95
+          ],
+          "155": [
+            "XOR",
+            22,
+            86
+          ],
+          "159": [
+            "XOR",
+            30,
+            94
+          ],
+          "166": [
+            "AND",
+            28,
+            92
+          ],
+          "168": [
+            "AND",
+            32,
+            96
+          ],
+          "184": [
+            "AND",
+            233,
+            333
+          ],
+          "212": [
+            "AND",
+            46,
+            70
+          ],
+          "213": [
+            "AND",
+            73,
+            424
+          ],
+          "219": [
+            "AND",
+            268,
+            271
+          ],
+          "220": [
+            "AND",
+            41,
+            319
+          ],
+          "239": [
+            "AND",
+            35,
+            39
+          ],
+          "240": [
+            "AND",
+            103,
+            478
+          ],
+          "242": [
+            "AND",
+            233,
+            266
+          ],
+          "243": [
+            "AND",
+            243,
+            484
+          ],
+          "244": [
+            "AND",
+            319,
+            486
+          ],
+          "245": [
+            "XOR",
+            40,
+            438
+          ],
+          "252": [
+            "AND",
+            23,
+            259
+          ],
+          "265": [
+            "AND",
+            39,
+            283
+          ],
+          "278": [
+            "AND",
+            37,
+            41
+          ],
+          "279": [
+            "AND",
+            427,
+            556
+          ],
+          "281": [
+            "AND",
+            249,
+            480
+          ],
+          "282": [
+            "AND",
+            310,
+            562
+          ],
+          "291": [
+            "AND",
+            39,
+            490
+          ],
+          "295": [
+            "AND",
+            259,
+            556
+          ],
+          "297": [
+            "AND",
+            440,
+            583
+          ],
+          "298": [
+            "AND",
+            558,
+            565
+          ],
+          "299": [
+            "AND",
+            369,
+            505
+          ],
+          "300": [
+            "AND",
+            489,
+            595
+          ]
+        }
+      },
+      "abstract_certificate": {
+        "size": 16,
+        "tick_budget": 64,
+        "known_visible_bits_by_tick": [
+          0,
+          1,
+          1,
+          6,
+          9,
+          12,
+          17,
+          22,
+          29,
+          38,
+          46,
+          59,
+          62,
+          82,
+          92,
+          104,
+          129,
+          131,
+          154,
+          178,
+          189,
+          218,
+          231,
+          243,
+          254,
+          256,
+          256
+        ],
+        "known_wrong_visible_bits_by_tick": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "first_all_visible_correct": 25,
+        "abstract_fixed_point_tick": 26,
+        "certifies_all_initial_states_and_future_ticks": true
+      },
+      "provably_wrong_cells_after_tick_64": [],
+      "all_probe_visible_period2_from_tick20": false,
+      "all_probe_full_state_period2_from_tick20": false,
+      "full_state_fixed_from_tick20": false,
+      "all_probes_same_visible_at_tick20": false,
+      "all_probes_same_visible_at_tick21": false,
+      "visible_wrong_pixels_tick20_first_probe": [],
+      "original_probe_errors_by_tick": [
+        4089,
+        4063,
+        3959,
+        3920,
+        3776,
+        3678,
+        3467,
+        3396,
+        3208,
+        3041,
+        2718,
+        2501,
+        2192,
+        1885,
+        1467,
+        1072,
+        787,
+        536,
+        257,
+        153,
+        44,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first_probe_thresholded_soft_errors": {
+        "250": {
+          "thresholded_soft_errors": 123,
+          "common_hard_errors": 128,
+          "soft_sse": 63.67937469482422
+        },
+        "400": {
+          "thresholded_soft_errors": 6,
+          "common_hard_errors": 12,
+          "soft_sse": 7.49594783782959
+        },
+        "450": {
+          "thresholded_soft_errors": 0,
+          "common_hard_errors": 28,
+          "soft_sse": 1.6153035163879395
+        },
+        "500": {
+          "thresholded_soft_errors": 0,
+          "common_hard_errors": 0,
+          "soft_sse": 0.045854441821575165
+        }
+      }
+    },
+    "R002_formal_attempt01_seed04_categorical_no_decay": {
+      "basic": {
+        "binary_nodes_all_channels": 5,
+        "and_nodes": 5,
+        "xor_nodes": 0,
+        "visible_recurrent_channels": [
+          0,
+          6
+        ],
+        "visible_core_binary_nodes": 2,
+        "relevant_local_inputs": 10,
+        "output_expressions": [
+          "~(~(~s6[+1,+1] & ~s6[-1,-1]) & ~s6[-1,+1])",
+          "s5[+0,+1]",
+          "~(((~s3[+0,+0] & ~s3[+0,+1]) & ~s3[+1,-1]) & ~s3[+1,+0])",
+          "1",
+          "1",
+          "1",
+          "s0[-1,+1]",
+          "s1[-1,+1]"
+        ],
+        "output_literals": [
+          255,
+          92,
+          225,
+          1,
+          1,
+          1,
+          34,
+          36
+        ],
+        "reachable_nodes": {
+          "0": [
+            "constant"
+          ],
+          "7": [
+            "input",
+            6
+          ],
+          "17": [
+            "input",
+            16
+          ],
+          "18": [
+            "input",
+            17
+          ],
+          "23": [
+            "input",
+            22
+          ],
+          "36": [
+            "input",
+            35
+          ],
+          "44": [
+            "input",
+            43
+          ],
+          "46": [
+            "input",
+            45
+          ],
+          "52": [
+            "input",
+            51
+          ],
+          "60": [
+            "input",
+            59
+          ],
+          "71": [
+            "input",
+            70
+          ],
+          "76": [
+            "AND",
+            73,
+            89
+          ],
+          "87": [
+            "AND",
+            105,
+            152
+          ],
+          "103": [
+            "AND",
+            15,
+            143
+          ],
+          "112": [
+            "AND",
+            121,
+            174
+          ],
+          "127": [
+            "AND",
+            47,
+            207
+          ]
+        }
+      },
+      "refined": {
+        "binary_nodes_all_channels": 5,
+        "and_nodes": 5,
+        "xor_nodes": 0,
+        "visible_recurrent_channels": [
+          0,
+          6
+        ],
+        "visible_core_binary_nodes": 2,
+        "relevant_local_inputs": 10,
+        "output_expressions": [
+          "~(~(~s6[+1,+1] & ~s6[-1,-1]) & ~s6[-1,+1])",
+          "s5[+0,+1]",
+          "~(((~s3[+0,+0] & ~s3[+0,+1]) & ~s3[+1,-1]) & ~s3[+1,+0])",
+          "1",
+          "1",
+          "1",
+          "s0[-1,+1]",
+          "s1[-1,+1]"
+        ],
+        "output_literals": [
+          255,
+          92,
+          225,
+          1,
+          1,
+          1,
+          34,
+          36
+        ],
+        "reachable_nodes": {
+          "0": [
+            "constant"
+          ],
+          "7": [
+            "input",
+            6
+          ],
+          "17": [
+            "input",
+            16
+          ],
+          "18": [
+            "input",
+            17
+          ],
+          "23": [
+            "input",
+            22
+          ],
+          "36": [
+            "input",
+            35
+          ],
+          "44": [
+            "input",
+            43
+          ],
+          "46": [
+            "input",
+            45
+          ],
+          "52": [
+            "input",
+            51
+          ],
+          "60": [
+            "input",
+            59
+          ],
+          "71": [
+            "input",
+            70
+          ],
+          "76": [
+            "AND",
+            73,
+            89
+          ],
+          "87": [
+            "AND",
+            105,
+            152
+          ],
+          "103": [
+            "AND",
+            15,
+            143
+          ],
+          "112": [
+            "AND",
+            121,
+            174
+          ],
+          "127": [
+            "AND",
+            47,
+            207
+          ]
+        }
+      },
+      "abstract_certificate": {
+        "size": 16,
+        "tick_budget": 64,
+        "known_visible_bits_by_tick": [
+          0,
+          2,
+          5,
+          8,
+          17,
+          22,
+          37,
+          44,
+          65,
+          74,
+          101,
+          112,
+          145,
+          158,
+          197,
+          212,
+          256,
+          256
+        ],
+        "known_wrong_visible_bits_by_tick": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "first_all_visible_correct": 16,
+        "abstract_fixed_point_tick": 17,
+        "certifies_all_initial_states_and_future_ticks": true
+      },
+      "provably_wrong_cells_after_tick_64": [],
+      "all_probe_visible_period2_from_tick20": true,
+      "all_probe_full_state_period2_from_tick20": true,
+      "full_state_fixed_from_tick20": true,
+      "all_probes_same_visible_at_tick20": true,
+      "all_probes_same_visible_at_tick21": true,
+      "visible_wrong_pixels_tick20_first_probe": [],
+      "original_probe_errors_by_tick": [
+        4089,
+        4124,
+        3990,
+        4092,
+        3761,
+        3945,
+        3432,
+        3543,
+        2994,
+        3175,
+        2396,
+        2471,
+        1705,
+        1761,
+        808,
+        794,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first_probe_thresholded_soft_errors": {
+        "250": {
+          "thresholded_soft_errors": 45,
+          "common_hard_errors": 0,
+          "soft_sse": 35.013614654541016
+        },
+        "400": {
+          "thresholded_soft_errors": 0,
+          "common_hard_errors": 0,
+          "soft_sse": 0.042592644691467285
+        },
+        "450": {
+          "thresholded_soft_errors": 0,
+          "common_hard_errors": 0,
+          "soft_sse": 0.03372390568256378
+        },
+        "500": {
+          "thresholded_soft_errors": 0,
+          "common_hard_errors": 0,
+          "soft_sse": 0.02656162902712822
+        }
+      },
+      "two_field_equations_exhaustively_verified": true
+    },
+    "R002_formal_attempt01_seed15_categorical_no_decay": {
+      "basic": {
+        "binary_nodes_all_channels": 9,
+        "and_nodes": 9,
+        "xor_nodes": 0,
+        "visible_recurrent_channels": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          7
+        ],
+        "visible_core_binary_nodes": 9,
+        "relevant_local_inputs": 12,
+        "output_expressions": [
+          "~(~(~s3[+1,+1] & ~s3[-1,-1]) & ~s5[-1,+1])",
+          "~(~((~s3[+1,+1] & ~s3[-1,+0]) & (~s5[+1,+1] & ~s7[+0,+0])) & ~s3[-1,+1])",
+          "~(~((~s3[+1,+1] & ~s3[-1,+0]) & (~s5[+1,+1] & ~s7[+0,+0])) & ~s3[-1,+1])",
+          "s1[-1,+1]",
+          "s2[-1,+1]",
+          "~((~s0[-1,+1] & ~s2[-1,+1]) & ~s1[-1,+1])",
+          "~s1[+0,+0]",
+          "~(~s5[+1,+1] & ~s5[-1,-1])"
+        ],
+        "output_literals": [
+          399,
+          409,
+          409,
+          36,
+          38,
+          407,
+          69,
+          301
+        ],
+        "reachable_nodes": {
+          "4": [
+            "input",
+            3
+          ],
+          "6": [
+            "input",
+            5
+          ],
+          "12": [
+            "input",
+            11
+          ],
+          "17": [
+            "input",
+            16
+          ],
+          "18": [
+            "input",
+            17
+          ],
+          "19": [
+            "input",
+            18
+          ],
+          "20": [
+            "input",
+            19
+          ],
+          "22": [
+            "input",
+            21
+          ],
+          "34": [
+            "input",
+            33
+          ],
+          "40": [
+            "input",
+            39
+          ],
+          "68": [
+            "input",
+            67
+          ],
+          "70": [
+            "input",
+            69
+          ],
+          "116": [
+            "AND",
+            25,
+            137
+          ],
+          "148": [
+            "AND",
+            9,
+            137
+          ],
+          "150": [
+            "AND",
+            13,
+            141
+          ],
+          "188": [
+            "AND",
+            81,
+            141
+          ],
+          "197": [
+            "AND",
+            232,
+            376
+          ],
+          "199": [
+            "AND",
+            45,
+            297
+          ],
+          "202": [
+            "AND",
+            35,
+            39
+          ],
+          "203": [
+            "AND",
+            37,
+            404
+          ],
+          "204": [
+            "AND",
+            41,
+            395
+          ]
+        }
+      },
+      "refined": {
+        "binary_nodes_all_channels": 9,
+        "and_nodes": 9,
+        "xor_nodes": 0,
+        "visible_recurrent_channels": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          7
+        ],
+        "visible_core_binary_nodes": 9,
+        "relevant_local_inputs": 12,
+        "output_expressions": [
+          "~(~(~s3[+1,+1] & ~s3[-1,-1]) & ~s5[-1,+1])",
+          "~(~(((~s3[-1,+0] & ~s7[+0,+0]) & ~s3[+1,+1]) & ~s5[+1,+1]) & ~s3[-1,+1])",
+          "~(~(((~s3[-1,+0] & ~s7[+0,+0]) & ~s3[+1,+1]) & ~s5[+1,+1]) & ~s3[-1,+1])",
+          "s1[-1,+1]",
+          "s2[-1,+1]",
+          "~((~s0[-1,+1] & ~s1[-1,+1]) & ~s2[-1,+1])",
+          "~s1[+0,+0]",
+          "~(~s5[+1,+1] & ~s5[-1,-1])"
+        ],
+        "output_literals": [
+          479,
+          487,
+          487,
+          36,
+          38,
+          485,
+          69,
+          301
+        ],
+        "reachable_nodes": {
+          "4": [
+            "input",
+            3
+          ],
+          "6": [
+            "input",
+            5
+          ],
+          "12": [
+            "input",
+            11
+          ],
+          "17": [
+            "input",
+            16
+          ],
+          "18": [
+            "input",
+            17
+          ],
+          "19": [
+            "input",
+            18
+          ],
+          "20": [
+            "input",
+            19
+          ],
+          "22": [
+            "input",
+            21
+          ],
+          "34": [
+            "input",
+            33
+          ],
+          "40": [
+            "input",
+            39
+          ],
+          "68": [
+            "input",
+            67
+          ],
+          "70": [
+            "input",
+            69
+          ],
+          "148": [
+            "AND",
+            9,
+            137
+          ],
+          "150": [
+            "AND",
+            13,
+            141
+          ],
+          "235": [
+            "AND",
+            25,
+            81
+          ],
+          "236": [
+            "AND",
+            137,
+            470
+          ],
+          "237": [
+            "AND",
+            141,
+            472
+          ],
+          "239": [
+            "AND",
+            45,
+            297
+          ],
+          "241": [
+            "AND",
+            35,
+            37
+          ],
+          "242": [
+            "AND",
+            39,
+            482
+          ],
+          "243": [
+            "AND",
+            41,
+            475
+          ]
+        }
+      },
+      "abstract_certificate": {
+        "size": 16,
+        "tick_budget": 64,
+        "known_visible_bits_by_tick": [
+          0,
+          2,
+          5,
+          6,
+          11,
+          19,
+          29,
+          39,
+          49,
+          62,
+          81,
+          96,
+          117,
+          133,
+          159,
+          181,
+          208,
+          228,
+          240,
+          250,
+          256,
+          256,
+          256
+        ],
+        "known_wrong_visible_bits_by_tick": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "first_all_visible_correct": 20,
+        "abstract_fixed_point_tick": 22,
+        "certifies_all_initial_states_and_future_ticks": true
+      },
+      "provably_wrong_cells_after_tick_64": [],
+      "all_probe_visible_period2_from_tick20": true,
+      "all_probe_full_state_period2_from_tick20": false,
+      "full_state_fixed_from_tick20": false,
+      "all_probes_same_visible_at_tick20": true,
+      "all_probes_same_visible_at_tick21": true,
+      "visible_wrong_pixels_tick20_first_probe": [],
+      "original_probe_errors_by_tick": [
+        4089,
+        4019,
+        3907,
+        4007,
+        3885,
+        3780,
+        3586,
+        3465,
+        3410,
+        3126,
+        2800,
+        2591,
+        2337,
+        2096,
+        1626,
+        1283,
+        917,
+        539,
+        317,
+        108,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "first_probe_thresholded_soft_errors": {
+        "250": {
+          "thresholded_soft_errors": 111,
+          "common_hard_errors": 118,
+          "soft_sse": 62.67621994018555
+        },
+        "400": {
+          "thresholded_soft_errors": 16,
+          "common_hard_errors": 18,
+          "soft_sse": 14.043285369873047
+        },
+        "450": {
+          "thresholded_soft_errors": 16,
+          "common_hard_errors": 16,
+          "soft_sse": 13.12096118927002
+        },
+        "500": {
+          "thresholded_soft_errors": 0,
+          "common_hard_errors": 0,
+          "soft_sse": 0.5671849250793457
+        }
+      }
+    },
+    "R002_formal_attempt01_seed08_truth_reference_decay": {
+      "basic": {
+        "binary_nodes_all_channels": 166,
+        "and_nodes": 166,
+        "xor_nodes": 0,
+        "visible_recurrent_channels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "visible_core_binary_nodes": 166,
+        "relevant_local_inputs": 53,
+        "output_expressions": [
+          "~((((~(((((s7[+0,+0] & ~s7[-1,+0]) & s7[+1,-1]) & ~(~s7[+0,+0] & ~s7[+1,+0])) & ((~(s3[+0,+0] & s3[+0,+1]) & ~s3[+1,+1]) & ~s3[-1,+1])) & (((~s6[+0,+1] & ~s6[+1,+1]) & ~s6[-1,+1]) & ~s3[-1,+0])) & ~s2[-1,+0]) & ~(((~s0[+1,+1] & ~s0[-1,+1]) & (~s5[-1,+0] & ~s7[-1,+0])) & ((~s4[+0,+1] & ~s4[+1,+1]) & ~s4[-1,+1]))) & ~((((((((s7[+0,+0] & s7[+1,-1]) & (s7[+0,+0] & ~s7[-1,+0])) & ((s7[+0,+0] & ~s7[-1,-1]) & ~(~s7[+0,+0] & ~s7[+1,+0]))) & (s7[+0,-1] & ~s7[-1,+1])) & (~s1[+1,+1] & ~s1[-1,+1])) & ~s2[-1,+0]) & (((~s6[+0,+1] & ~s6[+1,+1]) & ~s6[-1,+1]) & (~s6[-1,+0] & ~s7[-1,+0]))) & ~((~s2[+0,-1] & ~s2[-1,+1]) & ~((s0[+0,-1] & ~s0[-1,+1]) & ~(s0[+1,+1] & ~((s0[+0,-1] & ~s0[+0,+0]) & s0[-1,+1])))))) & ~((((((s6[+0,+0] & ~s6[-1,+0]) & s6[+1,-1]) & ~(~s6[+0,+0] & ~s6[+1,+0])) & ((~((s6[+0,-1] & ~s6[+0,+0]) & (~s6[+0,+0] & ~s6[-1,+1])) & ~s6[+1,+1]) & (~s6[+1,+1] & ~s6[-1,+1]))) & (((~s6[+0,+1] & ~s6[+1,+1]) & ~s6[-1,+1]) & ~s3[-1,+0])) & ~(~((((~s1[+1,+1] & ~s1[-1,+1]) & ~s7[-1,+0]) & ((~s3[+0,+1] & ~s3[+1,+1]) & ~s3[-1,+1])) & ~s5[-1,+1]) & ~s2[-1,+0])))",
+          "s3[-1,+1]",
+          "~((((~(((~(~s7[+0,-1] & ~s7[-1,+1]) & ~s6[-1,+0]) & ~s0[-1,+0]) & ~(~((s3[+0,+0] & ~s3[-1,+1]) & ~((s6[+1,+1] & ~((s6[+0,-1] & ~s6[+0,+0]) & s6[-1,+1])) & ~(s6[+0,-1] & ~s6[-1,+1]))) & ~((~s1[+1,+1] & ~s1[-1,+1]) & ~(s1[+1,+1] & ~((s1[+0,-1] & ~s1[+0,+0]) & s1[-1,+1]))))) & ~s6[-1,+1]) & ~((((((s0[+0,+0] & ~s0[-1,+0]) & s0[+1,-1]) & ~(~s0[+0,+0] & ~s0[+1,+0])) & (((~((s1[+0,-1] & ~s1[+0,+0]) & (~s1[+0,+0] & ~s1[-1,+1])) & ~s1[+1,+1]) & ~s1[-1,+1]) & ~(~s2[+0,-1] & ~s2[-1,+1]))) & (((s7[+0,+0] & ~s7[-1,+0]) & s7[+1,-1]) & ~(~s7[+0,+0] & ~s7[+1,+0]))) & (((((s7[+0,+0] & s7[+1,-1]) & (s7[+0,+0] & ~s7[-1,+0])) & ((s7[+0,+0] & ~s7[-1,-1]) & ~(~s7[+0,+0] & ~s7[+1,+0]))) & (s7[+0,-1] & ~s7[-1,+1])) & (~s0[+1,+1] & ~s0[-1,+1])))) & ~((((((~s2[+0,+1] & ~s2[+1,+1]) & ~s2[-1,+1]) & ~s2[-1,+1]) & ~s7[-1,+0]) & (((s7[+0,+0] & s7[+1,-1]) & (s7[+0,+0] & ~s7[-1,-1])) & ~(s0[-1,+1] & ~(~s0[+1,+1] & ~s0[-1,+1])))) & ~s4[-1,+0])) & ~((((((~(s6[+0,+0] & s6[+0,+1]) & ~s6[+1,+1]) & ~s6[-1,+1]) & (~s5[-1,+0] & ~s7[-1,+0])) & (~(s0[-1,+0] & ~(~(((s1[+0,+0] & ~s1[-1,+0]) & s1[+1,-1]) & ~(~s1[+0,+0] & ~s1[+1,+0])) & ~s1[-1,+0])) & ~s2[-1,+0])) & ~(s2[+1,+1] & ~((s2[+0,-1] & ~s2[+0,+0]) & s2[-1,+1]))) & ~(~((((s7[+0,+0] & s7[+1,-1]) & (s7[+0,+0] & ~s7[-1,-1])) & ~s1[-1,+0]) & ~s7[-1,+0]) & ~(((s7[+0,+0] & ~s7[-1,+0]) & s7[+1,-1]) & ~(~s7[+0,+0] & ~s7[+1,+0])))))",
+          "(((((s7[-1,+1] & ~(~s7[+1,+1] & ~s7[-1,+1])) & ~s4[+0,+0]) & s5[-1,+1]) & (~(s7[+0,-1] & ~s7[-1,+1]) & ~s5[-1,+0])) & (~(((((~(s4[+0,+0] & s4[+0,+1]) & ~s4[+1,+1]) & ~s4[-1,+1]) & ~s4[-1,+1]) & (s3[-1,+0] & ~(((s3[+0,+0] & s3[+1,-1]) & (s3[+0,+0] & ~s3[-1,+0])) & ((s3[+0,+0] & ~s3[-1,-1]) & ~(~s3[+0,+0] & ~s3[+1,+0]))))) & ~(s6[+1,+1] & ~((s6[+0,-1] & ~s6[+0,+0]) & s6[-1,+1]))) & ~(~(((((~s2[+0,+1] & ~s2[+1,+1]) & ~s2[-1,+1]) & s2[-1,+1]) & ~((~s7[+0,+1] & ~s7[+1,+1]) & ~s7[-1,+1])) & ~(((~((s6[+0,-1] & ~s6[+0,+0]) & (~s6[+0,+0] & ~s6[-1,+1])) & ~s6[+1,+1]) & (~s6[+1,+1] & ~s6[-1,+1])) & ~s1[-1,+0])) & ~s6[-1,+0])))",
+          "(((((~(((~(~s7[+0,-1] & ~s7[-1,+1]) & ~s6[-1,+0]) & ~s0[-1,+0]) & ~(~((s3[+0,+0] & ~s3[-1,+1]) & ~((s6[+1,+1] & ~((s6[+0,-1] & ~s6[+0,+0]) & s6[-1,+1])) & ~(s6[+0,-1] & ~s6[-1,+1]))) & ~((~s1[+1,+1] & ~s1[-1,+1]) & ~(s1[+1,+1] & ~((s1[+0,-1] & ~s1[+0,+0]) & s1[-1,+1]))))) & ~s6[-1,+1]) & ~((((((s0[+0,+0] & ~s0[-1,+0]) & s0[+1,-1]) & ~(~s0[+0,+0] & ~s0[+1,+0])) & (((~((s1[+0,-1] & ~s1[+0,+0]) & (~s1[+0,+0] & ~s1[-1,+1])) & ~s1[+1,+1]) & ~s1[-1,+1]) & ~(~s2[+0,-1] & ~s2[-1,+1]))) & (((s7[+0,+0] & ~s7[-1,+0]) & s7[+1,-1]) & ~(~s7[+0,+0] & ~s7[+1,+0]))) & (((((s7[+0,+0] & s7[+1,-1]) & (s7[+0,+0] & ~s7[-1,+0])) & ((s7[+0,+0] & ~s7[-1,-1]) & ~(~s7[+0,+0] & ~s7[+1,+0]))) & (s7[+0,-1] & ~s7[-1,+1])) & (~s0[+1,+1] & ~s0[-1,+1])))) & ~((((((~s2[+0,+1] & ~s2[+1,+1]) & ~s2[-1,+1]) & ~s2[-1,+1]) & ~s7[-1,+0]) & (((s7[+0,+0] & s7[+1,-1]) & (s7[+0,+0] & ~s7[-1,-1])) & ~(s0[-1,+1] & ~(~s0[+1,+1] & ~s0[-1,+1])))) & ~s4[-1,+0])) & ~((((((~(s6[+0,+0] & s6[+0,+1]) & ~s6[+1,+1]) & ~s6[-1,+1]) & (~s5[-1,+0] & ~s7[-1,+0])) & (~(s0[-1,+0] & ~(~(((s1[+0,+0] & ~s1[-1,+0]) & s1[+1,-1]) & ~(~s1[+0,+0] & ~s1[+1,+0])) & ~s1[-1,+0])) & ~s2[-1,+0])) & ~(s2[+1,+1] & ~((s2[+0,-1] & ~s2[+0,+0]) & s2[-1,+1]))) & ~(~((((s7[+0,+0] & s7[+1,-1]) & (s7[+0,+0] & ~s7[-1,-1])) & ~s1[-1,+0]) & ~s7[-1,+0]) & ~(((s7[+0,+0] & ~s7[-1,+0]) & s7[+1,-1]) & ~(~s7[+0,+0] & ~s7[+1,+0]))))) & s1[-1,+0])",
+          "s1[-1,+0]",
+          "((~(~(~((s2[+0,-1] & ~s2[+0,+0]) & (~s2[+0,+0] & ~s2[-1,+1])) & ~s2[+1,+1]) & ~s2[-1,+1]) & ~(~s7[+1,+1] & ~s7[-1,+1])) & ~((s2[+1,+1] & ~((s2[+0,-1] & ~s2[+0,+0]) & s2[-1,+1])) & (~s2[-1,+1] & ~s4[-1,+0])))",
+          "~((((s2[+1,+1] & ~((s2[+0,-1] & ~s2[+0,+0]) & s2[-1,+1])) & (~s2[-1,+1] & ~s4[-1,+0])) & ((~(s0[-1,-1] & ~s0[+1,+0]) & ~s0[-1,+0]) & ~s0[-1,+0])) & ~((~(~(~((s2[+0,-1] & ~s2[+0,+0]) & (~s2[+0,+0] & ~s2[-1,+1])) & ~s2[+1,+1]) & ~s2[-1,+1]) & ~(~s7[+1,+1] & ~s7[-1,+1])) & ~((s2[+1,+1] & ~((s2[+0,-1] & ~s2[+0,+0]) & s2[-1,+1])) & (~s2[-1,+1] & ~s4[-1,+0]))))"
+        ],
+        "output_literals": [
+          1923,
+          40,
+          1925,
+          1894,
+          1926,
+          20,
+          1562,
+          1929
+        ],
+        "reachable_nodes": {
+          "1": [
+            "input",
+            0
+          ],
+          "4": [
+            "input",
+            3
+          ],
+          "8": [
+            "input",
+            7
+          ],
+          "9": [
+            "input",
+            8
+          ],
+          "10": [
+            "input",
+            9
+          ],
+          "11": [
+            "input",
+            10
+          ],
+          "12": [
+            "input",
+            11
+          ],
+          "13": [
+            "input",
+            12
+          ],
+          "14": [
+            "input",
+            13
+          ],
+          "15": [
+            "input",
+            14
+          ],
+          "16": [
+            "input",
+            15
+          ],
+          "17": [
+            "input",
+            16
+          ],
+          "18": [
+            "input",
+            17
+          ],
+          "19": [
+            "input",
+            18
+          ],
+          "20": [
+            "input",
+            19
+          ],
+          "21": [
+            "input",
+            20
+          ],
+          "22": [
+            "input",
+            21
+          ],
+          "23": [
+            "input",
+            22
+          ],
+          "24": [
+            "input",
+            23
+          ],
+          "25": [
+            "input",
+            24
+          ],
+          "26": [
+            "input",
+            25
+          ],
+          "27": [
+            "input",
+            26
+          ],
+          "31": [
+            "input",
+            30
+          ],
+          "32": [
+            "input",
+            31
+          ],
+          "33": [
+            "input",
+            32
+          ],
+          "34": [
+            "input",
+            33
+          ],
+          "35": [
+            "input",
+            34
+          ],
+          "36": [
+            "input",
+            35
+          ],
+          "37": [
+            "input",
+            36
+          ],
+          "39": [
+            "input",
+            38
+          ],
+          "40": [
+            "input",
+            39
+          ],
+          "43": [
+            "input",
+            42
+          ],
+          "44": [
+            "input",
+            43
+          ],
+          "45": [
+            "input",
+            44
+          ],
+          "47": [
+            "input",
+            46
+          ],
+          "48": [
+            "input",
+            47
+          ],
+          "49": [
+            "input",
+            48
+          ],
+          "50": [
+            "input",
+            49
+          ],
+          "52": [
+            "input",
+            51
+          ],
+          "55": [
+            "input",
+            54
+          ],
+          "56": [
+            "input",
+            55
+          ],
+          "57": [
+            "input",
+            56
+          ],
+          "58": [
+            "input",
+            57
+          ],
+          "60": [
+            "input",
+            59
+          ],
+          "63": [
+            "input",
+            62
+          ],
+          "64": [
+            "input",
+            63
+          ],
+          "65": [
+            "input",
+            64
+          ],
+          "66": [
+            "input",
+            65
+          ],
+          "67": [
+            "input",
+            66
+          ],
+          "68": [
+            "input",
+            67
+          ],
+          "69": [
+            "input",
+            68
+          ],
+          "71": [
+            "input",
+            70
+          ],
+          "72": [
+            "input",
+            71
+          ],
+          "80": [
+            "AND",
+            9,
+            72
+          ],
+          "88": [
+            "AND",
+            17,
+            80
+          ],
+          "89": [
+            "AND",
+            50,
+            67
+          ],
+          "91": [
+            "AND",
+            52,
+            69
+          ],
+          "93": [
+            "AND",
+            54,
+            71
+          ],
+          "101": [
+            "AND",
+            62,
+            79
+          ],
+          "116": [
+            "AND",
+            72,
+            104
+          ],
+          "128": [
+            "AND",
+            80,
+            112
+          ],
+          "147": [
+            "AND",
+            19,
+            66
+          ],
+          "148": [
+            "AND",
+            37,
+            69
+          ],
+          "150": [
+            "AND",
+            21,
+            68
+          ],
+          "151": [
+            "AND",
+            39,
+            71
+          ],
+          "156": [
+            "AND",
+            25,
+            72
+          ],
+          "163": [
+            "AND",
+            47,
+            79
+          ],
+          "165": [
+            "AND",
+            31,
+            78
+          ],
+          "168": [
+            "AND",
+            33,
+            80
+          ],
+          "178": [
+            "AND",
+            72,
+            88
+          ],
+          "181": [
+            "AND",
+            74,
+            90
+          ],
+          "187": [
+            "AND",
+            78,
+            94
+          ],
+          "194": [
+            "AND",
+            67,
+            115
+          ],
+          "196": [
+            "AND",
+            69,
+            117
+          ],
+          "200": [
+            "AND",
+            73,
+            121
+          ],
+          "206": [
+            "AND",
+            79,
+            127
+          ],
+          "208": [
+            "AND",
+            81,
+            129
+          ],
+          "228": [
+            "AND",
+            41,
+            72
+          ],
+          "235": [
+            "AND",
+            39,
+            55
+          ],
+          "240": [
+            "AND",
+            49,
+            65
+          ],
+          "243": [
+            "AND",
+            87,
+            135
+          ],
+          "244": [
+            "AND",
+            89,
+            137
+          ],
+          "245": [
+            "AND",
+            91,
+            139
+          ],
+          "247": [
+            "AND",
+            95,
+            143
+          ],
+          "248": [
+            "AND",
+            97,
+            145
+          ],
+          "258": [
+            "AND",
+            2,
+            115
+          ],
+          "276": [
+            "AND",
+            182,
+            296
+          ],
+          "279": [
+            "AND",
+            186,
+            302
+          ],
+          "283": [
+            "AND",
+            232,
+            312
+          ],
+          "291": [
+            "AND",
+            202,
+            326
+          ],
+          "295": [
+            "AND",
+            256,
+            336
+          ],
+          "300": [
+            "AND",
+            137,
+            357
+          ],
+          "301": [
+            "AND",
+            139,
+            363
+          ],
+          "303": [
+            "AND",
+            143,
+            375
+          ],
+          "306": [
+            "AND",
+            98,
+            294
+          ],
+          "308": [
+            "AND",
+            100,
+            300
+          ],
+          "318": [
+            "AND",
+            110,
+            330
+          ],
+          "320": [
+            "AND",
+            112,
+            336
+          ],
+          "329": [
+            "AND",
+            35,
+            50
+          ],
+          "347": [
+            "AND",
+            47,
+            62
+          ],
+          "350": [
+            "AND",
+            49,
+            64
+          ],
+          "353": [
+            "AND",
+            34,
+            178
+          ],
+          "355": [
+            "AND",
+            36,
+            182
+          ],
+          "357": [
+            "AND",
+            38,
+            186
+          ],
+          "360": [
+            "AND",
+            160,
+            401
+          ],
+          "365": [
+            "AND",
+            46,
+            202
+          ],
+          "368": [
+            "AND",
+            176,
+            417
+          ],
+          "376": [
+            "AND",
+            176,
+            256
+          ],
+          "377": [
+            "AND",
+            35,
+            131
+          ],
+          "378": [
+            "AND",
+            37,
+            133
+          ],
+          "383": [
+            "AND",
+            47,
+            143
+          ],
+          "384": [
+            "AND",
+            49,
+            145
+          ],
+          "387": [
+            "AND",
+            39,
+            486
+          ],
+          "388": [
+            "AND",
+            41,
+            488
+          ],
+          "389": [
+            "AND",
+            43,
+            490
+          ],
+          "391": [
+            "AND",
+            47,
+            494
+          ],
+          "392": [
+            "AND",
+            49,
+            496
+          ],
+          "393": [
+            "AND",
+            19,
+            517
+          ],
+          "403": [
+            "AND",
+            133,
+            553
+          ],
+          "405": [
+            "AND",
+            135,
+            559
+          ],
+          "413": [
+            "AND",
+            143,
+            583
+          ],
+          "420": [
+            "AND",
+            41,
+            600
+          ],
+          "421": [
+            "AND",
+            43,
+            602
+          ],
+          "423": [
+            "AND",
+            47,
+            606
+          ],
+          "425": [
+            "AND",
+            389,
+            612
+          ],
+          "426": [
+            "AND",
+            393,
+            616
+          ],
+          "431": [
+            "AND",
+            413,
+            636
+          ],
+          "432": [
+            "AND",
+            417,
+            640
+          ],
+          "433": [
+            "AND",
+            130,
+            707
+          ],
+          "435": [
+            "AND",
+            132,
+            711
+          ],
+          "437": [
+            "AND",
+            134,
+            715
+          ],
+          "440": [
+            "AND",
+            566,
+            720
+          ],
+          "445": [
+            "AND",
+            142,
+            731
+          ],
+          "448": [
+            "AND",
+            590,
+            736
+          ],
+          "456": [
+            "AND",
+            38,
+            774
+          ],
+          "459": [
+            "AND",
+            24,
+            881
+          ],
+          "460": [
+            "AND",
+            43,
+            842
+          ],
+          "464": [
+            "AND",
+            21,
+            853
+          ],
+          "467": [
+            "AND",
+            34,
+            755
+          ],
+          "482": [
+            "AND",
+            48,
+            769
+          ],
+          "491": [
+            "AND",
+            766,
+            826
+          ],
+          "493": [
+            "AND",
+            658,
+            867
+          ],
+          "494": [
+            "AND",
+            37,
+            806
+          ],
+          "496": [
+            "AND",
+            31,
+            481
+          ],
+          "497": [
+            "AND",
+            39,
+            811
+          ],
+          "498": [
+            "AND",
+            39,
+            774
+          ],
+          "505": [
+            "AND",
+            695,
+            890
+          ],
+          "520": [
+            "AND",
+            756,
+            871
+          ],
+          "523": [
+            "AND",
+            27,
+            39
+          ],
+          "533": [
+            "AND",
+            456,
+            1011
+          ],
+          "536": [
+            "AND",
+            471,
+            988
+          ],
+          "541": [
+            "AND",
+            769,
+            995
+          ],
+          "547": [
+            "AND",
+            470,
+            987
+          ],
+          "549": [
+            "AND",
+            862,
+            982
+          ],
+          "550": [
+            "AND",
+            18,
+            929
+          ],
+          "555": [
+            "AND",
+            918,
+            920
+          ],
+          "556": [
+            "AND",
+            29,
+            33
+          ],
+          "558": [
+            "AND",
+            785,
+            912
+          ],
+          "559": [
+            "AND",
+            21,
+            982
+          ],
+          "560": [
+            "AND",
+            752,
+            935
+          ],
+          "564": [
+            "AND",
+            21,
+            752
+          ],
+          "577": [
+            "AND",
+            33,
+            756
+          ],
+          "578": [
+            "AND",
+            840,
+            864
+          ],
+          "585": [
+            "AND",
+            75,
+            964
+          ],
+          "613": [
+            "AND",
+            776,
+            1154
+          ],
+          "619": [
+            "AND",
+            1116,
+            1119
+          ],
+          "622": [
+            "AND",
+            700,
+            896
+          ],
+          "623": [
+            "AND",
+            754,
+            1112
+          ],
+          "626": [
+            "AND",
+            33,
+            1128
+          ],
+          "627": [
+            "AND",
+            44,
+            1170
+          ],
+          "631": [
+            "AND",
+            850,
+            1072
+          ],
+          "639": [
+            "AND",
+            19,
+            992
+          ],
+          "643": [
+            "AND",
+            25,
+            782
+          ],
+          "651": [
+            "AND",
+            874,
+            1046
+          ],
+          "663": [
+            "AND",
+            29,
+            701
+          ],
+          "669": [
+            "AND",
+            33,
+            996
+          ],
+          "670": [
+            "AND",
+            778,
+            1246
+          ],
+          "674": [
+            "AND",
+            865,
+            1253
+          ],
+          "690": [
+            "AND",
+            1041,
+            1067
+          ],
+          "692": [
+            "AND",
+            756,
+            1244
+          ],
+          "702": [
+            "AND",
+            754,
+            1244
+          ],
+          "704": [
+            "AND",
+            45,
+            1226
+          ],
+          "707": [
+            "AND",
+            31,
+            33
+          ],
+          "708": [
+            "AND",
+            23,
+            1101
+          ],
+          "713": [
+            "AND",
+            1156,
+            1286
+          ],
+          "728": [
+            "AND",
+            23,
+            1384
+          ],
+          "736": [
+            "AND",
+            864,
+            1262
+          ],
+          "738": [
+            "AND",
+            1098,
+            1286
+          ],
+          "742": [
+            "AND",
+            23,
+            1409
+          ],
+          "747": [
+            "AND",
+            1254,
+            1326
+          ],
+          "769": [
+            "AND",
+            1278,
+            1381
+          ],
+          "781": [
+            "AND",
+            1082,
+            1303
+          ],
+          "788": [
+            "AND",
+            891,
+            1110
+          ],
+          "790": [
+            "AND",
+            782,
+            1414
+          ],
+          "806": [
+            "AND",
+            19,
+            786
+          ],
+          "811": [
+            "AND",
+            846,
+            1112
+          ],
+          "829": [
+            "AND",
+            1404,
+            1472
+          ],
+          "831": [
+            "AND",
+            31,
+            1239
+          ],
+          "832": [
+            "AND",
+            23,
+            1427
+          ],
+          "841": [
+            "AND",
+            1120,
+            1338
+          ],
+          "851": [
+            "AND",
+            1341,
+            1664
+          ],
+          "871": [
+            "AND",
+            1456,
+            1580
+          ],
+          "874": [
+            "AND",
+            47,
+            1539
+          ],
+          "886": [
+            "AND",
+            1577,
+            1663
+          ],
+          "894": [
+            "AND",
+            1302,
+            1612
+          ],
+          "899": [
+            "AND",
+            1095,
+            1742
+          ],
+          "901": [
+            "AND",
+            1416,
+            1622
+          ],
+          "915": [
+            "AND",
+            1659,
+            1748
+          ],
+          "921": [
+            "AND",
+            875,
+            1802
+          ],
+          "928": [
+            "AND",
+            27,
+            1682
+          ],
+          "940": [
+            "AND",
+            1349,
+            1842
+          ],
+          "941": [
+            "AND",
+            1830,
+            1857
+          ],
+          "947": [
+            "AND",
+            1494,
+            1772
+          ],
+          "953": [
+            "AND",
+            1702,
+            1799
+          ],
+          "956": [
+            "AND",
+            1476,
+            1485
+          ],
+          "961": [
+            "AND",
+            1906,
+            1913
+          ],
+          "962": [
+            "AND",
+            1881,
+            1882
+          ],
+          "963": [
+            "AND",
+            20,
+            1924
+          ],
+          "964": [
+            "AND",
+            1563,
+            1788
+          ]
+        }
+      },
+      "refined": {
+        "binary_nodes_all_channels": 145,
+        "and_nodes": 145,
+        "xor_nodes": 0,
+        "visible_recurrent_channels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "visible_core_binary_nodes": 145,
+        "relevant_local_inputs": 46,
+        "output_expressions": [
+          "~((((~((((((~s5[-1,+0] & ~s7[-1,+0]) & ~s0[-1,+1]) & ~s4[-1,+1]) & ~s4[+0,+1]) & ~s0[+1,+1]) & ~s4[+1,+1]) & ~s2[-1,+0]) & ~(((((((((~s3[-1,+0] & ~s7[-1,+0]) & ~s3[-1,+1]) & ~s6[-1,+1]) & s7[+0,+0]) & ~s6[+0,+1]) & s7[+1,-1]) & ~s3[+1,+1]) & ~s6[+1,+1]) & ~(s3[+0,+0] & s3[+0,+1]))) & ~((((((((((((~s6[-1,+0] & ~s7[-1,-1]) & ~s7[-1,+0]) & ~s1[-1,+1]) & ~s6[-1,+1]) & ~s7[-1,+1]) & s7[+0,-1]) & s7[+0,+0]) & ~s6[+0,+1]) & s7[+1,-1]) & ~s1[+1,+1]) & ~s6[+1,+1]) & ~((~s2[+0,-1] & ~s2[-1,+1]) & ~((s0[+0,-1] & ~s0[-1,+1]) & ~(s0[+1,+1] & ~((s0[+0,-1] & s0[-1,+1]) & ~s0[+0,+0])))))) & ~(((((((~s3[-1,+0] & ~s6[-1,+0]) & ~s6[-1,+1]) & s6[+0,+0]) & ~s6[+0,+1]) & s6[+1,-1]) & ~s6[+1,+1]) & ~(~((((((~s1[-1,+1] & ~s7[-1,+0]) & ~s3[-1,+1]) & ~s5[-1,+1]) & ~s3[+0,+1]) & ~s1[+1,+1]) & ~s3[+1,+1]) & ~s2[-1,+0])))",
+          "s3[-1,+1]",
+          "~((((~(((~s0[-1,+0] & ~s6[-1,+0]) & ~(~s7[+0,-1] & ~s7[-1,+1])) & ~(~((s3[+0,+0] & ~s3[-1,+1]) & ~((s6[+1,+1] & ~(s6[+0,-1] & ~s6[-1,+1])) & ~((s6[+0,-1] & s6[-1,+1]) & ~s6[+0,+0]))) & ~(~s1[+1,+1] & ~s1[-1,+1]))) & ~s6[-1,+1]) & ~((((((((((((((~s0[-1,+0] & ~s7[-1,-1]) & ~s7[-1,+0]) & ~s0[-1,+1]) & ~s1[-1,+1]) & ~s7[-1,+1]) & s7[+0,-1]) & s0[+0,+0]) & s7[+0,+0]) & s0[+1,-1]) & s7[+1,-1]) & ~s0[+1,+1]) & ~s1[+1,+1]) & ~(s1[+0,-1] & ~s1[+0,+0])) & ~(~s2[+0,-1] & ~s2[-1,+1]))) & ~((((((((~s4[-1,+0] & ~s7[-1,-1]) & ~s7[-1,+0]) & ~s0[-1,+1]) & ~s2[-1,+1]) & s7[+0,+0]) & ~s2[+0,+1]) & s7[+1,-1]) & ~s2[+1,+1])) & ~(((((((~s2[-1,+0] & ~s5[-1,+0]) & ~s7[-1,+0]) & ~s6[+1,+1]) & ~(s6[+0,+0] & s6[+0,+1])) & ~(s2[+1,+1] & ~((s2[+0,-1] & s2[-1,+1]) & ~s2[+0,+0]))) & ~(s0[-1,+0] & ~(~(s1[+0,+0] & s1[+1,-1]) & ~s1[-1,+0]))) & ~(~((((~s1[-1,+0] & ~s7[-1,-1]) & ~s7[-1,+0]) & s7[+0,+0]) & s7[+1,-1]) & ~((s7[+0,+0] & ~s7[-1,+0]) & s7[+1,-1]))))",
+          "(((((s6[-1,+0] & ~s5[-1,+0]) & s5[-1,+1]) & s7[-1,+1]) & ~s4[+0,+0]) & ~((((s3[-1,+0] & ~s4[-1,+1]) & ~s4[+1,+1]) & ~(s4[+0,+0] & s4[+0,+1])) & ~(s6[+1,+1] & ~((s6[+0,-1] & s6[-1,+1]) & ~s6[+0,+0]))))",
+          "(((((s1[-1,+0] & ~s6[-1,+1]) & ~(((~s0[-1,+0] & ~s6[-1,+0]) & ~(~s7[+0,-1] & ~s7[-1,+1])) & ~(~((s3[+0,+0] & ~s3[-1,+1]) & ~((s6[+1,+1] & ~(s6[+0,-1] & ~s6[-1,+1])) & ~((s6[+0,-1] & s6[-1,+1]) & ~s6[+0,+0]))) & ~(~s1[+1,+1] & ~s1[-1,+1])))) & ~((((((((((((((~s0[-1,+0] & ~s7[-1,-1]) & ~s7[-1,+0]) & ~s0[-1,+1]) & ~s1[-1,+1]) & ~s7[-1,+1]) & s7[+0,-1]) & s0[+0,+0]) & s7[+0,+0]) & s0[+1,-1]) & s7[+1,-1]) & ~s0[+1,+1]) & ~s1[+1,+1]) & ~(s1[+0,-1] & ~s1[+0,+0])) & ~(~s2[+0,-1] & ~s2[-1,+1]))) & ~((((((((~s4[-1,+0] & ~s7[-1,-1]) & ~s7[-1,+0]) & ~s0[-1,+1]) & ~s2[-1,+1]) & s7[+0,+0]) & ~s2[+0,+1]) & s7[+1,-1]) & ~s2[+1,+1])) & ~(((((((~s2[-1,+0] & ~s5[-1,+0]) & ~s7[-1,+0]) & ~s6[+1,+1]) & ~(s6[+0,+0] & s6[+0,+1])) & ~(s2[+1,+1] & ~((s2[+0,-1] & s2[-1,+1]) & ~s2[+0,+0]))) & ~(s0[-1,+0] & ~(~(s1[+0,+0] & s1[+1,-1]) & ~s1[-1,+0]))) & ~(~((((~s1[-1,+0] & ~s7[-1,-1]) & ~s7[-1,+0]) & s7[+0,+0]) & s7[+1,-1]) & ~((s7[+0,+0] & ~s7[-1,+0]) & s7[+1,-1]))))",
+          "s1[-1,+0]",
+          "((~(~(~((s2[+0,-1] & ~s2[-1,+1]) & ~s2[+0,+0]) & ~s2[+1,+1]) & ~s2[-1,+1]) & ~(~s7[+1,+1] & ~s7[-1,+1])) & ~((~s2[-1,+1] & ~s4[-1,+0]) & s2[+1,+1]))",
+          "~(((((~s0[-1,+0] & ~s4[-1,+0]) & ~s2[-1,+1]) & s2[+1,+1]) & ~(s0[-1,-1] & ~s0[+1,+0])) & ~((~(~(~((s2[+0,-1] & ~s2[-1,+1]) & ~s2[+0,+0]) & ~s2[+1,+1]) & ~s2[-1,+1]) & ~(~s7[+1,+1] & ~s7[-1,+1])) & ~((~s2[-1,+1] & ~s4[-1,+0]) & s2[+1,+1])))"
+        ],
+        "output_literals": [
+          3157,
+          40,
+          3169,
+          3100,
+          3178,
+          20,
+          2126,
+          3181
+        ],
+        "reachable_nodes": {
+          "1": [
+            "input",
+            0
+          ],
+          "8": [
+            "input",
+            7
+          ],
+          "9": [
+            "input",
+            8
+          ],
+          "10": [
+            "input",
+            9
+          ],
+          "11": [
+            "input",
+            10
+          ],
+          "12": [
+            "input",
+            11
+          ],
+          "13": [
+            "input",
+            12
+          ],
+          "14": [
+            "input",
+            13
+          ],
+          "15": [
+            "input",
+            14
+          ],
+          "16": [
+            "input",
+            15
+          ],
+          "17": [
+            "input",
+            16
+          ],
+          "18": [
+            "input",
+            17
+          ],
+          "19": [
+            "input",
+            18
+          ],
+          "20": [
+            "input",
+            19
+          ],
+          "21": [
+            "input",
+            20
+          ],
+          "22": [
+            "input",
+            21
+          ],
+          "23": [
+            "input",
+            22
+          ],
+          "24": [
+            "input",
+            23
+          ],
+          "25": [
+            "input",
+            24
+          ],
+          "26": [
+            "input",
+            25
+          ],
+          "27": [
+            "input",
+            26
+          ],
+          "31": [
+            "input",
+            30
+          ],
+          "32": [
+            "input",
+            31
+          ],
+          "33": [
+            "input",
+            32
+          ],
+          "34": [
+            "input",
+            33
+          ],
+          "35": [
+            "input",
+            34
+          ],
+          "36": [
+            "input",
+            35
+          ],
+          "37": [
+            "input",
+            36
+          ],
+          "39": [
+            "input",
+            38
+          ],
+          "40": [
+            "input",
+            39
+          ],
+          "43": [
+            "input",
+            42
+          ],
+          "44": [
+            "input",
+            43
+          ],
+          "45": [
+            "input",
+            44
+          ],
+          "47": [
+            "input",
+            46
+          ],
+          "49": [
+            "input",
+            48
+          ],
+          "50": [
+            "input",
+            49
+          ],
+          "55": [
+            "input",
+            54
+          ],
+          "56": [
+            "input",
+            55
+          ],
+          "57": [
+            "input",
+            56
+          ],
+          "65": [
+            "input",
+            64
+          ],
+          "66": [
+            "input",
+            65
+          ],
+          "67": [
+            "input",
+            66
+          ],
+          "68": [
+            "input",
+            67
+          ],
+          "69": [
+            "input",
+            68
+          ],
+          "71": [
+            "input",
+            70
+          ],
+          "72": [
+            "input",
+            71
+          ],
+          "91": [
+            "AND",
+            52,
+            69
+          ],
+          "110": [
+            "AND",
+            68,
+            100
+          ],
+          "168": [
+            "AND",
+            33,
+            80
+          ],
+          "178": [
+            "AND",
+            72,
+            88
+          ],
+          "181": [
+            "AND",
+            74,
+            90
+          ],
+          "187": [
+            "AND",
+            78,
+            94
+          ],
+          "228": [
+            "AND",
+            41,
+            72
+          ],
+          "235": [
+            "AND",
+            39,
+            55
+          ],
+          "240": [
+            "AND",
+            49,
+            65
+          ],
+          "258": [
+            "AND",
+            2,
+            115
+          ],
+          "273": [
+            "AND",
+            35,
+            50
+          ],
+          "281": [
+            "AND",
+            39,
+            54
+          ],
+          "282": [
+            "AND",
+            71,
+            562
+          ],
+          "297": [
+            "AND",
+            47,
+            62
+          ],
+          "303": [
+            "AND",
+            112,
+            336
+          ],
+          "361": [
+            "AND",
+            34,
+            50
+          ],
+          "362": [
+            "AND",
+            67,
+            722
+          ],
+          "365": [
+            "AND",
+            38,
+            54
+          ],
+          "366": [
+            "AND",
+            71,
+            730
+          ],
+          "373": [
+            "AND",
+            46,
+            62
+          ],
+          "374": [
+            "AND",
+            79,
+            746
+          ],
+          "386": [
+            "AND",
+            37,
+            133
+          ],
+          "392": [
+            "AND",
+            49,
+            145
+          ],
+          "427": [
+            "AND",
+            135,
+            565
+          ],
+          "465": [
+            "AND",
+            130,
+            725
+          ],
+          "467": [
+            "AND",
+            134,
+            733
+          ],
+          "471": [
+            "AND",
+            142,
+            749
+          ],
+          "480": [
+            "AND",
+            21,
+            221
+          ],
+          "493": [
+            "AND",
+            546,
+            931
+          ],
+          "495": [
+            "AND",
+            39,
+            855
+          ],
+          "499": [
+            "AND",
+            142,
+            595
+          ],
+          "500": [
+            "AND",
+            749,
+            998
+          ],
+          "510": [
+            "AND",
+            25,
+            31
+          ],
+          "524": [
+            "AND",
+            27,
+            39
+          ],
+          "531": [
+            "AND",
+            29,
+            30
+          ],
+          "536": [
+            "AND",
+            456,
+            1001
+          ],
+          "543": [
+            "AND",
+            785,
+            991
+          ],
+          "551": [
+            "AND",
+            470,
+            987
+          ],
+          "556": [
+            "AND",
+            18,
+            961
+          ],
+          "561": [
+            "AND",
+            24,
+            43
+          ],
+          "562": [
+            "AND",
+            139,
+            1122
+          ],
+          "563": [
+            "AND",
+            363,
+            1124
+          ],
+          "564": [
+            "AND",
+            29,
+            33
+          ],
+          "582": [
+            "AND",
+            17,
+            21
+          ],
+          "605": [
+            "AND",
+            33,
+            37
+          ],
+          "680": [
+            "AND",
+            41,
+            1210
+          ],
+          "695": [
+            "AND",
+            35,
+            1128
+          ],
+          "703": [
+            "AND",
+            33,
+            1164
+          ],
+          "704": [
+            "AND",
+            80,
+            1406
+          ],
+          "705": [
+            "AND",
+            112,
+            1408
+          ],
+          "710": [
+            "AND",
+            23,
+            29
+          ],
+          "735": [
+            "AND",
+            19,
+            31
+          ],
+          "736": [
+            "AND",
+            481,
+            1470
+          ],
+          "762": [
+            "AND",
+            134,
+            1048
+          ],
+          "789": [
+            "AND",
+            43,
+            1390
+          ],
+          "790": [
+            "AND",
+            91,
+            1578
+          ],
+          "791": [
+            "AND",
+            131,
+            1580
+          ],
+          "792": [
+            "AND",
+            139,
+            1582
+          ],
+          "800": [
+            "AND",
+            607,
+            1411
+          ],
+          "825": [
+            "AND",
+            773,
+            1073
+          ],
+          "865": [
+            "AND",
+            45,
+            1360
+          ],
+          "866": [
+            "AND",
+            89,
+            1730
+          ],
+          "867": [
+            "AND",
+            133,
+            1732
+          ],
+          "868": [
+            "AND",
+            137,
+            1734
+          ],
+          "876": [
+            "AND",
+            25,
+            33
+          ],
+          "877": [
+            "AND",
+            41,
+            1752
+          ],
+          "878": [
+            "AND",
+            47,
+            1754
+          ],
+          "879": [
+            "AND",
+            80,
+            1756
+          ],
+          "880": [
+            "AND",
+            95,
+            1758
+          ],
+          "881": [
+            "AND",
+            112,
+            1760
+          ],
+          "882": [
+            "AND",
+            137,
+            1762
+          ],
+          "883": [
+            "AND",
+            143,
+            1764
+          ],
+          "884": [
+            "AND",
+            357,
+            1766
+          ],
+          "939": [
+            "AND",
+            47,
+            1020
+          ],
+          "940": [
+            "AND",
+            78,
+            1878
+          ],
+          "941": [
+            "AND",
+            95,
+            1880
+          ],
+          "942": [
+            "AND",
+            110,
+            1882
+          ],
+          "943": [
+            "AND",
+            143,
+            1884
+          ],
+          "954": [
+            "AND",
+            23,
+            1737
+          ],
+          "1035": [
+            "AND",
+            1472,
+            1651
+          ],
+          "1063": [
+            "AND",
+            1086,
+            1525
+          ],
+          "1074": [
+            "AND",
+            943,
+            1126
+          ],
+          "1157": [
+            "AND",
+            17,
+            19
+          ],
+          "1158": [
+            "AND",
+            33,
+            2314
+          ],
+          "1159": [
+            "AND",
+            35,
+            2316
+          ],
+          "1160": [
+            "AND",
+            37,
+            2318
+          ],
+          "1161": [
+            "AND",
+            49,
+            2320
+          ],
+          "1162": [
+            "AND",
+            64,
+            2322
+          ],
+          "1163": [
+            "AND",
+            66,
+            2324
+          ],
+          "1164": [
+            "AND",
+            80,
+            2326
+          ],
+          "1165": [
+            "AND",
+            98,
+            2328
+          ],
+          "1166": [
+            "AND",
+            112,
+            2330
+          ],
+          "1167": [
+            "AND",
+            131,
+            2332
+          ],
+          "1168": [
+            "AND",
+            133,
+            2334
+          ],
+          "1169": [
+            "AND",
+            183,
+            2336
+          ],
+          "1170": [
+            "AND",
+            471,
+            2338
+          ],
+          "1239": [
+            "AND",
+            23,
+            1585
+          ],
+          "1240": [
+            "AND",
+            1769,
+            2478
+          ],
+          "1317": [
+            "AND",
+            47,
+            2071
+          ],
+          "1359": [
+            "AND",
+            19,
+            27
+          ],
+          "1360": [
+            "AND",
+            39,
+            2718
+          ],
+          "1361": [
+            "AND",
+            134,
+            2720
+          ],
+          "1362": [
+            "AND",
+            517,
+            2722
+          ],
+          "1366": [
+            "AND",
+            33,
+            1420
+          ],
+          "1437": [
+            "AND",
+            2341,
+            2634
+          ],
+          "1488": [
+            "AND",
+            17,
+            27
+          ],
+          "1489": [
+            "AND",
+            33,
+            2976
+          ],
+          "1490": [
+            "AND",
+            35,
+            2978
+          ],
+          "1491": [
+            "AND",
+            39,
+            2980
+          ],
+          "1492": [
+            "AND",
+            80,
+            2982
+          ],
+          "1493": [
+            "AND",
+            87,
+            2984
+          ],
+          "1494": [
+            "AND",
+            112,
+            2986
+          ],
+          "1495": [
+            "AND",
+            135,
+            2988
+          ],
+          "1540": [
+            "AND",
+            2874,
+            2991
+          ],
+          "1547": [
+            "AND",
+            44,
+            1062
+          ],
+          "1548": [
+            "AND",
+            48,
+            3094
+          ],
+          "1549": [
+            "AND",
+            75,
+            3096
+          ],
+          "1550": [
+            "AND",
+            2149,
+            3098
+          ],
+          "1553": [
+            "AND",
+            17,
+            31
+          ],
+          "1554": [
+            "AND",
+            33,
+            3106
+          ],
+          "1555": [
+            "AND",
+            37,
+            3108
+          ],
+          "1556": [
+            "AND",
+            47,
+            3110
+          ],
+          "1557": [
+            "AND",
+            49,
+            3112
+          ],
+          "1558": [
+            "AND",
+            64,
+            3114
+          ],
+          "1559": [
+            "AND",
+            80,
+            3116
+          ],
+          "1560": [
+            "AND",
+            95,
+            3118
+          ],
+          "1561": [
+            "AND",
+            112,
+            3120
+          ],
+          "1562": [
+            "AND",
+            133,
+            3122
+          ],
+          "1563": [
+            "AND",
+            143,
+            3124
+          ],
+          "1564": [
+            "AND",
+            1103,
+            3126
+          ],
+          "1565": [
+            "AND",
+            2480,
+            3129
+          ],
+          "1566": [
+            "AND",
+            1886,
+            1909
+          ],
+          "1578": [
+            "AND",
+            3130,
+            3133
+          ],
+          "1579": [
+            "AND",
+            143,
+            2732
+          ],
+          "1580": [
+            "AND",
+            375,
+            3158
+          ],
+          "1581": [
+            "AND",
+            935,
+            3160
+          ],
+          "1582": [
+            "AND",
+            1113,
+            3162
+          ],
+          "1583": [
+            "AND",
+            1601,
+            3164
+          ],
+          "1584": [
+            "AND",
+            3080,
+            3167
+          ],
+          "1585": [
+            "AND",
+            20,
+            47
+          ],
+          "1586": [
+            "AND",
+            2071,
+            3170
+          ],
+          "1587": [
+            "AND",
+            2341,
+            3172
+          ],
+          "1588": [
+            "AND",
+            2991,
+            3174
+          ],
+          "1589": [
+            "AND",
+            3167,
+            3176
+          ],
+          "1590": [
+            "AND",
+            2127,
+            2724
+          ]
+        }
+      },
+      "abstract_certificate": {
+        "size": 16,
+        "tick_budget": 64,
+        "known_visible_bits_by_tick": [
+          0,
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          5,
+          6,
+          7,
+          9,
+          13,
+          14,
+          17,
+          20,
+          22,
+          24,
+          25,
+          27,
+          29,
+          31,
+          32,
+          34,
+          36,
+          38,
+          38,
+          39,
+          40,
+          41,
+          41,
+          42,
+          43,
+          44,
+          44,
+          45,
+          45,
+          45
+        ],
+        "known_wrong_visible_bits_by_tick": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "first_all_visible_correct": null,
+        "abstract_fixed_point_tick": 36,
+        "certifies_all_initial_states_and_future_ticks": false
+      },
+      "provably_wrong_cells_after_tick_64": [
+        [
+          0,
+          12
+        ]
+      ],
+      "all_probe_visible_period2_from_tick20": false,
+      "all_probe_full_state_period2_from_tick20": false,
+      "full_state_fixed_from_tick20": false,
+      "all_probes_same_visible_at_tick20": false,
+      "all_probes_same_visible_at_tick21": false,
+      "visible_wrong_pixels_tick20_first_probe": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          15
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          8,
+          13
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          11,
+          13
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          12,
+          9
+        ],
+        [
+          12,
+          10
+        ],
+        [
+          12,
+          11
+        ],
+        [
+          12,
+          12
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          12,
+          14
+        ],
+        [
+          13,
+          11
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          13,
+          13
+        ],
+        [
+          13,
+          15
+        ],
+        [
+          14,
+          7
+        ],
+        [
+          14,
+          9
+        ],
+        [
+          14,
+          10
+        ],
+        [
+          14,
+          11
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          14,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          15,
+          11
+        ],
+        [
+          15,
+          15
+        ]
+      ],
+      "original_probe_errors_by_tick": [
+        4089,
+        4048,
+        3962,
+        3981,
+        3909,
+        3838,
+        3767,
+        3646,
+        3618,
+        3449,
+        3345,
+        3082,
+        3087,
+        2799,
+        2682,
+        2482,
+        2448,
+        2392,
+        2406,
+        2426,
+        2472,
+        2500,
+        2396,
+        2411,
+        2283,
+        2261,
+        2114,
+        2126,
+        2058,
+        2232,
+        2179,
+        2384,
+        2309,
+        2389,
+        2262,
+        2292,
+        2163,
+        2154,
+        2031,
+        2211,
+        2198,
+        2383,
+        2291,
+        2389,
+        2284,
+        2313,
+        2126,
+        2145,
+        2052,
+        2218,
+        2183,
+        2373,
+        2305,
+        2404,
+        2250,
+        2301,
+        2154,
+        2149,
+        2042,
+        2210,
+        2199,
+        2389,
+        2271,
+        2392,
+        2278
+      ],
+      "first_probe_thresholded_soft_errors": {
+        "250": {
+          "thresholded_soft_errors": 125,
+          "common_hard_errors": 128,
+          "soft_sse": 63.329429626464844
+        },
+        "400": {
+          "thresholded_soft_errors": 50,
+          "common_hard_errors": 55,
+          "soft_sse": 32.455135345458984
+        },
+        "450": {
+          "thresholded_soft_errors": 29,
+          "common_hard_errors": 34,
+          "soft_sse": 18.66358184814453
+        },
+        "500": {
+          "thresholded_soft_errors": 2,
+          "common_hard_errors": 57,
+          "soft_sse": 4.054024696350098
+        }
+      }
+    },
+    "R002_formal_attempt01_seed14_truth_reference_decay": {
+      "basic": {
+        "binary_nodes_all_channels": 147,
+        "and_nodes": 146,
+        "xor_nodes": 1,
+        "visible_recurrent_channels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "visible_core_binary_nodes": 147,
+        "relevant_local_inputs": 58,
+        "output_expressions": [
+          "~((((~(~s0[+1,+1] & ~s0[-1,-1]) & ~s0[-1,+1]) & ~(((((((s5[+0,+0] & s5[+0,-1]) & (s5[+0,+0] & s5[+1,-1])) & ~(~((~s1[+1,+1] & ~s1[-1,-1]) & ~s1[-1,+1]) & ~(~(~s1[+1,+1] & ~s1[-1,-1]) & ~s1[-1,+1]))) & (~((s3[+0,+0] & s3[+1,-1]) & (s3[+0,+0] & ~s3[+0,-1])) & ~(~(s3[+1,-1] & ~s3[+0,+0]) & ~s3[+0,-1]))) & ((~s0[+1,+1] & ~s0[-1,-1]) & ~((s0[+0,+0] & s0[+1,+0]) & s0[-1,+1]))) & (s2[+1,+0] & ~s2[-1,+1])) & ~(s4[+0,+0] & s4[+1,+1]))) & ~(((((~s1[+0,+0] & ~s1[+1,+1]) & (~s1[+0,+0] & ~s1[-1,+1])) & ((~s1[+1,+1] & ~s1[-1,-1]) & ~((s1[+0,+0] & s1[+1,+0]) & s1[-1,+1]))) & ~(~(((~s1[+1,+1] & ~s1[-1,-1]) & ~((s1[+0,+0] & s1[+1,+0]) & s1[-1,+1])) & (~((s3[+0,+0] & s3[+1,-1]) & (s3[+0,+0] & ~s3[+0,-1])) & ~(~(s3[+1,-1] & ~s3[+0,+0]) & ~s3[+0,-1]))) & ~s0[-1,+1])) & (((s3[+0,+0] & s3[+0,-1]) & (s3[+0,+0] & s3[+1,-1])) & ~(~((~s3[+0,+0] & ~s3[-1,+0]) & s3[+0,+1]) & ~s3[+0,-1])))) & ~(((((s3[+0,-1] & ~(~((~s3[+0,+0] & ~s3[-1,+0]) & s3[+0,+1]) & ~s3[+0,-1])) & ~s0[+1,+1]) & s5[+0,+0]) & (~(~((s6[+0,+0] & s6[+1,-1]) & (s6[+0,+0] & ~s6[+0,-1])) & ~(~(s6[+1,-1] & ~s6[+0,+0]) & ~s6[+0,-1])) & ~s0[+1,+1])) & ~(~(s3[+0,+0] & ~(~(s6[+0,-1] & s6[+1,-1]) & ~s6[+0,-1])) & ~s2[+1,+1])))",
+          "~((((~((~s6[+0,+0] & ~s6[-1,+0]) & s6[+0,+1]) & ~s6[+0,-1]) & ~((~(~s3[+0,+1] & ~s3[-1,+0]) & ~s0[-1,+1]) & ~((~s6[+1,+1] & ~s6[-1,-1]) & ~s6[-1,+1]))) & ((~s4[+1,+1] & ~s4[-1,-1]) & ~s4[-1,+1])) & (((~s6[+1,+1] & ~s6[-1,-1]) & ~s6[-1,+1]) & ~s6[+1,+1]))",
+          "s4[+0,-1]",
+          "~(((((((((((s5[+0,+0] & s5[+1,-1]) & (s5[+0,+0] & ~s5[+0,-1])) & (~(s5[+1,-1] & ~s5[+0,+0]) & ~s5[+0,-1])) & ~((s2[+0,+0] & s2[+0,-1]) & (s2[+0,+0] & s2[+1,-1]))) & ~s1[+0,-1]) & ~((((s3[+1,+0] & ~s3[-1,+1]) & ~(s3[+1,+1] ^ s3[-1,-1])) & ~(s3[+0,+0] & ~s2[+0,+0])) & s7[+0,-1])) & ~s4[+0,-1]) & (((((~((s0[+0,+0] & s0[+0,-1]) & (s0[+0,+0] & s0[+1,-1])) & ~s0[+0,-1]) & ~((~s7[+1,+1] & ~s7[-1,-1]) & ~s7[-1,+1])) & (~((s6[+0,+0] & s6[+0,-1]) & s6[+0,+1]) & ~s6[+0,-1])) & (~(((s5[+0,+0] & s5[+0,-1]) & s5[+1,-1]) & (~s5[+0,+1] & ~s5[-1,+0])) & ~s5[+0,-1])) & ((((~(s2[+0,-1] & s2[+1,-1]) & ~s2[+0,-1]) & ~(((s0[+0,+0] & s0[+0,-1]) & s0[+1,-1]) & (~s0[+0,+1] & ~s0[-1,+0]))) & ~s6[+0,-1]) & ~s0[+0,-1]))) & (~s1[+0,-1] & ~s2[+0,-1])) & (~((s4[+0,+0] & s4[+0,-1]) & s4[+0,+1]) & ~s7[+0,-1])) & ((~((s1[+0,+0] & s1[+0,-1]) & (s1[+0,+0] & s1[+1,-1])) & ~((s4[+0,+0] & s4[+0,-1]) & (s4[+0,+0] & s4[+1,-1]))) & (~((s5[+0,+0] & s5[+0,-1]) & s5[+0,+1]) & ~s6[+0,-1])))",
+          "((s3[+1,+0] & s3[-1,+1]) & s3[+1,+1])",
+          "~(((((((((((s5[+0,+0] & s5[+1,-1]) & (s5[+0,+0] & ~s5[+0,-1])) & (~(s5[+1,-1] & ~s5[+0,+0]) & ~s5[+0,-1])) & ~((s2[+0,+0] & s2[+0,-1]) & (s2[+0,+0] & s2[+1,-1]))) & ~s1[+0,-1]) & ~((((s3[+1,+0] & ~s3[-1,+1]) & ~(s3[+1,+1] ^ s3[-1,-1])) & ~(s3[+0,+0] & ~s2[+0,+0])) & s7[+0,-1])) & ~s4[+0,-1]) & (((((~((s0[+0,+0] & s0[+0,-1]) & (s0[+0,+0] & s0[+1,-1])) & ~s0[+0,-1]) & ~((~s7[+1,+1] & ~s7[-1,-1]) & ~s7[-1,+1])) & (~((s6[+0,+0] & s6[+0,-1]) & s6[+0,+1]) & ~s6[+0,-1])) & (~(((s5[+0,+0] & s5[+0,-1]) & s5[+1,-1]) & (~s5[+0,+1] & ~s5[-1,+0])) & ~s5[+0,-1])) & ((((~(s2[+0,-1] & s2[+1,-1]) & ~s2[+0,-1]) & ~(((s0[+0,+0] & s0[+0,-1]) & s0[+1,-1]) & (~s0[+0,+1] & ~s0[-1,+0]))) & ~s6[+0,-1]) & ~s0[+0,-1]))) & (~s1[+0,-1] & ~s2[+0,-1])) & (~((s4[+0,+0] & s4[+0,-1]) & s4[+0,+1]) & ~s7[+0,-1])) & ((~((s1[+0,+0] & s1[+0,-1]) & (s1[+0,+0] & s1[+1,-1])) & ~((s4[+0,+0] & s4[+0,-1]) & (s4[+0,+0] & s4[+1,-1]))) & (~((s5[+0,+0] & s5[+0,-1]) & s5[+0,+1]) & ~s6[+0,-1])))",
+          "~((s2[+1,+0] & ~s2[-1,+1]) & ~((((((((s4[+0,+0] & s4[+0,-1]) & (s4[+0,+0] & s4[+1,-1])) & s4[+0,-1]) & ~s6[-1,+1]) & ((~s6[+1,+1] & ~s6[-1,-1]) & ~s6[-1,+1])) & (s6[+1,+0] & ~s6[-1,+1])) & (((s2[+0,+0] & s2[+0,-1]) & s2[+0,+1]) & s2[+0,-1])) & s5[+1,+1]))",
+          "~(((((s3[+0,-1] & ~(~((~s3[+0,+0] & ~s3[-1,+0]) & s3[+0,+1]) & ~s3[+0,-1])) & ~s0[+1,+1]) & s5[+0,+0]) & (~(~((s6[+0,+0] & s6[+1,-1]) & (s6[+0,+0] & ~s6[+0,-1])) & ~(~(s6[+1,-1] & ~s6[+0,+0]) & ~s6[+0,-1])) & ~s0[+1,+1])) & ~(~(s3[+0,+0] & ~(~(s6[+0,-1] & s6[+1,-1]) & ~s6[+0,-1])) & ~s2[+1,+1]))"
+        ],
+        "output_literals": [
+          1797,
+          1769,
+          58,
+          1793,
+          904,
+          1793,
+          1771,
+          1647
+        ],
+        "reachable_nodes": {
+          "1": [
+            "input",
+            0
+          ],
+          "2": [
+            "input",
+            1
+          ],
+          "4": [
+            "input",
+            3
+          ],
+          "5": [
+            "input",
+            4
+          ],
+          "7": [
+            "input",
+            6
+          ],
+          "8": [
+            "input",
+            7
+          ],
+          "9": [
+            "input",
+            8
+          ],
+          "12": [
+            "input",
+            11
+          ],
+          "14": [
+            "input",
+            13
+          ],
+          "15": [
+            "input",
+            14
+          ],
+          "17": [
+            "input",
+            16
+          ],
+          "18": [
+            "input",
+            17
+          ],
+          "19": [
+            "input",
+            18
+          ],
+          "20": [
+            "input",
+            19
+          ],
+          "21": [
+            "input",
+            20
+          ],
+          "23": [
+            "input",
+            22
+          ],
+          "24": [
+            "input",
+            23
+          ],
+          "25": [
+            "input",
+            24
+          ],
+          "26": [
+            "input",
+            25
+          ],
+          "27": [
+            "input",
+            26
+          ],
+          "28": [
+            "input",
+            27
+          ],
+          "29": [
+            "input",
+            28
+          ],
+          "30": [
+            "input",
+            29
+          ],
+          "31": [
+            "input",
+            30
+          ],
+          "32": [
+            "input",
+            31
+          ],
+          "33": [
+            "input",
+            32
+          ],
+          "34": [
+            "input",
+            33
+          ],
+          "35": [
+            "input",
+            34
+          ],
+          "36": [
+            "input",
+            35
+          ],
+          "37": [
+            "input",
+            36
+          ],
+          "38": [
+            "input",
+            37
+          ],
+          "39": [
+            "input",
+            38
+          ],
+          "41": [
+            "input",
+            40
+          ],
+          "43": [
+            "input",
+            42
+          ],
+          "44": [
+            "input",
+            43
+          ],
+          "45": [
+            "input",
+            44
+          ],
+          "46": [
+            "input",
+            45
+          ],
+          "47": [
+            "input",
+            46
+          ],
+          "49": [
+            "input",
+            48
+          ],
+          "50": [
+            "input",
+            49
+          ],
+          "51": [
+            "input",
+            50
+          ],
+          "52": [
+            "input",
+            51
+          ],
+          "53": [
+            "input",
+            52
+          ],
+          "54": [
+            "input",
+            53
+          ],
+          "55": [
+            "input",
+            54
+          ],
+          "57": [
+            "input",
+            56
+          ],
+          "58": [
+            "input",
+            57
+          ],
+          "59": [
+            "input",
+            58
+          ],
+          "60": [
+            "input",
+            59
+          ],
+          "63": [
+            "input",
+            62
+          ],
+          "65": [
+            "input",
+            64
+          ],
+          "66": [
+            "input",
+            65
+          ],
+          "67": [
+            "input",
+            66
+          ],
+          "68": [
+            "input",
+            67
+          ],
+          "69": [
+            "input",
+            68
+          ],
+          "70": [
+            "input",
+            69
+          ],
+          "71": [
+            "input",
+            70
+          ],
+          "72": [
+            "input",
+            71
+          ],
+          "74": [
+            "AND",
+            66,
+            98
+          ],
+          "76": [
+            "AND",
+            68,
+            100
+          ],
+          "78": [
+            "AND",
+            70,
+            102
+          ],
+          "79": [
+            "AND",
+            57,
+            72
+          ],
+          "80": [
+            "AND",
+            72,
+            104
+          ],
+          "82": [
+            "AND",
+            74,
+            106
+          ],
+          "83": [
+            "AND",
+            61,
+            76
+          ],
+          "84": [
+            "AND",
+            76,
+            108
+          ],
+          "85": [
+            "AND",
+            63,
+            78
+          ],
+          "86": [
+            "AND",
+            78,
+            110
+          ],
+          "92": [
+            "AND",
+            73,
+            104
+          ],
+          "94": [
+            "AND",
+            77,
+            108
+          ],
+          "95": [
+            "AND",
+            79,
+            110
+          ],
+          "105": [
+            "AND",
+            50,
+            66
+          ],
+          "106": [
+            "AND",
+            52,
+            68
+          ],
+          "107": [
+            "AND",
+            54,
+            70
+          ],
+          "108": [
+            "AND",
+            56,
+            72
+          ],
+          "109": [
+            "AND",
+            58,
+            74
+          ],
+          "110": [
+            "AND",
+            60,
+            76
+          ],
+          "111": [
+            "AND",
+            62,
+            78
+          ],
+          "116": [
+            "AND",
+            25,
+            73
+          ],
+          "119": [
+            "AND",
+            31,
+            79
+          ],
+          "138": [
+            "AND",
+            66,
+            114
+          ],
+          "140": [
+            "AND",
+            37,
+            69
+          ],
+          "141": [
+            "AND",
+            68,
+            116
+          ],
+          "142": [
+            "AND",
+            69,
+            133
+          ],
+          "170": [
+            "AND",
+            74,
+            138
+          ],
+          "191": [
+            "AND",
+            39,
+            118
+          ],
+          "194": [
+            "AND",
+            41,
+            120
+          ],
+          "195": [
+            "XOR",
+            8,
+            136
+          ],
+          "196": [
+            "AND",
+            158,
+            160
+          ],
+          "202": [
+            "AND",
+            166,
+            168
+          ],
+          "203": [
+            "AND",
+            47,
+            126
+          ],
+          "205": [
+            "AND",
+            170,
+            172
+          ],
+          "218": [
+            "AND",
+            40,
+            120
+          ],
+          "220": [
+            "AND",
+            57,
+            185
+          ],
+          "226": [
+            "AND",
+            61,
+            189
+          ],
+          "229": [
+            "AND",
+            63,
+            191
+          ],
+          "241": [
+            "AND",
+            3,
+            131
+          ],
+          "242": [
+            "AND",
+            5,
+            133
+          ],
+          "245": [
+            "AND",
+            11,
+            139
+          ],
+          "247": [
+            "AND",
+            15,
+            143
+          ],
+          "248": [
+            "AND",
+            17,
+            145
+          ],
+          "260": [
+            "AND",
+            88,
+            232
+          ],
+          "263": [
+            "AND",
+            94,
+            238
+          ],
+          "265": [
+            "AND",
+            148,
+            210
+          ],
+          "266": [
+            "AND",
+            152,
+            212
+          ],
+          "267": [
+            "AND",
+            156,
+            214
+          ],
+          "268": [
+            "AND",
+            160,
+            216
+          ],
+          "269": [
+            "AND",
+            164,
+            218
+          ],
+          "270": [
+            "AND",
+            168,
+            220
+          ],
+          "289": [
+            "AND",
+            34,
+            276
+          ],
+          "291": [
+            "AND",
+            36,
+            282
+          ],
+          "294": [
+            "AND",
+            54,
+            102
+          ],
+          "302": [
+            "AND",
+            62,
+            110
+          ],
+          "314": [
+            "AND",
+            19,
+            83
+          ],
+          "320": [
+            "AND",
+            25,
+            89
+          ],
+          "324": [
+            "AND",
+            29,
+            93
+          ],
+          "345": [
+            "AND",
+            98,
+            210
+          ],
+          "350": [
+            "AND",
+            108,
+            220
+          ],
+          "356": [
+            "AND",
+            388,
+            391
+          ],
+          "369": [
+            "AND",
+            35,
+            483
+          ],
+          "371": [
+            "AND",
+            37,
+            485
+          ],
+          "374": [
+            "AND",
+            86,
+            214
+          ],
+          "378": [
+            "AND",
+            90,
+            218
+          ],
+          "380": [
+            "AND",
+            92,
+            220
+          ],
+          "382": [
+            "AND",
+            94,
+            222
+          ],
+          "386": [
+            "AND",
+            37,
+            484
+          ],
+          "389": [
+            "AND",
+            43,
+            490
+          ],
+          "391": [
+            "AND",
+            47,
+            494
+          ],
+          "392": [
+            "AND",
+            49,
+            496
+          ],
+          "396": [
+            "AND",
+            57,
+            521
+          ],
+          "399": [
+            "AND",
+            63,
+            527
+          ],
+          "402": [
+            "AND",
+            280,
+            284
+          ],
+          "409": [
+            "AND",
+            482,
+            579
+          ],
+          "410": [
+            "AND",
+            484,
+            583
+          ],
+          "433": [
+            "AND",
+            628,
+            690
+          ],
+          "438": [
+            "AND",
+            648,
+            700
+          ],
+          "448": [
+            "AND",
+            51,
+            531
+          ],
+          "452": [
+            "AND",
+            136,
+            436
+          ],
+          "456": [
+            "AND",
+            743,
+            773
+          ],
+          "457": [
+            "AND",
+            393,
+            441
+          ],
+          "458": [
+            "AND",
+            56,
+            793
+          ],
+          "468": [
+            "AND",
+            404,
+            452
+          ],
+          "469": [
+            "AND",
+            55,
+            589
+          ],
+          "471": [
+            "AND",
+            58,
+            538
+          ],
+          "474": [
+            "AND",
+            61,
+            877
+          ],
+          "479": [
+            "AND",
+            536,
+            793
+          ],
+          "480": [
+            "AND",
+            54,
+            748
+          ],
+          "485": [
+            "AND",
+            804,
+            820
+          ],
+          "492": [
+            "AND",
+            63,
+            765
+          ],
+          "496": [
+            "AND",
+            411,
+            459
+          ],
+          "501": [
+            "AND",
+            71,
+            72
+          ],
+          "503": [
+            "AND",
+            63,
+            605
+          ],
+          "513": [
+            "AND",
+            47,
+            942
+          ],
+          "538": [
+            "AND",
+            540,
+            913
+          ],
+          "552": [
+            "AND",
+            143,
+            782
+          ],
+          "556": [
+            "AND",
+            820,
+            914
+          ],
+          "557": [
+            "AND",
+            785,
+            896
+          ],
+          "568": [
+            "AND",
+            535,
+            936
+          ],
+          "578": [
+            "AND",
+            131,
+            916
+          ],
+          "584": [
+            "AND",
+            867,
+            938
+          ],
+          "595": [
+            "AND",
+            712,
+            1003
+          ],
+          "596": [
+            "AND",
+            131,
+            993
+          ],
+          "599": [
+            "AND",
+            533,
+            539
+          ],
+          "634": [
+            "AND",
+            53,
+            1136
+          ],
+          "635": [
+            "AND",
+            64,
+            1190
+          ],
+          "636": [
+            "AND",
+            63,
+            1168
+          ],
+          "637": [
+            "AND",
+            782,
+            1026
+          ],
+          "659": [
+            "AND",
+            72,
+            1007
+          ],
+          "663": [
+            "AND",
+            984,
+            1114
+          ],
+          "672": [
+            "AND",
+            53,
+            55
+          ],
+          "687": [
+            "AND",
+            406,
+            1274
+          ],
+          "694": [
+            "AND",
+            1268,
+            1271
+          ],
+          "710": [
+            "AND",
+            914,
+            1076
+          ],
+          "712": [
+            "AND",
+            51,
+            1272
+          ],
+          "713": [
+            "AND",
+            948,
+            1326
+          ],
+          "723": [
+            "AND",
+            76,
+            1156
+          ],
+          "731": [
+            "AND",
+            818,
+            1420
+          ],
+          "734": [
+            "AND",
+            960,
+            1374
+          ],
+          "749": [
+            "AND",
+            59,
+            1388
+          ],
+          "750": [
+            "AND",
+            1424,
+            1426
+          ],
+          "755": [
+            "AND",
+            135,
+            1319
+          ],
+          "757": [
+            "AND",
+            140,
+            1468
+          ],
+          "764": [
+            "AND",
+            1192,
+            1446
+          ],
+          "770": [
+            "AND",
+            382,
+            1462
+          ],
+          "771": [
+            "AND",
+            1498,
+            1500
+          ],
+          "786": [
+            "AND",
+            35,
+            641
+          ],
+          "804": [
+            "AND",
+            341,
+            1540
+          ],
+          "811": [
+            "AND",
+            35,
+            1113
+          ],
+          "813": [
+            "AND",
+            783,
+            1572
+          ],
+          "817": [
+            "AND",
+            63,
+            761
+          ],
+          "822": [
+            "AND",
+            798,
+            1627
+          ],
+          "823": [
+            "AND",
+            1511,
+            1528
+          ],
+          "824": [
+            "AND",
+            1344,
+            1542
+          ],
+          "843": [
+            "AND",
+            970,
+            1623
+          ],
+          "858": [
+            "AND",
+            1198,
+            1634
+          ],
+          "864": [
+            "AND",
+            958,
+            1686
+          ],
+          "867": [
+            "AND",
+            778,
+            1644
+          ],
+          "873": [
+            "AND",
+            65,
+            757
+          ],
+          "884": [
+            "AND",
+            1104,
+            1734
+          ],
+          "885": [
+            "AND",
+            382,
+            1515
+          ],
+          "886": [
+            "AND",
+            738,
+            1609
+          ],
+          "890": [
+            "AND",
+            1648,
+            1746
+          ],
+          "892": [
+            "AND",
+            1729,
+            1772
+          ],
+          "896": [
+            "AND",
+            1716,
+            1780
+          ],
+          "898": [
+            "AND",
+            1647,
+            1784
+          ]
+        }
+      },
+      "refined": {
+        "binary_nodes_all_channels": 90,
+        "and_nodes": 90,
+        "xor_nodes": 0,
+        "visible_recurrent_channels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "visible_core_binary_nodes": 90,
+        "relevant_local_inputs": 49,
+        "output_expressions": [
+          "~((((~(~s0[+1,+1] & ~s0[-1,-1]) & ~s0[-1,+1]) & ~(((((((((((~s0[-1,-1] & ~s2[-1,+1]) & s5[+0,-1]) & s5[+0,+0]) & s5[+1,-1]) & s2[+1,+0]) & ~s0[+1,+1]) & ~(s4[+0,+0] & s4[+1,+1])) & ~((s3[+0,+0] & ~s3[+0,-1]) & s3[+1,-1])) & ~(~(s3[+1,-1] & ~s3[+0,+0]) & ~s3[+0,-1])) & ~((s0[+0,+0] & s0[-1,+1]) & s0[+1,+0])) & ~(~((~s1[-1,+1] & ~s1[-1,-1]) & ~s1[+1,+1]) & ~(~(~s1[+1,+1] & ~s1[-1,-1]) & ~s1[-1,+1])))) & ~((((s3[+0,-1] & s5[+0,+0]) & ~s0[+1,+1]) & ~(~((s6[+0,+0] & ~s6[+0,-1]) & s6[+1,-1]) & ~(~(s6[+1,-1] & ~s6[+0,+0]) & ~s6[+0,-1]))) & ~(~(s3[+0,+0] & s6[+0,-1]) & ~s2[+1,+1]))) & ~(((((((~s1[-1,+1] & ~s1[-1,-1]) & s3[+0,-1]) & ~s1[+0,+0]) & s3[+0,+0]) & s3[+1,-1]) & ~s1[+1,+1]) & ~(~((((~s1[+1,+1] & ~s1[-1,-1]) & ~((s3[+0,+0] & ~s3[+0,-1]) & s3[+1,-1])) & ~(~(s3[+1,-1] & ~s3[+0,+0]) & ~s3[+0,-1])) & ~((s1[+0,+0] & s1[-1,+1]) & s1[+1,+0])) & ~s0[-1,+1])))",
+          "~((((((((~s4[-1,-1] & ~s6[-1,-1]) & ~s4[-1,+1]) & ~s6[-1,+1]) & ~s6[+0,-1]) & ~s4[+1,+1]) & ~s6[+1,+1]) & ~((~s6[+0,+0] & ~s6[-1,+0]) & s6[+0,+1])) & ~((~(~s3[+0,+1] & ~s3[-1,+0]) & ~s0[-1,+1]) & ~((~s6[-1,+1] & ~s6[-1,-1]) & ~s6[+1,+1])))",
+          "s4[+0,-1]",
+          "~(((((((((~s0[+0,-1] & ~s1[+0,-1]) & ~s2[+0,-1]) & ~s4[+0,-1]) & ~s5[+0,-1]) & ~s6[+0,-1]) & ~s7[+0,-1]) & s5[+0,+0]) & s5[+1,-1]) & ~((~s7[-1,+1] & ~s7[-1,-1]) & ~s7[+1,+1]))",
+          "((s3[+1,+0] & s3[-1,+1]) & s3[+1,+1])",
+          "~(((((((((~s0[+0,-1] & ~s1[+0,-1]) & ~s2[+0,-1]) & ~s4[+0,-1]) & ~s5[+0,-1]) & ~s6[+0,-1]) & ~s7[+0,-1]) & s5[+0,+0]) & s5[+1,-1]) & ~((~s7[-1,+1] & ~s7[-1,-1]) & ~s7[+1,+1]))",
+          "~((s2[+1,+0] & ~s2[-1,+1]) & ~((((((((((~s6[-1,+1] & ~s6[-1,-1]) & s2[+0,-1]) & s4[+0,-1]) & s2[+0,+0]) & s4[+0,+0]) & s2[+0,+1]) & s4[+1,-1]) & s6[+1,+0]) & s5[+1,+1]) & ~s6[+1,+1]))",
+          "~((((s3[+0,-1] & s5[+0,+0]) & ~s0[+1,+1]) & ~(~((s6[+0,+0] & ~s6[+0,-1]) & s6[+1,-1]) & ~(~(s6[+1,-1] & ~s6[+0,+0]) & ~s6[+0,-1]))) & ~(~(s3[+0,+0] & s6[+0,-1]) & ~s2[+1,+1]))"
+        ],
+        "output_literals": [
+          3513,
+          3395,
+          58,
+          3409,
+          978,
+          3409,
+          3397,
+          3039
+        ],
+        "reachable_nodes": {
+          "1": [
+            "input",
+            0
+          ],
+          "2": [
+            "input",
+            1
+          ],
+          "5": [
+            "input",
+            4
+          ],
+          "7": [
+            "input",
+            6
+          ],
+          "8": [
+            "input",
+            7
+          ],
+          "12": [
+            "input",
+            11
+          ],
+          "15": [
+            "input",
+            14
+          ],
+          "17": [
+            "input",
+            16
+          ],
+          "18": [
+            "input",
+            17
+          ],
+          "19": [
+            "input",
+            18
+          ],
+          "20": [
+            "input",
+            19
+          ],
+          "21": [
+            "input",
+            20
+          ],
+          "23": [
+            "input",
+            22
+          ],
+          "24": [
+            "input",
+            23
+          ],
+          "25": [
+            "input",
+            24
+          ],
+          "26": [
+            "input",
+            25
+          ],
+          "27": [
+            "input",
+            26
+          ],
+          "28": [
+            "input",
+            27
+          ],
+          "29": [
+            "input",
+            28
+          ],
+          "30": [
+            "input",
+            29
+          ],
+          "31": [
+            "input",
+            30
+          ],
+          "32": [
+            "input",
+            31
+          ],
+          "33": [
+            "input",
+            32
+          ],
+          "34": [
+            "input",
+            33
+          ],
+          "35": [
+            "input",
+            34
+          ],
+          "36": [
+            "input",
+            35
+          ],
+          "37": [
+            "input",
+            36
+          ],
+          "38": [
+            "input",
+            37
+          ],
+          "39": [
+            "input",
+            38
+          ],
+          "43": [
+            "input",
+            42
+          ],
+          "44": [
+            "input",
+            43
+          ],
+          "47": [
+            "input",
+            46
+          ],
+          "52": [
+            "input",
+            51
+          ],
+          "53": [
+            "input",
+            52
+          ],
+          "54": [
+            "input",
+            53
+          ],
+          "55": [
+            "input",
+            54
+          ],
+          "57": [
+            "input",
+            56
+          ],
+          "58": [
+            "input",
+            57
+          ],
+          "59": [
+            "input",
+            58
+          ],
+          "60": [
+            "input",
+            59
+          ],
+          "63": [
+            "input",
+            62
+          ],
+          "65": [
+            "input",
+            64
+          ],
+          "66": [
+            "input",
+            65
+          ],
+          "67": [
+            "input",
+            66
+          ],
+          "68": [
+            "input",
+            67
+          ],
+          "69": [
+            "input",
+            68
+          ],
+          "70": [
+            "input",
+            69
+          ],
+          "71": [
+            "input",
+            70
+          ],
+          "72": [
+            "input",
+            71
+          ],
+          "79": [
+            "AND",
+            57,
+            72
+          ],
+          "85": [
+            "AND",
+            63,
+            78
+          ],
+          "92": [
+            "AND",
+            73,
+            104
+          ],
+          "95": [
+            "AND",
+            79,
+            110
+          ],
+          "119": [
+            "AND",
+            31,
+            79
+          ],
+          "170": [
+            "AND",
+            74,
+            138
+          ],
+          "191": [
+            "AND",
+            39,
+            118
+          ],
+          "196": [
+            "AND",
+            104,
+            158
+          ],
+          "205": [
+            "AND",
+            110,
+            170
+          ],
+          "218": [
+            "AND",
+            40,
+            120
+          ],
+          "220": [
+            "AND",
+            57,
+            185
+          ],
+          "229": [
+            "AND",
+            63,
+            191
+          ],
+          "241": [
+            "AND",
+            3,
+            131
+          ],
+          "242": [
+            "AND",
+            5,
+            133
+          ],
+          "263": [
+            "AND",
+            94,
+            238
+          ],
+          "289": [
+            "AND",
+            34,
+            66
+          ],
+          "290": [
+            "AND",
+            114,
+            578
+          ],
+          "292": [
+            "AND",
+            36,
+            68
+          ],
+          "293": [
+            "AND",
+            116,
+            584
+          ],
+          "324": [
+            "AND",
+            25,
+            89
+          ],
+          "369": [
+            "AND",
+            35,
+            483
+          ],
+          "371": [
+            "AND",
+            37,
+            485
+          ],
+          "387": [
+            "AND",
+            5,
+            37
+          ],
+          "388": [
+            "AND",
+            133,
+            774
+          ],
+          "397": [
+            "AND",
+            15,
+            47
+          ],
+          "398": [
+            "AND",
+            143,
+            794
+          ],
+          "399": [
+            "AND",
+            17,
+            49
+          ],
+          "400": [
+            "AND",
+            145,
+            798
+          ],
+          "489": [
+            "AND",
+            136,
+            436
+          ],
+          "492": [
+            "AND",
+            743,
+            777
+          ],
+          "518": [
+            "AND",
+            411,
+            459
+          ],
+          "616": [
+            "AND",
+            393,
+            484
+          ],
+          "617": [
+            "AND",
+            441,
+            1232
+          ],
+          "618": [
+            "AND",
+            587,
+            1234
+          ],
+          "880": [
+            "AND",
+            62,
+            72
+          ],
+          "1141": [
+            "AND",
+            56,
+            76
+          ],
+          "1142": [
+            "AND",
+            131,
+            2282
+          ],
+          "1168": [
+            "AND",
+            54,
+            794
+          ],
+          "1169": [
+            "AND",
+            58,
+            2336
+          ],
+          "1170": [
+            "AND",
+            70,
+            2338
+          ],
+          "1171": [
+            "AND",
+            74,
+            2340
+          ],
+          "1172": [
+            "AND",
+            86,
+            2342
+          ],
+          "1173": [
+            "AND",
+            106,
+            2344
+          ],
+          "1174": [
+            "AND",
+            126,
+            2346
+          ],
+          "1247": [
+            "AND",
+            135,
+            1761
+          ],
+          "1258": [
+            "AND",
+            140,
+            2348
+          ],
+          "1259": [
+            "AND",
+            143,
+            2516
+          ],
+          "1289": [
+            "AND",
+            1037,
+            2284
+          ],
+          "1307": [
+            "AND",
+            3,
+            39
+          ],
+          "1308": [
+            "AND",
+            60,
+            2614
+          ],
+          "1309": [
+            "AND",
+            76,
+            2616
+          ],
+          "1310": [
+            "AND",
+            108,
+            2618
+          ],
+          "1311": [
+            "AND",
+            118,
+            2620
+          ],
+          "1312": [
+            "AND",
+            131,
+            2622
+          ],
+          "1317": [
+            "AND",
+            51,
+            53
+          ],
+          "1318": [
+            "AND",
+            55,
+            2634
+          ],
+          "1319": [
+            "AND",
+            59,
+            2636
+          ],
+          "1320": [
+            "AND",
+            61,
+            2638
+          ],
+          "1321": [
+            "AND",
+            63,
+            2640
+          ],
+          "1404": [
+            "AND",
+            35,
+            649
+          ],
+          "1474": [
+            "AND",
+            341,
+            2624
+          ],
+          "1475": [
+            "AND",
+            393,
+            2948
+          ],
+          "1476": [
+            "AND",
+            441,
+            2950
+          ],
+          "1477": [
+            "AND",
+            581,
+            2952
+          ],
+          "1478": [
+            "AND",
+            985,
+            2954
+          ],
+          "1496": [
+            "AND",
+            35,
+            1237
+          ],
+          "1498": [
+            "AND",
+            797,
+            2808
+          ],
+          "1519": [
+            "AND",
+            2495,
+            2578
+          ],
+          "1627": [
+            "AND",
+            56,
+            774
+          ],
+          "1628": [
+            "AND",
+            69,
+            3254
+          ],
+          "1629": [
+            "AND",
+            72,
+            3256
+          ],
+          "1630": [
+            "AND",
+            104,
+            3258
+          ],
+          "1631": [
+            "AND",
+            133,
+            3260
+          ],
+          "1632": [
+            "AND",
+            2993,
+            3262
+          ],
+          "1690": [
+            "AND",
+            11,
+            15
+          ],
+          "1691": [
+            "AND",
+            43,
+            3380
+          ],
+          "1692": [
+            "AND",
+            47,
+            3382
+          ],
+          "1693": [
+            "AND",
+            63,
+            3384
+          ],
+          "1694": [
+            "AND",
+            139,
+            3386
+          ],
+          "1695": [
+            "AND",
+            143,
+            3388
+          ],
+          "1696": [
+            "AND",
+            527,
+            3390
+          ],
+          "1697": [
+            "AND",
+            2997,
+            3392
+          ],
+          "1698": [
+            "AND",
+            382,
+            2519
+          ],
+          "1699": [
+            "AND",
+            738,
+            2957
+          ],
+          "1701": [
+            "AND",
+            65,
+            2642
+          ],
+          "1702": [
+            "AND",
+            76,
+            3402
+          ],
+          "1703": [
+            "AND",
+            108,
+            3404
+          ],
+          "1704": [
+            "AND",
+            801,
+            3406
+          ],
+          "1755": [
+            "AND",
+            3039,
+            3398
+          ],
+          "1756": [
+            "AND",
+            3265,
+            3510
+          ]
+        }
+      },
+      "abstract_certificate": {
+        "size": 16,
+        "tick_budget": 64,
+        "known_visible_bits_by_tick": [
+          0,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10,
+          13,
+          17,
+          22,
+          27,
+          32,
+          38,
+          44,
+          50,
+          57,
+          65,
+          74,
+          84,
+          95,
+          105,
+          114,
+          118,
+          123,
+          128
+        ],
+        "known_wrong_visible_bits_by_tick": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "first_all_visible_correct": null,
+        "abstract_fixed_point_tick": 26,
+        "certifies_all_initial_states_and_future_ticks": false
+      },
+      "provably_wrong_cells_after_tick_64": [],
+      "all_probe_visible_period2_from_tick20": true,
+      "all_probe_full_state_period2_from_tick20": true,
+      "full_state_fixed_from_tick20": false,
+      "all_probes_same_visible_at_tick20": true,
+      "all_probes_same_visible_at_tick21": true,
+      "visible_wrong_pixels_tick20_first_probe": [],
+      "original_probe_errors_by_tick": [
+        4089,
+        4099,
+        3984,
+        4083,
+        3848,
+        4077,
+        3580,
+        3955,
+        3284,
+        3872,
+        2742,
+        3705,
+        2232,
+        3670,
+        1377,
+        3379,
+        756,
+        3502,
+        405,
+        3880,
+        0,
+        4096,
+        0,
+        4096,
+        0,
+        4096,
+        0,
+        4096,
+        0,
+        4096,
+        0,
+        4096,
+        0,
+        4096,
+        0,
+        4096,
+        0,
+        4096,
+        0,
+        4096,
+        0,
+        4096,
+        0,
+        4096,
+        0,
+        4096,
+        0,
+        4096,
+        0,
+        4096,
+        0,
+        4096,
+        0,
+        4096,
+        0,
+        4096,
+        0,
+        4096,
+        0,
+        4096,
+        0,
+        4096,
+        0,
+        4096,
+        0
+      ],
+      "first_probe_thresholded_soft_errors": {
+        "250": {
+          "thresholded_soft_errors": 84,
+          "common_hard_errors": 128,
+          "soft_sse": 55.241153717041016
+        },
+        "400": {
+          "thresholded_soft_errors": 0,
+          "common_hard_errors": 0,
+          "soft_sse": 2.846865177154541
+        },
+        "450": {
+          "thresholded_soft_errors": 0,
+          "common_hard_errors": 0,
+          "soft_sse": 0.4699232876300812
+        },
+        "500": {
+          "thresholded_soft_errors": 0,
+          "common_hard_errors": 0,
+          "soft_sse": 0.1326485127210617
+        }
+      }
+    }
+  },
+  "seed04_cross_condition_local_comparison": {
+    "all_channels_equal": false,
+    "any_channel_different": true,
+    "channels": [
+      {
+        "channel": 0,
+        "equal": true,
+        "method": "identical canonical expression"
+      },
+      {
+        "channel": 1,
+        "equal": false,
+        "method": "exhaustive relevant local assignments",
+        "relevant_input_bits": 1,
+        "assignments": 2,
+        "disagreement_fraction": 0.5
+      },
+      {
+        "channel": 2,
+        "equal": true,
+        "method": "identical canonical expression"
+      },
+      {
+        "channel": 3,
+        "equal": true,
+        "method": "identical canonical expression"
+      },
+      {
+        "channel": 4,
+        "equal": true,
+        "method": "identical canonical expression"
+      },
+      {
+        "channel": 5,
+        "equal": true,
+        "method": "identical canonical expression"
+      },
+      {
+        "channel": 6,
+        "equal": true,
+        "method": "identical canonical expression"
+      },
+      {
+        "channel": 7,
+        "equal": false,
+        "method": "exhaustive relevant local assignments",
+        "relevant_input_bits": 1,
+        "assignments": 2,
+        "disagreement_fraction": 0.5
+      }
+    ]
+  }
+}
