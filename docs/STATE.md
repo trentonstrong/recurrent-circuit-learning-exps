@@ -1,8 +1,9 @@
 # Research state
 
-Updated: 2026-09-10. The formal 64-run R002 paired sweep is complete. Next:
-review its aggregate comparison, then separately validate the successful-circuit
-simplification and publish the 317 MB artifact bundle to durable storage.
+Updated: 2026-09-10. The formal 64-run R002 paired sweep, independent trajectory
+review, and artifact publication are complete. Next: choose between a uniform
+budget continuation and R003's same-function mechanism diagnostic; validated
+successful-circuit simplification remains available as a separate analysis.
 
 ## Objective
 
@@ -116,8 +117,12 @@ All paired success tests have two-sided exact p-values at least 0.5, and all
 paired-bootstrap intervals for mean common-hard error differences cross zero.
 This cohort therefore does not support a gate-coordinate or weight-decay
 advantage. The sparse successes and wide intervals do not establish equivalence.
-R002-specific Boolean simplification of the successful circuits and durable
-publication of the 317 MB artifact bundle remain separate follow-up work.
+The 317 MB checkpoint, trajectory, and final-circuit collection is published in
+the experiment-scoped
+[`experiment/R002` GitHub release](https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/tag/experiment/R002).
+All release assets were downloaded and verified after publication. R002-specific
+Boolean simplification of the successful circuits remains separate follow-up
+work.
 
 The [independent R002 review](../reviews/R002_formal_attempt01/REVIEW.md) verifies
 all 128 committed result files and recomputes the paired statistics. Direct truth

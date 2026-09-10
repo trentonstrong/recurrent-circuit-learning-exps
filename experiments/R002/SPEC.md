@@ -10,7 +10,9 @@ The [full handoff](../../docs/RECURRENT_BASELINE_HANDOFF.md) is the detailed pro
 The paired cohort found 1/16 exact categorical/reference-decay trials, 1/16
 exact truth/reference-decay trials, 2/16 exact categorical/no-decay trials, and
 0/16 exact truth/no-decay trials. Paired uncertainty does not support an
-advantage for either coordinate system or decay setting.
+advantage for either coordinate system or decay setting. Its checkpoint,
+trajectory, and final-circuit payloads are published under the experiment-scoped
+[`experiment/R002` release](https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/tag/experiment/R002).
 
 Use 16 paired seeds, 0–15, with the synchronous architecture and 500 updates:
 

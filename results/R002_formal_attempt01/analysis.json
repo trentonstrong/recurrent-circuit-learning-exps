@@ -108,6 +108,36 @@
       "mean_common_bit_error_difference_bootstrap_95": [-591.3765625, 793.1921874999989]
     }
   },
+  "release": {
+    "tag": "experiment/R002",
+    "url": "https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/tag/experiment/R002",
+    "target_commit": "d0a9f9e42b9576d5a4e8e9ddbd67592bc2d929c8",
+    "published_at": "2026-09-10T16:07:14Z",
+    "verification": "all assets downloaded from GitHub and byte-compared with the local packages after upload",
+    "assets": [
+      {
+        "name": "R002_formal_attempt01_checkpoints.tar.gz",
+        "kind": "checkpoint_bundle",
+        "bytes": 218767657,
+        "sha256": "dfae3b7e5df98ded0df4a073f067d17699fa32ff8a564ddcb301b3b0e1e01248",
+        "url": "https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/download/experiment/R002/R002_formal_attempt01_checkpoints.tar.gz"
+      },
+      {
+        "name": "R002_formal_attempt01_analysis.tar.gz",
+        "kind": "analysis_bundle",
+        "bytes": 87494250,
+        "sha256": "7e216c4930fd867aa9360efc97bbd07d603648b7ac5190feb6dfaeedd7f4f8f9",
+        "url": "https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/download/experiment/R002/R002_formal_attempt01_analysis.tar.gz"
+      },
+      {
+        "name": "R002_formal_attempt01_release-assets.json",
+        "kind": "release_asset_manifest",
+        "bytes": 365239,
+        "sha256": "53b708d015e6697d740ecfa20436d7ab51ffadbdeca444d44cbc388a185cac89",
+        "url": "https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/download/experiment/R002/R002_formal_attempt01_release-assets.json"
+      }
+    ]
+  },
   "runtime": {
     "cohort_started_at": "2026-09-10T02:40:16.344084+00:00",
     "cohort_ended_at": "2026-09-10T03:50:03.417661+00:00",
@@ -122,7 +152,7 @@
   "boundaries": {
     "probe_grids_are_independent_trials": false,
     "posthoc_boolean_simplification": "pending separate validated review",
-    "artifact_storage": "local only; durable publication pending",
+    "artifact_storage": "published in the experiment/R002 GitHub release",
     "artifact_bytes": 317110063,
     "result_record_bytes": 19425729
   }

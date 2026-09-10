@@ -15,7 +15,9 @@ in [`R002_20260910_validation`](R002_20260910_validation/summary.md). The formal
 seeds 0--15 subsequently completed in
 [`R002_formal_attempt01`](R002_formal_attempt01/summary.md): all 64 trials
 finished, and the paired analysis supports neither a coordinate-system nor a
-weight-decay advantage in this cohort.
+weight-decay advantage in this cohort. Its large checkpoint, trajectory, and
+final-circuit payloads are published under the experiment-scoped
+[`experiment/R002` GitHub release](https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/tag/experiment/R002).
 
 Create one directory per run, for example `R001_20260909_seed23_jaxgpu_attempt01`.
 Use separate identities for retries and interventions and explain their relation.

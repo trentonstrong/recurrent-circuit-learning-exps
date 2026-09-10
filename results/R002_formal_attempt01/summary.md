@@ -114,9 +114,13 @@ comparison.
 The 64 manifest/metrics directories occupy 19,425,729 bytes. The checkpoint and
 trajectory artifacts occupy 317,110,063 bytes and remain outside git under
 `artifacts/R002_formal_attempt01_*`; every identity is recorded in its run
-manifest. Those local paths are not durable publication. Artifact publication
-and R002-specific validated Boolean simplification remain explicit follow-up
-work. No post-hoc analysis changed trial status or the frozen training recipe.
+manifest. They are published in the durable
+[`experiment/R002` GitHub release](https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/tag/experiment/R002).
+The release has separate checkpoint and analysis bundles plus a
+constituent-level asset manifest. All three assets were downloaded from GitHub
+and byte-compared with the local packages after upload. R002-specific validated
+Boolean simplification remains separate follow-up work. No post-hoc analysis
+changed trial status or the frozen training recipe.
 
 Machine-readable aggregate statistics and analysis methods are in
 [`analysis.json`](analysis.json). The per-run manifests and metrics are in the
