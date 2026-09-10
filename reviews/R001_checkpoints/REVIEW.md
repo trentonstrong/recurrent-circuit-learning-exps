@@ -136,7 +136,11 @@ remain exactly those of initialization.
 At updates 250 and 500 the visible field reaches the target by runtime tick 16
 on all 32 recorded inputs and stays correct through tick 20. This is observed
 convergence on that fixed set, not a proof for all possible initial grids or all
-grid sizes. No longer-runtime or new-size evaluation was added here.
+grid sizes. No longer-runtime or new-size evaluation was added in this initial
+review. The subsequent [rule walkthrough and convergence certificate](RULE250.md)
+establishes convergence at tick 16 for every initial grid at checkpoint 250,
+and a fixed point of its visible two-channel subsystem by tick 17, under the
+same 16 by 16 zero-exterior contract.
 
 ![Stored state trajectories, with the zero exterior](probe_states.png)
 
@@ -243,10 +247,10 @@ switch to a declared method, with sampled disagreements distinguished from proof
 R003's same-effective-truth-table intervention remains a separate mechanism test.
 No RG constants or correlators are estimated in this checkpoint review.
 
-The strongest next mechanistic question is whether these compact rules can be
-shown analytically to erase arbitrary initial conditions under the given boundary
-and time contract. That would be stronger than another batch of successful
-random-grid rollouts, while keeping the representation comparison a separate task.
+The initial review identified erasure of arbitrary initial conditions as the
+next mechanistic question. The subsequent [walkthrough](RULE250.md) answers it
+for checkpoint 250 using sound set-valued propagation. The paired representation
+comparison remains a separate task.
 
 ## Reproduce this analysis
 

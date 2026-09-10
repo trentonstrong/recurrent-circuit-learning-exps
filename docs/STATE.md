@@ -69,6 +69,13 @@ Some recorded gate changes preserve the complete hard update rule; others
 preserve visible behavior or only the terminal result. These measurements do
 not establish continuous neutral optimizer paths or complete description lengths.
 
+The [rule walkthrough](../reviews/R001_checkpoints/RULE250.md) adds a finite
+convergence certificate for checkpoint 250. Sound unknown-value propagation
+establishes the target at tick 16 for every initial assignment on its 16 by 16
+zero-exterior grid. Its two-channel visible subsystem reaches a fixed point by
+tick 17. This is a property of the frozen hard circuit, not another training run
+or a size-generalization result; the R000 source parity gap remains separate.
+
 The source and dimensionality audits are recorded in the
 [manifest](../references/difflogic_ca/source_manifest.json). These are completed
 audits, not new recurrent-training results.
