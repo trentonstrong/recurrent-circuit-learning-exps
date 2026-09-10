@@ -119,6 +119,15 @@ advantage. The sparse successes and wide intervals do not establish equivalence.
 R002-specific Boolean simplification of the successful circuits and durable
 publication of the 317 MB artifact bundle remain separate follow-up work.
 
+The [independent R002 review](../reviews/R002_formal_attempt01/REVIEW.md) verifies
+all 128 committed result files and recomputes the paired statistics. Direct truth
+coordinates produce more common gate-change events in every paired seed under
+both decay settings, without an established exact-solution advantage. All 64
+trials have lower fixed-probe soft loss at update 500 than at 400. These are
+trajectory observations, not evidence of neutral paths or stationary failures.
+The review distinguishes a possible uniform budget extension from R003's direct
+same-function mechanism test; neither follow-up has been launched.
+
 The [review of commit e94789f](../reviews/R001_e94789f/REVIEW.md) identified the
 now-closed direct-notebook validation gap. Shared access to the existing R001
 checkpoint bundle is provided by the experiment-scoped

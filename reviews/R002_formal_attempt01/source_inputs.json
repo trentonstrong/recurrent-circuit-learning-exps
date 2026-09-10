@@ -1,0 +1,646 @@
+{
+  "reviewed_commit": "ba24a95dea6c7d4153843e822d9deed1fafbfed5",
+  "training_commit": "d220b65da822707cd7db3dc90df69d9250aa0f77",
+  "inputs": [
+    {
+      "path": "results/R002_formal_attempt01_seed00_categorical_no_decay/manifest.json",
+      "git_blob_sha": "859974d3a48171a7e1494633bea6344f34bb2420",
+      "bytes": 110382
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed00_categorical_no_decay/metrics.jsonl",
+      "git_blob_sha": "01d88078a84cb2b38b5afa5cea46c3dbad61daee",
+      "bytes": 191056
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed00_categorical_reference_decay/manifest.json",
+      "git_blob_sha": "437e001d30c798e70181719e6dd7bdc3a9323928",
+      "bytes": 110314
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed00_categorical_reference_decay/metrics.jsonl",
+      "git_blob_sha": "bbafd298e6e6e04fba30ee947d3c7a5407b150ac",
+      "bytes": 191012
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed00_truth_no_decay/manifest.json",
+      "git_blob_sha": "5d89252635ecc38afafea0bd9f60d1a54f764d8a",
+      "bytes": 110390
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed00_truth_no_decay/metrics.jsonl",
+      "git_blob_sha": "fdf5bcdaf0798bd769d4c9f6d6237d03cf812938",
+      "bytes": 190840
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed00_truth_reference_decay/manifest.json",
+      "git_blob_sha": "1b3619420c57129e813dae644fc9341faf6dd53b",
+      "bytes": 110455
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed00_truth_reference_decay/metrics.jsonl",
+      "git_blob_sha": "258d960920033d2b4c5d4a44351c2a32752fb77c",
+      "bytes": 190783
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed01_categorical_no_decay/manifest.json",
+      "git_blob_sha": "c56dd285cdc2cf6589b38e54e6d7e7cf9027e7dc",
+      "bytes": 110787
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed01_categorical_no_decay/metrics.jsonl",
+      "git_blob_sha": "ffd566cdd0380bf641d14f6630759005e0f2f778",
+      "bytes": 190822
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed01_categorical_reference_decay/manifest.json",
+      "git_blob_sha": "293a8b3359db34e219fe3ecca66d68c34362e24c",
+      "bytes": 110811
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed01_categorical_reference_decay/metrics.jsonl",
+      "git_blob_sha": "7e8086bb933771e5cacff6878095eddffc63bf75",
+      "bytes": 190625
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed01_truth_no_decay/manifest.json",
+      "git_blob_sha": "e4e7c6222877011b58e1845dcf78dca6d15aee9f",
+      "bytes": 110767
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed01_truth_no_decay/metrics.jsonl",
+      "git_blob_sha": "7a8ca487650508abb1749e3cc9b683bfae1c5014",
+      "bytes": 190677
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed01_truth_reference_decay/manifest.json",
+      "git_blob_sha": "23d382b1a2d9d4432f8b71880f89f620e44ea8b1",
+      "bytes": 110759
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed01_truth_reference_decay/metrics.jsonl",
+      "git_blob_sha": "d8ff8414f3ed040f3224beb6901f0ce54b296aef",
+      "bytes": 190662
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed02_categorical_no_decay/manifest.json",
+      "git_blob_sha": "27adedf7e402c775ff07202d25ec80d3d8a2e3c4",
+      "bytes": 111030
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed02_categorical_no_decay/metrics.jsonl",
+      "git_blob_sha": "271b1eb3274e629e4642635e66f8698792c4e768",
+      "bytes": 191601
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed02_categorical_reference_decay/manifest.json",
+      "git_blob_sha": "b5c7c168a5479ff60f0d4bafd9a24fcd0387db2c",
+      "bytes": 110978
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed02_categorical_reference_decay/metrics.jsonl",
+      "git_blob_sha": "4b8abfd9a7d470f223fd39a2745e51054d0661d5",
+      "bytes": 191227
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed02_truth_no_decay/manifest.json",
+      "git_blob_sha": "6ecbfa913976ffe9ab15027221136054670db563",
+      "bytes": 111011
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed02_truth_no_decay/metrics.jsonl",
+      "git_blob_sha": "f9ae01e0a5776c1d546cfe9c2632ff20048b4c43",
+      "bytes": 190726
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed02_truth_reference_decay/manifest.json",
+      "git_blob_sha": "3af8c5c8ad2f4adde4d7dbe5416e4661ba327360",
+      "bytes": 111055
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed02_truth_reference_decay/metrics.jsonl",
+      "git_blob_sha": "85ff6cce60352da32d4580ca745866b448b3b8ad",
+      "bytes": 190617
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed03_categorical_no_decay/manifest.json",
+      "git_blob_sha": "41ff5be539a81439fae252f5f17dec39cb4839c1",
+      "bytes": 111345
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed03_categorical_no_decay/metrics.jsonl",
+      "git_blob_sha": "59d1ebd5647bf138cc201e62602bb51484f515af",
+      "bytes": 190584
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed03_categorical_reference_decay/manifest.json",
+      "git_blob_sha": "d532b0c8986ca5b7b7559adcb7df945b9f97f1c6",
+      "bytes": 111370
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed03_categorical_reference_decay/metrics.jsonl",
+      "git_blob_sha": "8c5c71d0c13da804c337dc6811b660ba9dc333ec",
+      "bytes": 190413
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed03_truth_no_decay/manifest.json",
+      "git_blob_sha": "0879c157eb581a544a16223c60ecb5ee6a04faef",
+      "bytes": 111277
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed03_truth_no_decay/metrics.jsonl",
+      "git_blob_sha": "2eccf8c7603c162f3d5c8a77f074ae635d61746e",
+      "bytes": 190944
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed03_truth_reference_decay/manifest.json",
+      "git_blob_sha": "7cc032e10228fa97ee1981c5394c41e8f8407187",
+      "bytes": 111308
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed03_truth_reference_decay/metrics.jsonl",
+      "git_blob_sha": "b53f241daf4d60a0cb8ad6c5c40326a9f76953a7",
+      "bytes": 190683
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed04_categorical_no_decay/manifest.json",
+      "git_blob_sha": "1a65ebd47d970aa006d5b47d9878e560bfc9adf6",
+      "bytes": 111581
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed04_categorical_no_decay/metrics.jsonl",
+      "git_blob_sha": "599b0a559fa076fc58601c1d3a73a786859518a9",
+      "bytes": 192077
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed04_categorical_reference_decay/manifest.json",
+      "git_blob_sha": "ef0e5af25e6a7868d6cea5c71c2cfd555c43d946",
+      "bytes": 111657
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed04_categorical_reference_decay/metrics.jsonl",
+      "git_blob_sha": "4a1007d9c9467a83a1ae70d66ec5e9dc47b08a82",
+      "bytes": 191871
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed04_truth_no_decay/manifest.json",
+      "git_blob_sha": "64336b483c57d986cd80dba7c85db88a2af53b61",
+      "bytes": 111586
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed04_truth_no_decay/metrics.jsonl",
+      "git_blob_sha": "eac6591c66398c7b4795634e8c01f2aec5062f3f",
+      "bytes": 191015
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed04_truth_reference_decay/manifest.json",
+      "git_blob_sha": "316e4541b53959afee66a9613a183e24dbf23e82",
+      "bytes": 111590
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed04_truth_reference_decay/metrics.jsonl",
+      "git_blob_sha": "fe4254f2ac90ac7ae9375420784672c6707adde1",
+      "bytes": 190771
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed05_categorical_no_decay/manifest.json",
+      "git_blob_sha": "2845cd12a1ea06a4a93a2bdfa8e70a6ce802817e",
+      "bytes": 111938
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed05_categorical_no_decay/metrics.jsonl",
+      "git_blob_sha": "3a6b99b7b803a29e55b0df8b19b21d4676823c59",
+      "bytes": 191084
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed05_categorical_reference_decay/manifest.json",
+      "git_blob_sha": "c17f3bdd0ee0631b1d20c385248ff978abe316fc",
+      "bytes": 112011
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed05_categorical_reference_decay/metrics.jsonl",
+      "git_blob_sha": "04bbd1474dfa99b28390f9c9a3cf2d6a4282172e",
+      "bytes": 190739
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed05_truth_no_decay/manifest.json",
+      "git_blob_sha": "23c0b169233e2440909cd4f62061b429d1f243ff",
+      "bytes": 111815
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed05_truth_no_decay/metrics.jsonl",
+      "git_blob_sha": "63d064266e72e8460d0bb445a5c2dd7eb98274b3",
+      "bytes": 190756
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed05_truth_reference_decay/manifest.json",
+      "git_blob_sha": "8f16d1da5ecd2c62d49c413884280cc30aa58531",
+      "bytes": 111907
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed05_truth_reference_decay/metrics.jsonl",
+      "git_blob_sha": "5a619b886d12a54a0a87ccaea44592aefe07fc07",
+      "bytes": 190737
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed06_categorical_no_decay/manifest.json",
+      "git_blob_sha": "a649e33f5f10439b315f65e64ab971e7d13e1f12",
+      "bytes": 112145
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed06_categorical_no_decay/metrics.jsonl",
+      "git_blob_sha": "6651f1567d58787149b979bac4dc45b892dfd303",
+      "bytes": 190975
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed06_categorical_reference_decay/manifest.json",
+      "git_blob_sha": "a923000eaadf4cb023e6d45bc09295974a2d737a",
+      "bytes": 112130
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed06_categorical_reference_decay/metrics.jsonl",
+      "git_blob_sha": "8893866d5dfd412fb1025799cbdc7a9935e49403",
+      "bytes": 190979
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed06_truth_no_decay/manifest.json",
+      "git_blob_sha": "0e4cf7663658c104b4eea16103afd64142e0d5b9",
+      "bytes": 112136
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed06_truth_no_decay/metrics.jsonl",
+      "git_blob_sha": "240c3cce36c24ad19ed3f87c6feedf95e8ea9e32",
+      "bytes": 190761
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed06_truth_reference_decay/manifest.json",
+      "git_blob_sha": "9c776f5c8c106125bceeb36b7d7ef78066f09682",
+      "bytes": 112125
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed06_truth_reference_decay/metrics.jsonl",
+      "git_blob_sha": "c8a60ce6eb0d67d30dab56f7ef790e07e0b9b4ff",
+      "bytes": 190637
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed07_categorical_no_decay/manifest.json",
+      "git_blob_sha": "cd591e3d6484b7b653561627da0ac41a19384d64",
+      "bytes": 112405
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed07_categorical_no_decay/metrics.jsonl",
+      "git_blob_sha": "1b0589a2e1c2a8cd2a776e7dab60b2fb0352c9ec",
+      "bytes": 190943
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed07_categorical_reference_decay/manifest.json",
+      "git_blob_sha": "bbe75cbc4f801af3ac414794fb2a6287b76ffd9e",
+      "bytes": 112432
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed07_categorical_reference_decay/metrics.jsonl",
+      "git_blob_sha": "489585e24e0bae08b7548383214b2aa0028e79fd",
+      "bytes": 190923
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed07_truth_no_decay/manifest.json",
+      "git_blob_sha": "ec15678484b169200ceb69ea1678945320027a89",
+      "bytes": 112416
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed07_truth_no_decay/metrics.jsonl",
+      "git_blob_sha": "807b83c16ed85d98681f6a495cc1669b187e2315",
+      "bytes": 190872
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed07_truth_reference_decay/manifest.json",
+      "git_blob_sha": "cecd416fb40730a44ad0348201ecb0ef0a6c5ebd",
+      "bytes": 112489
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed07_truth_reference_decay/metrics.jsonl",
+      "git_blob_sha": "7ecac0abc5b215de897e06571e36f64d89607773",
+      "bytes": 190748
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed08_categorical_no_decay/manifest.json",
+      "git_blob_sha": "54d4476851ec07969f1a485b3c92dcdd152ef2bd",
+      "bytes": 112771
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed08_categorical_no_decay/metrics.jsonl",
+      "git_blob_sha": "c0f8384133d89d34f599c4a7c86d1837e98e621f",
+      "bytes": 191177
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed08_categorical_reference_decay/manifest.json",
+      "git_blob_sha": "c1b244c6ba9bc5c290e2be58d58f14ef7116f304",
+      "bytes": 112719
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed08_categorical_reference_decay/metrics.jsonl",
+      "git_blob_sha": "1d2c4cf30c03552e9b5f1bf5e7d206b24e2ae44d",
+      "bytes": 190873
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed08_truth_no_decay/manifest.json",
+      "git_blob_sha": "d2ab0033300c1407809236a44fbf99c625708a2e",
+      "bytes": 112667
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed08_truth_no_decay/metrics.jsonl",
+      "git_blob_sha": "bafb46d7a3ef8b089ac8015f224411e9982d4d17",
+      "bytes": 191147
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed08_truth_reference_decay/manifest.json",
+      "git_blob_sha": "d77ffc618fa327c628422d3415eade916705e27f",
+      "bytes": 112688
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed08_truth_reference_decay/metrics.jsonl",
+      "git_blob_sha": "d50d3d0d4b16879c634576bfd4db75d0b5bb012a",
+      "bytes": 191177
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed09_categorical_no_decay/manifest.json",
+      "git_blob_sha": "bfdd97d4585645577d2f1319997d183f0bdb48fb",
+      "bytes": 113027
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed09_categorical_no_decay/metrics.jsonl",
+      "git_blob_sha": "12cf5b6482987a91879d27429c115c5d3ca7c94a",
+      "bytes": 190845
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed09_categorical_reference_decay/manifest.json",
+      "git_blob_sha": "28d32062b95b8b50b5659b6c8798c09c37b8f23f",
+      "bytes": 112959
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed09_categorical_reference_decay/metrics.jsonl",
+      "git_blob_sha": "d5c68af94562d4b050603c59b0242e152f7885dc",
+      "bytes": 190731
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed09_truth_no_decay/manifest.json",
+      "git_blob_sha": "78d82a1f0297b0ebf09612fa84c1b5acac21c6f6",
+      "bytes": 112885
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed09_truth_no_decay/metrics.jsonl",
+      "git_blob_sha": "d9e9b5111a748a474384f52c8cae23d0fa88a751",
+      "bytes": 191116
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed09_truth_reference_decay/manifest.json",
+      "git_blob_sha": "6c65c90590591a34d36305f43a52445d54acfd81",
+      "bytes": 112977
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed09_truth_reference_decay/metrics.jsonl",
+      "git_blob_sha": "99c2bd3031035acf0dd8cb767fa1ad47bd54db2f",
+      "bytes": 191152
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed10_categorical_no_decay/manifest.json",
+      "git_blob_sha": "f6059b9fe80ae07b543c998442a728402e9c9dd9",
+      "bytes": 113362
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed10_categorical_no_decay/metrics.jsonl",
+      "git_blob_sha": "a8323b21615ee57424b04a6df12b1eff4615449e",
+      "bytes": 190558
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed10_categorical_reference_decay/manifest.json",
+      "git_blob_sha": "75174a7fcb81bb7fc2d2326c3fac9d419d2d0797",
+      "bytes": 113403
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed10_categorical_reference_decay/metrics.jsonl",
+      "git_blob_sha": "18dd2d7a6acb3e781f3c68ac0edc653594b824df",
+      "bytes": 190384
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed10_truth_no_decay/manifest.json",
+      "git_blob_sha": "f04ff0f86a34abd4eebc66112ffcf9ea068c02e9",
+      "bytes": 113412
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed10_truth_no_decay/metrics.jsonl",
+      "git_blob_sha": "09fa09a2ea5f651e193de9f4c8e8385fdb2adafe",
+      "bytes": 190871
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed10_truth_reference_decay/manifest.json",
+      "git_blob_sha": "ad3e188eca2b7a84242a214cbe8effe42d24a6b2",
+      "bytes": 113363
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed10_truth_reference_decay/metrics.jsonl",
+      "git_blob_sha": "bb9c365d20371c0d14b506f11f2d4d322a21d9c1",
+      "bytes": 190836
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed11_categorical_no_decay/manifest.json",
+      "git_blob_sha": "7bae8288597bcbc4811d822da356a76b5dba16c9",
+      "bytes": 113575
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed11_categorical_no_decay/metrics.jsonl",
+      "git_blob_sha": "63db4cb47b658e1a0a8d1b9755dcd00c0d94ca0a",
+      "bytes": 191508
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed11_categorical_reference_decay/manifest.json",
+      "git_blob_sha": "d3431eacb0b96138f2b0f2d55207ce358599d7c4",
+      "bytes": 113542
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed11_categorical_reference_decay/metrics.jsonl",
+      "git_blob_sha": "8f343bd0b186db1959e640ac4eced8de5deecf61",
+      "bytes": 191503
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed11_truth_no_decay/manifest.json",
+      "git_blob_sha": "c67333af3394e55e60d36f31f4a884c654173f07",
+      "bytes": 113557
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed11_truth_no_decay/metrics.jsonl",
+      "git_blob_sha": "849ede0451a8a4138e8005a574054c8d659eec8f",
+      "bytes": 190901
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed11_truth_reference_decay/manifest.json",
+      "git_blob_sha": "a9dd6404cb725f16b24fa903ca81f9a3b89d1438",
+      "bytes": 113616
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed11_truth_reference_decay/metrics.jsonl",
+      "git_blob_sha": "bc566bb8b936a1370795dd3693d474784586da62",
+      "bytes": 190734
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed12_categorical_no_decay/manifest.json",
+      "git_blob_sha": "05873ea0bb5b6790e5313330b8eb093f3828e4bc",
+      "bytes": 113832
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed12_categorical_no_decay/metrics.jsonl",
+      "git_blob_sha": "d299cd944ca252418ce5c0ce8de33bca6a8799a3",
+      "bytes": 190976
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed12_categorical_reference_decay/manifest.json",
+      "git_blob_sha": "f78a486ffe42c18aa5b1345dd06119b50f5f041d",
+      "bytes": 113842
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed12_categorical_reference_decay/metrics.jsonl",
+      "git_blob_sha": "8ea696e6cd24eb4793d74f385eb270b9672889f7",
+      "bytes": 191006
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed12_truth_no_decay/manifest.json",
+      "git_blob_sha": "c4dd27cf16fbe550a892f28b1b8abcca648efdb2",
+      "bytes": 113898
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed12_truth_no_decay/metrics.jsonl",
+      "git_blob_sha": "0d1ea4f1b92aa9e6f2fcdbb84621cb0675729dc0",
+      "bytes": 191194
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed12_truth_reference_decay/manifest.json",
+      "git_blob_sha": "9362605dc5f8996575ddf999a04075e1c5ea99f9",
+      "bytes": 113868
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed12_truth_reference_decay/metrics.jsonl",
+      "git_blob_sha": "2413d3cf048865ea83c724490e8e5ddf088c25a8",
+      "bytes": 191042
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed13_categorical_no_decay/manifest.json",
+      "git_blob_sha": "3d8649eb05fadfeb8312a12a770f72bcf339709c",
+      "bytes": 114212
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed13_categorical_no_decay/metrics.jsonl",
+      "git_blob_sha": "a8ab491e478f2bbdec04e3bf52a7506d531820e7",
+      "bytes": 191176
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed13_categorical_reference_decay/manifest.json",
+      "git_blob_sha": "cafd015acbeed927af5bc60dfc482601ccff8510",
+      "bytes": 114117
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed13_categorical_reference_decay/metrics.jsonl",
+      "git_blob_sha": "2dd0f4b79be934f6ae174922dfb71fe5deabd23b",
+      "bytes": 190944
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed13_truth_no_decay/manifest.json",
+      "git_blob_sha": "184293cff61182b471177071f48ae580efd2ea64",
+      "bytes": 114181
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed13_truth_no_decay/metrics.jsonl",
+      "git_blob_sha": "a5af89d435784cc7e978d32219b8cb70e8780029",
+      "bytes": 190956
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed13_truth_reference_decay/manifest.json",
+      "git_blob_sha": "699a813245746f10c5be22a1d421cabadf7d577c",
+      "bytes": 114159
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed13_truth_reference_decay/metrics.jsonl",
+      "git_blob_sha": "59d973e16055cb8692840d5c11637ebf120dd20e",
+      "bytes": 191184
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed14_categorical_no_decay/manifest.json",
+      "git_blob_sha": "f71a94651a82c4eff3bf770f03c2901924b7268b",
+      "bytes": 114476
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed14_categorical_no_decay/metrics.jsonl",
+      "git_blob_sha": "697c9caafa292808c44b406cbba678420c15d44f",
+      "bytes": 191637
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed14_categorical_reference_decay/manifest.json",
+      "git_blob_sha": "a96c3e7b53a63cd8916baf13ed890ff36e33a171",
+      "bytes": 114452
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed14_categorical_reference_decay/metrics.jsonl",
+      "git_blob_sha": "fe8f4a178ed639fc557c726ecf8282b25cb8d8d9",
+      "bytes": 191331
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed14_truth_no_decay/manifest.json",
+      "git_blob_sha": "34c7917228902e0f20ec3e7f730bdd08c405c6e5",
+      "bytes": 114430
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed14_truth_no_decay/metrics.jsonl",
+      "git_blob_sha": "99f59c4e7418cbc432c5868cc68ab995dd593e92",
+      "bytes": 190483
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed14_truth_reference_decay/manifest.json",
+      "git_blob_sha": "f0ed089ae5b03e7788b2032da024a697b48fd213",
+      "bytes": 114445
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed14_truth_reference_decay/metrics.jsonl",
+      "git_blob_sha": "e1073a2a1720578b36b99219db55e64527b0456f",
+      "bytes": 190490
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed15_categorical_no_decay/manifest.json",
+      "git_blob_sha": "4291898e8ff3f239f8b0da47d52f5b289588c448",
+      "bytes": 114728
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed15_categorical_no_decay/metrics.jsonl",
+      "git_blob_sha": "b8329059c122fd18838fca7437e2aa141246e8e2",
+      "bytes": 190893
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed15_categorical_reference_decay/manifest.json",
+      "git_blob_sha": "8fc8e3ae6f26ea999481530c24e25a56a2c999dd",
+      "bytes": 114699
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed15_categorical_reference_decay/metrics.jsonl",
+      "git_blob_sha": "361722dead91836133e5bad4ccccdf57cbb88d34",
+      "bytes": 191093
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed15_truth_no_decay/manifest.json",
+      "git_blob_sha": "61b93fd13a86ee219874603b3f183164e2f1b7a4",
+      "bytes": 114637
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed15_truth_no_decay/metrics.jsonl",
+      "git_blob_sha": "a7534cea104bc8069e75448d8f9f8adbf0ee2627",
+      "bytes": 190588
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed15_truth_reference_decay/manifest.json",
+      "git_blob_sha": "e8d0cf63a92400e5e8844a35e0cff053fc972e1c",
+      "bytes": 114735
+    },
+    {
+      "path": "results/R002_formal_attempt01_seed15_truth_reference_decay/metrics.jsonl",
+      "git_blob_sha": "f954d6a127f12d81ef1da23adc8668cb03816de2",
+      "bytes": 190427
+    }
+  ]
+}
