@@ -95,6 +95,68 @@ def build_bundle(
     }
 
 
+def build_tree_bundle(
+    output_path: Path,
+    experiment_id: str,
+    sweep_id: str,
+    bundle_kind: str,
+    files: list[Path],
+    artifact_root: Path,
+) -> dict[str, Any]:
+    contents = []
+    for path in sorted(files):
+        record = _content_record(path)
+        record["path"] = path.relative_to(artifact_root).as_posix()
+        del record["name"]
+        contents.append(record)
+    embedded_manifest = {
+        "schema_version": 1,
+        "experiment_id": experiment_id,
+        "sweep_id": sweep_id,
+        "bundle_kind": bundle_kind,
+        "files": contents,
+    }
+    manifest_bytes = (
+        json.dumps(embedded_manifest, indent=2, sort_keys=True) + "\n"
+    ).encode()
+
+    tar_buffer = io.BytesIO()
+    with tarfile.open(
+        fileobj=tar_buffer, mode="w", format=tarfile.PAX_FORMAT
+    ) as archive:
+        manifest_info = tarfile.TarInfo("CONTENTS.json")
+        manifest_info.size = len(manifest_bytes)
+        archive.addfile(_normalized_tar_info(manifest_info), io.BytesIO(manifest_bytes))
+        for path in sorted(files):
+            with path.open("rb") as handle:
+                archive.addfile(
+                    _normalized_tar_info(
+                        archive.gettarinfo(
+                            str(path),
+                            arcname=path.relative_to(artifact_root).as_posix(),
+                        )
+                    ),
+                    handle,
+                )
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with (
+        output_path.open("wb") as output_handle,
+        gzip.GzipFile(
+            filename="", mode="wb", compresslevel=9, mtime=0, fileobj=output_handle
+        ) as compressed,
+    ):
+        compressed.write(tar_buffer.getvalue())
+
+    return {
+        "name": output_path.name,
+        "kind": bundle_kind,
+        "bytes": output_path.stat().st_size,
+        "sha256": sha256_file(output_path),
+        "contents": contents,
+    }
+
+
 def build_release_assets(
     experiment_id: str,
     run_id: str,
@@ -153,19 +215,112 @@ def build_release_assets(
     return release_manifest
 
 
+def build_sweep_release_assets(
+    experiment_id: str,
+    sweep_id: str,
+    artifact_root: Path,
+    output_directory: Path,
+) -> dict[str, Any]:
+    if not EXPERIMENT_ID_PATTERN.fullmatch(experiment_id):
+        raise ValueError("experiment ID must have the form R000")
+    if not artifact_root.is_dir():
+        raise FileNotFoundError(artifact_root)
+
+    run_directories = sorted(artifact_root.glob(f"{experiment_id}_{sweep_id}_seed*"))
+    if not run_directories or any(not path.is_dir() for path in run_directories):
+        raise ValueError("artifact root has no matching sweep run directories")
+
+    checkpoints: list[Path] = []
+    analysis_files: list[Path] = []
+    for run_directory in run_directories:
+        run_checkpoints = sorted(run_directory.glob("checkpoint_update_*.npz"))
+        run_trajectories = sorted(run_directory.glob("probe_trajectory_update_*.npz"))
+        run_exports = [
+            run_directory / "final_native_circuit.npz",
+            run_directory / "final_common_circuit.npz",
+        ]
+        if (
+            not run_checkpoints
+            or len(run_checkpoints) != len(run_trajectories)
+            or any(not path.is_file() for path in run_exports)
+        ):
+            raise ValueError(f"incomplete sweep artifact directory: {run_directory}")
+        checkpoints.extend(run_checkpoints)
+        analysis_files.extend(run_trajectories)
+        analysis_files.extend(run_exports)
+
+    output_directory.mkdir(parents=True, exist_ok=True)
+    asset_prefix = f"{experiment_id}_{sweep_id}"
+    assets = [
+        build_tree_bundle(
+            output_directory / f"{asset_prefix}_checkpoints.tar.gz",
+            experiment_id,
+            sweep_id,
+            "checkpoints",
+            checkpoints,
+            artifact_root,
+        ),
+        build_tree_bundle(
+            output_directory / f"{asset_prefix}_analysis.tar.gz",
+            experiment_id,
+            sweep_id,
+            "analysis",
+            analysis_files,
+            artifact_root,
+        ),
+    ]
+    release_manifest = {
+        "schema_version": 1,
+        "experiment_id": experiment_id,
+        "sweep_id": sweep_id,
+        "release_tag": f"experiment/{experiment_id}",
+        "run_directories": [path.name for path in run_directories],
+        "assets": assets,
+    }
+    manifest_path = output_directory / f"{asset_prefix}_release-assets.json"
+    manifest_path.write_text(
+        json.dumps(release_manifest, indent=2, sort_keys=True) + "\n"
+    )
+    release_manifest["manifest_asset"] = {
+        "name": manifest_path.name,
+        "bytes": manifest_path.stat().st_size,
+        "sha256": sha256_file(manifest_path),
+    }
+    return release_manifest
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--experiment-id", required=True)
-    parser.add_argument("--run-id", required=True)
-    parser.add_argument("--artifact-directory", required=True, type=Path)
+    parser.add_argument("--run-id")
+    parser.add_argument("--artifact-directory", type=Path)
+    parser.add_argument("--sweep-id")
+    parser.add_argument("--artifact-root", type=Path)
     parser.add_argument("--output-directory", required=True, type=Path)
     args = parser.parse_args()
-    result = build_release_assets(
-        args.experiment_id,
-        args.run_id,
-        args.artifact_directory,
-        args.output_directory,
-    )
+    if args.sweep_id and args.artifact_root and not (
+        args.run_id or args.artifact_directory
+    ):
+        result = build_sweep_release_assets(
+            args.experiment_id,
+            args.sweep_id,
+            args.artifact_root,
+            args.output_directory,
+        )
+    elif args.run_id and args.artifact_directory and not (
+        args.sweep_id or args.artifact_root
+    ):
+        result = build_release_assets(
+            args.experiment_id,
+            args.run_id,
+            args.artifact_directory,
+            args.output_directory,
+        )
+    else:
+        parser.error(
+            "provide either --run-id with --artifact-directory or "
+            "--sweep-id with --artifact-root"
+        )
     print(json.dumps(result, indent=2, sort_keys=True))
 
 
