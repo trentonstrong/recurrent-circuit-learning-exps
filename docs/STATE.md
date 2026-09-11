@@ -4,9 +4,10 @@ Updated: 2026-09-11. The formal 64-run R002 paired sweep, independent trajectory
 review, artifact publication, selected six-run hard-circuit review, and bounded
 full-cohort runtime profile are complete. The profile distinguishes late
 convergence, phase-dependent success, and persistent Boolean failure without
-changing the frozen tick-20 outcomes. R003 now has a fixed implementation handoff
-and diagnostic configuration. Implementing and validating that protocol is the
-next step; no R003 execution or uniform training-budget continuation is claimed.
+changing the frozen tick-20 outcomes. R003's same-function diagnostic and R004's
+uniform training-budget continuation now have separate fixed handoffs and
+configurations. Their implementation and validation are the next steps; no
+execution of either new experiment is claimed.
 
 ## Objective
 
@@ -34,6 +35,7 @@ eventually periodic. Length and storage-size generalization need separate tests.
 | [R001](../experiments/R001/SPEC.md) | Synchronous checkerboard, canonical seed 23 | Completed; fixed 32-grid probe exact at update 500 |
 | [R002](../experiments/R002/SPEC.md) | Paired gate-coordinate and weight-decay comparison | Sweep and bounded runtime profile completed; no supported coordinate or decay advantage |
 | [R003](../experiments/R003/SPEC.md) | Same-function mixture interventions | Handoff and v1 protocol specified; implementation pending |
+| [R004](../experiments/R004/SPEC.md) | Continue all R002 runs from 500 to 2,000 updates | Handoff and v1 protocol specified; implementation pending |
 
 The [R003 implementation handoff](../experiments/R003/HANDOFF.md) and
 [configuration](../configs/experiments/r003_same_function_v1.json) fix a 96-case
@@ -42,7 +44,17 @@ Three mixture representatives preserve each eligible gate's effective table;
 FP64 invariance checks precede geometry measurements and independent plain-SGD
 steps at 0.001 and 0.0001. Saved Adam/RNG state is preserved. The handoff tests
 representative-dependent response, not a claim of improved training or a causal
-explanation of circuit size. A longer-training continuation remains separate.
+explanation of circuit size.
+
+The [R004 implementation handoff](../experiments/R004/HANDOFF.md) and
+[configuration](../configs/experiments/r004_training_continuation_v1.json) continue
+all 64 R002 runs from their own update-500 checkpoints to global update 2,000,
+preserving parameters, Adam moments/counters, random keys, wiring, FP32, and the
+original constant-rate, 20-tick training recipe. Checkpoints/evaluation remain
+every 50 updates; structure is measured every 250 updates and the full runtime
+profile at 500, 1,000, 1,500, and 2,000. The preflight checks historical replay
+and exact resumption. These are longer trajectories of the same seed groups,
+not new independent trials, and they do not use R003-modified checkpoints.
 
 Use a known recurrent learner as a positive control before redesigning the
 sequence learner. The initial reference has fixed wiring, shared recurrent

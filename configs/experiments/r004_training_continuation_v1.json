@@ -1,0 +1,436 @@
+{
+  "schema_version": 1,
+  "kind": "training_budget_continuation",
+  "experiment_id": "R004",
+  "protocol_id": "r004_training_continuation_v1",
+  "status": "specified_for_implementation",
+  "spec_path": "experiments/R004/SPEC.md",
+  "handoff_path": "experiments/R004/HANDOFF.md",
+  "source": {
+    "repository": "trentonstrong/recurrent-circuit-learning-exps",
+    "reference_commit": "8d58f06eb1161ce887ffdefe5993ca59cefd8392",
+    "original_training_code_commit": "d220b65da822707cd7db3dc90df69d9250aa0f77",
+    "parent_experiment": "R002",
+    "parent_sweep": "formal_attempt01",
+    "parent_manifest_pattern": "results/R002_formal_attempt01_seed{seed:02d}_{condition}/manifest.json",
+    "parent_checkpoint_update": 500,
+    "checkpoint_format_version": 2,
+    "parent_release_tag": "experiment/R002",
+    "verify_sha256_and_byte_length": true,
+    "verify_metadata_and_shapes": true,
+    "wiring_source": "verified_parent_Boolean_export",
+    "allow_parent_substitution": false,
+    "allow_R003_modified_checkpoint": false
+  },
+  "conditions": [
+    {
+      "name": "categorical_reference_decay",
+      "representation": "categorical",
+      "weight_decay": 0.01
+    },
+    {
+      "name": "truth_reference_decay",
+      "representation": "truth",
+      "weight_decay": 0.01
+    },
+    {
+      "name": "categorical_no_decay",
+      "representation": "categorical",
+      "weight_decay": 0
+    },
+    {
+      "name": "truth_no_decay",
+      "representation": "truth",
+      "weight_decay": 0
+    }
+  ],
+  "scientific_recipe": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "run_count": 64,
+    "start_optimizer_update": 500,
+    "final_optimizer_update": 2000,
+    "additional_updates_per_run": 1500,
+    "total_additional_updates": 96000,
+    "first_new_optimizer_update": 501,
+    "learning_rate": 0.05,
+    "optimizer": "original_Optax_AdamW_factory",
+    "adam_b1": 0.9,
+    "adam_b2": 0.99,
+    "adam_eps": 1e-8,
+    "adam_eps_root": 0,
+    "adam_mu_dtype": null,
+    "adam_nesterov": false,
+    "clip_value": 100,
+    "clipping": "elementwise_before_AdamW",
+    "batch_size": 2,
+    "runtime_ticks": 20,
+    "grid_size": [
+      16,
+      16
+    ],
+    "channels": 8,
+    "synchronous": true,
+    "periodic": false,
+    "exterior": "constant_zero",
+    "checker_square_width": 2,
+    "loss": "summed_terminal_channel_0_squared_error",
+    "kernel": "common_multilinear_truth_table",
+    "truth_column_order": [
+      "00",
+      "01",
+      "10",
+      "11"
+    ],
+    "truth_gate_id_bit_weights": [
+      8,
+      4,
+      2,
+      1
+    ],
+    "common_rounding": "q>=0.5",
+    "native_argmax_ties": "lowest_gate_index",
+    "additional_description_cost": 0,
+    "additional_noise": 0,
+    "learning_rate_schedule": "constant",
+    "early_stopping": false,
+    "change_training_unroll": false,
+    "new_independent_trials": false
+  },
+  "resume": {
+    "restore": [
+      "parameters",
+      "complete_optimizer_state",
+      "model_key",
+      "data_key",
+      "global_update_index",
+      "actual_wiring"
+    ],
+    "parent_load_metadata": "validate_as_R002_with_original_config_hash",
+    "descendant_save_metadata": "R004_with_own_config_hash_and_parent_checkpoint_identity",
+    "initialize_new_optimizer_moments": false,
+    "reencode_gate_parameters": false,
+    "rematch_effective_tables_between_conditions": false,
+    "preserve_model_key_split_even_if_secondary_key_unused": true,
+    "compile_and_evaluate_without_consuming_live_rng": true,
+    "atomic_checkpoint_write": true,
+    "resume_from": "latest_valid_complete_matching_R004_checkpoint",
+    "per_update_batch_hash": "SHA256(str(dtype).encode()+json.dumps(shape).encode()+C_order_bytes)",
+    "continuation_batch_hashes_sha256": "SHA256(ASCII concatenation of global_update:batch_hash followed by LF, updates 501..2000)",
+    "parent_stream_digest_kept_separately": true,
+    "superseded_uncheckpointed_tail_records": "retain_attempt_history_with_one_authoritative_record_per_update",
+    "resumed_attempt_is_same_trial": true
+  },
+  "runtime": {
+    "environment": "envs/jax-gpu",
+    "environment_manager": "uv",
+    "locked": true,
+    "expected_lock_sha256": "7a8e627cd9851d7426502bc3734bcedcfe48277575aec363877d4e7b717b2125",
+    "expected_versions": {
+      "python": "3.11.6",
+      "jax": "0.10.2",
+      "jaxlib": "0.10.2",
+      "numpy": "2.4.6",
+      "optax": "0.2.8"
+    },
+    "backend": "gpu",
+    "concurrency": 1,
+    "training_dtype": "float32",
+    "jax_enable_x64": false,
+    "jax_threefry_partitionable": false,
+    "categorical_dot_precision": "highest",
+    "xla_flags": " --xla_gpu_deterministic_ops=true",
+    "allow_mixed_precision": false,
+    "record_hardware_driver_and_kernel": true,
+    "report_compile_training_analysis_and_wall_time_separately": true
+  },
+  "evaluation": {
+    "optimizer_updates": [
+      500,
+      550,
+      600,
+      650,
+      700,
+      750,
+      800,
+      850,
+      900,
+      950,
+      1000,
+      1050,
+      1100,
+      1150,
+      1200,
+      1250,
+      1300,
+      1350,
+      1400,
+      1450,
+      1500,
+      1550,
+      1600,
+      1650,
+      1700,
+      1750,
+      1800,
+      1850,
+      1900,
+      1950,
+      2000
+    ],
+    "original_probe_path": "artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/fixed_evaluation_set.npz",
+    "original_probe_sha256": "d49ecf23fd932fba25b1068f8c90820265a05fd90daadc372089520889090b2f",
+    "original_probe_count": 32,
+    "readout_tick": 20,
+    "primary_endpoint_update": 2000,
+    "primary_hardening": "common",
+    "hardening_modes": [
+      "common",
+      "native"
+    ],
+    "primary_exactness": "zero_visible_bit_errors_on_all_32_original_probes_at_tick_20",
+    "save_first_original_probe_trajectories": true,
+    "trajectory_ticks": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "save_all_integer_trajectory_ticks": true,
+    "state_and_optimizer_checkpoint_interval": 50,
+    "expected_new_checkpoints": 1920,
+    "expected_labeled_evaluation_positions": 1984,
+    "parent_baseline": "reference_immutable_R002_record_and_label_R004_replay_separately",
+    "select_best_intermediate_checkpoint": false
+  },
+  "structure": {
+    "optimizer_updates": [
+      500,
+      750,
+      1000,
+      1250,
+      1500,
+      1750,
+      2000
+    ],
+    "hardening_modes": [
+      "common",
+      "native"
+    ],
+    "primary_hardening": "common",
+    "simplifier": "reviews/R002_circuits/refine_circuits.py:FactoredDAG",
+    "simplifier_reference_commit": "8d58f06eb1161ce887ffdefe5993ca59cefd8392",
+    "closure_definition": "existing_recurrent_visible_channel_closure",
+    "expected_labeled_snapshots": 896,
+    "fields": [
+      "visible_core_binary_nodes",
+      "visible_recurrent_channels",
+      "binary_nodes_all_channels",
+      "and_nodes",
+      "xor_nodes",
+      "relevant_local_inputs"
+    ],
+    "change_simplifier_only_for_later_checkpoints": false,
+    "count_interpretation": "constructive_representation_dependent_bounds_not_minimum_or_complete_descriptions"
+  },
+  "runtime_profile": {
+    "parent_protocol": "R002_runtime_profile_v1",
+    "parent_analysis": "R002_formal_attempt01_runtime_profile_attempt01",
+    "optimizer_updates": [
+      500,
+      1000,
+      1500,
+      2000
+    ],
+    "hardening_modes": [
+      "common",
+      "native"
+    ],
+    "horizon": 256,
+    "report_ticks": [
+      20,
+      21,
+      22,
+      25,
+      32,
+      64,
+      128,
+      256
+    ],
+    "retain_every_integer_tick": true,
+    "observer_channel": 0,
+    "starts": {
+      "original": 32,
+      "additional": 32,
+      "all_zero": 1,
+      "all_one": 1
+    },
+    "additional_probe_path": "artifacts/R002_formal_attempt01_runtime_profile_attempt01/fresh_probe.npz",
+    "additional_probe_sha256": "4a64f801d604478f7d8ffa40db8255b8d7aaabbdb560173fe1946e00659d1478",
+    "additional_probe_raw_sha256": "0bd05a2d3f281ff9f5e26c118677ba91ff9fc9c3bf777eed4ede6bca60387d65",
+    "additional_probe_shape": [
+      32,
+      16,
+      16,
+      8
+    ],
+    "additional_probe_dtype": "uint8",
+    "additional_probe_recovery": {
+      "generator": "numpy.random.Generator(PCG64)",
+      "seed": 20260910,
+      "low": 0,
+      "high_exclusive": 2,
+      "dtype": "uint8"
+    },
+    "additional_probe_is_reused_not_new_holdout": true,
+    "cycle_detection": "exact_full_state_recurrence",
+    "universal_method": "sound_set_valued_boolean_propagation",
+    "universal_tick_cap": 256,
+    "separate_phase_counterexample_inconclusive_and_orbit_onset_fields": true,
+    "expected_labeled_modes": 512,
+    "expected_labeled_trajectories": 33792,
+    "expected_new_labeled_trajectories": 25344,
+    "deduplicate_only_with_compatible_rule_and_analysis_semantics": true
+  },
+  "preflight": {
+    "resume_test_seeds": [
+      0
+    ],
+    "resume_test_conditions": [
+      "categorical_reference_decay",
+      "truth_reference_decay",
+      "categorical_no_decay",
+      "truth_no_decay"
+    ],
+    "historical_replay_from_update": 450,
+    "historical_replay_through_update": 500,
+    "historical_replay_requires_exact_state_equality": true,
+    "budget_field_parity_new_steps": 4,
+    "interruption_test_new_steps": 10,
+    "interruption_after_new_steps": 5,
+    "require_exact_parameters_optimizer_keys_and_counters": true,
+    "cohort_boundary_validation_count": 64,
+    "baseline_soft_comparison": {
+      "atol": 0.000001,
+      "rtol": 0.0001
+    },
+    "baseline_boolean_comparison": "exact",
+    "expected_baseline_common_success_counts": [
+      1,
+      1,
+      2,
+      0
+    ],
+    "validate_structure_and_runtime_adapter_at_update_500": true,
+    "preflight_descendants_may_seed_formal_runs": false,
+    "require_pass_before_formal_launch": true
+  },
+  "analysis": {
+    "primary_endpoint": 2000,
+    "baseline_endpoint": 500,
+    "paired_sampling_unit": "training_seed_group_across_all_conditions_and_timepoints",
+    "endpoint_exactness_transitions": [
+      {"name": "gained_at_endpoint", "at_500": false, "at_2000": true},
+      {"name": "lost_at_endpoint", "at_500": true, "at_2000": false},
+      {"name": "exact_at_both_endpoints", "at_500": true, "at_2000": true},
+      {"name": "inexact_at_both_endpoints", "at_500": false, "at_2000": false}
+    ],
+    "history_flags": [
+      "ever_observed_exact",
+      "final_inexact_after_observed_success",
+      "never_observed_exact"
+    ],
+    "history_scope": "all_saved_R002_and_R004_checkpoints_with_update_500_counted_once",
+    "size_gap": "truth_visible_core_count_minus_categorical_visible_core_count_within_decay_history",
+    "size_gap_change": "D(2000)-D(500)",
+    "bootstrap": {
+      "generator": "numpy.random.Generator(PCG64)",
+      "seed": 20260911,
+      "resamples": 100000,
+      "index_shape": [
+        100000,
+        16
+      ],
+      "index_dtype": "int64",
+      "low": 0,
+      "high_exclusive": 16,
+      "interval": "percentile_95",
+      "quantiles": [
+        0.025,
+        0.975
+      ],
+      "reuse_indices_across_contrasts": true
+    },
+    "endpoint_success_test": "two_sided_exact_paired_McNemar_binomial",
+    "multiplicity": "Holm_across_two_endpoint_coordinate_comparisons_one_per_decay_history",
+    "other_comparisons": "descriptive",
+    "incomplete_cohort": "report_missing_identities_and_bounds_no_silent_complete_case_full_cohort_claim",
+    "do_not_pool_R003": true
+  },
+  "outputs": {
+    "run_results_pattern": "results/R004_{sweep_id}_seed{seed:02d}_{condition}",
+    "aggregate_results_pattern": "results/R004_{sweep_id}",
+    "analysis_results_pattern": "results/R004_{sweep_id}_{analysis_id}",
+    "artifacts_root": "artifacts",
+    "source_artifacts_immutable": true,
+    "metrics_every_new_update": true,
+    "required_metric_extensions": [
+      "global_update",
+      "continuation_update",
+      "training_batch_sha256"
+    ],
+    "compact_review_subset": {
+      "seeds": [
+        0
+      ],
+      "conditions": [
+        "categorical_reference_decay",
+        "truth_reference_decay",
+        "categorical_no_decay",
+        "truth_no_decay"
+      ],
+      "optimizer_updates": [
+        500,
+        1000,
+        1500,
+        2000
+      ]
+    },
+    "review_archive_includes_all_small_cohort_results": true,
+    "release_tag": "experiment/R004",
+    "large_artifact_policy": "outside_git_with_stable_location_bytes_and_sha256"
+  }
+}
