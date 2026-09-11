@@ -2,9 +2,10 @@
 
 Protocol: `r003_same_function_v1`, 2026-09-11.
 
-Status: specified for implementation. No R003 runner, preflight, or cohort result
-is claimed by this document. The next implementation partner should implement
-the runner, pass the focused preflight, and execute the bounded diagnostic below.
+Protocol status: frozen v1 handoff. Execution completed on 2026-09-11; see the
+canonical [`R003_formal_attempt02`](../../results/R003_formal_attempt02/summary.md)
+result. This document specifies the protocol and does not itself supply measured
+results.
 The machine-readable contract is
 [r003_same_function_v1.json](../../configs/experiments/r003_same_function_v1.json).
 

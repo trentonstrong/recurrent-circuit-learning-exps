@@ -6,17 +6,19 @@ parameterization affect learning, neutral movement, discretization, and the
 structures that emerge during optimization. Increment and other small generators
 are stepping stones toward harder cases such as pi.
 
-**Status, 2026-09-09:** R000 passes on the office RTX 5090, and the canonical
-R001 seed-23 run completed all 500 updates. Its final native-hard circuit exactly
-reconstructed the independent fixed set of 32 checkerboard trials.
+**Status, 2026-09-11:** R000/R001 parity and the recurrent positive control,
+the formal R002 paired sweep and reviews, and the fixed R003 same-function
+mechanism diagnostic are complete. R003 finds representative-dependent local
+SGD and visible-output response at fixed effective truth tables; it is not a
+training-improvement result.
 
 ## Start here
 
 1. Read [the current research state](docs/STATE.md) and [agent instructions](AGENTS.md).
-2. Implement [R000: source capture and parity](experiments/R000/SPEC.md).
-3. Run [R001: the synchronous recurrent baseline](experiments/R001/SPEC.md).
-4. Review that evidence before launching [R002](experiments/R002/SPEC.md) or
-   [R003](experiments/R003/SPEC.md).
+2. Review [R000: source capture and parity](experiments/R000/SPEC.md).
+3. Review [R001: the synchronous recurrent baseline](experiments/R001/SPEC.md).
+4. Continue through the completed [R002](experiments/R002/SPEC.md) and
+   [R003](experiments/R003/SPEC.md) evidence before proposing another intervention.
 
 The first positive control is the published DiffLogic CA synchronous checkerboard
 task. It establishes recurrent learning before we adapt the architecture to

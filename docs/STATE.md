@@ -1,12 +1,12 @@
 # Research state
 
-Updated: 2026-09-11. The formal 64-run R002 paired sweep, independent trajectory
-review, artifact publication, selected six-run hard-circuit review, and bounded
-full-cohort runtime profile are complete. The profile distinguishes late
-convergence, phase-dependent success, and persistent Boolean failure without
-changing the frozen tick-20 outcomes. R003 now has a fixed implementation handoff
-and diagnostic configuration. Implementing and validating that protocol is the
-next step; no R003 execution or uniform training-budget continuation is claimed.
+Updated: 2026-09-11. The formal R002 sweep and follow-up reviews are complete.
+The fixed R003 same-function diagnostic has also completed all 96 checkpoint
+cases, 288 mixture arms, and 576 independent one-step probes. It establishes
+representative-dependent local SGD response at these checkpoints and shows that
+the response difference reaches the visible outputs. No improved-training,
+causal circuit-size, naturally traversed neutral-path, or uniform longer-budget
+claim is made.
 
 ## Objective
 
@@ -33,16 +33,19 @@ eventually periodic. Length and storage-size generalization need separate tests.
 | [R000](../experiments/R000/SPEC.md) | Pinned source, standalone JAX, numerical parity | Direct notebook and cross-runtime checks passed |
 | [R001](../experiments/R001/SPEC.md) | Synchronous checkerboard, canonical seed 23 | Completed; fixed 32-grid probe exact at update 500 |
 | [R002](../experiments/R002/SPEC.md) | Paired gate-coordinate and weight-decay comparison | Sweep and bounded runtime profile completed; no supported coordinate or decay advantage |
-| [R003](../experiments/R003/SPEC.md) | Same-function mixture interventions | Handoff and v1 protocol specified; implementation pending |
+| [R003](../experiments/R003/SPEC.md) | Same-function mixture interventions | Formal 96-case diagnostic completed; representative-dependent response observed |
 
-The [R003 implementation handoff](../experiments/R003/HANDOFF.md) and
-[configuration](../configs/experiments/r003_same_function_v1.json) fix a 96-case
-checkpoint diagnostic: all 32 categorical R002 runs at updates 0, 250, and 500.
-Three mixture representatives preserve each eligible gate's effective table;
-FP64 invariance checks precede geometry measurements and independent plain-SGD
-steps at 0.001 and 0.0001. Saved Adam/RNG state is preserved. The handoff tests
-representative-dependent response, not a claim of improved training or a causal
-explanation of circuit size. A longer-training continuation remains separate.
+The [R003 formal result](../results/R003_formal_attempt02/summary.md) implements
+the fixed [handoff](../experiments/R003/HANDOFF.md) and
+[configuration](../configs/experiments/r003_same_function_v1.json). All 288 arms
+passed the pre-step same-function controls. Original-to-factorized relative
+matrix differences span 0.333--0.793 (median 0.544), relative induced q-response
+differences span 0.00397--1.09 (median 0.330), and visible loss-input response
+difference norms span 5.58e-5--8.16 (median 0.331). The eta=0.0001 audit reduced
+the median and maximum output linearization residuals by about tenfold relative
+to eta=0.001. Common rounding changed no gate IDs; native argmax extraction
+changed 935 gate IDs across the primary contrasts. Saved Adam/RNG state was not
+consumed. A longer-training continuation remains separate.
 
 Use a known recurrent learner as a positive control before redesigning the
 sequence learner. The initial reference has fixed wiring, shared recurrent

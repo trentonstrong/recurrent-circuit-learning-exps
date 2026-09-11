@@ -19,6 +19,15 @@ weight-decay advantage in this cohort. Its large checkpoint, trajectory, and
 final-circuit payloads are published under the experiment-scoped
 [`experiment/R002` GitHub release](https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/tag/experiment/R002).
 
+The fixed R003 post-training mechanism diagnostic is recorded in
+[`R003_formal_attempt02`](R003_formal_attempt02/summary.md). All 96 checkpoint
+cases passed their same-function controls; changing the categorical
+representative changed the induced q response and reached the visible output in
+every primary contrast. `preflight_attempt01` retains an implementation failure,
+`preflight_attempt02` and `formal_attempt01` are passing development records, and
+`preflight_attempt03` plus `formal_attempt02` identify the canonical implementation
+whose derived bundle retains p arrays for independent geometry reconstruction.
+
 Create one directory per run, for example `R001_20260909_seed23_jaxgpu_attempt01`.
 Use separate identities for retries and interventions and explain their relation.
 Do not silently overwrite a failure with a successful rerun.
