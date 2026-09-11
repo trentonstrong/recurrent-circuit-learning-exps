@@ -5,6 +5,7 @@ import tarfile
 from pathlib import Path
 
 from scripts.build_release_assets import (
+    build_diagnostic_release_assets,
     build_release_assets,
     build_sweep_release_assets,
     sha256_file,
@@ -82,3 +83,31 @@ def test_sweep_release_assets_preserve_run_directories(tmp_path: Path) -> None:
     assert contents["experiment_id"] == "R002"
     assert contents["sweep_id"] == "test"
     assert contents["bundle_kind"] == "checkpoints"
+
+
+def test_diagnostic_release_assets_include_all_cases_and_review(tmp_path: Path) -> None:
+    artifact_directory = tmp_path / "artifacts" / "R003_formal_attempt02"
+    artifact_directory.mkdir(parents=True)
+    for seed in range(96):
+        (artifact_directory / f"case_{seed:03d}.npz").write_bytes(str(seed).encode())
+    (artifact_directory / "state_jvp_directions.npy").write_bytes(b"directions")
+    review = artifact_directory / "R003_formal_attempt02_review.tar.gz"
+    review.write_bytes(b"review")
+    output_directory = tmp_path / "release"
+
+    first = build_diagnostic_release_assets(
+        "R003", "R003_formal_attempt02", artifact_directory, review, output_directory
+    )
+    derived = output_directory / "R003_formal_attempt02_derived.tar.gz"
+    first_digest = sha256_file(derived)
+    second = build_diagnostic_release_assets(
+        "R003", "R003_formal_attempt02", artifact_directory, review, output_directory
+    )
+
+    assert first["release_tag"] == "experiment/R003"
+    assert first["assets"] == second["assets"]
+    assert first_digest == sha256_file(derived)
+    with tarfile.open(derived, "r:gz") as archive:
+        contents = json.load(archive.extractfile("CONTENTS.json"))  # type: ignore[arg-type]
+    assert len(contents["files"]) == 97
+    assert contents["bundle_kind"] == "derived_diagnostic_arrays"

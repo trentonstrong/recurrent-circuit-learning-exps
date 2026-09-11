@@ -45,7 +45,9 @@ difference norms span 5.58e-5--8.16 (median 0.331). The eta=0.0001 audit reduced
 the median and maximum output linearization residuals by about tenfold relative
 to eta=0.001. Common rounding changed no gate IDs; native argmax extraction
 changed 935 gate IDs across the primary contrasts. Saved Adam/RNG state was not
-consumed. A longer-training continuation remains separate.
+consumed. Deterministic release assets are prepared locally; publication is
+pending because the current workstation lacks the GitHub CLI. A longer-training
+continuation remains separate.
 
 Use a known recurrent learner as a positive control before redesigning the
 sequence learner. The initial reference has fixed wiring, shared recurrent

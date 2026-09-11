@@ -39,3 +39,8 @@ along fibers, or a causal explanation of R002 circuit-size differences.
 `analysis.json` retains all 16 seed values for every condition/update group.
 `cases.jsonl` contains per-case controls, geometry, responses, and finite steps;
 the hashed derived arrays retain p, q, gradients, responses, and measured deltas.
+
+Deterministic derived and review release assets are prepared in
+`artifacts/releases/R003/`, with identities recorded in
+`release-assets.json`. Upload to the intended `experiment/R003` GitHub release
+is pending because the current workstation does not have the `gh` client.
