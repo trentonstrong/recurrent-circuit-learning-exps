@@ -52,6 +52,16 @@ consumed. Deterministic release assets are prepared locally; publication is
 pending because the current workstation lacks the GitHub CLI. A longer-training
 continuation remains separate.
 
+The [independent R003 record review](../reviews/R003_same_function/REVIEW.md)
+verifies the committed case-derived summaries and adds response-direction
+measurements. At update 250, median shared-point output-response angles between
+original and factorized representatives are 24.3 degrees with decay and 68.3
+degrees without decay; at update 500 they are 1.63 and 1.76 degrees. The separate
+FP32/FP64 output comparison flags 30 of 96 cases at its recorded threshold;
+this is distinct from the passing within-FP64 neutrality controls. The review
+does not replay the external checkpoint/derived-array payloads or rerun the
+reported test suite, and records remaining instrumentation gaps.
+
 The [R004 implementation handoff](../experiments/R004/HANDOFF.md) and
 [configuration](../configs/experiments/r004_training_continuation_v1.json) continue
 all 64 R002 runs from their own update-500 checkpoints to global update 2,000,
@@ -162,8 +172,9 @@ coordinates produce more common gate-change events in every paired seed under
 both decay settings, without an established exact-solution advantage. All 64
 trials have lower fixed-probe soft loss at update 500 than at 400. These are
 trajectory observations, not evidence of neutral paths or stationary failures.
-The review distinguishes a possible uniform budget extension from R003's direct
-same-function mechanism test; neither follow-up has been launched.
+The review distinguished a possible uniform budget extension from R003's direct
+same-function mechanism test. R003 has since completed; R004 specifies the
+separate budget continuation.
 
 The selected circuit review finds that both successful seed-4 categorical runs
 share a two-operation, two-channel visible core: a rotated version of R001's
@@ -226,8 +237,8 @@ The same review finds a complete separation in the current simplified visible
 core operation counts: categorical circuits span 2–36, direct-truth circuits
 44–236, with direct truth larger in every paired seed under both decay settings.
 These are representation-dependent constructive counts, not proven minima.
-This gives a concrete motivation for R003's proposed geometry diagnostic; it
-does not yet identify the cause of the size difference. Source replay in the
+This motivated R003's now-completed geometry diagnostic; the cause of the size
+difference remains unidentified. Source replay in the
 independent review covers six runs, not the other 58 or the external tick-metric
 and witness payloads.
 
