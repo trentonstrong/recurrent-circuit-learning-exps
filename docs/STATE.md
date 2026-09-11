@@ -1,12 +1,12 @@
 # Research state
 
-Updated: 2026-09-10. The formal 64-run R002 paired sweep, independent trajectory
+Updated: 2026-09-11. The formal 64-run R002 paired sweep, independent trajectory
 review, artifact publication, selected six-run hard-circuit review, and bounded
 full-cohort runtime profile are complete. The profile distinguishes late
 convergence, phase-dependent success, and persistent Boolean failure without
-changing the frozen tick-20 outcomes. A uniform training-budget continuation
-and R003's same-function mechanism diagnostic remain separate options; neither
-has been launched.
+changing the frozen tick-20 outcomes. R003 now has a fixed implementation handoff
+and diagnostic configuration. Implementing and validating that protocol is the
+next step; no R003 execution or uniform training-budget continuation is claimed.
 
 ## Objective
 
@@ -33,7 +33,16 @@ eventually periodic. Length and storage-size generalization need separate tests.
 | [R000](../experiments/R000/SPEC.md) | Pinned source, standalone JAX, numerical parity | Direct notebook and cross-runtime checks passed |
 | [R001](../experiments/R001/SPEC.md) | Synchronous checkerboard, canonical seed 23 | Completed; fixed 32-grid probe exact at update 500 |
 | [R002](../experiments/R002/SPEC.md) | Paired gate-coordinate and weight-decay comparison | Sweep and bounded runtime profile completed; no supported coordinate or decay advantage |
-| [R003](../experiments/R003/SPEC.md) | Same-function mixture interventions | Proposed mechanism study |
+| [R003](../experiments/R003/SPEC.md) | Same-function mixture interventions | Handoff and v1 protocol specified; implementation pending |
+
+The [R003 implementation handoff](../experiments/R003/HANDOFF.md) and
+[configuration](../configs/experiments/r003_same_function_v1.json) fix a 96-case
+checkpoint diagnostic: all 32 categorical R002 runs at updates 0, 250, and 500.
+Three mixture representatives preserve each eligible gate's effective table;
+FP64 invariance checks precede geometry measurements and independent plain-SGD
+steps at 0.001 and 0.0001. Saved Adam/RNG state is preserved. The handoff tests
+representative-dependent response, not a claim of improved training or a causal
+explanation of circuit size. A longer-training continuation remains separate.
 
 Use a known recurrent learner as a positive control before redesigning the
 sequence learner. The initial reference has fixed wiring, shared recurrent

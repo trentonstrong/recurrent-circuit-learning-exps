@@ -1,0 +1,293 @@
+{
+  "schema_version": 1,
+  "kind": "post_training_mechanism_diagnostic",
+  "experiment_id": "R003",
+  "protocol_id": "r003_same_function_v1",
+  "status": "specified_for_implementation",
+  "spec_path": "experiments/R003/SPEC.md",
+  "handoff_path": "experiments/R003/HANDOFF.md",
+  "source": {
+    "repository": "trentonstrong/recurrent-circuit-learning-exps",
+    "reference_commit": "a58d417e7e34a33907d8ae33cbcd22b14af1846d",
+    "parent_experiment": "R002",
+    "parent_sweep": "formal_attempt01",
+    "conditions": [
+      "categorical_reference_decay",
+      "categorical_no_decay"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "checkpoint_updates": [
+      0,
+      250,
+      500
+    ],
+    "manifest_pattern": "results/R002_formal_attempt01_seed{seed:02d}_{condition}/manifest.json",
+    "checkpoint_format_version": 2,
+    "wiring_artifact_kind": "final_common_hard_circuit",
+    "source_release_tag": "experiment/R002",
+    "expected_logical_checkpoint_cases": 96,
+    "expected_checkpoint_references": 96,
+    "expected_wiring_references": 32,
+    "verify_sha256_and_byte_length": true,
+    "allow_missing_case_substitution": false
+  },
+  "probes": {
+    "artifact_path": "artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/fixed_evaluation_set.npz",
+    "sha256": "d49ecf23fd932fba25b1068f8c90820265a05fd90daadc372089520889090b2f",
+    "array_keys": [
+      "inputs",
+      "target"
+    ],
+    "loss_input_indices": [
+      0,
+      1
+    ],
+    "observation_input_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "additional_observation_indices": [
+      2,
+      3
+    ],
+    "state_comparison_ticks": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "deterministic_forward_chunk_size": 2,
+    "state_jvp": {
+      "input_indices": [
+        0,
+        1
+      ],
+      "terminal_tick": 20,
+      "direction_count": 2,
+      "rng": "numpy.random.Generator(PCG64)",
+      "seed": 20260911,
+      "raw_shape": [
+        2,
+        2,
+        16,
+        16,
+        8
+      ],
+      "integer_draw_low": 0,
+      "integer_draw_high_exclusive": 2,
+      "integer_dtype": "int8",
+      "conversion": "FP64 signs = 2*x - 1; normalize each leading-index batch tensor to Euclidean norm 1",
+      "save_and_hash_directions": true
+    }
+  },
+  "scientific_recipe": {
+    "grid_size": [
+      16,
+      16
+    ],
+    "channels": 8,
+    "shared_gate_slots": 3040,
+    "runtime_ticks": 20,
+    "synchronous": true,
+    "periodic": false,
+    "exterior": "constant_zero",
+    "kernel": "common_multilinear_truth_table",
+    "truth_column_order": [
+      "00",
+      "01",
+      "10",
+      "11"
+    ],
+    "truth_gate_id_bit_weights": [
+      8,
+      4,
+      2,
+      1
+    ],
+    "loss": "summed_terminal_channel_0_squared_error",
+    "loss_batch_size": 2,
+    "common_rounding": "q>=0.5",
+    "native_argmax_ties": "lowest_gate_index",
+    "checkpoint_parameters": "load_actual_saved_FP32_logits_then_promote_to_FP64",
+    "regenerate_wiring_or_probe_from_seed": false
+  },
+  "intervention": {
+    "original_alpha": 0,
+    "primary_comparison_alpha": 1,
+    "alphas": [
+      0,
+      0.5,
+      1
+    ],
+    "factorized_distribution": "product_r q_r**T_gr * (1-q_r)**(1-T_gr)",
+    "path": "p_alpha=(1-alpha)*p+alpha*p_factorized",
+    "application": "all_eligible_shared_gate_slots_simultaneously",
+    "eligibility": {
+      "q_margin": 1e-8,
+      "require_finite_logits": true,
+      "require_finite_positive_probabilities": true,
+      "fixed_from_original_FP64_case": true,
+      "ineligible_policy": "leave_original_logits_unchanged_in_all_arms",
+      "clamp_q": false
+    },
+    "alpha_zero_uses_original_logits": true,
+    "encoded_logit_gauge": "match_original_per_gate_mean",
+    "detach_before_differentiation": true,
+    "post_reset_coordinates": "all_16_independent_categorical_logits_per_gate",
+    "refactorize_after_step": false,
+    "expected_logical_arm_cases": 288
+  },
+  "diagnostic_step": {
+    "optimizer": "plain_Euclidean_SGD_in_categorical_logits",
+    "learning_rates": [
+      0.001,
+      0.0001
+    ],
+    "primary_learning_rate": 0.001,
+    "second_learning_rate_role": "independent_linearization_audit",
+    "start_each_step_from_untouched_arm": true,
+    "steps_per_clone": 1,
+    "all_gates_trainable_including_ineligible": true,
+    "weight_decay": 0,
+    "cost_coefficient": 0,
+    "momentum": 0,
+    "gradient_clipping": null,
+    "injected_noise": 0,
+    "use_saved_adam_moments": false,
+    "consume_saved_rng": false,
+    "expected_logical_step_cases": 576
+  },
+  "geometry": {
+    "jacobian": "J_rg=p_g*(T_gr-q_r)",
+    "response_matrix": "M=J@J.T",
+    "common_gradient_response": "v_common=-M_arm@h_original",
+    "actual_gradient_response": "v_actual=-M_arm@h_arm",
+    "logit_gradient": "g=J.T@h_arm",
+    "check_q_gradient_invariance": true,
+    "observable": "terminal_visible_outputs_on_observation_input_indices",
+    "observable_response": "D_Q O @ v; compare shared-point and actual-point responses",
+    "direct_truth_comparator": "diag((q*(1-q))**2) at original Q; analytic only",
+    "save_all_four_matrix_eigenvalues": true,
+    "zero_norm_ratio_or_angle": "null_with_reason",
+    "independent_sampling_unit": "training_seed",
+    "report_conditions_and_checkpoint_updates_separately": true
+  },
+  "numerical": {
+    "primary_dtype": "float64",
+    "jax_enable_x64": true,
+    "dot_precision": "highest",
+    "fp32_source_comparison": "separate_preflight_measurement",
+    "probability_sum": {
+      "atol": 5e-14,
+      "rtol": 0
+    },
+    "effective_table": {
+      "atol": 1e-12,
+      "rtol": 1e-10
+    },
+    "recurrent_states": {
+      "atol": 1e-9,
+      "rtol": 1e-7
+    },
+    "loss": {
+      "atol": 1e-8,
+      "rtol": 1e-7
+    },
+    "state_jvp_and_q_gradient": {
+      "atol": 1e-9,
+      "rtol": 0.000001
+    },
+    "local_jacobian": {
+      "atol": 1e-12,
+      "rtol": 1e-10
+    },
+    "full_chain_rule": {
+      "atol": 1e-9,
+      "rtol": 0.000001
+    },
+    "common_rounding_ambiguity_distance": 1e-10,
+    "failed_soft_invariance": "retain_case_but_exclude_from_valid_same_function_comparisons",
+    "automatic_tolerance_relaxation": false,
+    "automatic_learning_rate_tuning": false
+  },
+  "preflight": {
+    "seeds": [
+      0
+    ],
+    "conditions": [
+      "categorical_reference_decay",
+      "categorical_no_decay"
+    ],
+    "checkpoint_updates": [
+      0,
+      250,
+      500
+    ],
+    "expected_logical_checkpoint_cases": 6,
+    "full_logit_autodiff_chain_rule_check": true,
+    "synthetic_full_support_example_uniform_mass": 0.2,
+    "gauge_control_logit_shift": 1,
+    "require_pass_before_cohort": true
+  },
+  "runtime": {
+    "environment": "envs/jax-gpu",
+    "environment_manager": "uv",
+    "locked": true,
+    "concurrency": 1,
+    "preferred_backend": "gpu",
+    "cpu_fp64_fallback": "record_runtime_adaptation_and_pass_same_controls",
+    "preserve_repository_determinism_flags": true,
+    "forbid_formal_fp32_downgrade": true
+  },
+  "outputs": {
+    "results_pattern": "results/R003_{run_id}",
+    "artifacts_pattern": "artifacts/R003_{run_id}",
+    "required_small_files": [
+      "manifest.json",
+      "validation.json",
+      "cases.jsonl",
+      "summary.md"
+    ],
+    "include_all_case_statuses": true,
+    "source_artifacts_immutable": true,
+    "review_subset": "seed_0_both_histories_updates_0_250_500",
+    "compact_review_archive": true,
+    "large_artifact_policy": "outside_git_with_stable_location_bytes_and_sha256"
+  }
+}
