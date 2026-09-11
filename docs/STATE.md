@@ -5,8 +5,10 @@ The fixed R003 same-function diagnostic has also completed all 96 checkpoint
 cases, 288 mixture arms, and 576 independent one-step probes. It establishes
 representative-dependent local SGD response at these checkpoints and shows that
 the response difference reaches the visible outputs. No improved-training,
-causal circuit-size, naturally traversed neutral-path, or uniform longer-budget
-claim is made.
+causal circuit-size, or naturally traversed neutral-path claim is made. R004's
+uniform training-budget continuation now has a separate fixed handoff and
+configuration; its implementation and validation are the next steps, and no
+R004 execution is claimed.
 
 ## Objective
 
@@ -34,6 +36,7 @@ eventually periodic. Length and storage-size generalization need separate tests.
 | [R001](../experiments/R001/SPEC.md) | Synchronous checkerboard, canonical seed 23 | Completed; fixed 32-grid probe exact at update 500 |
 | [R002](../experiments/R002/SPEC.md) | Paired gate-coordinate and weight-decay comparison | Sweep and bounded runtime profile completed; no supported coordinate or decay advantage |
 | [R003](../experiments/R003/SPEC.md) | Same-function mixture interventions | Formal 96-case diagnostic completed; representative-dependent response observed |
+| [R004](../experiments/R004/SPEC.md) | Continue all R002 runs from 500 to 2,000 updates | Handoff and v1 protocol specified; implementation pending |
 
 The [R003 formal result](../results/R003_formal_attempt02/summary.md) implements
 the fixed [handoff](../experiments/R003/HANDOFF.md) and
@@ -48,6 +51,16 @@ changed 935 gate IDs across the primary contrasts. Saved Adam/RNG state was not
 consumed. Deterministic release assets are prepared locally; publication is
 pending because the current workstation lacks the GitHub CLI. A longer-training
 continuation remains separate.
+
+The [R004 implementation handoff](../experiments/R004/HANDOFF.md) and
+[configuration](../configs/experiments/r004_training_continuation_v1.json) continue
+all 64 R002 runs from their own update-500 checkpoints to global update 2,000,
+preserving parameters, Adam moments/counters, random keys, wiring, FP32, and the
+original constant-rate, 20-tick training recipe. Checkpoints/evaluation remain
+every 50 updates; structure is measured every 250 updates and the full runtime
+profile at 500, 1,000, 1,500, and 2,000. The preflight checks historical replay
+and exact resumption. These are longer trajectories of the same seed groups,
+not new independent trials, and they do not use R003-modified checkpoints.
 
 Use a known recurrent learner as a positive control before redesigning the
 sequence learner. The initial reference has fixed wiring, shared recurrent
