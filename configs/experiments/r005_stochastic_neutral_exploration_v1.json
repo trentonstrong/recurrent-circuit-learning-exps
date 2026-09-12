@@ -1,0 +1,492 @@
+{
+  "schema_version": 1,
+  "kind": "post_training_stochastic_mechanism_diagnostic",
+  "experiment_id": "R005",
+  "protocol_id": "r005_stochastic_neutral_exploration_v1",
+  "status": "specified_for_implementation",
+  "spec_path": "experiments/R005/SPEC.md",
+  "handoff_path": "experiments/R005/HANDOFF.md",
+  "source": {
+    "repository": "trentonstrong/recurrent-circuit-learning-exps",
+    "reference_commit": "35bea6cf9a84d2ca267bd1d83d8430b81f4f7acb",
+    "parent_experiment": "R002",
+    "parent_sweep": "formal_attempt01",
+    "conditions": [
+      "categorical_reference_decay",
+      "categorical_no_decay"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "checkpoint_updates": [
+      0,
+      250,
+      500
+    ],
+    "manifest_pattern": "results/R002_formal_attempt01_seed{seed:02d}_{condition}/manifest.json",
+    "checkpoint_format_version": 2,
+    "wiring_artifact_kind": "final_common_hard_circuit",
+    "source_release_tag": "experiment/R002",
+    "expected_logical_checkpoint_cases": 96,
+    "expected_checkpoint_references": 96,
+    "expected_wiring_references": 32,
+    "verify_sha256_and_byte_length": true,
+    "allow_missing_case_substitution": false,
+    "source_resolution_protocol": "configs/experiments/r003_same_function_v1.json",
+    "source_resolution_protocol_blob": "02ac8b60c67c965f35b9f821387aeed6f6809a6a",
+    "proposal_path": "docs/proposals/neutral_exploration/PROPOSAL.md",
+    "proposal_blob": "92bdcf5cc1e6573ac57ecfdf7811006985996025",
+    "use_r003_modified_parameters": false,
+    "use_r004_parameters": false
+  },
+  "probes": {
+    "artifact_path": "artifacts/R001_20260909T231016Z_seed23_jaxgpu_attempt01/fixed_evaluation_set.npz",
+    "sha256": "d49ecf23fd932fba25b1068f8c90820265a05fd90daadc372089520889090b2f",
+    "array_keys": [
+      "inputs",
+      "target"
+    ],
+    "loss_input_indices": [
+      0,
+      1
+    ],
+    "observation_input_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "primary_observation_indices": [
+      2,
+      3
+    ],
+    "state_comparison_ticks": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "deterministic_forward_chunk_size": 2
+  },
+  "scientific_recipe": {
+    "grid_size": [
+      16,
+      16
+    ],
+    "channels": 8,
+    "shared_gate_slots": 3040,
+    "runtime_ticks": 20,
+    "synchronous": true,
+    "periodic": false,
+    "exterior": "constant_zero",
+    "kernel": "common_multilinear_truth_table",
+    "truth_column_order": [
+      "00",
+      "01",
+      "10",
+      "11"
+    ],
+    "truth_gate_id_bit_weights": [
+      8,
+      4,
+      2,
+      1
+    ],
+    "loss": "summed_terminal_channel_0_squared_error",
+    "loss_batch_size": 2,
+    "common_rounding": "q>=0.5",
+    "native_argmax_ties": "lowest_gate_index",
+    "checkpoint_parameters": "load_actual_saved_FP32_logits_then_promote_to_FP64",
+    "regenerate_wiring_or_probe_from_seed": false
+  },
+  "intervention": {
+    "direction_library": "24_square_face_exchanges",
+    "truth_positions": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "direction_order": "lexicographic varying-position pair, then lexicographic fixed-position bits",
+    "face_vertex_order": [
+      "00",
+      "01",
+      "10",
+      "11"
+    ],
+    "face_signs": [
+      1,
+      -1,
+      -1,
+      1
+    ],
+    "direction_l2_norm": 2,
+    "expected_kernel_rank": 11,
+    "rho": 0.1,
+    "weighted_gamma": 0.75,
+    "uniform_gamma": 0,
+    "repetitions": 16,
+    "repetition_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "application": "one_exchange_per_eligible_shared_gate_simultaneously_from_untouched_source",
+    "eligibility": {
+      "q_margin": 1e-08,
+      "require_finite_logits": true,
+      "require_finite_positive_probabilities": true,
+      "fixed_from_original_FP64_case": true,
+      "ineligible_policy": "leave_original_logits_unchanged_in_all_arms",
+      "clamp_q": false
+    },
+    "proposal_interval": "ell=-min(p[d==+1]); r=min(p[d==-1])",
+    "delta": "rho*(ell+u_delta*(r-ell)); u_delta uniform on [0,1)",
+    "score": "E[delta^2]*norm((I-u*u.T)*B*d)^2/norm(v)^2",
+    "score_second_moment": "rho^2*(ell^2+ell*r+r^2)/3",
+    "selection": "(1-gamma)/24 + gamma*score/sum(score)",
+    "zero_response_or_all_zero_score": "uniform_choice_with_explicit_reason",
+    "numerical_underflow_policy": "use_scale_stable_algebra; record_unresolved_and_uniform_fallback; never_invent_epsilon_response",
+    "encoding": "log(p_new)+mean(z_original)-mean(log(p_new))",
+    "detach_before_task_update": true,
+    "renormalize_probabilities": false,
+    "clip_probabilities": false,
+    "clip_q": false,
+    "identity_uses_original_logits": true,
+    "arms": [
+      {
+        "id": "identity",
+        "role": "ordinary_SGD_reference",
+        "repetitions": 1
+      },
+      {
+        "id": "uniform",
+        "role": "raw_uniform_stochastic_law",
+        "gamma": 0,
+        "repetitions": 16
+      },
+      {
+        "id": "direction_weighted",
+        "role": "raw_geometry_weighted_stochastic_law",
+        "gamma": 0.75,
+        "repetitions": 16
+      },
+      {
+        "id": "uniform_matched",
+        "role": "coupled_amplitude_control_from_uniform",
+        "repetitions": 16
+      },
+      {
+        "id": "direction_weighted_matched",
+        "role": "coupled_amplitude_control_from_direction_weighted",
+        "repetitions": 16
+      }
+    ],
+    "matched_control": "per_gate a=min(abs(delta_uniform),abs(delta_weighted)); preserve each sampled sign and direction; reencode from source; do not rescore or resample",
+    "matched_control_changes_proposal_law": true,
+    "expected_representative_cases": 6240,
+    "expected_raw_representative_cases": 3168,
+    "expected_matched_representative_cases": 3072,
+    "zero_delta_uses_original_logits": true
+  },
+  "randomness": {
+    "implementation": "jax.random",
+    "root_seed": 20260912,
+    "case_key": "fold_in(PRNGKey(root_seed), training_seed), then checkpoint_update, then repetition_id; uint32 values",
+    "pair_training_histories": true,
+    "pair_raw_sampling_arms": true,
+    "gate_order": "perceive then update; ascending layer; C order within each leaf",
+    "draw_recipe": "split case_key into choice_key and delta_key; independent float64 uniform arrays of shape [3040]",
+    "selection_algorithm": "inverse CDF; count(u_choice>=cdf[:-1]); index in 0..23",
+    "matched_controls_draw_new_randomness": false,
+    "consume_parent_keys": false,
+    "save_key_data_and_sampled_directions_deltas": true,
+    "save_random_array_hashes": true,
+    "gate_subsampling": false,
+    "schedule_dependence": false
+  },
+  "diagnostic_step": {
+    "optimizer": "plain_Euclidean_SGD_in_categorical_logits",
+    "learning_rates": [
+      0.001,
+      0.0001
+    ],
+    "primary_learning_rate": 0.001,
+    "second_learning_rate_role": "independent_linearization_audit",
+    "steps_per_clone": 1,
+    "start_each_step_from_untouched_arm": true,
+    "all_gates_trainable_including_ineligible": true,
+    "reuse_original_q_gradient": true,
+    "recompute_logit_gradient_at_new_representative": true,
+    "audit_fresh_q_gradient_for_every_representative": true,
+    "weight_decay": 0,
+    "cost_coefficient": 0,
+    "momentum": 0,
+    "gradient_clipping": null,
+    "extra_functional_noise": 0,
+    "use_saved_adam_moments": false,
+    "consume_saved_rng": false,
+    "expected_logical_step_cases": 12480
+  },
+  "geometry": {
+    "jacobian": "J_rg=p_g*(T_gr-q_r)",
+    "response_matrix": "M=J@J.T",
+    "q_response": "v=-M@h_original",
+    "score_derivative": "B_column_g=-2*p_g*(T_g-q)*dot(T_g-q,h_original)",
+    "shared_output_response": "D_Q O(Q_original) @ v_arm",
+    "actual_point_output_response": "D_Q O(Q_arm) @ v_arm",
+    "normalized_response": "u=v/norm(v); scale-stable normalization; undefined for zero or unresolved norm",
+    "save_all_four_matrix_eigenvalues": true,
+    "walsh_moments": "E_p[product_(r in S)(2*T_gr-1)] for all subsets with degree 2,3,4",
+    "include_two_entry_connected_correlators": true,
+    "estimate_rg_constants": false,
+    "per_gate_angular_weight": "norm(v_original_i)^2 / sum_j norm(v_original_j)^2; fixed from source"
+  },
+  "analysis": {
+    "primary_checkpoint_update": 250,
+    "primary_histories": "report_both_separately",
+    "primary_contrast": [
+      "direction_weighted_matched",
+      "uniform_matched"
+    ],
+    "primary_observable": "terminal_visible_output_response_on_indices_2_3",
+    "primary_metric": "trace_unbiased_sample_covariance_of_unit_output_responses_across_16_draws",
+    "covariance_formula": "V_a=sum_r norm(u_a_r-mean_r(u_a_r))^2/(R-1)",
+    "contrast_formula": "DeltaV=V_direction_weighted_matched-V_uniform_matched",
+    "report_mean_drift_separately": true,
+    "mean_drift_formula": "norm(mean_r(u_a_r)-u_identity)^2",
+    "report_mean_squared_displacement_from_identity": true,
+    "secondary_checkpoints": [
+      0,
+      500
+    ],
+    "secondary_metrics": [
+      "raw_law_dispersion",
+      "q_response_dispersion",
+      "per_gate_angular_displacement",
+      "absolute_response_norms",
+      "response_angles",
+      "trace_normalized_matrix_shape",
+      "probability_displacement",
+      "finite_step_residuals",
+      "observed_post_step_loss",
+      "common_and_native_gate_changes"
+    ],
+    "speed_control": "analytic_directions_normalized_to_equal_global_q_response_norm; no extra finite-step eta tuning",
+    "inference_unit": "training_seed",
+    "bootstrap": {
+      "rng": "numpy.random.Generator(PCG64)",
+      "seed": 20260912,
+      "resamples": 100000,
+      "indices_shape": [
+        100000,
+        16
+      ],
+      "dtype": "int64",
+      "interval": "percentile_95",
+      "paired_over": "histories_checkpoints_arms_and_repetitions"
+    },
+    "invalid_draws": "retain_and_report; no_replacement; no_partial_draw_dispersion_for_primary_endpoint",
+    "incomplete_cohort": "available_complete_seed_pairs_descriptive; no_full_16_seed_interval_until_complete",
+    "p_value_claims": false,
+    "training_improvement_claim": false,
+    "circuit_size_causality_claim": false
+  },
+  "numerical": {
+    "primary_dtype": "float64",
+    "jax_enable_x64": true,
+    "dot_precision": "highest",
+    "fp32_source_comparison": "separate_preflight_measurement",
+    "probability_sum": {
+      "atol": 5e-14,
+      "rtol": 0
+    },
+    "effective_table": {
+      "atol": 1e-12,
+      "rtol": 1e-10
+    },
+    "recurrent_states": {
+      "atol": 1e-09,
+      "rtol": 1e-07
+    },
+    "loss": {
+      "atol": 1e-08,
+      "rtol": 1e-07
+    },
+    "state_jvp_and_q_gradient": {
+      "atol": 1e-09,
+      "rtol": 1e-06
+    },
+    "local_jacobian": {
+      "atol": 1e-12,
+      "rtol": 1e-10
+    },
+    "full_chain_rule": {
+      "atol": 1e-09,
+      "rtol": 1e-06
+    },
+    "common_rounding_ambiguity_distance": 1e-10,
+    "failed_soft_invariance": "retain_case_but_exclude_from_valid_same_function_comparisons",
+    "automatic_tolerance_relaxation": false,
+    "automatic_learning_rate_tuning": false,
+    "amplitude_match": {
+      "atol": 1e-14,
+      "rtol": 1e-10
+    },
+    "common_rounding_policy": "nonambiguous_mismatch_fails_control; any_ambiguous_flip_separately_recorded_and_excluded_from_hard_invariance_claim",
+    "score_nonfinite": "invalid_unless_identified_underflow_is_resolved_or_declared_uniform_fallback",
+    "fresh_gradient_audit": "same q-gradient and full-chain-rule tolerances as inherited R003 policy",
+    "finite_step_linearization_tolerance": "measure_both_eta_residuals_and_ratios; no_effect_size_gate_or_eta_retuning"
+  },
+  "preflight": {
+    "seeds": [
+      0
+    ],
+    "conditions": [
+      "categorical_reference_decay",
+      "categorical_no_decay"
+    ],
+    "checkpoint_updates": [
+      0,
+      250,
+      500
+    ],
+    "repetition_ids": [
+      0,
+      1
+    ],
+    "expected_checkpoint_cases": 6,
+    "expected_representative_cases": 54,
+    "expected_step_cases": 108,
+    "require_pass_before_cohort": true,
+    "full_logit_autodiff_chain_rule_check": true,
+    "compare_compiled_and_reference_sampling_with_identical_uniform_arrays": true,
+    "control_zero_rho_identity_fast_path": true,
+    "control_zero_gamma_matches_uniform": true,
+    "control_detached_all_16_logits_trainable": true,
+    "control_fresh_vs_reused_h_step": true,
+    "control_underflow_ties_and_ineligible_masks": true,
+    "preserve_source_hashes_and_keys": true,
+    "require_numpy_reference_and_compiled_jax_agreement": true
+  },
+  "runtime": {
+    "environment": "envs/jax-gpu",
+    "environment_manager": "uv",
+    "locked": true,
+    "concurrency": 1,
+    "preferred_backend": "gpu",
+    "scientific_dtype": "float64",
+    "jax_enable_x64": true,
+    "preserve_repository_determinism_flags": true,
+    "formal_fp32_downgrade": false,
+    "cpu_fallback": "record_adaptation_for_mechanism_only; cannot_claim_GPU_benchmark",
+    "gpu_schedule": "run_when_GPU_available_without_interrupting_R004",
+    "fused_operator": "Q,h -> score_and_sample -> affine_probability_move -> detached_logits -> J_new.T@h -> SGD",
+    "host_transfer_policy": "no_parameter_gradient_or_sampling_roundtrip_inside_compiled_update",
+    "formal_checks_and_output_jvps_outside_timed_update": true
+  },
+  "benchmark": {
+    "purpose": "implementation_cost_only_not_learning_outcome",
+    "source_cases": "six_preflight_checkpoints",
+    "arms": [
+      "identity",
+      "uniform",
+      "direction_weighted"
+    ],
+    "dtype": "float64",
+    "learning_rate": 0.001,
+    "timed_blocks": 5,
+    "updates_per_block": 20,
+    "reset_to_source_between_blocks": true,
+    "carry_parameters_and_intervention_key_within_block": true,
+    "inputs": "fixed_loss_indices_0_1",
+    "key_seed": 20260913,
+    "key_recipe": "fold training_seed,checkpoint_update,block_id; split within scan at each update; pair histories_and_arms",
+    "implementation": "jit(lax.scan) with evolving parameters and key; full recurrent backward pass each update",
+    "timing": "block_until_ready at block boundaries; compilation, steady update cost, and validation overhead separate",
+    "require_transfer_guard_audit": true,
+    "record": [
+      "compile_seconds",
+      "all_block_seconds",
+      "median_seconds_per_update",
+      "overhead_ratio_vs_identity",
+      "peak_device_memory",
+      "null_or_underflow_fallback_counts",
+      "nonfinite_status"
+    ],
+    "output_results_separate_from_formal_mechanism": true,
+    "warmup_blocks": 1,
+    "warmup_block_id": 4294967295,
+    "timed_block_ids": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "compile_timed_block_before_warmup": true
+  },
+  "outputs": {
+    "results_pattern": "results/R005_{run_id}",
+    "artifacts_pattern": "artifacts/R005_{run_id}",
+    "benchmark_results_pattern": "results/R005_{run_id}_benchmark",
+    "required_small_files": [
+      "manifest.json",
+      "validation.json",
+      "cases.jsonl",
+      "analysis.json",
+      "summary.md"
+    ],
+    "review_subset": "seed_0_both_histories_updates_0_250_500_all_arms_repetitions_0_1_both_etas",
+    "include_all_statuses": true,
+    "source_artifacts_immutable": true,
+    "store_sufficient_arrays_for_independent_recompute": true,
+    "large_artifact_policy": "outside_git_with_stable_location_bytes_and_sha256",
+    "publication_release_tag": "experiment/R005"
+  }
+}

@@ -1,6 +1,6 @@
 # Research state
 
-Updated: 2026-09-11. The formal R002 sweep and follow-up reviews are complete.
+Updated: 2026-09-12. The formal R002 sweep and follow-up reviews are complete.
 The fixed R003 same-function diagnostic has also completed all 96 checkpoint
 cases, 288 mixture arms, and 576 independent one-step probes. It establishes
 representative-dependent local SGD response at these checkpoints and shows that
@@ -8,7 +8,10 @@ the response difference reaches the visible outputs. No improved-training,
 causal circuit-size, or naturally traversed neutral-path claim is made. R004's
 uniform training-budget continuation now has a separate fixed handoff and
 configuration; its implementation and validation are the next steps, and no
-R004 execution is claimed.
+R004 execution is claimed in this repository snapshot. The user reports R004
+implementation underway on the workstation. R005 now has a fixed stochastic
+neutral-exploration specification, configuration, and implementation handoff;
+its operator, formal diagnostic, and GPU benchmark have not run.
 
 ## Objective
 
@@ -36,7 +39,8 @@ eventually periodic. Length and storage-size generalization need separate tests.
 | [R001](../experiments/R001/SPEC.md) | Synchronous checkerboard, canonical seed 23 | Completed; fixed 32-grid probe exact at update 500 |
 | [R002](../experiments/R002/SPEC.md) | Paired gate-coordinate and weight-decay comparison | Sweep and bounded runtime profile completed; no supported coordinate or decay advantage |
 | [R003](../experiments/R003/SPEC.md) | Same-function mixture interventions | Formal 96-case diagnostic completed; representative-dependent response observed |
-| [R004](../experiments/R004/SPEC.md) | Continue all R002 runs from 500 to 2,000 updates | Handoff and v1 protocol specified; implementation pending |
+| [R004](../experiments/R004/SPEC.md) | Continue all R002 runs from 500 to 2,000 updates | Implementation underway (user-reported); no committed result |
+| [R005](../experiments/R005/SPEC.md) | Stochastic neutral exchanges and GPU update cost | Handoff and v1 protocol specified; implementation pending |
 
 The [R003 formal result](../results/R003_formal_attempt02/summary.md) implements
 the fixed [handoff](../experiments/R003/HANDOFF.md) and
@@ -71,6 +75,25 @@ every 50 updates; structure is measured every 250 updates and the full runtime
 profile at 500, 1,000, 1,500, and 2,000. The preflight checks historical replay
 and exact resumption. These are longer trajectories of the same seed groups,
 not new independent trials, and they do not use R003-modified checkpoints.
+
+The [R005 handoff](../experiments/R005/HANDOFF.md) and
+[configuration](../configs/experiments/r005_stochastic_neutral_exploration_v1.json)
+turn the [neutral-exploration proposal](proposals/neutral_exploration/PROPOSAL.md)
+into a fixed checkpoint experiment. Compare identity, uniform exchanges, and
+geometry-weighted stochastic exchanges on the same 96 original R002 cases as
+R003. Sixteen paired draws per stochastic arm, plus coupled controls matching
+per-gate probability displacement, give 6,240 representatives and 12,480
+independent one-step SGD probes across eta = 0.001 and 0.0001. rho = 0.1 and
+weighted gamma = 0.75 are initial fixed choices, not tuned optima.
+
+R005's primary comparison measures directional spread of output responses on
+the additional observation inputs at update 250, separately for both training
+histories. Average drift and response magnitude are measured separately. The
+operator is specified for compiled GPU execution with a reused recurrent
+q-gradient and a recomputed logit gradient; full numerical audits and a separate
+FP64 cost benchmark are required. No R005 learning improvement, circuit-size
+cause, stationary fiber distribution, or GPU timing result is established.
+Its planned diagnostic does not change the R004 continuation.
 
 Use a known recurrent learner as a positive control before redesigning the
 sequence learner. The initial reference has fixed wiring, shared recurrent
