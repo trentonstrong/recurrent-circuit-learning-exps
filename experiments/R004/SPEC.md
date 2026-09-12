@@ -1,9 +1,21 @@
 # R004 — Uniform continuation of the R002 training cohort
 
-Status: specified for implementation, 2026-09-11. No R004 runner, preflight, or
-training result is claimed. The authoritative v1 protocol is the
+Status: completed and released; independently reviewed 2026-09-12. All 64
+trajectories reached update 2,000. The
+[review](../../reviews/R004_continuation/REVIEW.md) recomputes the cohort
+statistics and directly replays the seed-0 subset. Implementation and small
+result records are captured in the
+[release](https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/tag/experiment/R004)
+with explicit dirty-source provenance; a workstation source commit remains
+pending. The authoritative frozen v1 protocol remains the
 [implementation handoff](HANDOFF.md) and
 [configuration](../../configs/experiments/r004_training_continuation_v1.json).
+
+Common-hard original-probe successes rose from 4/64 to 16/64. All 64 soft losses
+improved, but visible-core size increased in 62/64 runs. At least 47/64 final
+relaxed outputs meet a sufficient thresholded-output correctness bound; 32
+still yield failed hard circuits. These are improved fitting and hard-success
+results, not evidence of compression or a proven coordinate advantage.
 
 Continue all 64 original R002 `formal_attempt01` trajectories from their own
 update-500 checkpoints to global update 2,000. Preserve every parameter,

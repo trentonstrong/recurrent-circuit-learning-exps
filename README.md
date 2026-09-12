@@ -10,8 +10,11 @@ are stepping stones toward harder cases such as pi.
 the formal R002 paired sweep and reviews, and the fixed R003 same-function
 mechanism diagnostic are complete. R003 finds representative-dependent local
 SGD and visible-output response at fixed effective truth tables; it is not a
-training-improvement result. R004's uniform continuation is handed off. R005's
-stochastic neutral-exploration experiment is now specified for implementation;
+training-improvement result. R004's released continuation is independently
+reviewed: exact primary-probe solutions increase from 4/64 to 16/64, while
+extracted circuits generally grow and many fitted relaxations fail hardening.
+Its implementation and small result tables await a workstation source commit.
+R005's stochastic neutral-exploration experiment is specified for implementation;
 no R005 operator execution or GPU benchmark is claimed.
 
 ## Start here
@@ -21,8 +24,9 @@ no R005 operator execution or GPU benchmark is claimed.
 3. Review [R001: the synchronous recurrent baseline](experiments/R001/SPEC.md).
 4. Continue through the completed [R002](experiments/R002/SPEC.md) and
    [R003](experiments/R003/SPEC.md) evidence before proposing another intervention.
-5. Use the [R004 continuation handoff](experiments/R004/HANDOFF.md) for longer
-   training and the [R005 stochastic-exploration handoff](experiments/R005/HANDOFF.md)
+5. Read the [R004 continuation review](reviews/R004_continuation/REVIEW.md)
+   alongside its [frozen handoff](experiments/R004/HANDOFF.md).
+6. Use the [R005 stochastic-exploration handoff](experiments/R005/HANDOFF.md)
    for the separate geometry experiment and GPU cost measurement.
 
 The first positive control is the published DiffLogic CA synchronous checkerboard

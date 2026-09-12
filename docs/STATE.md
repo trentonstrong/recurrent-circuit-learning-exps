@@ -6,10 +6,11 @@ cases, 288 mixture arms, and 576 independent one-step probes. It establishes
 representative-dependent local SGD response at these checkpoints and shows that
 the response difference reaches the visible outputs. No improved-training,
 causal circuit-size, or naturally traversed neutral-path claim is made. R004's
-uniform training-budget continuation now has a separate fixed handoff and
-configuration; its implementation and validation are the next steps, and no
-R004 execution is claimed in this repository snapshot. The user reports R004
-implementation underway on the workstation. R005 now has a fixed stochastic
+uniform continuation has completed all 64 trajectories through update 2,000.
+The published release and independent review establish more exact solutions,
+a substantial relaxed-to-hard gap, and larger extracted circuits. R004's
+implementation and original small result tables are captured in the release
+but still await a workstation source commit on main. R005 has a fixed stochastic
 neutral-exploration specification, configuration, and implementation handoff;
 its operator, formal diagnostic, and GPU benchmark have not run.
 
@@ -39,7 +40,7 @@ eventually periodic. Length and storage-size generalization need separate tests.
 | [R001](../experiments/R001/SPEC.md) | Synchronous checkerboard, canonical seed 23 | Completed; fixed 32-grid probe exact at update 500 |
 | [R002](../experiments/R002/SPEC.md) | Paired gate-coordinate and weight-decay comparison | Sweep and bounded runtime profile completed; no supported coordinate or decay advantage |
 | [R003](../experiments/R003/SPEC.md) | Same-function mixture interventions | Formal 96-case diagnostic completed; representative-dependent response observed |
-| [R004](../experiments/R004/SPEC.md) | Continue all R002 runs from 500 to 2,000 updates | Implementation underway (user-reported); no committed result |
+| [R004](../experiments/R004/SPEC.md) | Continue all R002 runs from 500 to 2,000 updates | Released and independently reviewed; 16/64 exact at 2,000; implementation commit pending |
 | [R005](../experiments/R005/SPEC.md) | Stochastic neutral exchanges and GPU update cost | Handoff and v1 protocol specified; implementation pending |
 
 The [R003 formal result](../results/R003_formal_attempt02/summary.md) implements
@@ -75,6 +76,38 @@ every 50 updates; structure is measured every 250 updates and the full runtime
 profile at 500, 1,000, 1,500, and 2,000. The preflight checks historical replay
 and exact resumption. These are longer trajectories of the same seed groups,
 not new independent trials, and they do not use R003-modified checkpoints.
+
+The [independent R004 review](../reviews/R004_continuation/REVIEW.md) verifies
+the released records, recomputes paired statistics, and replays seed 0 in all
+four conditions at four snapshots in both hardenings (2,112 initialization
+trajectories). Common-hard original-probe successes increase from 4/64 at
+update 500 to 16/64 at 2,000: categorical/decay 3/16, truth/decay 2/16,
+categorical/no-decay 8/16, and truth/no-decay 3/16. The no-decay paired endpoint
+comparison has Holm-adjusted p = 0.25, so the observed coordinate difference
+is not an established population advantage. All four original successes
+return as endpoint successes, but five saved histories include a temporary
+success-to-failure transition and two finish inexact.
+
+All 64 fixed-probe soft losses improve. At least 47/64 final relaxed outputs
+are provably correct under output thresholding from their summed SSE < 0.25;
+32 of these still yield failed common-hard circuits. Visible-core operation
+counts increase in 62/64 runs, and the mean paired truth-minus-categorical
+gap grows under both decay histories. These constructive size counts are not
+minimum or complete description lengths. The 8/16 categorical/no-decay primary
+successes become 6/16 on all 66 declared runtime initializations at tick 20.
+Longer training helps, but neither hardening nor compression follows
+automatically from relaxed fitting. R005 remains a separate frozen test; R004
+does not demonstrate a neutral-exploration benefit.
+
+The [R004 release](https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/tag/experiment/R004)
+pins fe14ca6 with explicit dirty-source identities. Its compact review archive
+passed hash checks; the full checkpoint cohort and other seeds' circuit arrays
+were not replayed here. The later final artifact preflight passes its recorded
+checks, while the original pre-launch preflight referenced by the cohort
+manifest is absent from the compact archive. The implementation, small results,
+and original/failed preflight records still need a workstation source commit.
+A bundled loader validates gate IDs only after uint8 conversion; its checks
+should precede casting. All raw gate IDs in the replayed subset are valid.
 
 The [R005 handoff](../experiments/R005/HANDOFF.md) and
 [configuration](../configs/experiments/r005_stochastic_neutral_exploration_v1.json)
@@ -196,8 +229,8 @@ both decay settings, without an established exact-solution advantage. All 64
 trials have lower fixed-probe soft loss at update 500 than at 400. These are
 trajectory observations, not evidence of neutral paths or stationary failures.
 The review distinguished a possible uniform budget extension from R003's direct
-same-function mechanism test. R003 has since completed; R004 specifies the
-separate budget continuation.
+same-function mechanism test. R003 has since completed; R004's separate budget
+continuation is now released and reviewed above.
 
 The selected circuit review finds that both successful seed-4 categorical runs
 share a two-operation, two-channel visible core: a rotated version of R001's
