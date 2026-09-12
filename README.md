@@ -13,9 +13,10 @@ SGD and visible-output response at fixed effective truth tables; it is not a
 training-improvement result. R004's released continuation is independently
 reviewed: exact primary-probe solutions increase from 4/64 to 16/64, while
 extracted circuits generally grow and many fitted relaxations fail hardening.
-Its implementation and small result tables await a workstation source commit.
-R005's stochastic neutral-exploration experiment is specified for implementation;
-no R005 operator execution or GPU benchmark is claimed.
+R004's implementation and result records are now committed. R005's stochastic
+neutral-exploration experiment and R006's continuation to 10,000 updates with
+frozen hardening probes are specified for implementation; neither new
+experiment has run.
 
 ## Start here
 
@@ -28,6 +29,8 @@ no R005 operator execution or GPU benchmark is claimed.
    alongside its [frozen handoff](experiments/R004/HANDOFF.md).
 6. Use the [R005 stochastic-exploration handoff](experiments/R005/HANDOFF.md)
    for the separate geometry experiment and GPU cost measurement.
+7. Use the [R006 continuation and hardening handoff](experiments/R006/HANDOFF.md)
+   to test a larger training budget and the approach to Boolean extraction.
 
 The first positive control is the published DiffLogic CA synchronous checkerboard
 task. It establishes recurrent learning before we adapt the architecture to

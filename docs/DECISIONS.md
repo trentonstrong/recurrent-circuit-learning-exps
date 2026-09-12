@@ -70,3 +70,29 @@ historical JAX CPU oracle and modern GPU runtime, each with a validated lock and
 exact interpreter pin. Record uv itself in run provenance and use locked mode
 for reproduction. R000 will resolve and validate these environments locally;
 this decision does not constitute a completed dependency lock.
+
+## D009 — Separate longer training from frozen hardening probes
+
+On 2026-09-12, retain the known recurrent loss and optimizer while studying why
+some relaxed models fail gate hardening. R004's finite-budget gap is not proof
+of convergence or of an unavoidable analog computation. R006 continues all
+64 original trajectories from update 2,000 to a fixed 10,000 endpoint, with
+no outcome-based selection or early stopping. The endpoint is a fivefold
+total budget relative to R004, adding 512,000 updates across the same cohort.
+
+At five fixed checkpoints, evaluate Q-alpha = Q + alpha*(H(Q)-Q) directly in
+truth-table coordinates on 33 fixed alphas and the existing 66-start probe set.
+Keep the entire curve, including failures followed by recoveries. Record actual
+rounding displacement and numerical sensitivity; equal alpha need not mean
+equal parameter movement across checkpoints. These frozen evaluations cannot
+change live parameters, optimizer state, random streams, or the training loss.
+The path changes the relaxed function while preserving its common-rounded
+circuit, and is distinct from R005's same-function neutral movement.
+
+Keep evaluation every 50 updates and store resumable checkpoints every 250
+to limit artifacts; retain every update record outside git with hashes.
+This is a storage choice, not altered training mathematics. Keep R005's
+protocol and source selection unchanged. The
+[R006 handoff](../experiments/R006/HANDOFF.md) and
+[configuration](../configs/experiments/r006_training_and_hardening_v1.json)
+define the preflight, paired endpoints, diagnostics, and validation boundary.

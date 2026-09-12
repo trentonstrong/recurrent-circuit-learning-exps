@@ -13,6 +13,9 @@ to-hard gap, and larger extracted circuits, but the corrected paired endpoint
 comparisons do not support a categorical-versus-truth winner. R005 has a fixed
 stochastic neutral-exploration specification, configuration, and implementation
 handoff; its operator, formal diagnostic, and GPU benchmark have not run.
+R006 now specifies a continuation of all 64 R004 parents from update 2,000 to
+10,000, with frozen hardening curves at five checkpoints. Its implementation,
+preflight, training, and probes have not run.
 
 ## Objective
 
@@ -42,6 +45,7 @@ eventually periodic. Length and storage-size generalization need separate tests.
 | [R003](../experiments/R003/SPEC.md) | Same-function mixture interventions | Formal 96-case diagnostic completed; representative-dependent response observed |
 | [R004](../experiments/R004/SPEC.md) | Continue all R002 runs from 500 to 2,000 updates | Released and independently reviewed; 64/64 accounted for, 16/64 exact at 2,000 |
 | [R005](../experiments/R005/SPEC.md) | Stochastic neutral exchanges and GPU update cost | Handoff and v1 protocol specified; implementation pending |
+| [R006](../experiments/R006/SPEC.md) | Continue R004 to 10,000 updates and measure frozen hardening curves | Handoff, source pins, and v1 config specified; implementation pending |
 
 The [R003 formal result](../results/R003_formal_attempt02/summary.md) implements
 the fixed [handoff](../experiments/R003/HANDOFF.md) and
@@ -152,7 +156,34 @@ operator is specified for compiled GPU execution with a reused recurrent
 q-gradient and a recomputed logit gradient; full numerical audits and a separate
 FP64 cost benchmark are required. No R005 learning improvement, circuit-size
 cause, stationary fiber distribution, or GPU timing result is established.
-Its planned diagnostic does not change the R004 continuation.
+Its planned diagnostic does not change the R004 or R006 training trajectories.
+
+The [R006 handoff](../experiments/R006/HANDOFF.md),
+[configuration](../configs/experiments/r006_training_and_hardening_v1.json), and
+[source pins](../experiments/R006/SOURCE_PINS.json) fix a longer continuation
+against the completed R004 source commit c768096. Every original seed/condition
+receives another 8,000 updates, ending at 10,000 with the same FP32 optimizer,
+loss, fresh-input stream, and 20-tick computation. This is 512,000 added updates.
+Original-probe evaluations remain every 50 updates; full checkpoints are saved
+every 250 as a declared storage-cadence change. No outcome changes the budget.
+
+At updates 2,000, 4,000, 6,000, 8,000, and 10,000, R006 evaluates the frozen
+path Q-alpha = Q + alpha*(H(Q)-Q) on 33 fixed alpha values and the same 66
+declared initial states. The common-rounded circuit is constant along this
+path; the relaxed function changes. No interpolated model enters training.
+Full curves, actual thresholded soft outputs, Q distances, per-tick state
+displacement, and a small separate FP64 audit distinguish measured rounding
+sensitivity from the size of the rounding perturbation. Nonmonotonic curves
+and numerical disagreements are retained, not collapsed to a claimed radius.
+
+The primary comparison is within-condition common-hard endpoint correctness
+at 2,000 versus 10,000, with paired tests and Holm correction over four
+conditions. Curves, baseline-failure subgroups, coordinate comparisons, and
+constructive size remain secondary descriptive measurements. R004's finite
+hardening gap does not establish that the learner has converged: successes
+were still appearing near its cutoff, and low relaxed loss need not mean
+training for correct hardening is complete. R006's implementation and GPU
+validation are pending; the handoff is not a new result.
 
 Use a known recurrent learner as a positive control before redesigning the
 sequence learner. The initial reference has fixed wiring, shared recurrent
