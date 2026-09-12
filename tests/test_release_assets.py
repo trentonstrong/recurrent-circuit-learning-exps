@@ -59,14 +59,10 @@ def test_sweep_release_assets_preserve_run_directories(tmp_path: Path) -> None:
             (run_directory / name).write_bytes(value)
 
     output_directory = tmp_path / "release"
-    first = build_sweep_release_assets(
-        "R002", "test", artifact_root, output_directory
-    )
+    first = build_sweep_release_assets("R002", "test", artifact_root, output_directory)
     checkpoint_asset = output_directory / "R002_test_checkpoints.tar.gz"
     first_digest = sha256_file(checkpoint_asset)
-    second = build_sweep_release_assets(
-        "R002", "test", artifact_root, output_directory
-    )
+    second = build_sweep_release_assets("R002", "test", artifact_root, output_directory)
 
     assert first["release_tag"] == "experiment/R002"
     assert first_digest == sha256_file(checkpoint_asset)
@@ -83,6 +79,48 @@ def test_sweep_release_assets_preserve_run_directories(tmp_path: Path) -> None:
     assert contents["experiment_id"] == "R002"
     assert contents["sweep_id"] == "test"
     assert contents["bundle_kind"] == "checkpoints"
+
+
+def test_sweep_release_assets_support_continuation_circuits_and_review(
+    tmp_path: Path,
+) -> None:
+    artifact_root = tmp_path / "artifacts"
+    run_directory = artifact_root / "R004_test_seed00_categorical"
+    run_directory.mkdir(parents=True)
+    for name, value in (
+        ("checkpoint_update_1000.npz", b"checkpoint"),
+        ("probe_trajectory_update_1000.npz", b"trajectory"),
+        ("circuit_update_1000_native.npz", b"native"),
+        ("circuit_update_1000_common.npz", b"common"),
+    ):
+        (run_directory / name).write_bytes(value)
+    analysis_directory = artifact_root / "R004_test_analysis"
+    analysis_directory.mkdir()
+    (analysis_directory / "runtime_rule_a.npz").write_bytes(b"runtime")
+    review = artifact_root / "R004_test_review.tar.gz"
+    review.write_bytes(b"review")
+
+    output_directory = tmp_path / "release"
+    result = build_sweep_release_assets(
+        "R004",
+        "test",
+        artifact_root,
+        output_directory,
+        analysis_directory,
+        review,
+    )
+
+    assert [asset["kind"] for asset in result["assets"]] == [
+        "checkpoints",
+        "analysis",
+        "runtime_analysis_arrays",
+        "compact_review_archive",
+    ]
+    with tarfile.open(
+        output_directory / "R004_test_analysis.tar.gz", "r:gz"
+    ) as archive:
+        names = {member.name for member in archive.getmembers()}
+    assert "R004_test_seed00_categorical/circuit_update_1000_native.npz" in names
 
 
 def test_diagnostic_release_assets_include_all_cases_and_review(tmp_path: Path) -> None:

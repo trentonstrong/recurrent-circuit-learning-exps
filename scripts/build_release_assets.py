@@ -220,6 +220,8 @@ def build_sweep_release_assets(
     sweep_id: str,
     artifact_root: Path,
     output_directory: Path,
+    analysis_artifact_directory: Path | None = None,
+    review_archive: Path | None = None,
 ) -> dict[str, Any]:
     if not EXPERIMENT_ID_PATTERN.fullmatch(experiment_id):
         raise ValueError("experiment ID must have the form R000")
@@ -235,13 +237,19 @@ def build_sweep_release_assets(
     for run_directory in run_directories:
         run_checkpoints = sorted(run_directory.glob("checkpoint_update_*.npz"))
         run_trajectories = sorted(run_directory.glob("probe_trajectory_update_*.npz"))
-        run_exports = [
+        final_exports = [
             run_directory / "final_native_circuit.npz",
             run_directory / "final_common_circuit.npz",
         ]
+        run_exports = (
+            final_exports
+            if all(path.is_file() for path in final_exports)
+            else sorted(run_directory.glob("circuit_update_*.npz"))
+        )
         if (
             not run_checkpoints
             or len(run_checkpoints) != len(run_trajectories)
+            or not run_exports
             or any(not path.is_file() for path in run_exports)
         ):
             raise ValueError(f"incomplete sweep artifact directory: {run_directory}")
@@ -251,7 +259,7 @@ def build_sweep_release_assets(
 
     output_directory.mkdir(parents=True, exist_ok=True)
     asset_prefix = f"{experiment_id}_{sweep_id}"
-    assets = [
+    assets: list[dict[str, Any]] = [
         build_tree_bundle(
             output_directory / f"{asset_prefix}_checkpoints.tar.gz",
             experiment_id,
@@ -269,6 +277,31 @@ def build_sweep_release_assets(
             artifact_root,
         ),
     ]
+    if analysis_artifact_directory is not None:
+        runtime_arrays = sorted(analysis_artifact_directory.glob("runtime_rule_*.npz"))
+        if not runtime_arrays:
+            raise ValueError("analysis artifact directory has no runtime arrays")
+        assets.append(
+            build_tree_bundle(
+                output_directory / f"{asset_prefix}_runtime-analysis.tar.gz",
+                experiment_id,
+                sweep_id,
+                "runtime_analysis_arrays",
+                runtime_arrays,
+                analysis_artifact_directory,
+            )
+        )
+    if review_archive is not None:
+        if not review_archive.is_file():
+            raise FileNotFoundError(review_archive)
+        assets.append(
+            {
+                "name": review_archive.name,
+                "kind": "compact_review_archive",
+                "bytes": review_archive.stat().st_size,
+                "sha256": sha256_file(review_archive),
+            }
+        )
     release_manifest = {
         "schema_version": 1,
         "experiment_id": experiment_id,
@@ -348,14 +381,24 @@ def main() -> None:
     parser.add_argument("--artifact-directory", type=Path)
     parser.add_argument("--sweep-id")
     parser.add_argument("--artifact-root", type=Path)
+    parser.add_argument("--analysis-artifact-directory", type=Path)
+    parser.add_argument("--sweep-review-archive", type=Path)
     parser.add_argument("--diagnostic-run-id")
     parser.add_argument("--diagnostic-artifact-directory", type=Path)
     parser.add_argument("--review-archive", type=Path)
     parser.add_argument("--output-directory", required=True, type=Path)
     parser.add_argument("--manifest-copy", type=Path)
     args = parser.parse_args()
-    if args.diagnostic_run_id and args.diagnostic_artifact_directory and args.review_archive and not (
-        args.run_id or args.artifact_directory or args.sweep_id or args.artifact_root
+    if (
+        args.diagnostic_run_id
+        and args.diagnostic_artifact_directory
+        and args.review_archive
+        and not (
+            args.run_id
+            or args.artifact_directory
+            or args.sweep_id
+            or args.artifact_root
+        )
     ):
         result = build_diagnostic_release_assets(
             args.experiment_id,
@@ -364,17 +407,23 @@ def main() -> None:
             args.review_archive,
             args.output_directory,
         )
-    elif args.sweep_id and args.artifact_root and not (
-        args.run_id or args.artifact_directory or args.diagnostic_run_id
+    elif (
+        args.sweep_id
+        and args.artifact_root
+        and not (args.run_id or args.artifact_directory or args.diagnostic_run_id)
     ):
         result = build_sweep_release_assets(
             args.experiment_id,
             args.sweep_id,
             args.artifact_root,
             args.output_directory,
+            args.analysis_artifact_directory,
+            args.sweep_review_archive,
         )
-    elif args.run_id and args.artifact_directory and not (
-        args.sweep_id or args.artifact_root or args.diagnostic_run_id
+    elif (
+        args.run_id
+        and args.artifact_directory
+        and not (args.sweep_id or args.artifact_root or args.diagnostic_run_id)
     ):
         result = build_release_assets(
             args.experiment_id,

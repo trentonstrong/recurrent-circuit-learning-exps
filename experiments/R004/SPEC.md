@@ -1,13 +1,14 @@
 # R004 — Uniform continuation of the R002 training cohort
 
-Status: completed and released; independently reviewed 2026-09-12. All 64
-trajectories reached update 2,000. The
-[review](../../reviews/R004_continuation/REVIEW.md) recomputes the cohort
-statistics and directly replays the seed-0 subset. Implementation and small
-result records are captured in the
+Status: completed, released, and independently reviewed 2026-09-12. All 64
+continuations and the fixed analysis are
+recorded in [`formal_attempt01`](../../results/R004_formal_attempt01/summary.md)
+and [`analysis_attempt03`](../../results/R004_formal_attempt01_analysis_attempt03/summary.md).
+The [review](../../reviews/R004_continuation/REVIEW.md) recomputes the cohort
+statistics and directly replays the seed-0 subset. The experiment-scoped
 [release](https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/tag/experiment/R004)
-with explicit dirty-source provenance; a workstation source commit remains
-pending. The authoritative frozen v1 protocol remains the
+preserves the original dirty-source provenance. The authoritative frozen v1
+protocol remains the
 [implementation handoff](HANDOFF.md) and
 [configuration](../../configs/experiments/r004_training_continuation_v1.json).
 
@@ -42,3 +43,18 @@ the new continuation orchestration, uninterrupted versus save/resume agreement,
 and update-500 source/evaluation/analysis checks. Preserve all original R002
 results and artifacts. Use separate continuation manifests, output paths, and
 failure/resume ledgers; missing outcomes are not silently replaced.
+
+The final cohort contains all 96,000 added optimizer updates and 1,920 new
+checkpoints with an empty failure ledger. Common-hard exactness at update 2,000
+is 3/16, 2/16, 8/16, and 3/16 in the condition order above, versus 1/16, 1/16,
+2/16, and 0/16 at update 500. The corrected paired categorical-versus-truth
+endpoint tests do not reject equality. Constructive truth-minus-categorical
+size gaps grew under both decay histories, but these representation-dependent
+bounds do not establish minimum description length or causality. The complete
+runtime report retains phase, orbit, universal-certificate, failure, and
+unresolved outcomes separately.
+
+Full checkpoints, continuation analysis, runtime arrays, the fixed compact
+review subset, and their identity manifest are published in the experiment-
+scoped [`experiment/R004` release](https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/tag/experiment/R004).
+Every published asset was downloaded and SHA-256 verified after publication.

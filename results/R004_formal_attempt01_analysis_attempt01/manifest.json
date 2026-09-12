@@ -1,0 +1,187 @@
+{
+  "analysis_code": {
+    "commit": "fe14ca65cf62cdc3e283cf8891a745a46967bd42",
+    "dirty": true,
+    "implementation_sources": {
+      "recurrent_circuit_learning/r004_analysis.py": {
+        "bytes": 41900,
+        "sha256": "af50b7d7953af282ce72e4cc68e50c463dbf51040c04a77f5c505339244b74f3"
+      },
+      "recurrent_circuit_learning/r004_runner.py": {
+        "bytes": 63935,
+        "sha256": "c91bb498bc7219c4fb67fcd978c134ae37da13de422f8f8608107bf07170c295"
+      },
+      "scripts/r004.py": {
+        "bytes": 10984,
+        "sha256": "67aa9ea2662ba1fb29b68dd740c9e180d791e2c42b70806732887d386114ae50"
+      }
+    },
+    "status": [
+      "M docs/STATE.md",
+      " M experiments/R004/SPEC.md",
+      "?? recurrent_circuit_learning/r004_analysis.py",
+      "?? recurrent_circuit_learning/r004_runner.py",
+      "?? results/R004_formal_attempt01/",
+      "?? results/R004_formal_attempt01_seed00_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed00_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed00_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed00_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed01_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed01_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed01_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed01_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed02_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed02_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed02_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed02_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed03_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed03_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed03_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed03_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed04_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed04_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed04_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed04_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed05_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed05_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed05_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed05_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed06_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed06_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed06_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed06_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed07_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed07_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed07_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed07_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed08_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed08_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed08_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed08_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed09_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed09_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed09_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed09_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed10_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed10_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed10_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed10_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed11_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed11_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed11_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed11_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed12_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed12_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed12_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed12_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed13_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed13_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed13_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed13_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed14_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed14_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed14_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed14_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed15_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed15_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed15_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed15_truth_reference_decay/",
+      "?? results/R004_preflight_attempt01/",
+      "?? results/R004_preflight_attempt02/",
+      "?? results/R004_preflight_attempt03/",
+      "?? results/R004_preflight_attempt04/",
+      "?? results/R004_preflight_final/",
+      "?? scripts/r004.py",
+      "?? tests/test_r004.py"
+    ],
+    "tracked_patch_sha256": "1e987eb0352d1a132437b65a7885b5ac3cb17c1576dc056c33455ca1a476404d"
+  },
+  "analysis_id": "analysis_attempt01",
+  "artifacts": [
+    {
+      "bytes": 803083,
+      "kind": "R004_structure_table",
+      "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/results/R004_formal_attempt01_analysis_attempt01/structure.jsonl",
+      "sha256": "c0e06fdd5e4194feeda8bd93404da6aa8b6818201357917a39eb88f95b358418"
+    },
+    {
+      "bytes": 35547660,
+      "kind": "R004_runtime_profile_table",
+      "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/results/R004_formal_attempt01_analysis_attempt01/runtime_profiles.jsonl",
+      "sha256": "790bdca2d954f89707c7d13cd09da9adf122c9a9e8e35d3f47bab095152c2ad8"
+    },
+    {
+      "bytes": 28133,
+      "kind": "R004_aggregate_analysis",
+      "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/results/R004_formal_attempt01_analysis_attempt01/analysis.json",
+      "sha256": "696883fc649cde03b537e490e116e199de6abd30b6a6ccd1ba9a0d356c528012"
+    },
+    {
+      "bytes": 1877,
+      "kind": "R004_analysis_summary",
+      "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/results/R004_formal_attempt01_analysis_attempt01/summary.md",
+      "sha256": "c26edfaaa4cba3c808a1877b22ae623583c6222be904e55553513bc4b3f21850"
+    },
+    {
+      "bytes": 1077,
+      "kind": "R004_analysis_validation",
+      "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/results/R004_formal_attempt01_analysis_attempt01/validation.json",
+      "sha256": "9334bea68d186d969b1cddc3bdef162fbdb3ad033756ccab5acba2ccc6862080"
+    },
+    {
+      "bytes": 4045,
+      "kind": "R004_analysis_figure",
+      "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/results/R004_formal_attempt01_analysis_attempt01/paired_error_trajectories.svg",
+      "sha256": "8f4a4eb7406e3a7de78a1746e1ce639fc2b5b2592454685db61292e1ffdda1cd"
+    },
+    {
+      "bytes": 4066,
+      "kind": "R004_analysis_figure",
+      "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/results/R004_formal_attempt01_analysis_attempt01/paired_soft_loss_trajectories.svg",
+      "sha256": "038391fecc2c74578e6025abaac2d922f65e3f70b1d608f9c1e2f4c7e82c0cb1"
+    },
+    {
+      "bytes": 5973,
+      "kind": "R004_analysis_figure",
+      "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/results/R004_formal_attempt01_analysis_attempt01/endpoint_transitions.svg",
+      "sha256": "be9276fba980236e4f6f51e103ce8fb8765fe62afa2f612c4ad8f69a98111a0a"
+    },
+    {
+      "bytes": 1498,
+      "kind": "R004_analysis_figure",
+      "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/results/R004_formal_attempt01_analysis_attempt01/size_gap_trajectory.svg",
+      "sha256": "fd5e08dc2856b0754e086397fc15dacb4cf613868d64c440bd1c597bd186a96b"
+    },
+    {
+      "bytes": 37584,
+      "kind": "R004_analysis_figure",
+      "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/results/R004_formal_attempt01_analysis_attempt01/joint_size_error_paths.svg",
+      "sha256": "2bd06485821eba0c5a5476dc1ef63d3c06ee27d90c7ab55d5b256e4cdcfd31a3"
+    },
+    {
+      "bytes": 1830,
+      "kind": "R004_analysis_figure",
+      "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/results/R004_formal_attempt01_analysis_attempt01/runtime_cycle_evidence.svg",
+      "sha256": "9c8a4e8461e7a1a4c9f6cb968f0e1bd213cab8f241615d4f446de2fe0ed804da"
+    },
+    {
+      "bytes": 1832,
+      "kind": "R004_analysis_figure",
+      "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/results/R004_formal_attempt01_analysis_attempt01/training_cost.svg",
+      "sha256": "1933ac6ebb5b772ecf834c198a2a7a806d95b2d681edc0950afabc6fb255b8da"
+    }
+  ],
+  "config_sha256": "9e6aed592c8214df37486ceaae20af1061d0498b4784be1a5c7380afde87907a",
+  "ended_at": "2026-09-12T01:12:16Z",
+  "experiment_id": "R004",
+  "failures": [],
+  "kind": "R004_structural_runtime_endpoint_analysis",
+  "runtime_mode_count": 512,
+  "runtime_trajectory_count": 33792,
+  "schema_version": 1,
+  "source_run_count": 64,
+  "status": "completed",
+  "structure_snapshot_count": 896,
+  "sweep_id": "formal_attempt01",
+  "wall_seconds": 217.27020508493297
+}

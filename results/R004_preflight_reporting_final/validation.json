@@ -1,0 +1,432 @@
+{
+  "analysis_adapter": {
+    "labeled_structural_modes_verified": 128,
+    "passed": true,
+    "selected_runtime_regressions": {
+      "R002_formal_attempt01_seed04_categorical_reference_decay": {
+        "expected": {
+          "observed_phase_dependence": false,
+          "universal_onset": 16,
+          "universal_status": "all_initial_states_visible_target_certified"
+        },
+        "observed_phase_dependence": false,
+        "universal_onset": 16,
+        "universal_status": "all_initial_states_visible_target_certified"
+      },
+      "R002_formal_attempt01_seed14_truth_reference_decay": {
+        "expected": {
+          "observed_phase_dependence": true,
+          "universal_onset": null,
+          "universal_status": "inconclusive"
+        },
+        "observed_phase_dependence": true,
+        "universal_onset": null,
+        "universal_status": "inconclusive"
+      }
+    },
+    "structural_counts_exact": true
+  },
+  "artifact_volume_projection": {
+    "method": "condition-specific seed-0 interruption checkpoint size times 480 checkpoints per condition",
+    "preflight_checkpoint_bytes": 1410738,
+    "projected_checkpoint_bytes": 677154240,
+    "projected_new_checkpoint_count": 1920
+  },
+  "code": {
+    "commit": "fe14ca65cf62cdc3e283cf8891a745a46967bd42",
+    "dirty": true,
+    "implementation_sources": {
+      "recurrent_circuit_learning/r004_analysis.py": {
+        "bytes": 46059,
+        "sha256": "9e165cb24569b12c26e699801a04ceee61071d9be62c458358fe79db26f3e74f"
+      },
+      "recurrent_circuit_learning/r004_runner.py": {
+        "bytes": 63935,
+        "sha256": "c91bb498bc7219c4fb67fcd978c134ae37da13de422f8f8608107bf07170c295"
+      },
+      "scripts/r004.py": {
+        "bytes": 10984,
+        "sha256": "67aa9ea2662ba1fb29b68dd740c9e180d791e2c42b70806732887d386114ae50"
+      }
+    },
+    "status": [
+      "M docs/STATE.md",
+      " M experiments/R004/SPEC.md",
+      "?? recurrent_circuit_learning/r004_analysis.py",
+      "?? recurrent_circuit_learning/r004_runner.py",
+      "?? results/R004_formal_attempt01/",
+      "?? results/R004_formal_attempt01_analysis_attempt01/",
+      "?? results/R004_formal_attempt01_seed00_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed00_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed00_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed00_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed01_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed01_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed01_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed01_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed02_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed02_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed02_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed02_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed03_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed03_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed03_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed03_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed04_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed04_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed04_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed04_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed05_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed05_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed05_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed05_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed06_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed06_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed06_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed06_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed07_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed07_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed07_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed07_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed08_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed08_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed08_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed08_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed09_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed09_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed09_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed09_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed10_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed10_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed10_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed10_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed11_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed11_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed11_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed11_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed12_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed12_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed12_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed12_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed13_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed13_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed13_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed13_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed14_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed14_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed14_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed14_truth_reference_decay/",
+      "?? results/R004_formal_attempt01_seed15_categorical_no_decay/",
+      "?? results/R004_formal_attempt01_seed15_categorical_reference_decay/",
+      "?? results/R004_formal_attempt01_seed15_truth_no_decay/",
+      "?? results/R004_formal_attempt01_seed15_truth_reference_decay/",
+      "?? results/R004_preflight_attempt01/",
+      "?? results/R004_preflight_attempt02/",
+      "?? results/R004_preflight_attempt03/",
+      "?? results/R004_preflight_attempt04/",
+      "?? results/R004_preflight_final/",
+      "?? scripts/r004.py",
+      "?? tests/test_r004.py"
+    ],
+    "tracked_patch_sha256": "1e987eb0352d1a132437b65a7885b5ac3cb17c1576dc056c33455ca1a476404d"
+  },
+  "cohort_boundary": {
+    "boolean_replay_failures": [],
+    "boolean_replay_passed": true,
+    "common_success_counts": {
+      "categorical_no_decay": 2,
+      "categorical_reference_decay": 1,
+      "truth_no_decay": 0,
+      "truth_reference_decay": 1
+    },
+    "expected_common_success_counts": {
+      "categorical_no_decay": 2,
+      "categorical_reference_decay": 1,
+      "truth_no_decay": 0,
+      "truth_reference_decay": 1
+    },
+    "maximum_soft_loss_absolute_residual": 0.0,
+    "pairing_verified": true,
+    "parents_verified": 64,
+    "saved_first_probe_soft_trajectories_passed": true,
+    "saved_first_probe_soft_trajectory_failures": [],
+    "soft_loss_replay_failures": [],
+    "soft_loss_replay_passed": true,
+    "success_counts_exact": true
+  },
+  "conditions": {
+    "categorical_no_decay": {
+      "budget_field_parity": [
+        {
+          "data_key": true,
+          "global_update": 501,
+          "inputs": true,
+          "loss": true,
+          "model_key": true,
+          "optimizer": true,
+          "parameters": true,
+          "update_index": true
+        },
+        {
+          "data_key": true,
+          "global_update": 502,
+          "inputs": true,
+          "loss": true,
+          "model_key": true,
+          "optimizer": true,
+          "parameters": true,
+          "update_index": true
+        },
+        {
+          "data_key": true,
+          "global_update": 503,
+          "inputs": true,
+          "loss": true,
+          "model_key": true,
+          "optimizer": true,
+          "parameters": true,
+          "update_index": true
+        },
+        {
+          "data_key": true,
+          "global_update": 504,
+          "inputs": true,
+          "loss": true,
+          "model_key": true,
+          "optimizer": true,
+          "parameters": true,
+          "update_index": true
+        }
+      ],
+      "checkpoint": {
+        "bytes": 542121,
+        "kind": "R004_preflight_interruption_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R004_preflight_reporting_final/interruption_categorical_no_decay_update_0505.npz",
+        "sha256": "259d879396574eec52ddc8b2058c11bfff2ef39bc2a2f031eafdfed64ba9a59d"
+      },
+      "historical_replay_450_to_500": {
+        "data_key": true,
+        "model_key": true,
+        "optimizer": true,
+        "parameters": true,
+        "update_index": true
+      },
+      "interruption_parity": {
+        "batch_hashes": true,
+        "data_key": true,
+        "evaluation_did_not_mutate_live_state": true,
+        "model_key": true,
+        "optimizer": true,
+        "parameters": true,
+        "update_index": true
+      }
+    },
+    "categorical_reference_decay": {
+      "budget_field_parity": [
+        {
+          "data_key": true,
+          "global_update": 501,
+          "inputs": true,
+          "loss": true,
+          "model_key": true,
+          "optimizer": true,
+          "parameters": true,
+          "update_index": true
+        },
+        {
+          "data_key": true,
+          "global_update": 502,
+          "inputs": true,
+          "loss": true,
+          "model_key": true,
+          "optimizer": true,
+          "parameters": true,
+          "update_index": true
+        },
+        {
+          "data_key": true,
+          "global_update": 503,
+          "inputs": true,
+          "loss": true,
+          "model_key": true,
+          "optimizer": true,
+          "parameters": true,
+          "update_index": true
+        },
+        {
+          "data_key": true,
+          "global_update": 504,
+          "inputs": true,
+          "loss": true,
+          "model_key": true,
+          "optimizer": true,
+          "parameters": true,
+          "update_index": true
+        }
+      ],
+      "checkpoint": {
+        "bytes": 564164,
+        "kind": "R004_preflight_interruption_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R004_preflight_reporting_final/interruption_categorical_reference_decay_update_0505.npz",
+        "sha256": "24314bec05cd88c60209d7b69fde3a54720a77b63a7e27e3e26d950ff6df542d"
+      },
+      "historical_replay_450_to_500": {
+        "data_key": true,
+        "model_key": true,
+        "optimizer": true,
+        "parameters": true,
+        "update_index": true
+      },
+      "interruption_parity": {
+        "batch_hashes": true,
+        "data_key": true,
+        "evaluation_did_not_mutate_live_state": true,
+        "model_key": true,
+        "optimizer": true,
+        "parameters": true,
+        "update_index": true
+      }
+    },
+    "truth_no_decay": {
+      "budget_field_parity": [
+        {
+          "data_key": true,
+          "global_update": 501,
+          "inputs": true,
+          "loss": true,
+          "model_key": true,
+          "optimizer": true,
+          "parameters": true,
+          "update_index": true
+        },
+        {
+          "data_key": true,
+          "global_update": 502,
+          "inputs": true,
+          "loss": true,
+          "model_key": true,
+          "optimizer": true,
+          "parameters": true,
+          "update_index": true
+        },
+        {
+          "data_key": true,
+          "global_update": 503,
+          "inputs": true,
+          "loss": true,
+          "model_key": true,
+          "optimizer": true,
+          "parameters": true,
+          "update_index": true
+        },
+        {
+          "data_key": true,
+          "global_update": 504,
+          "inputs": true,
+          "loss": true,
+          "model_key": true,
+          "optimizer": true,
+          "parameters": true,
+          "update_index": true
+        }
+      ],
+      "checkpoint": {
+        "bytes": 151394,
+        "kind": "R004_preflight_interruption_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R004_preflight_reporting_final/interruption_truth_no_decay_update_0505.npz",
+        "sha256": "58f4a782a835cd41c90ff4ad57d4770c60a9dc859814fc00fa9f051b66f53e5d"
+      },
+      "historical_replay_450_to_500": {
+        "data_key": true,
+        "model_key": true,
+        "optimizer": true,
+        "parameters": true,
+        "update_index": true
+      },
+      "interruption_parity": {
+        "batch_hashes": true,
+        "data_key": true,
+        "evaluation_did_not_mutate_live_state": true,
+        "model_key": true,
+        "optimizer": true,
+        "parameters": true,
+        "update_index": true
+      }
+    },
+    "truth_reference_decay": {
+      "budget_field_parity": [
+        {
+          "data_key": true,
+          "global_update": 501,
+          "inputs": true,
+          "loss": true,
+          "model_key": true,
+          "optimizer": true,
+          "parameters": true,
+          "update_index": true
+        },
+        {
+          "data_key": true,
+          "global_update": 502,
+          "inputs": true,
+          "loss": true,
+          "model_key": true,
+          "optimizer": true,
+          "parameters": true,
+          "update_index": true
+        },
+        {
+          "data_key": true,
+          "global_update": 503,
+          "inputs": true,
+          "loss": true,
+          "model_key": true,
+          "optimizer": true,
+          "parameters": true,
+          "update_index": true
+        },
+        {
+          "data_key": true,
+          "global_update": 504,
+          "inputs": true,
+          "loss": true,
+          "model_key": true,
+          "optimizer": true,
+          "parameters": true,
+          "update_index": true
+        }
+      ],
+      "checkpoint": {
+        "bytes": 153059,
+        "kind": "R004_preflight_interruption_checkpoint",
+        "path": "/home/trent/src/github.com/trentonstrong/recurrent-circuit-learning-exps/artifacts/R004_preflight_reporting_final/interruption_truth_reference_decay_update_0505.npz",
+        "sha256": "e3f0d1e1fa843e8049ada9a1db00a6298188b242763691cea978849be0076037"
+      },
+      "historical_replay_450_to_500": {
+        "data_key": true,
+        "model_key": true,
+        "optimizer": true,
+        "parameters": true,
+        "update_index": true
+      },
+      "interruption_parity": {
+        "batch_hashes": true,
+        "data_key": true,
+        "evaluation_did_not_mutate_live_state": true,
+        "model_key": true,
+        "optimizer": true,
+        "parameters": true,
+        "update_index": true
+      }
+    }
+  },
+  "config_sha256": "9e6aed592c8214df37486ceaae20af1061d0498b4784be1a5c7380afde87907a",
+  "ended_at": "2026-09-12T01:21:11.277528+00:00",
+  "experiment_id": "R004",
+  "failure_reason": null,
+  "kind": "R004_preflight",
+  "run_id": "preflight_reporting_final",
+  "schema_version": 1,
+  "started_at": "2026-09-12T01:16:49.397289+00:00",
+  "status": "passed"
+}

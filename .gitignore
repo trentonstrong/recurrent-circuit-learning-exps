@@ -27,6 +27,8 @@ wandb/
 tensorboard/
 results/**/raw/
 results/**/checkpoints/
+# Uncompressed runtime ledgers are development artifacts; canonical ledgers use .jsonl.gz.
+results/**/runtime_profiles.jsonl
 *.pt
 *.pth
 *.ckpt

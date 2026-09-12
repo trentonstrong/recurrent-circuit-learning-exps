@@ -6,13 +6,13 @@ cases, 288 mixture arms, and 576 independent one-step probes. It establishes
 representative-dependent local SGD response at these checkpoints and shows that
 the response difference reaches the visible outputs. No improved-training,
 causal circuit-size, or naturally traversed neutral-path claim is made. R004's
-uniform continuation has completed all 64 trajectories through update 2,000.
-The published release and independent review establish more exact solutions,
-a substantial relaxed-to-hard gap, and larger extracted circuits. R004's
-implementation and original small result tables are captured in the release
-but still await a workstation source commit on main. R005 has a fixed stochastic
-neutral-exploration specification, configuration, and implementation handoff;
-its operator, formal diagnostic, and GPU benchmark have not run.
+uniform training-budget continuation has completed all 64 trajectories through
+update 2,000 and the fixed structural/runtime analysis. The published release
+and independent review establish more exact solutions, a substantial relaxed-
+to-hard gap, and larger extracted circuits, but the corrected paired endpoint
+comparisons do not support a categorical-versus-truth winner. R005 has a fixed
+stochastic neutral-exploration specification, configuration, and implementation
+handoff; its operator, formal diagnostic, and GPU benchmark have not run.
 
 ## Objective
 
@@ -40,7 +40,7 @@ eventually periodic. Length and storage-size generalization need separate tests.
 | [R001](../experiments/R001/SPEC.md) | Synchronous checkerboard, canonical seed 23 | Completed; fixed 32-grid probe exact at update 500 |
 | [R002](../experiments/R002/SPEC.md) | Paired gate-coordinate and weight-decay comparison | Sweep and bounded runtime profile completed; no supported coordinate or decay advantage |
 | [R003](../experiments/R003/SPEC.md) | Same-function mixture interventions | Formal 96-case diagnostic completed; representative-dependent response observed |
-| [R004](../experiments/R004/SPEC.md) | Continue all R002 runs from 500 to 2,000 updates | Released and independently reviewed; 16/64 exact at 2,000; implementation commit pending |
+| [R004](../experiments/R004/SPEC.md) | Continue all R002 runs from 500 to 2,000 updates | Released and independently reviewed; 64/64 accounted for, 16/64 exact at 2,000 |
 | [R005](../experiments/R005/SPEC.md) | Stochastic neutral exchanges and GPU update cost | Handoff and v1 protocol specified; implementation pending |
 
 The [R003 formal result](../results/R003_formal_attempt02/summary.md) implements
@@ -54,8 +54,8 @@ the median and maximum output linearization residuals by about tenfold relative
 to eta=0.001. Common rounding changed no gate IDs; native argmax extraction
 changed 935 gate IDs across the primary contrasts. Saved Adam/RNG state was not
 consumed. Deterministic release assets are prepared locally; publication is
-pending because the current workstation lacks the GitHub CLI. A longer-training
-continuation remains separate.
+pending because the current workstation lacks the GitHub CLI. R004's completed
+longer-training continuation remains a separate intervention.
 
 The [independent R003 record review](../reviews/R003_same_function/REVIEW.md)
 verifies the committed case-derived summaries and adds response-direction
@@ -67,15 +67,41 @@ this is distinct from the passing within-FP64 neutrality controls. The review
 does not replay the external checkpoint/derived-array payloads or rerun the
 reported test suite, and records remaining instrumentation gaps.
 
-The [R004 implementation handoff](../experiments/R004/HANDOFF.md) and
-[configuration](../configs/experiments/r004_training_continuation_v1.json) continue
-all 64 R002 runs from their own update-500 checkpoints to global update 2,000,
-preserving parameters, Adam moments/counters, random keys, wiring, FP32, and the
-original constant-rate, 20-tick training recipe. Checkpoints/evaluation remain
-every 50 updates; structure is measured every 250 updates and the full runtime
-profile at 500, 1,000, 1,500, and 2,000. The preflight checks historical replay
-and exact resumption. These are longer trajectories of the same seed groups,
-not new independent trials, and they do not use R003-modified checkpoints.
+The [R004 formal result](../results/R004_formal_attempt01/summary.md) implements
+the fixed [handoff](../experiments/R004/HANDOFF.md) and
+[configuration](../configs/experiments/r004_training_continuation_v1.json).
+All 64 R002 runs continued from their own verified update-500 parameters, Adam
+state, random keys, and wiring to update 2,000. The empty failure ledger accounts
+for all 96,000 additional updates and 1,920 checkpoints; every seed's four
+condition-specific batch histories remain exactly paired. The final preflight
+reproduces R002 updates 450--500 and validates exact interruption/resumption.
+
+At the fixed common-hard endpoint, exact counts changed from 1 to 3 of 16 for
+categorical/reference-decay, 1 to 2 for truth/reference-decay, 2 to 8 for
+categorical/no-decay, and 0 to 3 for truth/no-decay. No endpoint success was lost,
+although one categorical/reference-decay and one truth/no-decay run were exact at
+an intermediate saved checkpoint and inexact at 2,000. The two categorical-versus-
+truth McNemar comparisons have Holm-adjusted p-values 1 and 0.25. Paired bootstrap
+intervals for relative hard-error change cross zero, so this cohort does not
+support a coordinate-system winner at the later endpoint.
+
+The [fixed analysis](../results/R004_formal_attempt01_analysis_attempt03/summary.md)
+records 896 structural modes and 33,792 trajectories across 512 labeled runtime
+modes. The mean truth-minus-categorical constructive size-gap change is 175.69
+operations with reference decay (95% paired bootstrap 108.19--242.38) and 191.56
+without decay (134.75--250.94). These are representation-dependent FactoredDAG
+bounds, not minimum descriptions or a causal result. Runtime analysis separately
+records phase dependence, explicit initialization counterexamples, per-orbit
+onsets, universal certificates, persistent failures, and cap-limited outcomes.
+These are longer trajectories of the same seed groups, not independent trials,
+and no R003-modified checkpoint enters R004.
+
+The measured R004 artifact payload is 976,096,916 bytes. Deterministic full and
+compact-review bundles are published under the experiment-scoped
+[`experiment/R004` release](https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/tag/experiment/R004).
+All five published assets were downloaded and SHA-256 verified. The compact
+archive fixes seed 0 across all conditions and updates 500, 1,000, 1,500, and
+2,000 while referencing the complete R002 parent release.
 
 The [independent R004 review](../reviews/R004_continuation/REVIEW.md) verifies
 the released records, recomputes paired statistics, and replays seed 0 in all
@@ -105,9 +131,9 @@ passed hash checks; the full checkpoint cohort and other seeds' circuit arrays
 were not replayed here. The later final artifact preflight passes its recorded
 checks, while the original pre-launch preflight referenced by the cohort
 manifest is absent from the compact archive. The implementation, small results,
-and original/failed preflight records still need a workstation source commit.
-A bundled loader validates gate IDs only after uint8 conversion; its checks
-should precede casting. All raw gate IDs in the replayed subset are valid.
+and original/failed preflight records are versioned with the completed R004
+work. A bundled loader validates gate IDs only after uint8 conversion; its
+checks should precede casting. All raw gate IDs in the replayed subset are valid.
 
 The [R005 handoff](../experiments/R005/HANDOFF.md) and
 [configuration](../configs/experiments/r005_stochastic_neutral_exploration_v1.json)

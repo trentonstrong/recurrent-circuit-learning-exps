@@ -28,6 +28,15 @@ every primary contrast. `preflight_attempt01` retains an implementation failure,
 `preflight_attempt03` plus `formal_attempt02` identify the canonical implementation
 whose derived bundle retains p arrays for independent geometry reconstruction.
 
+The R004 uniform continuation is recorded in
+[`R004_formal_attempt01`](R004_formal_attempt01/summary.md). All 64 verified R002
+descendants reached update 2,000, and the fixed structural/runtime analysis is
+recorded in
+[`analysis_attempt03`](R004_formal_attempt01_analysis_attempt03/summary.md).
+The deterministic assets are published under the experiment-scoped
+[`experiment/R004` GitHub release](https://github.com/trentonstrong/recurrent-circuit-learning-exps/releases/tag/experiment/R004)
+and were downloaded and SHA-256 verified after publication.
+
 Create one directory per run, for example `R001_20260909_seed23_jaxgpu_attempt01`.
 Use separate identities for retries and interventions and explain their relation.
 Do not silently overwrite a failure with a successful rerun.
